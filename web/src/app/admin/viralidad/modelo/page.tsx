@@ -11,7 +11,7 @@ export default async function ModeloPage() {
       backLabel="Volver a Viralidad"
       eyebrow="Viralidad · Modelo maestro"
       title="MODELO DE VIRALIDAD."
-      lead="El framework editorial de UGC Colombia para producir contenido que se gana el feed. Pilares, hooks, cadencia y loop de medición."
+      lead="El framework editorial de Live Cake para producir contenido que se gana el feed. Pilares, hooks, cadencia y loop de medición."
     />
   );
 }

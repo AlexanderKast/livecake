@@ -83,7 +83,7 @@ export function StepCreatorAudit({ onSubmit, onBack }: Props) {
       <div className="space-y-6">
         <div>
           <label className={labelClass}>
-            <span className="text-brand-yellow mr-1">1.</span>
+            <span className="text-brand-green mr-1">1.</span>
             ¿Qué tipo de contenido puedes crear? *
           </label>
           {errors.content_types && <p className={errorClass}>{errors.content_types}</p>}
@@ -101,7 +101,7 @@ export function StepCreatorAudit({ onSubmit, onBack }: Props) {
 
         <div>
           <label className={labelClass}>
-            <span className="text-brand-yellow mr-1">2.</span>
+            <span className="text-brand-green mr-1">2.</span>
             ¿Tienes experiencia creando UGC para marcas?
           </label>
           <div className="grid grid-cols-2 gap-2 mt-2">
@@ -120,7 +120,7 @@ export function StepCreatorAudit({ onSubmit, onBack }: Props) {
 
         <div>
           <label className={labelClass}>
-            <span className="text-brand-yellow mr-1">3.</span>
+            <span className="text-brand-green mr-1">3.</span>
             ¿Cuánto cobras (o cobrarías) por video? *
           </label>
           {errors.rate_per_video && <p className={errorClass}>{errors.rate_per_video}</p>}
@@ -138,7 +138,7 @@ export function StepCreatorAudit({ onSubmit, onBack }: Props) {
 
         <div>
           <label className={labelClass}>
-            <span className="text-brand-yellow mr-1">4.</span>
+            <span className="text-brand-green mr-1">4.</span>
             ¿Cuándo podrías empezar? *
           </label>
           {errors.availability && <p className={errorClass}>{errors.availability}</p>}
@@ -156,7 +156,7 @@ export function StepCreatorAudit({ onSubmit, onBack }: Props) {
 
         <div>
           <label className={labelClass}>
-            <span className="text-brand-yellow mr-1">5.</span>
+            <span className="text-brand-green mr-1">5.</span>
             ¿Cuál es tu objetivo principal? *
           </label>
           {errors.biggest_goal && <p className={errorClass}>{errors.biggest_goal}</p>}

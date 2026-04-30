@@ -14,7 +14,7 @@ const NAV_LINKS = {
     { label: "Blog", href: "/blog" },
   ],
   recursos: [
-    { label: "Kit UGC 2026", href: "/recursos/kit-ugc-2026" },
+    { label: "Live shopping playbook", href: "/recursos/live-shopping-playbook" },
     { label: "Preguntas frecuentes", href: "#faq" },
     { label: "Llamada inicial", href: "#diagnostico" },
     { label: "Contacto", href: "#diagnostico" },
@@ -29,17 +29,17 @@ const NAV_LINKS = {
 const SOCIALS = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/agenciaugccolombia",
+    href: "https://www.instagram.com/livecake",
     icon: Instagram,
   },
   {
     name: "TikTok",
-    href: "https://www.tiktok.com/@agenciaugccolombia",
+    href: "https://www.tiktok.com/@livecake",
     icon: SiTiktok,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/ugccolombia",
+    href: "https://www.linkedin.com/company/livecake",
     icon: Linkedin,
   },
   {
@@ -52,7 +52,7 @@ const SOCIALS = [
 export function Footer() {
   return (
     <footer
-      className="relative border-t border-brand-graphite/40 bg-brand-black text-white"
+      className="relative border-t border-neutral-200 bg-neutral-50 text-brand-black"
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -61,20 +61,20 @@ export function Footer() {
           <div className="md:col-span-5 lg:col-span-4">
             <a
               href="/"
-              className="inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
-              aria-label="UGC Colombia - Inicio"
+              className="inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
+              aria-label="Live Cake - Inicio"
             >
               <Image
-                src="/brand/logo-dark-bg.png"
-                alt="UGC Colombia"
+                src="/brand/logo-light-bg.png"
+                alt="Live Cake"
                 width={180}
                 height={52}
                 className="h-10 w-auto"
               />
             </a>
-            <p className="mt-6 text-sm text-brand-gray max-w-xs leading-relaxed">
-              Contenido real, resultados reales. Agencia boutique UGC para
-              marcas que viven de los resultados en LATAM.
+            <p className="mt-6 text-sm text-neutral-500 max-w-xs leading-relaxed">
+              Live shopping + falsos lives 24/7 sobre Pancake. Partner oficial
+              Meta + TikTok + Google. Sin comisión sobre ventas.
             </p>
 
             <div className="mt-8 flex items-center gap-3">
@@ -100,7 +100,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     aria-label={s.name}
                     onClick={handleClick}
-                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/[0.04] border border-brand-graphite/60 text-brand-gray hover:text-brand-yellow hover:border-brand-gold/60 hover:bg-brand-yellow/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-neutral-200 text-neutral-500 hover:text-brand-green hover:border-brand-green/40 hover:bg-brand-green/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
                   >
                     <Icon className="w-5 h-5" aria-hidden />
                   </a>
@@ -112,7 +112,7 @@ export function Footer() {
           {/* Nav columns */}
           <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xs font-bold text-white tracking-[0.2em] uppercase mb-5">
+              <h3 className="text-xs font-bold text-neutral-900 tracking-[0.2em] uppercase mb-5">
                 Agencia
               </h3>
               <ul className="flex flex-col gap-3">
@@ -120,7 +120,7 @@ export function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-sm text-brand-gray hover:text-brand-yellow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+                      className="text-sm text-neutral-500 hover:text-brand-green transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
                     >
                       {l.label}
                     </a>
@@ -130,7 +130,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold text-white tracking-[0.2em] uppercase mb-5">
+              <h3 className="text-xs font-bold text-neutral-900 tracking-[0.2em] uppercase mb-5">
                 Recursos
               </h3>
               <ul className="flex flex-col gap-3">
@@ -138,7 +138,7 @@ export function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-sm text-brand-gray hover:text-brand-yellow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+                      className="text-sm text-neutral-500 hover:text-brand-green transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
                     >
                       {l.label}
                     </a>
@@ -148,7 +148,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold text-white tracking-[0.2em] uppercase mb-5">
+              <h3 className="text-xs font-bold text-neutral-900 tracking-[0.2em] uppercase mb-5">
                 Legal
               </h3>
               <ul className="flex flex-col gap-3">
@@ -156,7 +156,7 @@ export function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-sm text-brand-gray hover:text-brand-yellow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+                      className="text-sm text-neutral-500 hover:text-brand-green transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
                     >
                       {l.label}
                     </a>
@@ -168,13 +168,13 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-brand-graphite/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-xs text-brand-gray/60">
-            © 2026 UGC Colombia · Todos los derechos reservados.
+        <div className="mt-16 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-xs text-neutral-400">
+            © 2026 Live Cake · Todos los derechos reservados.
           </p>
-          <p className="text-xs text-brand-gray/60">
+          <p className="text-xs text-neutral-400">
             Hecho con{" "}
-            <span className="text-brand-yellow" aria-hidden>
+            <span className="text-brand-green" aria-hidden>
               ★
             </span>{" "}
             en Medellín, Colombia

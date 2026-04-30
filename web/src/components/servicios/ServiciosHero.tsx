@@ -63,7 +63,7 @@ export function ServiciosHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,160,23,0.10) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.10) 0%, transparent 70%)",
         }}
       />
 
@@ -73,7 +73,7 @@ export function ServiciosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-6 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40"
+          className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-6 bg-brand-green/15 text-brand-green border border-brand-green/40"
         >
           Agencia AI-first
         </motion.span>
@@ -91,7 +91,7 @@ export function ServiciosHero() {
           <span
             className="block text-[clamp(1.6rem,5vw,4.5rem)] leading-[0.95] mt-2"
             style={{
-              background: "linear-gradient(90deg, #f9b334 0%, #d4a017 50%, #f9b334 100%)",
+              background: "linear-gradient(90deg, #16a34a 0%, #15803d 50%, #16a34a 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -123,7 +123,7 @@ export function ServiciosHero() {
         >
           <Button
             size="lg"
-            className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(249,179,52,0.35)] hover:shadow-[0_0_40px_rgba(249,179,52,0.55)]"
+            className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(22,163,74,0.35)] hover:shadow-[0_0_40px_rgba(22,163,74,0.55)]"
             onClick={() => openAudit("servicios_hero")}
           >
             APLICA AHORA →

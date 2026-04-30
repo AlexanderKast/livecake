@@ -28,7 +28,7 @@ type ServicioUnit =
   | "mes"
   | "guion"
   | "proyecto"
-  | "video";
+  | "live";
 
 type Servicio = {
   id: string;
@@ -43,74 +43,74 @@ const SERVICIOS: Servicio[] = [
   {
     id: "consultoria",
     icon: Compass,
-    title: "Consultoría Estratégica",
+    title: "Diagnóstico de sistema live",
     description:
-      "Sesiones 1-a-1 con Alexander para auditar tu contenido actual y construir la hoja de ruta de los próximos 90 días.",
+      "Sesiones 1-a-1 para auditar tu stack actual y construir la hoja de ruta de live shopping para los próximos 90 días. Definimos formato Pancake, presentadores y ángulos de venta.",
     prices: { USD: 200, COP: 790_000 },
     unit: "sesión",
   },
   {
     id: "marketing",
     icon: TrendingUp,
-    title: "Estrategia de Marketing",
+    title: "Estrategia de live shopping",
     description:
-      "Plan completo de adquisición, embudo de ventas, precios, canales y presupuesto para hacer crecer tu marca con intención.",
+      "Plan completo de live commerce: frecuencia de lives, ángulos por producto, segmentación de ads hacia Pancake y estructura de follow-up post-live con Postcake CRM.",
     prices: { USD: 325, COP: 1_290_000 },
     unit: "mes",
   },
   {
     id: "contenido",
     icon: BookOpen,
-    title: "Estrategia de Contenido",
+    title: "Calendario de lives y contenido",
     description:
-      "Pilares editoriales, calendario mensual, ángulos ganadores y marcos de ganchos probados por vertical.",
+      "Pilares editoriales para live, calendario mensual de transmisiones, ganchos de apertura y estructura de pitch de venta adaptados al formato Pancake.",
     prices: { USD: 225, COP: 890_000 },
     unit: "mes",
   },
   {
     id: "guiones",
     icon: FileText,
-    title: "Guiones UGC",
+    title: "Guiones de live shopping",
     description:
-      "Guiones conversacionales escritos con acento latino real. Ganchos, transiciones y llamadas a la acción listos para grabar.",
+      "Guiones conversacionales con apertura de gancho, demostración de producto y CTA de compra listos para live. Tono latino real, acento natural, probados en formato Pancake.",
     prices: { USD: 45, COP: 179_000 },
     unit: "guion",
   },
   {
     id: "research",
     icon: Search,
-    title: "Investigación de Mercado",
+    title: "Investigación de audiencia live",
     description:
-      "Análisis de audiencia, dolores, hallazgos culturales y tendencias LATAM con datos reales.",
+      "Análisis de qué productos venden mejor en live, qué dolores activan la compra impulsiva y qué horarios maximizan la retención en tu categoría LATAM.",
     prices: { USD: 225, COP: 890_000 },
     unit: "proyecto",
   },
   {
     id: "competencia",
     icon: Eye,
-    title: "Análisis de Competencia",
+    title: "Auditoría de competencia en live",
     description:
-      "Auditoría de tus competidores directos: contenido creativo, precios, posicionamiento y oportunidades de mercado.",
+      "Análisis de cómo tus competidores directos usan live commerce: frecuencia, formato, presentadores, precios y oportunidades de diferenciación en Pancake.",
     prices: { USD: 175, COP: 690_000 },
     unit: "proyecto",
   },
   {
     id: "edicion",
     icon: Film,
-    title: "Edición Profesional",
+    title: "Producción y edición de lives",
     description:
-      "Posproducción cinematográfica: corrección de color, gráficos animados, subtítulos animados y exportaciones listas para publicar.",
+      "Grabación, edición y optimización del live para Pancake: corrección de color, gráficos de producto animados, subtítulos y exportación lista para embeber en tu dominio.",
     prices: { USD: 33, COP: 129_000 },
-    unit: "video",
+    unit: "live",
   },
   {
     id: "creadores",
     icon: BadgeCheck,
-    title: "Creadores Verificados",
+    title: "Presentadores entrenados Pancake",
     description:
-      "Acceso a nuestra red de +30 creadores latinos pre-verificados. Selección por nicho, audiencia y estilo de marca.",
+      "Acceso a nuestra red de +30 presentadores latinos pre-verificados entrenados en live shopping formato Pancake. Selección por nicho, audiencia y estilo de marca.",
     prices: { USD: 75, COP: 299_000 },
-    unit: "video",
+    unit: "live",
   },
 ];
 
@@ -121,17 +121,17 @@ const PACKAGE_SEPARATE_COST: Record<Currency, number> = {
 };
 
 const PACKAGE_INCLUDES = [
-  "Consultoría estratégica mensual",
-  "Estrategia de marketing completa",
-  "Estrategia de contenido editorial",
-  "Guiones UGC por campaña",
-  "Investigación de mercado continua",
-  "Análisis de competencia trimestral",
-  "Edición profesional ilimitada",
-  "Red de creadores verificados",
+  "Diagnóstico de sistema live mensual",
+  "Estrategia de live shopping completa",
+  "Calendario de lives editorial",
+  "Guiones de live por campaña",
+  "Investigación de audiencia continua",
+  "Auditoría de competencia trimestral",
+  "Producción de lives ilimitada",
+  "Red de presentadores verificados Pancake",
   "Asesora de cuenta dedicada",
-  "Reportes semanales de resultados",
-  "Derechos de publicidad 12 meses",
+  "Reportes semanales de conversión",
+  "Setup completo suite Pancake",
   "Garantía de 7 días",
 ];
 
@@ -160,9 +160,9 @@ function ServicioCard({
       }}
       className={cn(
         "group relative rounded-2xl p-5 sm:p-6 lg:p-7",
-        "border border-brand-graphite/60 bg-white/[0.025]",
-        "hover:border-brand-gold/40 hover:bg-white/[0.04]",
-        "hover:shadow-[0_12px_40px_-12px_rgba(212,160,23,0.25)]",
+        "border border-neutral-200 bg-white",
+        "hover:border-brand-green/40",
+        "hover:shadow-[0_12px_40px_-12px_rgba(22,163,74,0.20)]",
         "transition-all duration-300 hover:-translate-y-1",
         "flex flex-col h-full"
       )}
@@ -174,7 +174,7 @@ function ServicioCard({
         style={{
           padding: "1px",
           background:
-            "linear-gradient(135deg, rgba(249,179,52,0.6), rgba(212,160,23,0.2), transparent 60%)",
+            "linear-gradient(135deg, rgba(22,163,74,0.5), rgba(22,163,74,0.15), transparent 60%)",
           WebkitMask:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
@@ -183,36 +183,36 @@ function ServicioCard({
       />
 
       {/* Icon */}
-      <div className="relative w-11 h-11 rounded-xl bg-brand-yellow/10 border border-brand-yellow/25 flex items-center justify-center mb-4 group-hover:bg-brand-yellow/20 group-hover:border-brand-yellow/50 transition-colors">
-        <Icon className="h-5 w-5 text-brand-yellow" aria-hidden="true" />
+      <div className="relative w-11 h-11 rounded-xl bg-brand-green/10 border border-brand-green/25 flex items-center justify-center mb-4 group-hover:bg-brand-green/20 group-hover:border-brand-green/50 transition-colors">
+        <Icon className="h-5 w-5 text-brand-green" aria-hidden="true" />
       </div>
 
       {/* Title */}
-      <h3 className="font-display text-lg sm:text-xl lg:text-2xl text-white leading-tight mb-3">
+      <h3 className="font-display text-lg sm:text-xl lg:text-2xl text-neutral-900 leading-tight mb-3">
         {servicio.title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-brand-gray leading-relaxed mb-5 flex-grow">
+      <p className="text-sm text-neutral-500 leading-relaxed mb-5 flex-grow">
         {servicio.description}
       </p>
 
       {/* Price */}
-      <div className="pt-4 border-t border-brand-graphite/50">
+      <div className="pt-4 border-t border-neutral-200">
         <div className="flex items-baseline justify-between gap-2">
           <div>
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-gold/70 mb-1">
+            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-1">
               Desde
             </p>
             <div className="flex items-baseline gap-2">
-              <span className="font-display text-2xl sm:text-3xl text-brand-yellow">
+              <span className="font-display text-2xl sm:text-3xl text-brand-green">
                 {priceFrom}
               </span>
-              <span className="text-xs text-brand-gray/80">{priceUnit}</span>
+              <span className="text-xs text-neutral-400">{priceUnit}</span>
             </div>
           </div>
           <ArrowRight
-            className="h-5 w-5 text-brand-gold/60 group-hover:text-brand-yellow group-hover:translate-x-1 transition-all flex-shrink-0"
+            className="h-5 w-5 text-neutral-300 group-hover:text-brand-green group-hover:translate-x-1 transition-all flex-shrink-0"
             aria-hidden
           />
         </div>
@@ -236,7 +236,7 @@ export function Servicios() {
     <section
       id="servicios"
       aria-labelledby="servicios-title"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Background decoration */}
       <div
@@ -244,7 +244,7 @@ export function Servicios() {
         className="pointer-events-none absolute inset-0 opacity-50"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(249,179,52,0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(22,163,74,0.06) 0%, transparent 60%)",
         }}
       />
 
@@ -256,18 +256,18 @@ export function Servicios() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-14 sm:mb-20 max-w-4xl mx-auto"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/10 text-brand-green border border-brand-green/30">
             8 servicios integrados
           </span>
           <h2
             id="servicios-title"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase"
           >
             Servicios a la medida.
             <br />
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -276,13 +276,13 @@ export function Servicios() {
               O todo el paquete.
             </span>
           </h2>
-          <p className="mt-6 text-base sm:text-lg text-brand-gray leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-neutral-500 leading-relaxed">
             8 servicios independientes diseñados para marcas que quieren dominar
-            su categoría. Cada uno se cotiza por separado —{" "}
-            <span className="text-white font-semibold">
+            su categoría con live shopping. Cada uno se cotiza por separado —{" "}
+            <span className="text-neutral-900 font-semibold">
               o los combinas todos
             </span>{" "}
-            en el Paquete Completo UGC y ahorras hasta{" "}
+            en el Paquete Live Cake y ahorras hasta{" "}
             <span className="text-emerald-400 font-semibold">
               {format(savings)} {unitPerMes}
             </span>
@@ -323,7 +323,7 @@ export function Servicios() {
                 "linear-gradient(135deg, #0a0a0a 0%, #141414 40%, #1a1a1a 100%)",
             }}
           />
-          {/* Imagen editorial del kit UGC */}
+          {/* Imagen editorial del live */}
           <div aria-hidden className="absolute inset-0 opacity-[0.28]">
             <Image
               src="/brand/home/servicios.png"
@@ -339,7 +339,7 @@ export function Servicios() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 10% 0%, rgba(249,179,52,0.18) 0%, transparent 50%), radial-gradient(ellipse 60% 70% at 100% 100%, rgba(212,160,23,0.14) 0%, transparent 55%)",
+                "radial-gradient(ellipse 60% 80% at 10% 0%, rgba(22,163,74,0.20) 0%, transparent 50%), radial-gradient(ellipse 60% 70% at 100% 100%, rgba(22,163,74,0.14) 0%, transparent 55%)",
             }}
           />
 
@@ -350,7 +350,7 @@ export function Servicios() {
             style={{
               padding: "2px",
               background:
-                "linear-gradient(135deg, rgba(249,179,52,0.7) 0%, rgba(212,160,23,0.35) 40%, rgba(212,160,23,0.1) 70%, transparent 100%)",
+                "linear-gradient(135deg, rgba(22,163,74,0.7) 0%, rgba(22,163,74,0.35) 40%, rgba(22,163,74,0.1) 70%, transparent 100%)",
               WebkitMask:
                 "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
               WebkitMaskComposite: "xor",
@@ -375,23 +375,23 @@ export function Servicios() {
             {/* Left: Paquete info */}
             <div className="lg:col-span-3 flex flex-col">
               {/* Badge */}
-              <div className="inline-flex self-start items-center gap-2 px-4 py-2 rounded-full bg-brand-yellow/10 border border-brand-yellow/40 mb-6">
+              <div className="inline-flex self-start items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/40 mb-6">
                 <Sparkles
-                  className="h-3.5 w-3.5 text-brand-yellow"
+                  className="h-3.5 w-3.5 text-brand-green"
                   aria-hidden
                 />
-                <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-brand-yellow">
-                  Paquete Completo · Más Popular
+                <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-brand-green">
+                  Paquete Live Cake · Más Popular
                 </span>
               </div>
 
               {/* Title */}
               <h3 className="font-display text-[clamp(2rem,5vw,4.5rem)] leading-[0.95] text-white tracking-tight uppercase mb-5">
-                Paquete Completo UGC.
+                Sistema Live Cake.
                 <br />
                 <span
                   style={{
-                    background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                    background: "linear-gradient(90deg, #22c55e, #16a34a)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -401,15 +401,15 @@ export function Servicios() {
                 </span>
               </h3>
 
-              <p className="text-sm sm:text-base lg:text-lg text-brand-gray max-w-xl leading-relaxed mb-8">
-                Los 8 servicios críticos de marketing y producción UGC bajo un
-                solo techo, un solo contrato, un solo equipo. Pensado para
-                marcas que valoran su tiempo.
+              <p className="text-sm sm:text-base lg:text-lg text-neutral-300 max-w-xl leading-relaxed mb-8">
+                Los 8 servicios críticos de live shopping + suite Pancake completa
+                bajo un solo techo, un solo contrato, un solo equipo. Para
+                marcas que valoran su tiempo y sus resultados.
               </p>
 
               {/* Includes grid */}
               <div className="mb-8">
-                <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-brand-yellow mb-4">
+                <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-brand-green mb-4">
                   Incluye todo lo siguiente
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
@@ -418,9 +418,9 @@ export function Servicios() {
                       key={item}
                       className="flex items-start gap-3 text-sm text-white/90"
                     >
-                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-yellow/15 border border-brand-yellow/50 flex items-center justify-center">
+                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-green/15 border border-brand-green/50 flex items-center justify-center">
                         <Check
-                          className="h-3 w-3 text-brand-yellow"
+                          className="h-3 w-3 text-brand-green"
                           strokeWidth={3}
                           aria-hidden
                         />
@@ -435,8 +435,8 @@ export function Servicios() {
             {/* Right: Price + CTA + comparison */}
             <div className="lg:col-span-2 flex flex-col gap-5">
               {/* Price card */}
-              <div className="rounded-2xl border-2 border-brand-yellow/60 bg-brand-yellow/5 p-5 sm:p-7">
-                <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-brand-gold mb-3">
+              <div className="rounded-2xl border-2 border-brand-green/60 bg-brand-green/5 p-5 sm:p-7">
+                <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-brand-green mb-3">
                   Desde
                 </p>
                 <div className="flex items-baseline gap-3 mb-2">
@@ -446,14 +446,13 @@ export function Servicios() {
                   <span className="text-sm text-brand-gray">{unitPerMes}</span>
                 </div>
                 <p className="text-sm text-brand-gray mb-6">
-                  Escala desde 5 hasta 30+ videos al mes con 2 a 3 variantes cada
-                  uno.
+                  Escala desde 2 hasta 31+ lives al mes con optimización continua.
                 </p>
 
                 {/* CTA */}
                 <a
                   href="#pricing"
-                  className="group/cta flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-brand-yellow text-black font-sans font-bold text-base tracking-wide hover:bg-brand-gold transition-all hover:shadow-[0_10px_40px_-10px_rgba(249,179,52,0.5)] min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  className="group/cta flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-brand-green text-white font-sans font-bold text-base tracking-wide hover:bg-brand-green-dark transition-all hover:shadow-[0_10px_40px_-10px_rgba(22,163,74,0.5)] min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
                   Ver planes
                   <ArrowRight
@@ -481,7 +480,7 @@ export function Servicios() {
                     </span>
                   </div>
                   <div className="flex justify-between text-white font-semibold">
-                    <span>Paquete Completo UGC - Crecimiento</span>
+                    <span>Sistema Live Cake — Crecimiento</span>
                     <span>{format(growthPrice)}/mes</span>
                   </div>
                   <div className="border-t border-emerald-500/30 pt-3 mt-3 flex justify-between items-baseline">

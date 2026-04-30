@@ -26,7 +26,7 @@ const TESTIMONIOS: Testimonial[] = [
     role: "Lencería para el hogar & Dropshipping",
     brand: "Cliente desde hace +1 año",
     quote:
-      "Llevamos más de un año trabajando con UGC Colombia y la experiencia ha sido excelente. Los videos están muy bien elaborados y trabajados. Los recomendamos ampliamente.",
+      "Llevamos más de un año trabajando con Live Cake y la experiencia ha sido excelente. Los lives están muy bien elaborados y trabajados. Los recomendamos ampliamente.",
     tag: "Lencería",
   },
   {
@@ -37,7 +37,7 @@ const TESTIMONIOS: Testimonial[] = [
     role: "Tienda mayorista",
     brand: "Colombia",
     quote:
-      "Nos sentimos súper contentos de trabajar con UGC Colombia. La colaboración, la atención y sobre todo los tiempos de entrega son increíbles. Han conectado a la perfección con nuestra visión.",
+      "Nos sentimos súper contentos de trabajar con Live Cake. La colaboración, la atención y sobre todo los tiempos de entrega son increíbles. Han conectado a la perfección con nuestra visión.",
     tag: "Mayoristas",
   },
   {
@@ -48,7 +48,7 @@ const TESTIMONIOS: Testimonial[] = [
     role: "CEO · smartBeemo",
     brand: "+$18M invertidos en pauta",
     quote:
-      "Con más de 18 millones de dólares invertidos en pauta, garantizamos el trabajo de UGC Colombia. Son muy rápidos, súper creativos y su contenido está completamente enfocado hacia la venta.",
+      "Con más de 18 millones de dólares invertidos en pauta, garantizamos el trabajo de Live Cake. Son muy rápidos, súper creativos y su contenido está completamente enfocado hacia la venta.",
     tag: "smartBeemo",
   },
 ];
@@ -130,7 +130,7 @@ function VideoCard({ t, idx }: { t: Testimonial; idx: number }) {
         style={{
           padding: "1px",
           background:
-            "linear-gradient(135deg, rgba(249,179,52,0.5), rgba(212,160,23,0.2) 50%, transparent 100%)",
+            "linear-gradient(135deg, rgba(22,163,74,0.5), rgba(22,163,74,0.15) 50%, transparent 100%)",
           WebkitMask:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
@@ -142,7 +142,7 @@ function VideoCard({ t, idx }: { t: Testimonial; idx: number }) {
       <div className="relative h-full flex flex-col justify-between p-5 sm:p-6">
         {/* Top — tag + mute */}
         <div className="flex items-start justify-between">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-brand-yellow/40 text-[10px] font-semibold text-brand-yellow tracking-wider uppercase">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-brand-green/40 text-[10px] font-semibold text-brand-green tracking-wider uppercase">
             {t.tag}
           </span>
           <button
@@ -150,7 +150,7 @@ function VideoCard({ t, idx }: { t: Testimonial; idx: number }) {
             onClick={toggleMute}
             aria-label={muted ? "Activar sonido" : "Silenciar"}
             aria-pressed={!muted}
-            className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-brand-yellow/20 hover:border-brand-yellow/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+            className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-brand-green/20 hover:border-brand-green/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
           >
             {muted ? (
               <VolumeX className="w-4 h-4" aria-hidden />
@@ -163,14 +163,14 @@ function VideoCard({ t, idx }: { t: Testimonial; idx: number }) {
         {/* Bottom — quote + autor */}
         <div className="space-y-3">
           <div>
-            <Quote className="w-4 h-4 text-brand-gold/80 mb-2" aria-hidden />
+            <Quote className="w-4 h-4 text-brand-green/80 mb-2" aria-hidden />
             <p className="text-sm text-white leading-snug italic line-clamp-3 drop-shadow-lg">
               &ldquo;{t.quote}&rdquo;
             </p>
           </div>
           <div className="flex items-center gap-2.5 pt-2 border-t border-white/10">
-            <div className="relative w-9 h-9 rounded-full overflow-hidden bg-gradient-to-br from-brand-yellow/30 to-brand-graphite flex items-center justify-center border border-brand-gold/40 flex-shrink-0">
-              <span className="font-display text-sm text-brand-yellow">
+            <div className="relative w-9 h-9 rounded-full overflow-hidden bg-gradient-to-br from-brand-green/30 to-neutral-800 flex items-center justify-center border border-brand-green/40 flex-shrink-0">
+              <span className="font-display text-sm text-brand-green">
                 {t.name.charAt(0)}
               </span>
             </div>
@@ -183,7 +183,7 @@ function VideoCard({ t, idx }: { t: Testimonial; idx: number }) {
             {inView && (
               <span
                 aria-hidden
-                className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse"
+                className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-red-live animate-pulse"
               />
             )}
           </div>
@@ -212,7 +212,7 @@ export function VideoTestimonios() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 40% at center top, rgba(212,160,23,0.07) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 40% at center top, rgba(22,163,74,0.07) 0%, transparent 70%)",
         }}
       />
 
@@ -224,7 +224,7 @@ export function VideoTestimonios() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
             Clientes reales
           </span>
           <h2
@@ -232,10 +232,10 @@ export function VideoTestimonios() {
             className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
           >
             Lo que dicen <br />
-            <span className="text-brand-yellow">nuestros clientes.</span>
+            <span className="text-brand-green">nuestros clientes.</span>
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-brand-gray mt-2">
-            Marcas reales contando, en video, cómo UGC Colombia movió sus métricas.
+            Marcas reales contando, en video, cómo Live Cake movió sus métricas.
           </p>
         </motion.div>
 
@@ -256,7 +256,7 @@ export function VideoTestimonios() {
           <button
             type="button"
             onClick={() => openAudit("video_testimonios")}
-            className="text-brand-yellow hover:text-brand-gold underline underline-offset-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+            className="text-brand-green hover:text-brand-green-dark underline underline-offset-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
           >
             Cuéntanos →
           </button>

@@ -16,7 +16,7 @@ export default async function ValentinaPage() {
   await requireAuth();
 
   const team = await listActiveTeamMembers();
-  const valentina = team.find((t) => t.email === 'valentina@ugccolombia.co');
+  const valentina = team.find((t) => t.email === 'valentina@livecake.com');
 
   if (!valentina) {
     return (
@@ -82,7 +82,7 @@ export default async function ValentinaPage() {
       </div>
 
       <header className="mb-10 pb-8 border-b border-brand-gold/15 flex items-center gap-6 flex-wrap">
-        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-yellow to-brand-gold flex items-center justify-center text-black font-display text-4xl flex-shrink-0 shadow-[0_0_32px_rgba(249,179,52,0.25)]">
+        <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-yellow to-brand-gold flex items-center justify-center text-black font-display text-4xl flex-shrink-0 shadow-[0_0_32px_rgba(0,214,79,0.25)]">
           VG
         </div>
         <div className="flex-1 min-w-0">
@@ -95,7 +95,7 @@ export default async function ValentinaPage() {
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage:
-                  'linear-gradient(90deg, #F9B334 0%, #D4A017 50%, #F9B334 100%)',
+                  'linear-gradient(90deg, #00D64F 0%, #00D64F 50%, #00D64F 100%)',
               }}
             >
               Giraldo.

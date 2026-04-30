@@ -144,19 +144,19 @@ export function AgendarClient() {
             <h1 className="font-sans text-3xl font-bold text-white mb-2">Llamada confirmada</h1>
             <p className="text-brand-gray mb-8">Revisa tu email — te enviamos los detalles y el link de la reunión.</p>
 
-            <div className="inline-flex flex-col gap-3 p-6 rounded-2xl border border-brand-gold/20 bg-white/[0.03] text-left mb-8">
+            <div className="inline-flex flex-col gap-3 p-6 rounded-2xl border border-brand-green/20 bg-white/[0.03] text-left mb-8">
               <div className="flex items-center gap-3 text-sm">
-                <Calendar className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                <Calendar className="w-5 h-5 text-brand-green flex-shrink-0" />
                 <span className="text-white font-medium">
                   {DAY_FULL[cotDate.getUTCDay()]} {cotDate.getUTCDate()} de {MONTH_NAMES[cotDate.getUTCMonth()]}
                 </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Clock className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                <Clock className="w-5 h-5 text-brand-green flex-shrink-0" />
                 <span className="text-white font-medium">{h12}:{m.toString().padStart(2, "0")} {ampm} — Hora Colombia</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
-                <Video className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                <Video className="w-5 h-5 text-brand-green flex-shrink-0" />
                 <span className="text-brand-gray">30 min · Google Meet · Con {booked.host_name}</span>
               </div>
             </div>
@@ -193,7 +193,7 @@ export function AgendarClient() {
         <div
           aria-hidden
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(212,160,23,0.08), transparent 60%)" }}
+          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(22,163,74,0.08), transparent 60%)" }}
         />
         <div className="relative max-w-2xl mx-auto">
           {/* Header */}
@@ -202,8 +202,8 @@ export function AgendarClient() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-[10px] font-semibold text-brand-yellow tracking-[0.2em] uppercase mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-[10px] font-semibold text-brand-green tracking-[0.2em] uppercase mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
               100% gratis · 30 minutos
             </span>
             <h1 className="font-sans text-2xl sm:text-3xl font-bold text-white mb-2">
@@ -230,7 +230,7 @@ export function AgendarClient() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Juan Pérez"
-                  className="w-full bg-black/60 border border-brand-gold/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
+                  className="w-full bg-black/60 border border-brand-green/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
                 />
               </div>
               <div>
@@ -241,7 +241,7 @@ export function AgendarClient() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="w-full bg-black/60 border border-brand-gold/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
+                  className="w-full bg-black/60 border border-brand-green/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
                 />
               </div>
             </motion.div>
@@ -249,7 +249,7 @@ export function AgendarClient() {
 
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20">
-              <Loader2 className="w-8 h-8 text-brand-yellow animate-spin mb-3" />
+              <Loader2 className="w-8 h-8 text-brand-green animate-spin mb-3" />
               <p className="text-sm text-brand-gray">Cargando disponibilidad...</p>
             </div>
           ) : availableDates.length === 0 ? (
@@ -308,12 +308,12 @@ export function AgendarClient() {
                         className={cn(
                           "flex flex-col items-center min-w-[56px] px-3 py-2.5 rounded-xl border text-xs transition-all flex-shrink-0",
                           isSelected
-                            ? "border-brand-gold/60 bg-brand-yellow/15 text-white"
+                            ? "border-brand-green/60 bg-brand-green/15 text-white"
                             : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20"
                         )}
                       >
                         <span className="font-semibold">{DAY_NAMES[d.getDay()]}</span>
-                        <span className={cn("text-lg font-bold", isSelected && "text-brand-yellow")}>{d.getDate()}</span>
+                        <span className={cn("text-lg font-bold", isSelected && "text-brand-green")}>{d.getDate()}</span>
                       </button>
                     );
                   })}
@@ -336,7 +336,7 @@ export function AgendarClient() {
                         className={cn(
                           "px-3 py-3 rounded-xl border text-sm font-medium transition-all",
                           isSelected
-                            ? "border-brand-gold/60 bg-brand-yellow/15 text-brand-yellow"
+                            ? "border-brand-green/60 bg-brand-green/15 text-brand-green"
                             : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20 hover:text-white"
                         )}
                       >

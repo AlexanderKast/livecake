@@ -115,7 +115,7 @@ export function CmdPalette({ onOpenWaitlist }: CmdPaletteProps) {
       {/* Panel */}
       <div className="relative w-full max-w-lg">
         <Command
-          className="bg-brand-graphite border border-brand-gold/30 rounded-xl overflow-hidden shadow-2xl shadow-black/60"
+          className="bg-brand-graphite border border-brand-green/30 rounded-xl overflow-hidden shadow-2xl shadow-black/60"
           label="Comandos de UGC Colombia"
         >
           <div className="border-b border-brand-graphite/80 px-4 py-3 flex items-center gap-3">
@@ -146,12 +146,12 @@ export function CmdPalette({ onOpenWaitlist }: CmdPaletteProps) {
                     "transition-colors duration-100 rounded-md mx-1",
                     item.disabled
                       ? "text-brand-gray/30 cursor-not-allowed"
-                      : "text-brand-gray hover:text-white data-[selected=true]:bg-brand-gold/10 data-[selected=true]:text-brand-gold",
+                      : "text-brand-gray hover:text-white data-[selected=true]:bg-brand-green/10 data-[selected=true]:text-brand-green",
                   ]
                     .filter(Boolean)
                     .join(" ")}
                 >
-                  <span className="text-brand-gold/70">{item.icon}</span>
+                  <span className="text-brand-green/70">{item.icon}</span>
                   {item.label}
                   {item.disabled && (
                     <span className="ml-auto text-[10px] text-brand-gray/30 uppercase tracking-wider">

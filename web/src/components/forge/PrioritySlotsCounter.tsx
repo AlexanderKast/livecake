@@ -52,10 +52,10 @@ export function PrioritySlotsCounter() {
   const progress = (counter.taken / counter.total) * 100;
 
   return (
-    <div className="inline-flex flex-col gap-2 px-4 py-3 rounded-xl border border-brand-yellow/40 bg-brand-yellow/5 max-w-md">
+    <div className="inline-flex flex-col gap-2 px-4 py-3 rounded-xl border border-brand-green/40 bg-brand-green/5 max-w-md">
       <div className="flex items-center gap-2">
-        <span className={`w-2 h-2 rounded-full ${soldOut ? "bg-red-500" : "bg-brand-yellow animate-pulse"}`} />
-        <p className="text-[11px] uppercase tracking-widest font-bold text-brand-yellow">
+        <span className={`w-2 h-2 rounded-full ${soldOut ? "bg-red-500" : "bg-brand-green animate-pulse"}`} />
+        <p className="text-[11px] uppercase tracking-widest font-bold text-brand-green">
           BONUS · Llamada 1:1 con Alexander
         </p>
       </div>
@@ -66,14 +66,14 @@ export function PrioritySlotsCounter() {
           </>
         ) : (
           <>
-            Los primeros <strong className="text-brand-yellow">{counter.total}</strong> que descarguen reciben una <strong>llamada de 15 minutos gratis</strong> para configurar Content Forge a su marca.{" "}
-            <strong className="text-brand-yellow">{counter.remaining}</strong> slots disponibles.
+            Los primeros <strong className="text-brand-green">{counter.total}</strong> que descarguen reciben una <strong>llamada de 15 minutos gratis</strong> para configurar Content Forge a su marca.{" "}
+            <strong className="text-brand-green">{counter.remaining}</strong> slots disponibles.
           </>
         )}
       </p>
       <div className="w-full h-1 rounded-full bg-black/40 overflow-hidden">
         <div
-          className={`h-full transition-all duration-500 ${soldOut ? "bg-red-500" : "bg-brand-yellow"}`}
+          className={`h-full transition-all duration-500 ${soldOut ? "bg-red-500" : "bg-brand-green"}`}
           style={{ width: `${Math.min(100, progress)}%` }}
         />
       </div>

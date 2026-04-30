@@ -92,7 +92,7 @@ function Section({
       transition={{ delay }}
     >
       <h2 className="flex items-center gap-2 text-sm font-semibold text-brand-gray uppercase tracking-wider mb-4">
-        <Icon className="w-4 h-4 text-brand-yellow" />
+        <Icon className="w-4 h-4 text-brand-green" />
         {title}
       </h2>
       {children}
@@ -165,7 +165,7 @@ export function DiagnosisPageClient({
                 UGC Colombia
               </a>{" "}
               / Diagnóstico /{" "}
-              <span className="text-brand-yellow">
+              <span className="text-brand-green">
                 @{instagramHandle || handle}
               </span>
             </p>
@@ -217,7 +217,7 @@ export function DiagnosisPageClient({
               </div>
               <div className="mt-4 h-2.5 w-full bg-black/30 rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-blue-500 via-brand-yellow to-orange-500"
+                  className="h-full rounded-full bg-gradient-to-r from-blue-500 via-brand-green to-orange-500"
                   initial={{ width: 0 }}
                   animate={{ width: `${score}%` }}
                   transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
@@ -358,7 +358,7 @@ export function DiagnosisPageClient({
                           {audit.ad_analysis.summary}
                         </p>
                         {audit.ad_analysis.recommendation && (
-                          <p className="text-sm text-brand-yellow mt-3 font-medium">
+                          <p className="text-sm text-brand-green mt-3 font-medium">
                             {audit.ad_analysis.recommendation}
                           </p>
                         )}
@@ -386,7 +386,7 @@ export function DiagnosisPageClient({
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {avatar.demographics && (
                           <div className="p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
-                            <p className="text-xs text-brand-yellow font-semibold uppercase tracking-wider mb-2">
+                            <p className="text-xs text-brand-green font-semibold uppercase tracking-wider mb-2">
                               Avatar
                             </p>
                             <p className="text-sm text-brand-gray">
@@ -410,7 +410,7 @@ export function DiagnosisPageClient({
                         )}
                         {persona.name && (
                           <div className="p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
-                            <p className="text-xs text-brand-yellow font-semibold uppercase tracking-wider mb-2">
+                            <p className="text-xs text-brand-green font-semibold uppercase tracking-wider mb-2">
                               Buyer Persona
                             </p>
                             <p className="text-sm text-white font-medium">
@@ -446,8 +446,8 @@ export function DiagnosisPageClient({
                           </div>
                         )}
                         {identity.recommended_tone && (
-                          <div className="p-4 rounded-xl border border-brand-yellow/15 bg-brand-yellow/[0.03]">
-                            <p className="text-[10px] text-brand-yellow/60 uppercase">
+                          <div className="p-4 rounded-xl border border-brand-green/15 bg-brand-green/[0.03]">
+                            <p className="text-[10px] text-brand-green/60 uppercase">
                               Tono recomendado
                             </p>
                             <p className="text-sm text-white mt-1">
@@ -496,7 +496,7 @@ export function DiagnosisPageClient({
                               <span className="text-sm font-bold text-white">
                                 {p.name}
                               </span>
-                              <span className="text-xs text-brand-yellow font-bold">
+                              <span className="text-xs text-brand-green font-bold">
                                 {p.percentage}%
                               </span>
                             </div>
@@ -541,7 +541,7 @@ export function DiagnosisPageClient({
                           };
                           const colors = {
                             tofu: "text-blue-400 border-blue-400/20 bg-blue-400/5",
-                            mofu: "text-brand-yellow border-brand-yellow/20 bg-brand-yellow/5",
+                            mofu: "text-brand-green border-brand-green/20 bg-brand-green/5",
                             bofu: "text-emerald-400 border-emerald-400/20 bg-emerald-400/5",
                           };
                           return (
@@ -581,7 +581,7 @@ export function DiagnosisPageClient({
                               key={i}
                               className="flex gap-3 p-3 rounded-xl border border-white/8 bg-white/[0.02]"
                             >
-                              <span className="text-brand-yellow font-bold text-sm">
+                              <span className="text-brand-green font-bold text-sm">
                                 {i + 1}
                               </span>
                               <p className="text-sm text-brand-gray">{hook}</p>
@@ -643,9 +643,9 @@ export function DiagnosisPageClient({
                         {quickWins.map((qw: any, i: number) => (
                           <div
                             key={i}
-                            className="flex gap-3 p-4 rounded-xl bg-brand-yellow/5 border border-brand-yellow/15"
+                            className="flex gap-3 p-4 rounded-xl bg-brand-green/5 border border-brand-green/15"
                           >
-                            <Zap className="w-4 h-4 text-brand-yellow flex-shrink-0 mt-0.5" />
+                            <Zap className="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" />
                             <div>
                               <p className="text-sm text-white font-medium">
                                 {qw.action}
@@ -667,7 +667,7 @@ export function DiagnosisPageClient({
                       title="Paquete recomendado"
                       delay={0.2}
                     >
-                      <div className="p-5 rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-brand-yellow/8 to-transparent">
+                      <div className="p-5 rounded-2xl border border-brand-green/25 bg-gradient-to-br from-brand-green/8 to-transparent">
                         <p className="text-lg text-white font-bold mb-1">
                           {proposal.recommended}
                         </p>
@@ -677,7 +677,7 @@ export function DiagnosisPageClient({
                           </p>
                         )}
                         {proposal.estimated_roi && (
-                          <p className="text-sm text-brand-yellow font-medium mt-2">
+                          <p className="text-sm text-brand-green font-medium mt-2">
                             ROI estimado: {proposal.estimated_roi}
                           </p>
                         )}
@@ -698,7 +698,7 @@ export function DiagnosisPageClient({
                             key={i}
                             className="flex gap-3 p-3 rounded-xl border border-white/8 bg-white/[0.02]"
                           >
-                            <span className="w-6 h-6 rounded-full bg-brand-yellow/20 flex items-center justify-center text-[11px] text-brand-yellow font-bold flex-shrink-0">
+                            <span className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center text-[11px] text-brand-green font-bold flex-shrink-0">
                               {i + 1}
                             </span>
                             <p className="text-sm text-brand-gray">{step}</p>
@@ -710,7 +710,7 @@ export function DiagnosisPageClient({
 
                   {/* CTA */}
                   <motion.div
-                    className="mt-8 p-8 rounded-2xl border border-brand-gold/20 bg-gradient-to-br from-brand-yellow/8 to-transparent text-center"
+                    className="mt-8 p-8 rounded-2xl border border-brand-green/20 bg-gradient-to-br from-brand-green/8 to-transparent text-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}

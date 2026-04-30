@@ -10,13 +10,13 @@ export function ForgeWhoAmI() {
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
           <div className="md:sticky md:top-10">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-brand-yellow/30 bg-gradient-to-br from-brand-yellow/10 to-transparent flex items-center justify-center">
-              <span className="font-display text-6xl text-brand-yellow/80">AC</span>
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-brand-green/30 bg-gradient-to-br from-brand-green/10 to-transparent flex items-center justify-center">
+              <span className="font-display text-6xl text-brand-green/80">AC</span>
             </div>
           </div>
 
           <div className="flex flex-col gap-5">
-            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-yellow">
+            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
               Quién lo regala
             </span>
 
@@ -37,7 +37,7 @@ export function ForgeWhoAmI() {
             </div>
 
             <div className="flex flex-col gap-1 pt-2">
-              <p className="text-sm text-brand-yellow font-semibold">
+              <p className="text-sm text-brand-green font-semibold">
                 — Alexander Cast
               </p>
               <p className="text-xs text-brand-gray-light">
@@ -48,7 +48,7 @@ export function ForgeWhoAmI() {
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 href="https://ugccolombia.co"
-                className="text-sm text-brand-yellow hover:underline font-medium"
+                className="text-sm text-brand-green hover:underline font-medium"
               >
                 ugccolombia.co
               </Link>
@@ -57,7 +57,7 @@ export function ForgeWhoAmI() {
                 href="https://kreoon.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-brand-yellow hover:underline font-medium"
+                className="text-sm text-brand-green hover:underline font-medium"
               >
                 kreoon.com
               </Link>

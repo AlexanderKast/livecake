@@ -11,7 +11,7 @@ export default function Color() {
         <SectionTitle
           eyebrow="Paleta oficial"
           title="Negro, amarillo y oro."
-          desc="Los valores HEX usados en producción en ugccolombia.co. Esta es la fuente única de verdad para cualquier pieza, canal o formato."
+          desc="Los valores HEX usados en producción en livecake.com. Esta es la fuente única de verdad para cualquier pieza, canal o formato."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {palette.map((token) => (

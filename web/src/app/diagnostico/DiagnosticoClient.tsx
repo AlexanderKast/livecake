@@ -65,7 +65,7 @@ export function DiagnosticoClient() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 20%, rgba(212,160,23,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse 70% 50% at 50% 20%, rgba(22,163,74,0.12) 0%, transparent 60%)",
         }}
       />
 
@@ -92,7 +92,7 @@ export function DiagnosticoClient() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40"
         >
           <Sparkles className="w-3.5 h-3.5" />
           Diagnóstico con IA · Gratis
@@ -105,7 +105,7 @@ export function DiagnosticoClient() {
           className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight uppercase mb-5"
         >
           Tus ads no venden?{" "}
-          <span className="text-brand-yellow">Descubre qué falta</span> en 5
+          <span className="text-brand-green">Descubre qué falta</span> en 5
           minutos
         </motion.h1>
 
@@ -147,7 +147,7 @@ export function DiagnosticoClient() {
           <Button
             size="lg"
             onClick={reopenAudit}
-            className="min-h-[56px] px-8 text-base font-bold tracking-wide shadow-[0_0_40px_rgba(249,179,52,0.45)] hover:shadow-[0_0_50px_rgba(249,179,52,0.6)]"
+            className="min-h-[56px] px-8 text-base font-bold tracking-wide shadow-[0_0_40px_rgba(22,163,74,0.45)] hover:shadow-[0_0_50px_rgba(22,163,74,0.6)]"
           >
             <Sparkles className="w-5 h-5 mr-2" />
             Empezar mi diagnóstico gratis →
@@ -171,10 +171,10 @@ export function DiagnosticoClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="p-5 rounded-2xl border border-brand-gold/15 bg-white/[0.02]"
+                className="p-5 rounded-2xl border border-brand-green/15 bg-white/[0.02]"
               >
-                <div className="w-10 h-10 rounded-xl bg-brand-yellow/10 border border-brand-yellow/25 flex items-center justify-center mb-3">
-                  <Icon className="w-5 h-5 text-brand-yellow" />
+                <div className="w-10 h-10 rounded-xl bg-brand-green/10 border border-brand-green/25 flex items-center justify-center mb-3">
+                  <Icon className="w-5 h-5 text-brand-green" />
                 </div>
                 <h3 className="font-sans font-bold text-white mb-1.5 text-sm tracking-wide uppercase">
                   {b.title}
@@ -195,7 +195,7 @@ export function DiagnosticoClient() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="p-6 sm:p-8 rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-brand-yellow/[0.06] to-transparent"
+          className="p-6 sm:p-8 rounded-2xl border border-brand-green/25 bg-gradient-to-br from-brand-green/[0.06] to-transparent"
         >
           <p className="font-display text-2xl sm:text-3xl uppercase tracking-tight mb-3">
             ¿Listo para saber qué te falta?

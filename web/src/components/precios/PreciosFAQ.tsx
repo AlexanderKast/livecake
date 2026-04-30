@@ -33,7 +33,7 @@ export function PreciosFAQ() {
             className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
           >
             Preguntas sobre{" "}
-            <span className="text-brand-yellow">precios.</span>
+            <span className="text-brand-green">precios.</span>
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-brand-gray mt-2">
             Todo sobre pagos, permanencia, cambios de plan y facturacion. Si
@@ -42,7 +42,7 @@ export function PreciosFAQ() {
               href="https://wa.me/573001234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-yellow hover:text-brand-gold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+              className="text-brand-green hover:text-brand-green underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
             >
               preguntanos por WhatsApp
             </a>
@@ -63,12 +63,12 @@ export function PreciosFAQ() {
                 <AccordionItem
                   key={idx}
                   value={`item-${idx}`}
-                  className="border border-brand-graphite/60 rounded-xl bg-white/[0.02] hover:border-brand-gold/40 transition-colors overflow-hidden data-[state=open]:border-brand-gold/30 data-[state=open]:bg-white/[0.03]"
+                  className="border border-brand-graphite/60 rounded-xl bg-white/[0.02] hover:border-brand-green/40 transition-colors overflow-hidden data-[state=open]:border-brand-green/30 data-[state=open]:bg-white/[0.03]"
                 >
-                  <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-left hover:no-underline min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-inset">
+                  <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-left hover:no-underline min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-inset">
                     <span className="flex items-center gap-3 text-sm sm:text-base font-semibold text-white pr-4 leading-snug">
                       <Icon
-                        className="h-4 w-4 text-brand-gold/60 flex-shrink-0"
+                        className="h-4 w-4 text-brand-green/60 flex-shrink-0"
                         aria-hidden
                       />
                       {item.question}
@@ -85,7 +85,7 @@ export function PreciosFAQ() {
           </Accordion>
 
           {/* CTA inline */}
-          <div className="mt-8 rounded-xl border border-brand-gold/25 bg-brand-yellow/[0.04] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-8 rounded-xl border border-brand-green/25 bg-brand-green/[0.04] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <p className="text-sm sm:text-base font-semibold text-white">
                 Tienes otra pregunta?
@@ -97,7 +97,7 @@ export function PreciosFAQ() {
             <button
               type="button"
               onClick={() => openAudit("precios_faq")}
-              className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-yellow text-black font-sans font-bold text-sm tracking-wide transition-all hover:bg-brand-gold hover:shadow-[0_8px_30px_-8px_rgba(249,179,52,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-green text-white font-sans font-bold text-sm tracking-wide transition-all hover:bg-brand-green-dark hover:shadow-[0_8px_30px_-8px_rgba(22,163,74,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               Agenda tu llamada →
             </button>

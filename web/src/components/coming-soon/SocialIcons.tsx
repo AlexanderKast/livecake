@@ -40,7 +40,7 @@ export function SocialIcons() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="text-brand-gray hover:text-brand-gold transition-colors duration-200 hover:scale-110 inline-block"
+              className="text-brand-gray hover:text-brand-green transition-colors duration-200 hover:scale-110 inline-block"
             >
               {link.icon}
             </a>

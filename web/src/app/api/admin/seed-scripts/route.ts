@@ -39,11 +39,11 @@ interface ParsedScript {
 
 const PERSONA_EMAIL: Record<string, string> = {
   alexander: 'founder@kreoon.com', // ya está en admin_users
-  diana: 'diana@ugccolombia.co',
-  brian: 'brian@ugccolombia.co',
-  samuel: 'samuel@ugccolombia.co',
-  tanya: 'tanya@ugccolombia.co',
-  valentina: 'valentina@ugccolombia.co',
+  diana: 'diana@livecake.com',
+  brian: 'brian@livecake.com',
+  samuel: 'samuel@livecake.com',
+  tanya: 'tanya@livecake.com',
+  valentina: 'valentina@livecake.com',
 };
 
 const PERSONA_FULLNAME: Record<string, string> = {

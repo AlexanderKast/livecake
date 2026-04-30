@@ -2,14 +2,14 @@ import type { Template } from "@/app/admin/marca/_data/templates";
 
 const bgMap: Record<Template["preview"]["bg"], string> = {
   black: "#000000",
-  yellow: "#F9B334",
-  cream: "#F5F5F0",
-  graphite: "#3D3D3C",
+  yellow: "#00D64F",
+  cream: "#F5F5F5",
+  graphite: "#262626",
 };
 
 const accentMap: Record<Template["preview"]["accent"], string> = {
-  yellow: "#F9B334",
-  gold: "#D4A017",
+  yellow: "#00D64F",
+  gold: "#00D64F",
   white: "#FFFFFF",
   black: "#000000",
 };

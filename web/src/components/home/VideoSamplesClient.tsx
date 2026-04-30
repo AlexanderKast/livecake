@@ -209,7 +209,7 @@ function VideoCard({ sample, unmuted, onToggleAudio }: VideoCardProps) {
         <button
           type="button"
           onClick={handleAudioClick}
-          className="absolute top-2 right-2 z-10 p-1.5 rounded-full bg-black/60 backdrop-blur-sm text-white hover:bg-black/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+          className="absolute top-2 right-2 z-10 p-1.5 rounded-full bg-black/60 backdrop-blur-sm text-white hover:bg-black/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
           aria-label={unmuted ? "Silenciar video" : "Activar sonido"}
         >
           {unmuted ? (
@@ -255,7 +255,7 @@ export function VideoSamplesClient({ initialSamples }: { initialSamples: VideoSa
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(212,160,23,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(22,163,74,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -275,7 +275,7 @@ export function VideoSamplesClient({ initialSamples }: { initialSamples: VideoSa
             <br />
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

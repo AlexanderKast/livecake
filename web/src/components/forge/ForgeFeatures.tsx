@@ -40,7 +40,7 @@ export function ForgeFeatures() {
     <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex flex-col gap-4 items-center text-center mb-12 md:mb-16">
-          <span className="text-[10px] uppercase tracking-widest font-bold text-brand-yellow">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
             Qué recibes
           </span>
           <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight max-w-3xl">
@@ -55,7 +55,7 @@ export function ForgeFeatures() {
           {FEATURES.map((f) => (
             <article
               key={f.title}
-              className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-brand-yellow/5 via-transparent to-transparent hover:border-brand-yellow/40 transition-colors"
+              className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-brand-green/5 via-transparent to-transparent hover:border-brand-green/40 transition-colors"
             >
               <div className="text-3xl" aria-hidden>{f.icon}</div>
               <h3 className="font-display text-2xl uppercase text-white tracking-tight leading-none">

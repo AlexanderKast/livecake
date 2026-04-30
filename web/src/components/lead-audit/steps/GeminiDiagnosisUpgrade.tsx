@@ -93,19 +93,19 @@ export function GeminiDiagnosisUpgrade({ leadId, earlyDiagnosisKey, instagramHan
   if (status === "polling") {
     return (
       <motion.div
-        className="mt-6 p-4 rounded-xl border border-brand-yellow/20 bg-brand-yellow/[0.03]"
+        className="mt-6 p-4 rounded-xl border border-brand-green/20 bg-brand-green/[0.03]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <div className="flex items-center gap-3">
           <div className="relative">
-            <Sparkles className="w-5 h-5 text-brand-yellow" />
+            <Sparkles className="w-5 h-5 text-brand-green" />
             <motion.div
               className="absolute inset-0"
               animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
-              <Sparkles className="w-5 h-5 text-brand-yellow" />
+              <Sparkles className="w-5 h-5 text-brand-green" />
             </motion.div>
           </div>
           <div>
@@ -119,7 +119,7 @@ export function GeminiDiagnosisUpgrade({ leadId, earlyDiagnosisKey, instagramHan
         </div>
         <div className="mt-3 h-1 w-full bg-white/5 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-brand-yellow/40 rounded-full"
+            className="h-full bg-brand-green/40 rounded-full"
             animate={{ width: ["5%", "80%"] }}
             transition={{ duration: 120, ease: "easeOut" }}
           />
@@ -150,9 +150,9 @@ export function GeminiDiagnosisUpgrade({ leadId, earlyDiagnosisKey, instagramHan
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-yellow/10 border border-brand-yellow/20">
-          <Sparkles className="w-4 h-4 text-brand-yellow" />
-          <p className="text-xs text-brand-yellow font-semibold">
+        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-green/10 border border-brand-green/20">
+          <Sparkles className="w-4 h-4 text-brand-green" />
+          <p className="text-xs text-brand-green font-semibold">
             Análisis con IA completado — Score: {diagnosis.overall_score}/100
           </p>
         </div>
@@ -188,12 +188,12 @@ export function GeminiDiagnosisUpgrade({ leadId, earlyDiagnosisKey, instagramHan
         {diagnosis.content_strategy?.pillars?.length > 0 && (
           <div>
             <p className="flex items-center gap-1.5 text-[11px] text-brand-gray uppercase tracking-wider font-semibold mb-2">
-              <Target className="w-3.5 h-3.5 text-brand-yellow" />
+              <Target className="w-3.5 h-3.5 text-brand-green" />
               Pilares recomendados
             </p>
             <div className="flex flex-wrap gap-2">
               {diagnosis.content_strategy.pillars.slice(0, 4).map((p, i) => (
-                <span key={i} className="px-3 py-1.5 rounded-lg bg-brand-yellow/10 border border-brand-yellow/20 text-xs text-brand-yellow font-medium">
+                <span key={i} className="px-3 py-1.5 rounded-lg bg-brand-green/10 border border-brand-green/20 text-xs text-brand-green font-medium">
                   {p.name} ({p.percentage}%)
                 </span>
               ))}
@@ -202,8 +202,8 @@ export function GeminiDiagnosisUpgrade({ leadId, earlyDiagnosisKey, instagramHan
         )}
 
         {diagnosis.quick_wins?.slice(0, 2).map((qw, i) => (
-          <div key={`qw-${i}`} className="flex gap-2 p-3 rounded-xl bg-brand-yellow/5 border border-brand-yellow/15 text-sm text-brand-gray">
-            <Zap className="w-4 h-4 text-brand-yellow flex-shrink-0 mt-0.5" />
+          <div key={`qw-${i}`} className="flex gap-2 p-3 rounded-xl bg-brand-green/5 border border-brand-green/15 text-sm text-brand-gray">
+            <Zap className="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" />
             <div>
               <span className="text-white font-medium">{qw.action}</span>
               <span className="text-brand-gray/60 ml-1">— {qw.expected_impact}</span>
@@ -216,7 +216,7 @@ export function GeminiDiagnosisUpgrade({ leadId, earlyDiagnosisKey, instagramHan
             href={`/diagnostico/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 text-sm text-brand-yellow hover:text-white transition-colors py-2"
+            className="flex items-center justify-center gap-2 text-sm text-brand-green hover:text-white transition-colors py-2"
           >
             <ExternalLink className="w-4 h-4" />
             Ver diagnóstico completo

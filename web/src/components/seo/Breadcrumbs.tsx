@@ -26,7 +26,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           {items.map((item, i) => (
             <li key={item.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <span className="text-brand-gold" aria-hidden="true">
+                <span className="text-brand-green" aria-hidden="true">
                   /
                 </span>
               )}
@@ -37,7 +37,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
               ) : (
                 <Link
                   href={item.href}
-                  className="transition-colors hover:text-brand-yellow"
+                  className="transition-colors hover:text-brand-green"
                 >
                   {item.label}
                 </Link>

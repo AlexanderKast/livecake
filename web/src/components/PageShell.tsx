@@ -23,7 +23,7 @@ export function PageShell({
       {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
       <main
         id="main-content"
-        className={className ?? "relative bg-brand-black text-white"}
+        className={className ?? "relative bg-white text-neutral-900"}
       >
         {children}
       </main>

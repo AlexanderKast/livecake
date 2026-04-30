@@ -28,7 +28,7 @@ const WHATSAPP_NUMBER = "573132947776";
 
 function getScoreColor(temp: string) {
   if (temp === "hot") return "text-orange-400";
-  if (temp === "warm") return "text-brand-yellow";
+  if (temp === "warm") return "text-brand-green";
   return "text-blue-400";
 }
 
@@ -40,7 +40,7 @@ function getScoreIcon(temp: string) {
 
 function getScoreBg(temp: string) {
   if (temp === "hot") return "from-orange-500/20 to-red-500/10 border-orange-500/30";
-  if (temp === "warm") return "from-brand-yellow/20 to-brand-gold/10 border-brand-yellow/30";
+  if (temp === "warm") return "from-brand-green/20 to-brand-green/10 border-brand-green/30";
   return "from-blue-500/20 to-cyan-500/10 border-blue-500/30";
 }
 
@@ -91,7 +91,7 @@ export function StepDiagnosis({ data, score, diagnosis, onBooking, onClose }: Pr
         {/* Score bar */}
         <div className="mt-4 h-2 w-full bg-black/30 rounded-full overflow-hidden">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-blue-500 via-brand-yellow to-orange-500"
+            className="h-full rounded-full bg-gradient-to-r from-blue-500 via-brand-green to-orange-500"
             initial={{ width: 0 }}
             animate={{ width: `${score.total}%` }}
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
@@ -175,7 +175,7 @@ export function StepDiagnosis({ data, score, diagnosis, onBooking, onClose }: Pr
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
       >
-        <div className="p-5 rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-brand-yellow/8 to-transparent text-center">
+        <div className="p-5 rounded-2xl border border-brand-green/25 bg-gradient-to-br from-brand-green/8 to-transparent text-center">
           <p className="text-white font-bold text-base mb-1">
             {isHot
               ? "Tu marca tiene alto potencial — hablemos esta semana"
@@ -194,7 +194,7 @@ export function StepDiagnosis({ data, score, diagnosis, onBooking, onClose }: Pr
             <ArrowRight className="w-5 h-5" />
           </Button>
           {isHot && (
-            <p className="text-[11px] text-brand-yellow mt-2">
+            <p className="text-[11px] text-brand-green mt-2">
               Score alto — tienes slots prioritarios esta semana
             </p>
           )}

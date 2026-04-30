@@ -89,7 +89,7 @@ export function WaitlistForm() {
         <span className="text-4xl" aria-hidden="true">
           🎉
         </span>
-        <p className="font-display text-2xl text-brand-gold uppercase tracking-wide">
+        <p className="font-display text-2xl text-brand-green uppercase tracking-wide">
           ¡Estás dentro!
         </p>
         <p className="text-brand-gray text-sm">
@@ -133,11 +133,11 @@ export function WaitlistForm() {
             aria-invalid={!!errors.email}
             className={[
               "w-full bg-brand-graphite/50 border rounded-lg px-4 py-3 text-white placeholder:text-brand-gray/60",
-              "font-sans text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+              "font-sans text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
               "transition-all duration-200",
               errors.email
                 ? "border-red-500"
-                : "border-brand-graphite hover:border-brand-gold/60 focus:border-brand-gold",
+                : "border-brand-graphite hover:border-brand-green/60 focus:border-brand-green",
               "animate-glow-pulse",
             ]
               .filter(Boolean)
@@ -158,7 +158,7 @@ export function WaitlistForm() {
         <motion.button
           type="submit"
           disabled={isSubmitting}
-          className="flex-shrink-0 flex items-center justify-center gap-2 bg-brand-yellow hover:bg-brand-gold text-black font-sans font-semibold text-sm px-6 py-3 rounded-lg transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+          className="flex-shrink-0 flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green text-white font-sans font-semibold text-sm px-6 py-3 rounded-lg transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
           whileHover={{ scale: isSubmitting ? 1 : 1.04 }}
           whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
         >

@@ -48,7 +48,7 @@ export const chapters: Chapter[] = [
     number: "03",
     title: "Tipografía",
     eyebrow: "Dos familias, un ritmo",
-    desc: "Anton display + Inter body. Jerarquía completa.",
+    desc: "Manrope display + Inter body. Jerarquía completa.",
     icon: Type,
     pdfPage: 5,
   },

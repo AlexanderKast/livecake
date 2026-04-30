@@ -39,7 +39,7 @@ export function PreciosCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212,160,23,0.15) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(22,163,74,0.15) 0%, transparent 65%)",
         }}
       />
       {/* Grid pattern */}
@@ -48,8 +48,8 @@ export function PreciosCTA() {
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(249,179,52,0.6) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(249,179,52,0.6) 1px, transparent 1px)
+            linear-gradient(rgba(22,163,74,0.6) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(22,163,74,0.6) 1px, transparent 1px)
           `,
           backgroundSize: "50px 50px",
           maskImage:
@@ -62,7 +62,7 @@ export function PreciosCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 40% 30% at 50% 70%, rgba(249,179,52,0.08) 0%, transparent 100%)",
+            "radial-gradient(ellipse 40% 30% at 50% 70%, rgba(22,163,74,0.08) 0%, transparent 100%)",
         }}
       />
 
@@ -74,8 +74,8 @@ export function PreciosCTA() {
         className="relative max-w-4xl mx-auto text-center"
       >
         {/* Badge urgencia — pill badge pattern */}
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-xs font-semibold text-brand-yellow tracking-[0.2em] uppercase mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse" />
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 text-xs font-semibold text-brand-green tracking-[0.2em] uppercase mb-6">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
           {OFFER_COPY.slots_text}
         </span>
 
@@ -86,7 +86,7 @@ export function PreciosCTA() {
           Aplica para{" "}
           <span
             style={{
-              background: "linear-gradient(90deg, #f9b334, #d4a017)",
+              background: "linear-gradient(90deg, #16a34a, #15803d)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -107,9 +107,9 @@ export function PreciosCTA() {
         </p>
 
         {/* Guarantee badge */}
-        <div className="inline-flex items-center gap-2.5 mb-8 px-5 py-3 rounded-xl border border-brand-gold/25 bg-white/[0.03]">
+        <div className="inline-flex items-center gap-2.5 mb-8 px-5 py-3 rounded-xl border border-brand-green/25 bg-white/[0.03]">
           <ShieldCheck
-            className="h-5 w-5 text-brand-yellow flex-shrink-0"
+            className="h-5 w-5 text-brand-green flex-shrink-0"
             aria-hidden
           />
           <div className="text-left">
@@ -125,7 +125,7 @@ export function PreciosCTA() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
           <Button
             size="lg"
-            className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(249,179,52,0.35)] hover:shadow-[0_0_40px_rgba(249,179,52,0.55)]"
+            className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(22,163,74,0.35)] hover:shadow-[0_0_40px_rgba(22,163,74,0.55)]"
             onClick={handleApply}
           >
             <CalendarDays className="h-5 w-5 mr-2" aria-hidden />
@@ -147,16 +147,16 @@ export function PreciosCTA() {
             {RECENT_CLIENTS.map((client) => (
               <div
                 key={client.initials}
-                className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-yellow/20 to-brand-gold/10 border-2 border-brand-black flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-green/20 to-brand-green/5 border-2 border-brand-black flex items-center justify-center"
                 title={client.name}
               >
-                <span className="text-[10px] font-bold text-brand-yellow/80 font-sans">
+                <span className="text-[10px] font-bold text-brand-green/80 font-sans">
                   {client.initials}
                 </span>
               </div>
             ))}
-            <div className="w-9 h-9 rounded-full bg-brand-yellow/10 border-2 border-brand-black flex items-center justify-center">
-              <span className="text-[10px] font-bold text-brand-yellow/60 font-sans">
+            <div className="w-9 h-9 rounded-full bg-brand-green/10 border-2 border-brand-black flex items-center justify-center">
+              <span className="text-[10px] font-bold text-brand-green/60 font-sans">
                 +
               </span>
             </div>

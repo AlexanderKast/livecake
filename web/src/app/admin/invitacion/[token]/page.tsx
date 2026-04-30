@@ -64,11 +64,11 @@ export default async function InvitationPage({ params }: PageProps) {
         <div className="mb-8 text-center">
           <div className="inline-flex items-center gap-2 text-brand-yellow text-xs font-semibold tracking-[0.2em] uppercase mb-4">
             <span className="w-1.5 h-1.5 bg-brand-yellow rounded-full" />
-            UGC Colombia
+            Live Cake
           </div>
           <h1 className="font-display text-4xl uppercase tracking-tight text-white">
             Bienvenido{" "}
-            <span className="bg-gradient-to-r from-[#f9b334] via-[#d4a017] to-[#f9b334] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00d64f] via-[#00d64f] to-[#00d64f] bg-clip-text text-transparent">
               al equipo.
             </span>
           </h1>

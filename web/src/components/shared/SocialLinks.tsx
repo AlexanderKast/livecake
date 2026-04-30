@@ -60,9 +60,9 @@ export function SocialLinks({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${s.name} · ${s.handle}`}
-            className="group flex items-center justify-center w-12 h-12 rounded-full border border-brand-yellow/40 bg-black/40 hover:bg-brand-yellow hover:border-brand-yellow transition-all"
+            className="group flex items-center justify-center w-12 h-12 rounded-full border border-brand-green/40 bg-black/40 hover:bg-brand-green hover:border-brand-green transition-all"
           >
-            <s.icon className="w-5 h-5 text-brand-yellow group-hover:text-black transition-colors" />
+            <s.icon className="w-5 h-5 text-brand-green group-hover:text-black transition-colors" />
           </Link>
         ))}
       </div>
@@ -78,7 +78,7 @@ export function SocialLinks({
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-brand-yellow hover:text-brand-yellow-hover font-medium transition-colors"
+            className="text-sm text-brand-green hover:text-brand-green-hover font-medium transition-colors"
           >
             {s.name}
           </Link>
@@ -101,9 +101,9 @@ export function SocialLinks({
             href={s.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-brand-yellow/30 bg-black/40 hover:border-brand-yellow hover:bg-brand-yellow/10 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-full border border-brand-green/30 bg-black/40 hover:border-brand-green hover:bg-brand-green/10 transition-all"
           >
-            <s.icon className="w-4 h-4 text-brand-yellow" />
+            <s.icon className="w-4 h-4 text-brand-green" />
             <span className="text-sm font-medium text-white">{s.name}</span>
           </Link>
         ))}

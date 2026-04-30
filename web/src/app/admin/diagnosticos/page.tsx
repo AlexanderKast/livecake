@@ -5,7 +5,7 @@ import { DiagnosticosList } from "./DiagnosticosList";
 import type { LeadCardData } from "@/components/admin/LeadCard";
 
 export const metadata: Metadata = {
-  title: "CRM — UGC Colombia",
+  title: "CRM — Live Cake",
   robots: { index: false, follow: false },
 };
 

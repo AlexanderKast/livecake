@@ -37,7 +37,7 @@ export default function ForgePage() {
       <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <div className="flex flex-col gap-4 items-center text-center mb-10">
-            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-yellow">
+            <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
               Todo listo
             </span>
             <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight">

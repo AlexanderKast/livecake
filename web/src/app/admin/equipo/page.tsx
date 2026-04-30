@@ -5,7 +5,7 @@ import { InviteForm } from "./InviteForm";
 import { PageHero, SectionTitle, Badge, Eyebrow } from "@/components/admin/ui";
 
 export const metadata: Metadata = {
-  title: "Equipo — Admin UGC Colombia",
+  title: "Equipo — Admin Live Cake",
   robots: { index: false, follow: false },
 };
 

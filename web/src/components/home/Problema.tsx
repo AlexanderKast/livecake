@@ -22,57 +22,57 @@ type Problema = {
 };
 
 /**
- * Dolores reales del mercado DTC/ecommerce con UGC en 2026.
- * Basado en investigación del mercado + testimonios de clientes.
+ * Dolores reales del mercado DTC/ecommerce con live shopping en 2026.
+ * Datos de market-stats.json: conversion-live-vs-ecom (30% vs 3%), returns-reduction (-40%).
  */
 const PROBLEMAS: Problema[] = [
   {
     num: "01",
     icon: TrendingDown,
-    title: "Tus anuncios se queman en 2 semanas",
-    text: "La fatiga creativa ahora llega en 2-3 semanas (antes eran 4+). Tu mejor anuncio se convierte en tu mayor riesgo sin darte cuenta.",
+    title: "Tu landing convierte al 3%",
+    text: "El ecommerce tradicional promedia 3% de conversión. Un live bien ejecutado convierte al 30% — hasta 10 veces más. Tu tráfico pagado merece mejor destino. (Fuente: McKinsey)",
   },
   {
     num: "02",
-    icon: Repeat,
-    title: "Necesitas 20+ variaciones al mes",
-    text: "Meta recomienda 3 a 5 piezas nuevas por semana para evitar la caída. Tú produces 4 al mes con suerte. El algoritmo te castiga sin piedad.",
+    icon: Timer,
+    title: "El dwell time cae antes de los 60 segundos",
+    text: "Un visitante típico de ecom toma menos de 60 segundos para decidir si se queda o se va. Un live retiene al 60%+ de la audiencia hasta los 10 minutos. (Fuente: Immerss)",
   },
   {
     num: "03",
     icon: PackageX,
-    title: "Mandaste el producto y nunca más lo viste",
-    text: "Le enviaste muestras a 3 creadores por mensaje privado. Uno desapareció, otro no entregó a tiempo y el tercero mandó algo que no podías usar.",
+    title: "Las devoluciones se comen tu margen",
+    text: "Los compradores en ecom devuelven entre 20-30% de los pedidos. En live shopping esa tasa baja al 10-15% porque el cliente vio el producto en uso real antes de comprar. (Fuente: Coresight + Immerss)",
   },
   {
     num: "04",
     icon: Sparkles,
-    title: "Tu contenido se ve bonito pero no vende",
-    text: "Inviertes en producción cinematográfica, luces y drones, pero los números no suben. Contenido precioso que nadie compra.",
+    title: "TikTok Live nativo no es una opción viable",
+    text: "Correr un live 24/7 en TikTok Live nativo con video pre-grabado viola sus políticas. Pancake es el único partner oficial que lo hace legal y aprobado por Meta, TikTok y Google.",
   },
   {
     num: "05",
     icon: Compass,
-    title: "Cada video es una lotería sin estrategia",
-    text: "Grabas sin plan: sin ganchos probados, sin pilares editoriales, sin medición. Cada publicación es adivinar y rezar.",
+    title: "Tu competencia ya llegó al live commerce",
+    text: "Magalu facturó USD 240M+ en un solo día de Black Friday con live. VTEX registró +40% de órdenes durante eventos live en LATAM. El canal ya existe — ¿tu marca está en él?",
   },
   {
     num: "06",
     icon: Globe2,
-    title: "Las plataformas extranjeras no conectan",
-    text: "Pagaste una plataforma gringa, los creadores no entienden tu marca, suenan traducidos y el acento no encaja con tu audiencia latina.",
+    title: "El mercado LATAM crece al 27.2% anual",
+    text: "El live commerce en LATAM pasará de USD 3.87B en 2024 a USD 32.08B en 2033 (CAGR 27.2%). Las marcas que entren hoy capturan posición de mercado antes del pico. (Fuente: Grand View Research)",
   },
   {
     num: "07",
-    icon: Timer,
-    title: "Tu equipo interno no da abasto",
-    text: "Tu marketer se volvió guionista, casting, director y editor al mismo tiempo. Las ideas se acumulan y la ejecución se estanca.",
+    icon: Repeat,
+    title: "El 34% de las compras pasan después del live",
+    text: "El live no solo vende durante la transmisión. El 34% de las compras se concretan horas o días después, cuando el viewer revisita la grabación o el link del producto. (Fuente: Immerss)",
   },
   {
     num: "08",
     icon: DollarSign,
-    title: "Tu CPA en Meta sube cada mes",
-    text: "El costo de adquirir un cliente subió 40% en el último año y tus anuncios con modelos genéricos de banco de imágenes ya no convierten como antes.",
+    title: "El ticket promedio sube 10-30% en live",
+    text: "El bundling y el upselling en vivo — 'agrega este producto y te queda mejor' — elevan el ticket promedio entre 10% y 30% vs el mismo producto en ecom estático. (Fuente: Immerss)",
   },
 ];
 
@@ -85,7 +85,7 @@ export function Problema() {
     <section
       id="problema"
       aria-labelledby="problema-title"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       {/* Noise texture overlay sutil */}
       <div
@@ -108,7 +108,7 @@ export function Problema() {
         }}
       />
 
-      {/* Imagen editorial de fatiga creativa — fondo derecho */}
+      {/* Imagen editorial de fondo */}
       <div
         aria-hidden="true"
         className="absolute top-0 right-0 w-full lg:w-1/2 h-[50%] lg:h-full pointer-events-none opacity-[0.18]"
@@ -120,7 +120,7 @@ export function Problema() {
           sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-cover object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-brand-black/60 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-neutral-50/60 to-neutral-50" />
       </div>
 
       <div className="max-w-7xl mx-auto relative" ref={ref}>
@@ -131,19 +131,19 @@ export function Problema() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl mb-14 sm:mb-20"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/10 text-brand-green border border-brand-green/30">
             ¿Te suena familiar?
           </span>
           <h2
             id="problema-title"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight"
           >
-            ¿Te suena familiar?
+            ¿Por qué el ecommerce ya no alcanza?
           </h2>
-          <p className="mt-5 text-base sm:text-lg text-brand-gray leading-relaxed">
-            Los 8 dolores más comunes de las marcas que invierten en publicidad
-            digital hoy. Si al menos 3 te resuenan, estás en el lugar
-            correcto.
+          <p className="mt-5 text-base sm:text-lg text-neutral-500 leading-relaxed">
+            Los 8 problemas que el live shopping resuelve directamente, con datos
+            reales del mercado LATAM 2024-2026. Si al menos 3 te resuenan, estás
+            en el lugar correcto.
           </p>
         </motion.div>
 
@@ -161,7 +161,7 @@ export function Problema() {
                   delay: 0.08 + i * 0.06,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative rounded-2xl border border-brand-graphite/60 bg-white/[0.025] p-5 sm:p-6 lg:p-7 overflow-hidden transition-all duration-300 hover:border-brand-gold/40 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(212,160,23,0.25)] flex flex-col h-full"
+                className="group relative rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6 lg:p-7 overflow-hidden transition-all duration-300 hover:border-brand-green/40 hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(22,163,74,0.20)] flex flex-col h-full"
               >
                 {/* Gradient border on hover */}
                 <div
@@ -170,7 +170,7 @@ export function Problema() {
                   style={{
                     padding: "1px",
                     background:
-                      "linear-gradient(135deg, rgba(249,179,52,0.5), rgba(212,160,23,0.15), transparent 60%)",
+                      "linear-gradient(135deg, rgba(22,163,74,0.4), rgba(22,163,74,0.12), transparent 60%)",
                     WebkitMask:
                       "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                     WebkitMaskComposite: "xor",
@@ -184,7 +184,7 @@ export function Problema() {
                     className="font-display text-3xl sm:text-4xl leading-none"
                     style={{
                       background:
-                        "linear-gradient(135deg, rgba(249,179,52,0.9) 0%, rgba(212,160,23,0.4) 100%)",
+                        "linear-gradient(135deg, rgba(22,163,74,0.9) 0%, rgba(22,163,74,0.4) 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -193,21 +193,21 @@ export function Problema() {
                   >
                     {item.num}
                   </span>
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-brand-graphite/60 flex items-center justify-center group-hover:bg-brand-yellow/10 group-hover:border-brand-yellow/40 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-neutral-50 border border-neutral-200 flex items-center justify-center group-hover:bg-brand-green/10 group-hover:border-brand-green/40 transition-colors">
                     <Icon
-                      className="h-4 w-4 text-brand-gray group-hover:text-brand-yellow transition-colors"
+                      className="h-4 w-4 text-neutral-400 group-hover:text-brand-green transition-colors"
                       aria-hidden="true"
                     />
                   </div>
                 </div>
 
                 {/* Título */}
-                <h3 className="text-white text-base sm:text-lg leading-tight font-sans font-semibold mb-2">
+                <h3 className="text-neutral-900 text-base sm:text-lg leading-tight font-sans font-semibold mb-2">
                   {item.title}
                 </h3>
 
                 {/* Texto descriptivo */}
-                <p className="text-sm text-brand-gray leading-relaxed flex-grow">
+                <p className="text-sm text-neutral-500 leading-relaxed flex-grow">
                   {item.text}
                 </p>
               </motion.div>
@@ -215,7 +215,7 @@ export function Problema() {
           })}
         </div>
 
-        {/* Stats bar — datos reales del mercado */}
+        {/* Stats bar — datos reales del mercado (market-stats.json) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
@@ -224,14 +224,14 @@ export function Problema() {
             delay: 0.7,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="mt-10 sm:mt-12 rounded-2xl border border-brand-gold/25 bg-gradient-to-br from-brand-graphite/20 via-black to-brand-black overflow-hidden"
+          className="mt-10 sm:mt-12 rounded-2xl border border-brand-green/20 bg-gradient-to-br from-brand-green/5 via-white to-white overflow-hidden"
         >
           <div
             aria-hidden
             className="absolute inset-0 pointer-events-none opacity-40"
             style={{
               background:
-                "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212,160,23,0.1), transparent 70%)",
+                "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(22,163,74,0.08), transparent 70%)",
             }}
           />
           <div className="relative p-6 sm:p-8 lg:p-10 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 text-center">
@@ -240,16 +240,16 @@ export function Problema() {
                 className="font-display text-4xl sm:text-5xl leading-none mb-2"
                 style={{
                   background:
-                    "linear-gradient(135deg, #f9b334, #d4a017)",
+                    "linear-gradient(135deg, #16a34a, #15803d)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                45%
+                30%
               </p>
-              <p className="text-xs sm:text-sm text-brand-gray leading-snug">
-                caída de rendimiento después de 4 impresiones al mismo anuncio
+              <p className="text-xs sm:text-sm text-neutral-500 leading-snug">
+                conversión live shopping vs 3% ecommerce tradicional
               </p>
             </div>
             <div>
@@ -257,16 +257,16 @@ export function Problema() {
                 className="font-display text-4xl sm:text-5xl leading-none mb-2"
                 style={{
                   background:
-                    "linear-gradient(135deg, #f9b334, #d4a017)",
+                    "linear-gradient(135deg, #16a34a, #15803d)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                2-3
+                60%+
               </p>
-              <p className="text-xs sm:text-sm text-brand-gray leading-snug">
-                semanas hasta que un anuncio pierde efectividad (antes 4+)
+              <p className="text-xs sm:text-sm text-neutral-500 leading-snug">
+                retención de audiencia a los 10 minutos de live
               </p>
             </div>
             <div>
@@ -274,16 +274,16 @@ export function Problema() {
                 className="font-display text-4xl sm:text-5xl leading-none mb-2"
                 style={{
                   background:
-                    "linear-gradient(135deg, #f9b334, #d4a017)",
+                    "linear-gradient(135deg, #16a34a, #15803d)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                +200%
+                -40%
               </p>
-              <p className="text-xs sm:text-sm text-brand-gray leading-snug">
-                subida del costo de contratar creadores desde 2023
+              <p className="text-xs sm:text-sm text-neutral-500 leading-snug">
+                devoluciones vs ecommerce estático (10-15% vs 20-30%)
               </p>
             </div>
             <div>
@@ -291,16 +291,16 @@ export function Problema() {
                 className="font-display text-4xl sm:text-5xl leading-none mb-2"
                 style={{
                   background:
-                    "linear-gradient(135deg, #f9b334, #d4a017)",
+                    "linear-gradient(135deg, #16a34a, #15803d)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                20+
+                34%
               </p>
-              <p className="text-xs sm:text-sm text-brand-gray leading-snug">
-                variaciones mensuales mínimas para escalar en Meta Ads
+              <p className="text-xs sm:text-sm text-neutral-500 leading-snug">
+                de compras ocurren después del live — efecto cola larga
               </p>
             </div>
           </div>

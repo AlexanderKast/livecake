@@ -82,9 +82,9 @@ export function UrgencyBanner() {
       style={{ height: `${BANNER_HEIGHT_PX}px` }}
       className={cn(
         "fixed top-0 left-0 right-0 z-[60] flex items-center",
-        "bg-gradient-to-r from-brand-gold-dark via-brand-yellow to-brand-gold-dark",
+        "bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-green-dark",
         "text-brand-black border-b border-brand-black/20",
-        "shadow-[0_4px_20px_-6px_rgba(212,160,23,0.5)]",
+        "shadow-[0_4px_20px_-6px_rgba(22,163,74,0.5)]",
       )}
     >
       {/* Sheen premium */}
@@ -105,7 +105,7 @@ export function UrgencyBanner() {
           className={cn(
             "flex items-center gap-1.5 flex-shrink-0 z-20",
             "font-mono text-[11px] sm:text-xs font-bold tabular-nums",
-            "bg-brand-black text-brand-yellow rounded-md px-2 sm:px-2.5 py-1",
+            "bg-brand-black text-brand-green rounded-md px-2 sm:px-2.5 py-1",
             "ml-3 sm:ml-6",
             "shadow-[0_2px_8px_-2px_rgba(0,0,0,0.4)]",
           )}
@@ -125,7 +125,7 @@ export function UrgencyBanner() {
             className="absolute inset-y-0 left-0 w-8 sm:w-12 z-10 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to right, rgb(212,160,23) 0%, rgba(212,160,23,0) 100%)",
+                "linear-gradient(to right, rgb(212,160,23) 0%, rgba(22,163,74,0) 100%)",
             }}
           />
           <div
@@ -133,7 +133,7 @@ export function UrgencyBanner() {
             className="absolute inset-y-0 right-0 w-8 sm:w-12 z-10 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to left, rgb(212,160,23) 0%, rgba(212,160,23,0) 100%)",
+                "linear-gradient(to left, rgb(212,160,23) 0%, rgba(22,163,74,0) 100%)",
             }}
           />
 

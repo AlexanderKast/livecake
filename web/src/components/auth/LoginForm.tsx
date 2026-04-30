@@ -17,9 +17,9 @@ type LoginPayload = z.infer<typeof loginSchema>;
 const FUNCTIONS_URL = "https://wjkbqcrxwsmvtxmqgiqc.supabase.co/functions/v1";
 
 const inputClass = cn(
-  "w-full bg-black/60 border border-brand-gold/30 rounded-lg px-4 py-3",
+  "w-full bg-black/60 border border-brand-green/30 rounded-lg px-4 py-3",
   "text-white placeholder:text-brand-gray/60 font-sans text-sm",
-  "focus:outline-none focus:border-brand-yellow focus:ring-2 focus:ring-brand-yellow/30",
+  "focus:outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green/30",
   "transition-colors"
 );
 const labelClass =
@@ -63,14 +63,14 @@ export function LoginForm() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto rounded-2xl p-6 sm:p-8 bg-brand-graphite/40 backdrop-blur-md border border-brand-gold/20 shadow-[0_0_80px_rgba(212,160,23,0.10)] animate-slide-up">
+    <div className="w-full max-w-md mx-auto rounded-2xl p-6 sm:p-8 bg-brand-graphite/40 backdrop-blur-md border border-brand-green/20 shadow-[0_0_80px_rgba(22,163,74,0.10)] animate-slide-up">
       {/* Header */}
       <div className="text-center mb-5">
-        <span className="inline-block px-3 py-1 rounded-full text-[10px] font-sans font-bold tracking-widest uppercase mb-3 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+        <span className="inline-block px-3 py-1 rounded-full text-[10px] font-sans font-bold tracking-widest uppercase mb-3 bg-brand-green/15 text-brand-green border border-brand-green/40">
           Comunidad UGC
         </span>
         <div className="flex items-center justify-center gap-2 mb-3 text-xs font-sans font-bold tracking-widest uppercase">
-          <span className="text-brand-yellow">UGC Colombia</span>
+          <span className="text-brand-green">UGC Colombia</span>
           <span className="text-brand-gray">&times;</span>
           <span className="text-white">KREOON</span>
         </div>
@@ -103,7 +103,7 @@ export function LoginForm() {
         <button
           type="submit"
           disabled={formState.isSubmitting}
-          className="w-full py-3.5 rounded-lg font-sans font-bold text-sm tracking-wide bg-brand-yellow text-black hover:bg-brand-gold transition-colors shadow-[0_0_20px_rgba(212,160,23,0.4)] disabled:opacity-50 flex items-center justify-center gap-2"
+          className="w-full py-3.5 rounded-lg font-sans font-bold text-sm tracking-wide bg-brand-green text-white hover:bg-brand-green-dark transition-colors shadow-[0_0_20px_rgba(22,163,74,0.4)] disabled:opacity-50 flex items-center justify-center gap-2"
         >
           {formState.isSubmitting ? (
             <>
@@ -115,16 +115,16 @@ export function LoginForm() {
         </button>
       </form>
 
-      <div className="mt-6 pt-5 border-t border-brand-gold/15 text-center">
+      <div className="mt-6 pt-5 border-t border-brand-green/15 text-center">
         <p className="text-brand-gray text-xs">
           ¿No tienes cuenta?{" "}
-          <a href="/registro" className="text-brand-yellow font-semibold hover:underline">
+          <a href="/registro" className="text-brand-green font-semibold hover:underline">
             Registrate gratis
           </a>
         </p>
         <p className="text-brand-gray/70 text-[10px] mt-2">
           Powered by{" "}
-          <a href="https://kreoon.com" className="text-brand-yellow hover:underline">
+          <a href="https://kreoon.com" className="text-brand-green hover:underline">
             KREOON
           </a>
         </p>

@@ -62,8 +62,8 @@ export function Navbar() {
       className={cn(
         "fixed left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-black/92 backdrop-blur-md border-b border-brand-gold/20 shadow-[0_1px_20px_rgba(0,0,0,0.5)]"
-          : "bg-black/60 backdrop-blur-sm border-b border-transparent"
+          ? "bg-white/95 backdrop-blur-md border-b border-brand-green/20 shadow-[0_1px_12px_rgba(0,0,0,0.08)]"
+          : "bg-white/80 backdrop-blur-sm border-b border-transparent"
       )}
     >
       <div
@@ -75,12 +75,12 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="/"
-          className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
-          aria-label="UGC Colombia — Inicio"
+          className="flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
+          aria-label="Live Cake — Inicio"
         >
           <Image
-            src="/brand/logo-dark-bg.png"
-            alt="UGC Colombia"
+            src="/brand/logo-light-bg.png"
+            alt="Live Cake"
             width={148}
             height={40}
             className={cn(
@@ -98,10 +98,10 @@ export function Navbar() {
         >
           {NAV_LINKS.map((link) => {
             const className = cn(
-              "px-4 py-2 text-sm font-sans font-medium text-brand-gray",
+              "px-4 py-2 text-sm font-sans font-medium text-neutral-600",
               "rounded-lg transition-all duration-150",
-              "hover:text-white hover:bg-white/6",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+              "hover:text-brand-black hover:bg-neutral-100",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
               "min-h-[44px] flex items-center"
             );
             if ("external" in link && link.external) {
@@ -124,10 +124,10 @@ export function Navbar() {
           <a
             href="/login"
             className={cn(
-              "px-4 py-2 text-sm font-sans font-semibold text-brand-gray",
+              "px-4 py-2 text-sm font-sans font-semibold text-neutral-600",
               "rounded-lg transition-all duration-150",
-              "hover:text-white hover:bg-brand-gold/10",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+              "hover:text-brand-black hover:bg-brand-green/10",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
               "min-h-[44px] flex items-center"
             )}
           >
@@ -136,10 +136,10 @@ export function Navbar() {
           <a
             href="/registro"
             className={cn(
-              "px-4 py-2 text-sm font-sans font-semibold text-brand-yellow",
+              "px-4 py-2 text-sm font-sans font-semibold text-brand-green",
               "rounded-lg transition-all duration-150",
-              "hover:text-white hover:bg-brand-gold/10",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+              "hover:text-brand-green-dark hover:bg-brand-green/10",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
               "min-h-[44px] flex items-center"
             )}
           >
@@ -158,7 +158,7 @@ export function Navbar() {
               "text-xs sm:text-sm",
               scrolled ? "px-3 sm:px-4 py-2" : "px-3 sm:px-5 py-2.5"
             )}
-            aria-label="Aplicar ahora a UGC Colombia"
+            aria-label="Aplicar ahora a Live Cake"
           >
             <span className="hidden sm:inline">Aplica ahora →</span>
             <span className="sm:hidden">Aplica →</span>
@@ -167,9 +167,9 @@ export function Navbar() {
           {/* Botón hamburguesa mobile */}
           <button
             className={cn(
-              "lg:hidden p-2 rounded-lg text-brand-gray",
-              "hover:text-white hover:bg-white/8 transition-colors",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+              "lg:hidden p-2 rounded-lg text-neutral-500",
+              "hover:text-brand-black hover:bg-neutral-100 transition-colors",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
               "min-w-[44px] min-h-[44px] flex items-center justify-center"
             )}
             aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
@@ -198,7 +198,7 @@ export function Navbar() {
             aria-label="Menú de navegación móvil"
             className={cn(
               "fixed left-0 right-0 z-40 lg:hidden",
-              "bg-black/97 backdrop-blur-xl border-b border-brand-gold/20",
+              "bg-white/98 backdrop-blur-xl border-b border-brand-green/20",
               "px-4 py-5 flex flex-col gap-1",
               "data-[state=open]:animate-in data-[state=closed]:animate-out",
               "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
@@ -213,10 +213,10 @@ export function Navbar() {
 
             {NAV_LINKS.map((link) => {
               const className = cn(
-                "w-full text-left px-4 py-3.5 text-base font-sans font-medium text-brand-gray",
+                "w-full text-left px-4 py-3.5 text-base font-sans font-medium text-neutral-600",
                 "rounded-xl transition-all duration-150 min-h-[44px]",
-                "hover:text-white hover:bg-white/8 hover:translate-x-1",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                "hover:text-brand-black hover:bg-neutral-100 hover:translate-x-1",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
               );
               if ("external" in link && link.external) {
                 return (
@@ -241,10 +241,10 @@ export function Navbar() {
               href="/login"
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "w-full text-left px-4 py-3.5 text-base font-sans font-semibold text-brand-gray",
+                "w-full text-left px-4 py-3.5 text-base font-sans font-semibold text-neutral-600",
                 "rounded-xl transition-all duration-150 min-h-[44px]",
-                "hover:text-white hover:bg-brand-gold/10 hover:translate-x-1",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                "hover:text-brand-black hover:bg-brand-green/10 hover:translate-x-1",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
               )}
             >
               Ingresar
@@ -253,10 +253,10 @@ export function Navbar() {
               href="/registro"
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "w-full text-left px-4 py-3.5 text-base font-sans font-semibold text-brand-yellow",
+                "w-full text-left px-4 py-3.5 text-base font-sans font-semibold text-brand-green",
                 "rounded-xl transition-all duration-150 min-h-[44px]",
-                "hover:text-white hover:bg-brand-gold/10 hover:translate-x-1",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                "hover:text-brand-green-dark hover:bg-brand-green/10 hover:translate-x-1",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
               )}
             >
               Registro →

@@ -93,7 +93,7 @@ export function DiagnosticosList({ rows }: Props) {
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
           <div>
             <h1 className="font-display text-xl uppercase tracking-wide">
-              CRM · UGC Colombia
+              CRM · Live Cake
             </h1>
             <p className="text-xs text-brand-gray mt-0.5">
               {stats.total} leads · 🔥 {stats.hot} · ☀️ {stats.warm} · ❄️ {stats.cold}

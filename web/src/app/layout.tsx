@@ -40,22 +40,22 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "UGC Colombia — Contenido real, resultados reales.",
+  title: "Live Cake — Live shopping que vende 24/7.",
   description:
-    "La agencia UGC que está cambiando el juego en LATAM. Contenido con humanos, potenciado por IA. Marcas que convierten más, creadores que se vuelven pro.",
-  metadataBase: new URL("https://ugccolombia.co"),
+    "Live shopping + falsos lives 24/7 sobre Pancake. Partner oficial Meta + TikTok + Google. Llevamos tráfico de tus ads al live embebido en tu dominio. Sin comisión sobre ventas.",
+  metadataBase: new URL("https://livecake.co"),
   openGraph: {
-    title: "UGC Colombia — Contenido real, resultados reales.",
+    title: "Live Cake — Live shopping que vende 24/7.",
     description:
-      "La agencia UGC que está cambiando el juego en LATAM. Muy pronto.",
-    url: "https://ugccolombia.co",
-    siteName: "UGC Colombia",
+      "Live shopping + falsos lives 24/7 sobre Pancake. Partner oficial Meta + TikTok + Google.",
+    url: "https://livecake.co",
+    siteName: "Live Cake",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "UGC Colombia — Contenido real, resultados reales.",
+        alt: "Live Cake — Live shopping que vende 24/7.",
       },
     ],
     locale: "es_CO",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UGC Colombia — Contenido real, resultados reales.",
+    title: "Live Cake — Live shopping que vende 24/7.",
     description:
-      "La agencia UGC que está cambiando el juego en LATAM. Muy pronto.",
+      "Live shopping + falsos lives 24/7 sobre Pancake. Partner oficial Meta + TikTok + Google.",
     images: ["/opengraph-image"],
   },
   robots: {
@@ -77,14 +77,14 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    "UGC Colombia",
-    "agencia UGC",
-    "contenido UGC",
-    "creadores de contenido",
-    "marketing de contenido",
-    "LATAM",
-    "ventas en vivo",
-    "contenido real",
+    "live shopping Colombia",
+    "falso live",
+    "Pancake live commerce",
+    "live commerce LATAM",
+    "agencia live shopping",
+    "live shopping 24/7",
+    "transmisiones en vivo ecommerce",
+    "live shopping Meta TikTok Google",
   ],
 };
 
@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="dns-prefetch" href="https://cdn.kreoon.com" />
         <link rel="dns-prefetch" href="https://kreoon-images.b-cdn.net" />
       </head>
-      <body className="bg-brand-black text-white font-sans antialiased">
+      <body className="bg-white text-brand-black font-sans antialiased">
         {/* Google Tag Manager (noscript) — debe ir justo después de <body> */}
         <noscript>
           <iframe

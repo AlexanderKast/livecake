@@ -8,7 +8,7 @@ import { useCurrency } from "@/components/providers/CurrencyProvider";
 import { PLAN_PRICES } from "@/lib/pricing/currency-config";
 import { cn } from "@/lib/utils";
 
-type PlanColumnKey = "inicio" | "crecimiento" | "escala" | "enterprise";
+type PlanColumnKey = "starter" | "growth" | "pro" | "elite" | "enterprise";
 
 interface PlanColumn {
   key: PlanColumnKey;
@@ -30,8 +30,8 @@ function CellValue({
         className={cn(
           "inline-flex w-5 h-5 rounded-full items-center justify-center",
           highlight
-            ? "bg-brand-yellow text-black"
-            : "bg-brand-yellow/15 border border-brand-yellow/40 text-brand-yellow"
+            ? "bg-brand-green text-white"
+            : "bg-brand-green/15 border border-brand-green/40 text-brand-green"
         )}
         aria-label="Si incluido"
       >
@@ -53,7 +53,7 @@ function CellValue({
     <span
       className={cn(
         "text-xs sm:text-sm font-sans",
-        highlight ? "text-brand-yellow font-semibold" : "text-white/85"
+        highlight ? "text-brand-green font-semibold" : "text-white/85"
       )}
     >
       {value}
@@ -83,20 +83,25 @@ export function PreciosComparison() {
 
   const PLAN_COLUMNS: PlanColumn[] = [
     {
-      key: "inicio",
-      name: "Inicio",
+      key: "starter",
+      name: "Starter",
       price: `${format(PLAN_PRICES.starter[currency].amount)}/mes`,
     },
     {
-      key: "crecimiento",
-      name: "Crecimiento",
+      key: "growth",
+      name: "Growth",
       price: `${format(PLAN_PRICES.growth[currency].amount)}/mes`,
       highlight: true,
     },
     {
-      key: "escala",
-      name: "Escala",
-      price: `${format(PLAN_PRICES.scale[currency].amount)}/mes`,
+      key: "pro",
+      name: "Pro",
+      price: `${format(PLAN_PRICES.pro[currency].amount)}/mes`,
+    },
+    {
+      key: "elite",
+      name: "Elite",
+      price: `${format(PLAN_PRICES.elite[currency].amount)}/mes`,
     },
     { key: "enterprise", name: "A la medida", price: "Custom" },
   ];
@@ -112,7 +117,7 @@ export function PreciosComparison() {
         className="pointer-events-none absolute inset-0 opacity-50"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(249,179,52,0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(22,163,74,0.06) 0%, transparent 60%)",
         }}
       />
 
@@ -124,7 +129,7 @@ export function PreciosComparison() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-14 sm:mb-18 max-w-3xl mx-auto"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
             Compara en detalle
           </span>
           <h2
@@ -134,7 +139,7 @@ export function PreciosComparison() {
             Todo lo que{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -145,7 +150,7 @@ export function PreciosComparison() {
             .
           </h2>
           <p className="mt-6 text-base sm:text-lg text-brand-gray leading-relaxed">
-            22 variables comparadas lado a lado. Sin asteriscos, sin letra
+            Cada variable comparada lado a lado. Sin asteriscos, sin letra
             pequena.
           </p>
         </motion.div>
@@ -158,8 +163,8 @@ export function PreciosComparison() {
           className="hidden lg:block rounded-2xl border border-brand-graphite/60 bg-white/[0.015] overflow-hidden"
         >
           {/* Sticky header */}
-          <div className="grid grid-cols-[2fr_1fr_1.1fr_1fr_1fr] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border-b border-brand-graphite/60 sticky top-0 z-20 backdrop-blur-md">
-            <div className="p-5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70">
+          <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border-b border-brand-graphite/60 sticky top-0 z-20 backdrop-blur-md">
+            <div className="p-5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70">
               Caracteristica
             </div>
             {PLAN_COLUMNS.map((col) => (
@@ -167,13 +172,13 @@ export function PreciosComparison() {
                 key={col.key}
                 className={cn(
                   "p-5 text-center border-l border-brand-graphite/40",
-                  col.highlight && "bg-brand-yellow/[0.08]"
+                  col.highlight && "bg-brand-green/[0.08]"
                 )}
               >
                 <p
                   className={cn(
                     "font-display text-sm tracking-[0.2em] uppercase mb-1",
-                    col.highlight ? "text-brand-yellow" : "text-white"
+                    col.highlight ? "text-brand-green" : "text-white"
                   )}
                 >
                   {col.name}
@@ -187,27 +192,30 @@ export function PreciosComparison() {
           {grouped.map((group) => (
             <div key={group.category}>
               {/* Category header */}
-              <div className="grid grid-cols-[2fr_1fr_1.1fr_1fr_1fr] border-b border-brand-graphite/40 bg-white/[0.01]">
-                <div className="col-span-5 px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/80">
+              <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] border-b border-brand-graphite/40 bg-white/[0.01]">
+                <div className="col-span-6 px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/80">
                   {group.category}
                 </div>
               </div>
               {group.items.map((row) => (
                 <div
                   key={row.feature}
-                  className="grid grid-cols-[2fr_1fr_1.1fr_1fr_1fr] border-b border-brand-graphite/30 last:border-b-0 hover:bg-brand-yellow/[0.02] hover:shadow-[inset_0_0_30px_rgba(212,160,23,0.03)] transition-all duration-200"
+                  className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] border-b border-brand-graphite/30 last:border-b-0 hover:bg-brand-green/[0.02] hover:shadow-[inset_0_0_30px_rgba(22,163,74,0.03)] transition-all duration-200"
                 >
                   <div className="px-5 py-3.5 text-sm text-white/90 font-sans">
                     {row.feature}
                   </div>
                   <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
-                    <CellValue value={row.inicio} />
+                    <CellValue value={row.starter} />
                   </div>
-                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30 bg-brand-yellow/[0.04]">
-                    <CellValue value={row.crecimiento} highlight />
+                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30 bg-brand-green/[0.04]">
+                    <CellValue value={row.growth} highlight />
                   </div>
                   <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
-                    <CellValue value={row.escala} />
+                    <CellValue value={row.pro} />
+                  </div>
+                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
+                    <CellValue value={row.elite} />
                   </div>
                   <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
                     <CellValue value={row.enterprise} />
@@ -229,7 +237,7 @@ export function PreciosComparison() {
               className={cn(
                 "rounded-2xl border p-5 sm:p-6",
                 col.highlight
-                  ? "border-2 border-brand-gold bg-brand-yellow/5 shadow-[0_0_40px_-20px_rgba(212,160,23,0.4)]"
+                  ? "border-2 border-brand-green bg-brand-green/5 shadow-[0_0_40px_-20px_rgba(22,163,74,0.4)]"
                   : "border-brand-graphite/60 bg-white/[0.025]"
               )}
             >
@@ -237,7 +245,7 @@ export function PreciosComparison() {
                 <p
                   className={cn(
                     "font-display text-xl tracking-[0.15em] uppercase",
-                    col.highlight ? "text-brand-yellow" : "text-white"
+                    col.highlight ? "text-brand-green" : "text-white"
                   )}
                 >
                   {col.name}
@@ -247,7 +255,7 @@ export function PreciosComparison() {
 
               {grouped.map((group) => (
                 <div key={group.category} className="mb-5 last:mb-0">
-                  <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/80 mb-2.5">
+                  <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/80 mb-2.5">
                     {group.category}
                   </p>
                   <ul className="space-y-2">

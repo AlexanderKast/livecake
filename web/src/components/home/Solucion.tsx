@@ -9,30 +9,30 @@ const PASOS = [
   {
     icon: Target,
     step: "01",
-    title: "Estrategia",
+    title: "Setup del sistema Pancake",
     description:
-      "Definimos tu perfil de cliente ideal, ángulos de mensaje y territorios creativos antes de grabar un solo segundo. El resumen estratégico que la mayoría de agencias omite.",
+      "Configuramos tu stack completo: WebCake (live embebido en tu dominio), LiveCake (motor del live), Botcake (WhatsApp automático) y Postcake (CRM post-live). Todo antes de tu primer live.",
   },
   {
     icon: Users,
     step: "02",
-    title: "Selección de creadores",
+    title: "Presentadores entrenados para live LATAM",
     description:
-      "Elegimos creadores de nuestra red verificada que ya conocen tu nicho. Latinos reales, acentos reales, que conectan con tu audiencia objetivo.",
+      "Seleccionamos presentadores de nuestra red verificada entrenados en técnicas de live shopping para formato Pancake. Latinos reales, pitch de venta probado, sin improvisación.",
   },
   {
     icon: Film,
     step: "03",
-    title: "Producción en lote",
+    title: "Producción de lives y falsos lives 24/7",
     description:
-      "Producimos todos los videos en ciclos coordinados. Revisión, corrección y entrega en 7 días con guiones aprobados. Sin sorpresas, sin perseguir a nadie.",
+      "Grabamos el live, lo cargamos en Pancake embebido en tu dominio y lo dejamos corriendo 24/7. Tus ads en Meta/TikTok/Google llevan tráfico al live — no al live nativo de TikTok.",
   },
   {
     icon: BarChart3,
     step: "04",
-    title: "Iteración con datos",
+    title: "Optimización con datos reales",
     description:
-      "Medimos CTR, hook rate y ROAS de cada video. Los ganadores se escalan, los que no funcionan se reemplazan. Tu presupuesto de publicidad siempre con el mejor contenido.",
+      "Medimos conversión, retención y ticket promedio de cada live. Los ángulos que convierten más se escalan, los que no se reemplazan. Tu inversión siempre corriendo con el mejor live.",
   },
 ] as const;
 
@@ -47,8 +47,7 @@ export function Solucion() {
       aria-labelledby="solucion-title"
       className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24"
       style={{
-        background:
-          "linear-gradient(180deg, #000000 0%, #0a0800 50%, #000000 100%)",
+        background: "#ffffff",
       }}
     >
       {/* Imagen editorial de workspace */}
@@ -63,7 +62,7 @@ export function Solucion() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/70 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-white" />
       </div>
 
       {/* Glow central */}
@@ -72,7 +71,7 @@ export function Solucion() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 40% at 50% 50%, rgba(212,160,23,0.05) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 40% at 50% 50%, rgba(22,163,74,0.05) 0%, transparent 70%)",
         }}
       />
 
@@ -84,18 +83,18 @@ export function Solucion() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-14 sm:mb-20"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/10 text-brand-green border border-brand-green/30">
             Nuestro proceso
           </span>
           <h2
             id="solucion-title"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight"
           >
-            Así trabajamos contigo.
+            Tu live en marcha en 10 días.
           </h2>
-          <p className="mt-4 text-brand-gray max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
-            Cuatro pasos probados que convierten tu inversión en contenido en
-            resultados medibles.
+          <p className="mt-4 text-neutral-500 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
+            De 30% de conversión, +60% de retención y -40% de devoluciones —
+            cuatro pasos que lo hacen posible.
           </p>
         </motion.div>
 
@@ -113,7 +112,7 @@ export function Solucion() {
                   delay: 0.1 + i * 0.12,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative rounded-2xl border border-brand-graphite/50 bg-white/3 p-6 sm:p-7 lg:p-8 overflow-hidden transition-all duration-300 hover:border-brand-gold/25 hover:bg-white/5 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(212,160,23,0.08)]"
+                className="group relative rounded-2xl border border-neutral-200 bg-white p-6 sm:p-7 lg:p-8 overflow-hidden transition-all duration-300 hover:border-brand-green/30 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(22,163,74,0.08)]"
               >
                 {/* Corner glow */}
                 <div
@@ -121,15 +120,15 @@ export function Solucion() {
                   className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(ellipse at 100% 0%, rgba(212,160,23,0.12), transparent 70%)",
+                      "radial-gradient(ellipse at 100% 0%, rgba(22,163,74,0.10), transparent 70%)",
                   }}
                 />
 
                 {/* Icon box */}
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-yellow/10 border border-brand-yellow/20 flex items-center justify-center group-hover:bg-brand-yellow/20 group-hover:border-brand-yellow/40 transition-colors duration-300">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center group-hover:bg-brand-green/20 group-hover:border-brand-green/40 transition-colors duration-300">
                     <Icon
-                      className="h-5 w-5 text-brand-yellow"
+                      className="h-5 w-5 text-brand-green"
                       aria-hidden="true"
                     />
                   </div>
@@ -138,10 +137,10 @@ export function Solucion() {
                   </span>
                 </div>
 
-                <h3 className="font-display text-xl sm:text-2xl text-white mb-3">
+                <h3 className="font-display text-xl sm:text-2xl text-neutral-900 mb-3">
                   {paso.title}
                 </h3>
-                <p className="text-brand-gray text-sm sm:text-base leading-relaxed">
+                <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">
                   {paso.description}
                 </p>
               </motion.div>

@@ -69,7 +69,7 @@ export const templates: Template[] = [
     platform: "YouTube",
     size: "2560 × 1440",
     ratio: "Zona segura 1546 × 423",
-    sampleHeadline: "UGC COLOMBIA · BRAND",
+    sampleHeadline: "LIVE CAKE · BRAND",
     sampleSubcopy: "AGENCY · BOUTIQUE",
     preview: { w: 320, h: 180, bg: "graphite", accent: "yellow" },
   },
@@ -77,7 +77,7 @@ export const templates: Template[] = [
 
 export const universalRules = [
   { element: "Zona segura", rule: "5% inset en todos los lados (mínimo)" },
-  { element: "Font display", rule: "Anton 400 · UPPERCASE siempre" },
+  { element: "Font display", rule: "Manrope 700/800 — UPPERCASE solo en badges/eyebrows" },
   { element: "Font body", rule: "Inter SemiBold 600 (labels) · Regular 400 (copy)" },
   {
     element: "Colores por pieza",

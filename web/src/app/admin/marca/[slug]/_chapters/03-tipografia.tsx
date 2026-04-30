@@ -9,7 +9,7 @@ export default function Tipografia() {
         <SectionTitle
           eyebrow="Dos familias"
           title="Un ritmo."
-          desc="Anton para impacto, Inter para claridad. Nunca mezclar más de 2 tipografías en una pieza."
+          desc="Manrope para impacto, Inter para claridad. Nunca mezclar más de 2 tipografías en una pieza."
         />
         <div className="grid md:grid-cols-2 gap-4">
           <FamilyCard family="display" {...typography.display} />

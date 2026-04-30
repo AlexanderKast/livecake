@@ -45,7 +45,7 @@ export function PageLoader() {
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-brand-black"
           role="status"
           aria-live="polite"
-          aria-label="Cargando UGC Colombia"
+          aria-label="Cargando Live Cake"
         >
           {/* Glow dorado ambiental */}
           <div
@@ -53,7 +53,7 @@ export function PageLoader() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(212,160,23,0.18) 0%, transparent 70%)",
+                "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(22,163,74,0.18) 0%, transparent 70%)",
             }}
           />
 
@@ -69,7 +69,7 @@ export function PageLoader() {
               height: 260,
               borderRadius: "50%",
               background:
-                "radial-gradient(circle, rgba(249,179,52,0.25) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(22,163,74,0.25) 0%, transparent 70%)",
               filter: "blur(20px)",
             }}
           />
@@ -83,7 +83,7 @@ export function PageLoader() {
           >
             <Image
               src="/brand/logo-dark-bg.png"
-              alt="UGC Colombia"
+              alt="Live Cake"
               width={220}
               height={80}
               priority
@@ -103,7 +103,7 @@ export function PageLoader() {
                 className="absolute inset-y-0 w-1/2 rounded-full"
                 style={{
                   background:
-                    "linear-gradient(90deg, transparent, #d4a017, #f9b334, #d4a017, transparent)",
+                    "linear-gradient(90deg, transparent, #15803d, #16a34a, #15803d, transparent)",
                 }}
               />
             </div>

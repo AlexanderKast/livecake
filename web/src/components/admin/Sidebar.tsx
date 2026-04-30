@@ -143,8 +143,8 @@ export function Sidebar({ user }: SidebarProps) {
         <div className="px-6 py-6 border-b border-brand-gold/10 flex-shrink-0">
           <Link href="/admin" onClick={() => setMobileOpen(false)}>
             <Image
-              src="/brand/logo-dark-bg.png"
-              alt="UGC Colombia"
+              src="/brand/logo-dark-bg.png?v=2"
+              alt="Live Cake"
               width={148}
               height={40}
               className="w-auto h-8"

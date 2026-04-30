@@ -40,7 +40,7 @@ export function ForgeFAQ() {
     <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
         <div className="flex flex-col gap-3 items-center text-center mb-10">
-          <span className="text-[10px] uppercase tracking-widest font-bold text-brand-yellow">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
             Preguntas frecuentes
           </span>
           <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight">
@@ -64,7 +64,7 @@ export function ForgeFAQ() {
                   {f.q}
                 </h3>
                 <span
-                  className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-brand-yellow/20 text-brand-yellow transition-transform ${
+                  className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-brand-green/20 text-brand-green transition-transform ${
                     open === i ? "rotate-45" : ""
                   }`}
                   aria-hidden

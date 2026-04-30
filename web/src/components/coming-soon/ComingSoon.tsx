@@ -51,7 +51,7 @@ export function ComingSoon() {
 
         {/* Divisor */}
         <div
-          className="w-24 h-px bg-brand-gold/40"
+          className="w-24 h-px bg-brand-green/40"
           aria-hidden="true"
         />
 
@@ -60,7 +60,7 @@ export function ComingSoon() {
 
         {/* Divisor */}
         <div
-          className="w-24 h-px bg-brand-gold/40"
+          className="w-24 h-px bg-brand-green/40"
           aria-hidden="true"
         />
 

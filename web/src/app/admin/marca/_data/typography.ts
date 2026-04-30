@@ -1,11 +1,11 @@
 export const typography = {
   display: {
-    name: "Anton",
+    name: "Manrope",
     role: "Display",
     desc: "Sans-serif condensada de impacto. Titulares en mayúsculas con personalidad fuerte. Único peso disponible: 400. El peso visual se logra con tamaño y contraste, nunca con bold.",
     source: "Google Fonts",
     weights: [400],
-    cssVar: "--font-anton",
+    cssVar: "--font-manrope",
     sample: "HACEMOS CRECER MARCAS.",
   },
   body: {
@@ -22,7 +22,7 @@ export const typography = {
 
 export interface TypeHierarchyEntry {
   level: string;
-  family: "Anton" | "Inter";
+  family: "Manrope" | "Inter";
   weight: number;
   size: string;
   leading?: string;
@@ -35,7 +35,7 @@ export interface TypeHierarchyEntry {
 export const hierarchy: TypeHierarchyEntry[] = [
   {
     level: "Display · Hero Headline",
-    family: "Anton",
+    family: "Manrope",
     weight: 400,
     size: "clamp(2.4rem, 8vw, 8rem)",
     leading: "0.92",
@@ -45,7 +45,7 @@ export const hierarchy: TypeHierarchyEntry[] = [
   },
   {
     level: "H2 Section",
-    family: "Anton",
+    family: "Manrope",
     weight: 400,
     size: "clamp(2.5rem, 6vw, 5rem)",
     tracking: "tracking-tight",

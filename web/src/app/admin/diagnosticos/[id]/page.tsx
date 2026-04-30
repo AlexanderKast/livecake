@@ -5,7 +5,7 @@ import { getSupabaseAdmin } from "@/lib/supabase";
 import { LeadDetailClient, type LeadDetail, type Activity } from "./LeadDetailClient";
 
 export const metadata: Metadata = {
-  title: "Lead — Admin UGC Colombia",
+  title: "Lead — Admin Live Cake",
   robots: { index: false, follow: false },
 };
 

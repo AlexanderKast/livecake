@@ -13,7 +13,7 @@ export const checklistTecnico = [
   "Resolución correcta por plataforma",
   "Audio claro, nivel consistente",
   "Paleta: máx 3 colores visibles",
-  "Fuentes: solo Anton + Inter",
+  "Fuentes: solo Manrope + Inter",
   "Handle o URL visible",
   "Hashtags optimizados (5-10 máx)",
   "Horario óptimo por audiencia",

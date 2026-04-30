@@ -39,7 +39,7 @@ export function ParticlesBg() {
         fpsLimit: 60,
         particles: {
           number: { value: 50, density: { enable: true } },
-          color: { value: ["#D4A017", "#f9b334", "#c9940a"] },
+          color: { value: ["#D4A017", "#16a34a", "#c9940a"] },
           opacity: {
             value: { min: 0.1, max: 0.4 },
             animation: { enable: true, speed: 0.4, sync: false },

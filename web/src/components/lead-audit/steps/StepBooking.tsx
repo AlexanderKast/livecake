@@ -149,19 +149,19 @@ export function StepBooking({ data, score, onBack, onClose }: Props) {
           Te enviamos un email con los detalles y el link de la reunión.
         </p>
 
-        <div className="inline-flex flex-col gap-2 p-5 rounded-2xl border border-brand-gold/20 bg-white/[0.03] text-left mb-6">
+        <div className="inline-flex flex-col gap-2 p-5 rounded-2xl border border-brand-green/20 bg-white/[0.03] text-left mb-6">
           <div className="flex items-center gap-3 text-sm">
-            <Calendar className="w-4 h-4 text-brand-yellow flex-shrink-0" />
+            <Calendar className="w-4 h-4 text-brand-green flex-shrink-0" />
             <span className="text-white font-medium">
               {dayName} {cotDate.getUTCDate()} de {monthName} — {h12}:{m.toString().padStart(2, "0")} {ampm}
             </span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <Clock className="w-4 h-4 text-brand-yellow flex-shrink-0" />
+            <Clock className="w-4 h-4 text-brand-green flex-shrink-0" />
             <span className="text-brand-gray">30 minutos · Hora Colombia</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <Video className="w-4 h-4 text-brand-yellow flex-shrink-0" />
+            <Video className="w-4 h-4 text-brand-green flex-shrink-0" />
             <span className="text-brand-gray">Con {booked.host_name} — UGC Colombia</span>
           </div>
         </div>
@@ -205,8 +205,8 @@ export function StepBooking({ data, score, onBack, onClose }: Props) {
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-xl bg-brand-yellow/15 border border-brand-yellow/30 flex items-center justify-center">
-          <Calendar className="w-5 h-5 text-brand-yellow" />
+        <div className="w-10 h-10 rounded-xl bg-brand-green/15 border border-brand-green/30 flex items-center justify-center">
+          <Calendar className="w-5 h-5 text-brand-green" />
         </div>
         <div>
           <h3 className="font-display text-xl sm:text-2xl text-white uppercase tracking-tight">
@@ -229,7 +229,7 @@ export function StepBooking({ data, score, onBack, onClose }: Props) {
 
       {loading ? (
         <div className="flex flex-col items-center justify-center py-16">
-          <Loader2 className="w-8 h-8 text-brand-yellow animate-spin mb-3" />
+          <Loader2 className="w-8 h-8 text-brand-green animate-spin mb-3" />
           <p className="text-sm text-brand-gray">Cargando disponibilidad...</p>
         </div>
       ) : availableDates.length === 0 ? (
@@ -290,14 +290,14 @@ export function StepBooking({ data, score, onBack, onClose }: Props) {
                     onClick={() => { setSelectedDate(date); setSelectedSlot(null); }}
                     className={cn(
                       "flex flex-col items-center min-w-[52px] px-3 py-2 rounded-xl border text-xs transition-all flex-shrink-0",
-                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
                       isSelected
-                        ? "border-brand-gold/60 bg-brand-yellow/15 text-white"
+                        ? "border-brand-green/60 bg-brand-green/15 text-white"
                         : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20"
                     )}
                   >
                     <span className="font-semibold">{DAY_NAMES[d.getDay()]}</span>
-                    <span className={cn("text-lg font-bold", isSelected && "text-brand-yellow")}>{d.getDate()}</span>
+                    <span className={cn("text-lg font-bold", isSelected && "text-brand-green")}>{d.getDate()}</span>
                   </button>
                 );
               })}
@@ -319,9 +319,9 @@ export function StepBooking({ data, score, onBack, onClose }: Props) {
                     onClick={() => setSelectedSlot(slot)}
                     className={cn(
                       "px-3 py-2.5 rounded-xl border text-sm font-medium transition-all",
-                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
                       isSelected
-                        ? "border-brand-gold/60 bg-brand-yellow/15 text-brand-yellow"
+                        ? "border-brand-green/60 bg-brand-green/15 text-brand-green"
                         : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20 hover:text-white"
                     )}
                   >

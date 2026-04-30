@@ -7,22 +7,23 @@ import { PorEsoExistimos } from "@/components/casos/PorEsoExistimos";
 import { CasosCTAFinal } from "@/components/casos/CasosCTAFinal";
 
 export const metadata = createMetadata({
-  title: "Casos & Dolores Reales",
+  title: "Casos — Por que el live shopping cambia el juego",
   description:
-    "Por qué crear contenido cada semana te está matando. 7 dolores reales del marketing UGC, ads y contratación de creadores — y cómo los resolvemos en UGC Colombia.",
+    "Carlos pierde el 22% en devoluciones. Valentina solo vende en lanzamiento. Rodrigo le paga el 20% al marketplace. Tres casos reales de por que el live shopping es el canal que le faltaba a tu negocio.",
   path: "/casos",
   keywords: [
-    "casos UGC",
-    "problemas marketing contenido",
-    "dolor creación de contenido",
-    "soluciones UGC LATAM",
+    "casos live shopping LATAM",
+    "live commerce Colombia",
+    "devoluciones ecommerce live",
+    "live shopping vs marketplace",
+    "infoproductos live shopping",
   ],
 });
 
 const jsonLd = getDefaultJsonLd("cases", {
-  name: "Casos & Dolores Reales — UGC Colombia",
+  name: "Casos Live Shopping — Live Cake",
   description:
-    "Dolores reales de creación de contenido, ads, métricas, fatiga creativa y contratación de creadores.",
+    "Tres avatares reales que muestran por que el live shopping resuelve devoluciones altas, ingresos estacionales y comisiones de marketplace.",
   url: "/casos",
 });
 

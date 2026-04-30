@@ -24,24 +24,24 @@ export function FAQ() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/10 text-brand-green border border-brand-green/30">
             Preguntas frecuentes
           </span>
           <h2
             id="faq-heading"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase"
           >
             Preguntas{" "}
-            <span className="text-brand-yellow">frecuentes.</span>
+            <span className="text-brand-green">frecuentes.</span>
           </h2>
-          <p className="max-w-2xl text-base sm:text-lg text-brand-gray mt-2">
+          <p className="max-w-2xl text-base sm:text-lg text-neutral-500 mt-2">
             Todo lo que quieres saber antes de agendar tu llamada inicial. Si
             falta algo,{" "}
             <a
               href="https://wa.me/573001234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-yellow hover:text-brand-gold underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+              className="text-brand-green hover:text-brand-green-dark underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
             >
               pregúntanos por WhatsApp
             </a>
@@ -60,15 +60,15 @@ export function FAQ() {
               <AccordionItem
                 key={idx}
                 value={`item-${idx}`}
-                className="border border-brand-graphite/60 rounded-xl bg-white/[0.02] hover:border-brand-gold/40 transition-colors overflow-hidden"
+                className="border border-neutral-200 rounded-xl bg-white hover:border-brand-green/40 transition-colors overflow-hidden"
               >
-                <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-left hover:no-underline min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-inset">
-                  <span className="text-sm sm:text-base font-semibold text-white pr-4 leading-snug">
+                <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-left hover:no-underline min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-inset">
+                  <span className="text-sm sm:text-base font-semibold text-neutral-900 pr-4 leading-snug">
                     {item.question}
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-5 sm:px-6 pb-5 pt-0">
-                  <p className="text-sm sm:text-base text-brand-gray leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
                     {item.answer}
                   </p>
                 </AccordionContent>

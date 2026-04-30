@@ -35,6 +35,9 @@ export const brandColors = {
   red: "#DC2626",
   redHover: "#B91C1C",
   green: "#16A34A",
+  greenDark: "#15803D",
+  greenBright: "#22C55E",
+  redLive: "#FF0033",
 } as const;
 
 export const brandGradient = {
@@ -131,10 +134,13 @@ export const shadows = {
   md: "0 8px 24px rgba(0,0,0,0.65)",
   lg: "0 16px 40px rgba(0,0,0,0.70)",
   xl: "0 24px 64px rgba(0,0,0,0.75)",
-  yellow: "0 0 24px rgba(249,179,52,0.30)",
-  yellowSm: "0 0 8px rgba(249,179,52,0.18)",
-  gold: "0 0 24px rgba(212,160,23,0.30)",
-  goldSm: "0 0 8px rgba(212,160,23,0.18)",
+  yellow: "0 0 24px rgba(22,163,74,0.30)",
+  yellowSm: "0 0 8px rgba(22,163,74,0.18)",
+  gold: "0 0 24px rgba(22,163,74,0.30)",
+  goldSm: "0 0 8px rgba(22,163,74,0.18)",
+  green: "0 0 24px rgba(22,163,74,0.30)",
+  greenSm: "0 0 8px rgba(22,163,74,0.18)",
+  liveDot: "0 0 12px rgba(255,0,51,0.60)",
   inset: "inset 0 1px 0 rgba(255,255,255,0.06)",
 } as const;
 

@@ -19,63 +19,63 @@ export interface PreciosFAQItem extends FAQItem {
 
 export const PRECIOS_FAQS: PreciosFAQItem[] = [
   {
-    question: "Cual es el modelo de pago?",
+    question: "¿Cuál es el modelo de pago?",
     answer:
-      "Todos los planes son con pago anticipado. Los planes mensuales (Inicio, Crecimiento, Escala) se cobran al inicio de cada periodo via Stripe. El plan A la Medida se factura segun acuerdo comercial (pago unico, mensual o por hito). Aceptamos tarjeta internacional, transferencia USD/COP y facturacion electronica LATAM.",
+      "Todos los planes tienen dos componentes: (1) setup inicial (pago único al arranque: $1,400–$3,000 USD según el plan) que cubre la configuración de Pancake, las pruebas técnicas y el onboarding; y (2) mensualidad recurrente cobrada al inicio de cada periodo via Stripe. Aceptamos tarjeta internacional, transferencia USD/COP y facturación electrónica LATAM.",
     icon: CreditCard,
   },
   {
-    question: "Hay permanencia minima?",
+    question: "¿Hay permanencia mínima?",
     answer:
-      "Por defecto operan mes a mes, sin permanencia obligatoria. Si te comprometes a un contrato mínimo de 3 meses bajamos el precio entre 8% y 15% según el plan. Contratos de 6 o 12 meses tienen un descuento aún mayor. Lo conversamos en la llamada inicial.",
+      "Mínimo 3 meses en todos los planes recurrentes. Después queda mes a mes, cancelable con 30 días de aviso. Si te comprometes a un contrato de 6 o 12 meses, aplicamos descuento adicional del 10% al 15% sobre la mensualidad. Lo conversamos en la llamada inicial.",
     icon: Clock,
   },
   {
-    question: "Puedo cambiar de plan a mitad de mes?",
+    question: "¿Puedo cambiar de plan durante el contrato?",
     answer:
-      "Si. Si subes de plan (por ejemplo de Inicio a Crecimiento), el cambio es inmediato y pagas la diferencia prorrateada. Si bajas de plan, el cambio aplica al siguiente ciclo de facturacion. Sin penalidades.",
+      "Sí. Si subes de plan (por ejemplo de Starter a Growth), el cambio aplica al siguiente ciclo y pagas la diferencia del setup entre planes. Si bajas de plan, el cambio aplica al siguiente ciclo también. Sin penalidades por cambio de plan.",
     icon: ArrowUpDown,
   },
   {
-    question: "Puedo cancelar cuando quiera?",
+    question: "¿Puedo cancelar cuando quiera?",
     answer:
-      "Si. Cancelas con 30 dias de aviso y no te volvemos a cobrar. Conservas todos los videos producidos hasta esa fecha, con sus derechos de publicidad pagada por 12 meses. No retenemos contenido ni hacemos clawback.",
+      "Sí, con 30 días de aviso y cumpliendo el mínimo de 3 meses. Al cancelar conservas el acceso a Pancake hasta el fin del periodo pagado y todos los recordings de lives producidos. El setup inicial no es reembolsable.",
     icon: XCircle,
   },
   {
-    question: "Ofrecen garantia de devolucion?",
+    question: "¿Ofrecen garantía de devolución?",
     answer:
-      "Si. Tienes 7 dias de garantia desde el primer pago. Si durante la primera semana consideras que no encajamos con tu marca, te devolvemos el 100% del pago. Pasada esa ventana no hay reembolso, pero puedes cancelar al siguiente ciclo sin penalidad.",
+      "Sí. Tienes 7 días de garantía desde el primer pago de la mensualidad. Si durante la primera semana consideras que no encajamos con tu negocio, te devolvemos el 100% de la mensualidad (el setup inicial no se incluye en la devolución). Pasada esa ventana puedes cancelar al siguiente ciclo sin penalidad.",
     icon: ShieldCheck,
   },
   {
-    question: "En que moneda se factura?",
+    question: "¿En qué moneda se factura?",
     answer:
-      "La pagina detecta tu pais y te muestra los precios en tu moneda local (USD por defecto, COP en Colombia). Puedes cambiar la moneda en cualquier momento desde el selector en el menu superior. Para marcas fuera de Colombia facturamos en USD (tarjeta internacional o transferencia). Para marcas colombianas facturamos en COP a la TRM del dia o USD a tu eleccion, con factura electronica DIAN. Los impuestos se manejan segun el pais de origen.",
+      "La página detecta tu país y muestra los precios en USD (default) o COP en Colombia. Puedes cambiar la moneda desde el selector del menú. Para marcas fuera de Colombia facturamos en USD. Para marcas colombianas facturamos en COP a la TRM del día o USD a tu elección, con factura electrónica DIAN.",
     icon: DollarSign,
   },
   {
-    question: "Que pasa si necesito mas videos un mes especifico?",
+    question: "¿Qué pasa si necesito más lives un mes específico?",
     answer:
-      "En los planes mensuales puedes comprar videos extra del mismo plan, a precio unitario proporcional al plan contratado. Por ejemplo, en Crecimiento el costo por video adicional equivale al precio del plan dividido entre los 10 videos base. Si necesitas un volumen mayor de forma recurrente, conviene subir de nivel. Lo ajustamos en la llamada.",
+      "Puedes comprar lives adicionales fuera del plan a tarifa unitaria proporcional al plan contratado. Si el volumen extra es recurrente, conviene subir de nivel. También evaluamos el plan A la Medida si necesitas frecuencia diaria con equipo completamente dedicado.",
     icon: Plus,
   },
   {
-    question: "Que incluye la licencia de publicidad de 12 meses?",
+    question: "¿La suite Pancake queda en mi cuenta o en la de Live Cake?",
     answer:
-      "Uso comercial para medios pagados (Meta Ads, TikTok Ads, Google Ads, YouTube Ads) por 12 meses desde la entrega del video. Si necesitas publicacion con tu marca, se negocia directamente con el creador teniendo en cuenta su engagement y seguidores. Derechos perpetuos o exclusividad por nicho se cotizan como complemento.",
+      "La instancia de Pancake se configura bajo tu marca y dominio. Tienes acceso al panel de control, los datos de tus clientes (historial de compras en live, segmentos CRM, flows de Botcake) y los recordings son tuyos. Si decides salir, Live Cake no retiene ningún dato de tus compradores.",
     icon: FileText,
   },
   {
-    question: "Puedo empezar con un paquete y escalar despues?",
+    question: "¿Puedo empezar con Starter y escalar después?",
     answer:
-      "Sí — de hecho es lo más común. La mayoría de marcas arranca con Inicio o Crecimiento por 1 a 3 meses para validar que el flujo funciona con su producto, y luego sube de plan. El histórico de instructivos, creadores aprobados y aprendizajes queda guardado dentro de tu cuenta.",
+      "Sí — de hecho es el camino más común. La mayoría de marcas arranca con Starter o Growth por 1 a 3 meses para validar la dinámica del live con su audiencia y sus productos, luego sube de plan. El setup técnico, los runbooks y el aprendizaje del host quedan listos para la transición.",
     icon: TrendingUp,
   },
   {
-    question: "Que hace diferente al plan A la Medida?",
+    question: "¿Qué hace diferente al plan A la Medida?",
     answer:
-      "Equipo dedicado exclusivo, director creativo propio, acuerdos de servicio garantizados por contrato, entrega sin límites de variantes, integración directa con tu equipo de medios pagados, panel en tiempo real y arranque ejecutivo con Alexander Cast. Es para empresas con presupuesto en publicidad pagada de más de $20.000 USD (~$80 millones COP) al mes, que necesitan una máquina de contenido corriendo todo el año.",
+      "Equipo completamente dedicado (estratega, host senior, editor, account manager), lives ilimitados, integración con tu ERP/OMS, acuerdos de servicio garantizados por contrato (SLA), BI personalizado en tiempo real y onboarding ejecutivo con Alexander Cast. Es para marcas con volumen de ventas alto que necesitan operar live shopping todos los días del mes.",
     icon: Crown,
   },
 ];

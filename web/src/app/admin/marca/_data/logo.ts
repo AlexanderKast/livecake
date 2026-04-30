@@ -32,7 +32,7 @@ export const logoVariants: LogoVariant[] = [
     subtitle: "Sobre claro",
     src: "/brand/logo-light-bg.png",
     bg: "cream",
-    bgRequired: "Fondo blanco o cream #F5F5F0",
+    bgRequired: "Fondo blanco o cream #F5F5F5",
     notes:
       "Documentos formales, mailing, propuestas impresas. OBLIGATORIO fondo blanco si el logo queda en negro.",
   },
@@ -42,7 +42,7 @@ export const logoVariants: LogoVariant[] = [
     subtitle: "Sobre yellow",
     src: "/brand/logo-light-bg.png",
     bg: "yellow",
-    bgRequired: "Bloque amarillo #F9B334",
+    bgRequired: "Bloque amarillo #00D64F",
     notes:
       "Usos signature: banners, stories destacadas. El logo debe ir dentro de un cuadro/contenedor blanco o directamente sobre amarillo — nunca amarillo sobre foto.",
   },
@@ -52,7 +52,7 @@ export const logoVariants: LogoVariant[] = [
     subtitle: "Superficie neutra",
     src: "/brand/logo-dark-bg.png",
     bg: "graphite",
-    bgRequired: "Fondo #3D3D3C",
+    bgRequired: "Fondo #262626",
     notes:
       "Secciones secundarias, footers, UI editorial. Mantener clearspace 1× isotipo.",
   },
@@ -62,9 +62,9 @@ export const logoShineCSS = `animation: logo-shine-sweep 5s ease-in-out infinite
 background: linear-gradient(115deg,
   transparent 30%,
   rgba(255,255,255,0.15) 44%,
-  rgba(249,179,52,0.55) 48%,
+  rgba(0,214,79,0.55) 48%,
   rgba(255,255,255,0.9) 50%,
-  rgba(249,179,52,0.55) 52%,
+  rgba(0,214,79,0.55) 52%,
   rgba(255,255,255,0.15) 56%,
   transparent 70%);
 mix-blend-mode: screen;`;

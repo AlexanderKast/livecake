@@ -19,10 +19,10 @@ export function MarqueeCore() {
 
   return (
     <div
-      className="group relative w-full overflow-hidden border-y border-brand-gold/30 py-5 sm:py-6"
+      className="group relative w-full overflow-hidden border-y border-brand-green/30 py-5 sm:py-6"
       style={{
         background:
-          "linear-gradient(90deg, rgba(212,160,23,0.08) 0%, rgba(249,179,52,0.12) 50%, rgba(212,160,23,0.08) 100%)",
+          "linear-gradient(90deg, rgba(22,163,74,0.08) 0%, rgba(22,163,74,0.12) 50%, rgba(22,163,74,0.08) 100%)",
       }}
       aria-label="Mensajes de UGC Colombia"
     >
@@ -55,7 +55,7 @@ export function MarqueeCore() {
               {phrase}
             </span>
             <span
-              className="text-brand-yellow text-2xl sm:text-3xl md:text-4xl shrink-0 select-none"
+              className="text-brand-green text-2xl sm:text-3xl md:text-4xl shrink-0 select-none"
               aria-hidden="true"
             >
               ◆

@@ -19,22 +19,22 @@ import { FAQ } from "@/components/home/FAQ";
 import { CTAFinal } from "@/components/home/CTAFinal";
 
 export const metadata = createMetadata({
-  title: "Contenido real, resultados reales",
+  title: "Live shopping que vende 24/7",
   description:
-    "La agencia UGC que está cambiando el juego en LATAM. Contenido con humanos, potenciado por IA. Marcas que convierten más, creadores que se vuelven pro.",
+    "Live shopping + falsos lives 24/7 sobre Pancake — partner oficial Meta + TikTok + Google. Llevamos tráfico de tus ads al live embebido en tu dominio. Sin comisión sobre ventas.",
   path: "/",
   keywords: [
-    "agencia UGC Colombia",
-    "contenido para ads",
-    "creadores UGC LATAM",
-    "video marketing Colombia",
+    "live shopping Colombia",
+    "falso live Pancake",
+    "live commerce LATAM",
+    "agencia live shopping",
   ],
 });
 
 const jsonLd = getDefaultJsonLd("home", {
-  name: "UGC Colombia — Contenido real, resultados reales",
+  name: "Live Cake — Live shopping que vende 24/7",
   description:
-    "La agencia UGC que está cambiando el juego en LATAM. Contenido con humanos, potenciado por IA.",
+    "Live shopping + falsos lives 24/7 sobre Pancake. Partner oficial Meta + TikTok + Google. Sin comisión sobre ventas.",
   url: "/",
   faqs: HOME_FAQS,
 });

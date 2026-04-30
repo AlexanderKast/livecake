@@ -12,43 +12,49 @@ import { PreciosFAQ } from "@/components/precios/PreciosFAQ";
 import { PreciosCTA } from "@/components/precios/PreciosCTA";
 
 export const metadata = createMetadata({
-  title: "Precios UGC",
+  title: "Precios Live Shopping — Live Cake",
   description:
-    "Paquetes UGC con garantía de performance: Inicio desde $590 USD ($1.590.000 COP), Crecimiento, Escala y A la Medida. Si tus videos no rinden en publicidad pagada, los reemplazamos. Detección automática de moneda por país.",
+    "Planes de live shopping con suite Pancake completa incluida: Starter desde $599 USD/mes, Growth $999, Pro $1,699 y Elite $2,799. Sin comision sobre ventas. Setup tecnico desde el dia uno.",
   path: "/precios",
   keywords: [
-    "precios UGC",
-    "paquetes UGC Colombia",
-    "costos contenido UGC",
-    "planes agencia UGC",
-    "garantía UGC",
+    "precios live shopping",
+    "planes live commerce LATAM",
+    "paquetes live shopping Colombia",
+    "Pancake live shopping precios",
+    "costos live commerce",
   ],
 });
 
 const jsonLd = getDefaultJsonLd("pricing", {
-  name: "Precios UGC — UGC Colombia",
+  name: "Precios Live Shopping — Live Cake",
   description:
-    "Paquetes UGC con garantía de performance. Si tus videos no logran CTR ≥ 1.5% y Hook Rate ≥ 25% en anuncios pagados, los reemplazamos.",
+    "Planes de live shopping con suite Pancake completa incluida. Sin comision sobre ventas. Garantia de performance incluida.",
   url: "/precios",
   faqs: PRECIOS_FAQS,
   products: [
     {
-      name: "UGC Inicio",
+      name: "Live Cake Starter",
       description:
-        "6 videos UGC/mes, hasta 2 creadores, investigación básica, edición profesional, garantía de performance, licencia de publicidad 12 meses.",
-      price: 590,
+        "2 lives A/B por mes, 2 optimizaciones, suite Pancake completa, setup tecnico, reporte post-live y garantia de performance.",
+      price: 599,
     },
     {
-      name: "UGC Crecimiento",
+      name: "Live Cake Growth",
       description:
-        "10 videos UGC/mes, 3 variantes por video, hasta 5 creadores, investigación V2, parrilla mensual, garantía de performance, licencia de publicidad 12 meses.",
-      price: 890,
+        "8 lives A/B por mes (2/semana), 4 optimizaciones, suite Pancake completa, host dedicado, reporte semanal y garantia de performance.",
+      price: 999,
     },
     {
-      name: "UGC Escala",
+      name: "Live Cake Pro",
       description:
-        "30 videos UGC/mes, 3 variantes por video, hasta 10 creadores, investigación V3 Plus + scraping de competidores, estrategia omnicanal, garantía de performance, licencia de publicidad 12 meses.",
-      price: 1890,
+        "16 lives A/B por mes (dia por medio), 8 optimizaciones, suite Pancake completa, host senior dedicado, dashboard en tiempo real y garantia de performance.",
+      price: 1699,
+    },
+    {
+      name: "Live Cake Elite",
+      description:
+        "31 lives A/B por mes (1 diario), optimizaciones ilimitadas, suite Pancake completa, equipo dedicado, soporte 24/7 durante lives y garantia de performance.",
+      price: 2799,
     },
   ],
 });

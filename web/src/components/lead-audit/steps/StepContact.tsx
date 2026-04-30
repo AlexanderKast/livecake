@@ -109,7 +109,7 @@ export function StepContact({ data, onSubmit, onBack }: Props) {
         <div>
           <label className={labelClass}>WhatsApp</label>
           <div className="flex gap-2">
-            <span className="flex items-center px-3.5 bg-black/60 border border-brand-gold/30 rounded-xl text-sm text-brand-gray">
+            <span className="flex items-center px-3.5 bg-black/60 border border-brand-green/30 rounded-xl text-sm text-brand-gray">
               +57
             </span>
             <input

@@ -30,7 +30,7 @@ export default function Pilares() {
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage:
-                  "linear-gradient(90deg, #F9B334 0%, #D4A017 50%, #F9B334 100%)",
+                  "linear-gradient(90deg, #00D64F 0%, #00D64F 50%, #00D64F 100%)",
               }}
             >
               {total}%

@@ -87,22 +87,22 @@ export function GraciasClient() {
           {/* Meeting details card */}
           {startISO && (
             <motion.div
-              className="p-6 rounded-2xl border border-brand-gold/20 bg-white/[0.03] text-left mb-8 inline-block w-full"
+              className="p-6 rounded-2xl border border-brand-green/20 bg-white/[0.03] text-left mb-8 inline-block w-full"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                  <Calendar className="w-5 h-5 text-brand-green flex-shrink-0" />
                   <span className="text-white font-semibold">{dateStr}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                  <Clock className="w-5 h-5 text-brand-green flex-shrink-0" />
                   <span className="text-white font-semibold">{timeStr} — Hora Colombia</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Video className="w-5 h-5 text-brand-yellow flex-shrink-0" />
+                  <Video className="w-5 h-5 text-brand-green flex-shrink-0" />
                   <span className="text-brand-gray">30 min · Google Meet · Con {hostName}</span>
                 </div>
               </div>
@@ -156,15 +156,15 @@ export function GraciasClient() {
             <p className="text-xs font-semibold text-brand-gray uppercase tracking-wider mb-3">Prepárate para la llamada</p>
             <ul className="space-y-2 text-sm text-brand-gray">
               <li className="flex items-start gap-2">
-                <span className="text-brand-yellow mt-0.5">1.</span>
+                <span className="text-brand-green mt-0.5">1.</span>
                 Ten a mano ejemplos de contenido que hayas usado o que te gusten
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-brand-yellow mt-0.5">2.</span>
+                <span className="text-brand-green mt-0.5">2.</span>
                 Revisa tus métricas actuales (ads, ventas, seguidores)
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-brand-yellow mt-0.5">3.</span>
+                <span className="text-brand-green mt-0.5">3.</span>
                 Piensa en qué resultado te haría sentir que valió la pena
               </li>
             </ul>
@@ -178,7 +178,7 @@ export function GraciasClient() {
             transition={{ delay: 0.9 }}
           >
             <p className="text-xs text-brand-gray/50">Síguenos:</p>
-            <a href="https://www.instagram.com/agenciaugccolombia" target="_blank" rel="noopener noreferrer" className="text-brand-gray/50 hover:text-brand-yellow transition-colors">
+            <a href="https://www.instagram.com/agenciaugccolombia" target="_blank" rel="noopener noreferrer" className="text-brand-gray/50 hover:text-brand-green transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
           </motion.div>

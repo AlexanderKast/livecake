@@ -15,95 +15,104 @@ type Caso = {
   title: React.ReactNode;
   desc: string;
   metricas: readonly Metrica[];
+  sourceLabel?: string;
+  sourceUrl?: string;
 };
 
+/**
+ * Casos de live commerce LATAM citables del market-stats.json.
+ * Fuentes: magalu-bf-2024, vtex-live-uplift, beauty-retailer-conversion.
+ */
 const CASOS: readonly Caso[] = [
   {
-    id: "skincare",
-    tag: "SKINCARE PREMIUM · LATAM",
-    icon: Sparkles,
+    id: "magalu",
+    tag: "LIVE COMMERCE · BRASIL",
+    icon: TrendingUp,
     image: "/brand/casos/caso-skincare.png",
-    imageAlt: "Gota de sérum premium en luz editorial dorada",
+    imageAlt: "Live commerce a escala en LATAM",
     title: (
       <>
-        Del 22% al{" "}
+        Magalu Black Friday:{" "}
         <span
           style={{
-            background: "linear-gradient(90deg, #f9b334, #d4a017)",
+            background: "linear-gradient(90deg, #16a34a, #15803d)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}
         >
-          38% de hook rate
+          USD 240M+ en un día.
         </span>
-        .
       </>
     ),
-    desc: "Objetivo del marco C.O.N.V.E.R.T. aplicado a cuidado de la piel: sacar el creativo del promedio de industria (20-25%) y llevarlo al cuartil superior de Meta (30%+). Foco en los primeros 2 segundos.",
+    desc: "Magazine Luiza opera Magalu Live desde 2020. En Black Friday 2024 generó más de USD 240M en ventas en un solo día de transmisión en vivo. El live commerce ya no es experimento — es el canal principal de revenue.",
     metricas: [
-      { label: "GANCHO", value: "38%", desc: "Tasa de retención Meta (3s)" },
-      { label: "PERMANENCIA", value: "62%", desc: "Retención a 15s" },
-      { label: "CTR", value: "2.8%", desc: "Tasa de clics" },
+      { label: "VENTAS", value: "$240M+", desc: "USD en un solo día (BF 2024)" },
+      { label: "CANAL", value: "Live", desc: "Magalu Live desde 2020" },
+      { label: "MERCADO", value: "BR", desc: "Tercer país LATAM en live" },
     ],
+    sourceLabel: "ecommerceupdate.org",
+    sourceUrl: "https://www.ecommerceupdate.org/en/highlight/americanas-e-magalu-anunciam-parceria-estrategica-para-e-commerce/",
   },
   {
-    id: "moda",
-    tag: "E-COMMERCE · MODA",
+    id: "vtex",
+    tag: "E-COMMERCE · LATAM",
     icon: ShoppingBag,
     image: "/brand/casos/caso-moda.png",
-    imageAlt: "Tela editorial drapeada en luz cálida diagonal",
+    imageAlt: "Plataforma live commerce para retailers LATAM",
     title: (
       <>
-        CTR de{" "}
+        VTEX clients:{" "}
         <span
           style={{
-            background: "linear-gradient(90deg, #f9b334, #d4a017)",
+            background: "linear-gradient(90deg, #16a34a, #15803d)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}
         >
-          3.4% en TikTok
+          +40% de órdenes.
         </span>
-        .
       </>
     ),
-    desc: "Target en Spark Ads nativos: superar el 3% de CTR (vs 0.84% del promedio de TikTok Ads). Foco en ganchos visuales de producto en contexto real, no en foto de estudio.",
+    desc: "Clientes de VTEX en LATAM registraron +40% de órdenes completadas durante eventos live vs períodos equivalentes sin live. El canal amplifica directamente las ventas sin cambiar el producto.",
     metricas: [
-      { label: "HOOK", value: "42%", desc: "Hook rate TikTok (2s)" },
-      { label: "CTR", value: "3.4%", desc: "Spark Ads nativos" },
-      { label: "CPM", value: "-38%", desc: "vs creativo de marca" },
+      { label: "ÓRDENES", value: "+40%", desc: "durante eventos live" },
+      { label: "REGIÓN", value: "LATAM", desc: "múltiples países" },
+      { label: "PLATAFORMA", value: "VTEX", desc: "via yavendio" },
     ],
+    sourceLabel: "VTEX / yavendio",
+    sourceUrl: "https://www.yavendio.com/en/blog/live-commerce-latam-estadisticas",
   },
   {
-    id: "saas",
-    tag: "SAAS · FINTECH",
+    id: "beauty",
+    tag: "BELLEZA · BRASIL",
     icon: Layers,
     image: "/brand/casos/caso-saas.png",
-    imageAlt: "Haz de luz dorado cinematográfico sobre espacio oscuro",
+    imageAlt: "Retailer de belleza con live shopping de alta conversión",
     title: (
       <>
-        Hold rate del{" "}
+        Retailer de belleza:{" "}
         <span
           style={{
-            background: "linear-gradient(90deg, #f9b334, #d4a017)",
+            background: "linear-gradient(90deg, #16a34a, #15803d)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}
         >
-          64% en frío
+          30% de conversión.
         </span>
-        .
       </>
     ),
-    desc: "Target en audiencias frías B2B: llevar el hold rate al top-cuartil (60%+) explicando el producto en 15 segundos. Medimos costo por visita cualificada, no ROAS.",
+    desc: "Retailer brasileño de belleza logró 30% de conversión viewer→purchase en live — aproximadamente 10 veces su ecommerce estándar. La demostración de producto en vivo elimina la duda de compra.",
     metricas: [
-      { label: "HOLD", value: "64%", desc: "Retención a 15s" },
-      { label: "HOOK", value: "34%", desc: "Hook rate Meta (3s)" },
-      { label: "CPV", value: "-47%", desc: "Costo por visita cualif." },
+      { label: "CONV.", value: "30%", desc: "viewer → purchase" },
+      { label: "VS ECOM", value: "~10×", desc: "vs ecommerce estándar" },
+      { label: "VERTICAL", value: "Belleza", desc: "Brasil 2025" },
     ],
+    sourceLabel: "yavendio",
+    sourceUrl: "https://www.yavendio.com/en/blog/live-commerce-latam-estadisticas",
   },
 ] as const;
 
@@ -119,7 +128,7 @@ export function Casos() {
     <section
       id="casos"
       aria-labelledby="casos-title"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto" ref={ref}>
         {/* Header */}
@@ -129,24 +138,25 @@ export function Casos() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-5"
         >
-          <p className="sr-only">Casos de éxito</p>
+          <p className="sr-only">Casos de live commerce en LATAM</p>
           <h2
             id="casos-title"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight"
           >
-            Que los resultados hablen por nosotros.
+            El live commerce ya funciona en LATAM.
           </h2>
         </motion.div>
 
-        {/* Subtítulo metodológico */}
+        {/* Subtítulo */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center text-brand-gray text-sm sm:text-base font-sans max-w-2xl mx-auto mb-12 sm:mb-16 leading-relaxed"
+          className="text-center text-neutral-500 text-sm sm:text-base font-sans max-w-2xl mx-auto mb-12 sm:mb-16 leading-relaxed"
         >
-          Medimos lo que el video <span className="text-white font-semibold">sí controla</span>:
-          tasa de retención, tasa de permanencia y tasa de clics. No ROAS — eso depende de tu oferta, precios y embudo de venta.
+          Datos citables de mercado 2024-2025. Hasta tener nuestros propios pilotos
+          publicados, aquí están los referentes del sector que validan{" "}
+          <span className="text-neutral-900 font-semibold">por qué el live convierte más</span>.
         </motion.p>
 
         {/* Caso destacado */}
@@ -154,19 +164,19 @@ export function Casos() {
           initial={{ opacity: 0, y: 36 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-3xl overflow-hidden border border-brand-gold/25 bg-gradient-to-br from-brand-yellow/4 to-transparent mb-5"
+          className="relative rounded-3xl overflow-hidden border border-brand-green/25 bg-gradient-to-br from-brand-green/4 to-transparent mb-5"
         >
           <div
             aria-hidden="true"
             className="absolute top-0 right-0 w-80 h-80 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at 100% 0%, rgba(249,179,52,0.12), transparent 65%)",
+                "radial-gradient(ellipse at 100% 0%, rgba(22,163,74,0.12), transparent 65%)",
             }}
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            <div className="relative min-h-[240px] sm:min-h-[280px] lg:min-h-full overflow-hidden bg-brand-black">
+            <div className="relative min-h-[240px] sm:min-h-[280px] lg:min-h-full overflow-hidden bg-neutral-100">
               <Image
                 src={destacado.image}
                 alt={destacado.imageAlt}
@@ -177,48 +187,62 @@ export function Casos() {
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-brand-black/60"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/60"
               />
               <div
                 aria-hidden="true"
                 className="absolute top-3 left-3 w-10 h-10 rounded-xl flex items-center justify-center backdrop-blur-md"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(249,179,52,0.25), rgba(212,160,23,0.1))",
-                  border: "1px solid rgba(212,160,23,0.35)",
+                    "linear-gradient(135deg, rgba(22,163,74,0.25), rgba(22,163,74,0.1))",
+                  border: "1px solid rgba(22,163,74,0.35)",
                 }}
               >
                 <IconoDestacado
-                  className="h-5 w-5 text-brand-yellow"
+                  className="h-5 w-5 text-brand-green"
                   aria-hidden="true"
                 />
               </div>
             </div>
 
             <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
-              <span className="inline-flex self-start items-center mb-5 text-xs font-sans font-bold tracking-widest uppercase bg-brand-yellow/12 text-brand-yellow border border-brand-yellow/25 px-3 py-1.5 rounded-full">
+              <span className="inline-flex self-start items-center mb-5 text-xs font-sans font-bold tracking-widest uppercase bg-brand-green/10 text-brand-green border border-brand-green/25 px-3 py-1.5 rounded-full">
                 {destacado.tag}
               </span>
 
-              <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl text-white leading-tight mb-3">
+              <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl text-neutral-900 leading-tight mb-3">
                 {destacado.title}
               </h3>
 
-              <p className="text-brand-gray text-sm sm:text-base leading-relaxed mb-7">
+              <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-7">
                 {destacado.desc}
               </p>
+
+              {destacado.sourceLabel && destacado.sourceUrl && (
+                <p className="text-[11px] text-neutral-400 mb-4">
+                  Fuente:{" "}
+                  <a
+                    href={destacado.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-brand-green transition-colors"
+                  >
+                    {destacado.sourceLabel}
+                  </a>
+                </p>
+              )}
 
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 {destacado.metricas.map((m) => (
                   <div
                     key={m.label}
-                    className="rounded-xl bg-white/4 border border-brand-gold/15 p-3 sm:p-4 text-center"
+                    className="rounded-xl bg-neutral-50 border border-brand-green/15 p-3 sm:p-4 text-center"
                   >
                     <p
                       className="font-display text-lg sm:text-2xl leading-tight mb-0.5"
                       style={{
                         background:
-                          "linear-gradient(135deg, #f9b334, #d4a017)",
+                          "linear-gradient(135deg, #16a34a, #15803d)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                         backgroundClip: "text",
@@ -226,7 +250,7 @@ export function Casos() {
                     >
                       {m.value}
                     </p>
-                    <p className="text-[10px] sm:text-xs text-brand-gray font-sans leading-tight">
+                    <p className="text-[10px] sm:text-xs text-neutral-500 font-sans leading-tight">
                       {m.desc}
                     </p>
                   </div>
@@ -250,7 +274,7 @@ export function Casos() {
                   delay: 0.2 + i * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="relative rounded-2xl border border-brand-gold/20 bg-brand-black overflow-hidden flex flex-col min-h-[380px]"
+                className="relative rounded-2xl border border-brand-green/20 bg-neutral-900 overflow-hidden flex flex-col min-h-[380px]"
               >
                 <Image
                   src={caso.image}
@@ -268,7 +292,7 @@ export function Casos() {
                   className="absolute top-0 right-0 w-40 h-40 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(ellipse at 100% 0%, rgba(249,179,52,0.12), transparent 70%)",
+                      "radial-gradient(ellipse at 100% 0%, rgba(22,163,74,0.12), transparent 70%)",
                   }}
                 />
 
@@ -278,16 +302,16 @@ export function Casos() {
                       className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                       style={{
                         background:
-                          "linear-gradient(135deg, rgba(249,179,52,0.18), rgba(212,160,23,0.08))",
-                        border: "1px solid rgba(212,160,23,0.25)",
+                          "linear-gradient(135deg, rgba(22,163,74,0.18), rgba(22,163,74,0.08))",
+                        border: "1px solid rgba(22,163,74,0.25)",
                       }}
                     >
                       <Icono
-                        className="h-5 w-5 text-brand-yellow"
+                        className="h-5 w-5 text-brand-green"
                         aria-hidden="true"
                       />
                     </div>
-                    <span className="text-[10px] sm:text-xs font-sans font-bold tracking-widest uppercase text-brand-gold">
+                    <span className="text-[10px] sm:text-xs font-sans font-bold tracking-widest uppercase text-brand-green">
                       {caso.tag}
                     </span>
                   </div>
@@ -296,21 +320,35 @@ export function Casos() {
                     {caso.title}
                   </h3>
 
-                  <p className="text-brand-gray text-xs sm:text-sm leading-relaxed mb-5">
+                  <p className="text-brand-gray text-xs sm:text-sm leading-relaxed mb-3">
                     {caso.desc}
                   </p>
+
+                  {caso.sourceLabel && caso.sourceUrl && (
+                    <p className="text-[10px] text-brand-gray/50 mb-4">
+                      Fuente:{" "}
+                      <a
+                        href={caso.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-2 hover:text-brand-green transition-colors"
+                      >
+                        {caso.sourceLabel}
+                      </a>
+                    </p>
+                  )}
 
                   <div className="grid grid-cols-3 gap-2 mt-auto">
                     {caso.metricas.map((m) => (
                       <div
                         key={m.label}
-                        className="rounded-lg bg-white/4 border border-brand-gold/15 p-2.5 text-center"
+                        className="rounded-lg bg-white/[0.08] border border-brand-green/20 p-2.5 text-center"
                       >
                         <p
                           className="font-display text-base sm:text-lg leading-tight mb-0.5"
                           style={{
                             background:
-                              "linear-gradient(135deg, #f9b334, #d4a017)",
+                              "linear-gradient(135deg, #22c55e, #16a34a)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
@@ -335,11 +373,10 @@ export function Casos() {
           initial={{ opacity: 0 }}
           animate={isIntersecting ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center text-[11px] sm:text-xs text-brand-gray/70 font-sans max-w-3xl mx-auto mt-10 leading-relaxed"
+          className="text-center text-[11px] sm:text-xs text-neutral-400 font-sans max-w-3xl mx-auto mt-10 leading-relaxed"
         >
-          Targets basados en benchmarks públicos de industria 2025-2026 (Motion, Triple Whale,
-          Dash Social, Billo). No reportamos ROAS ni ventas como KPI propio: esas métricas
-          dependen de variables ajenas al video — oferta, pricing, landing y checkout.
+          Datos de mercado 2024-2025 con fuentes públicas verificables (Grand View Research, McKinsey, VTEX, yavendio, ecommerceupdate.org).
+          Los resultados propios de clientes Live Cake se publicarán cuando los pilotos estén completados.
         </motion.p>
       </div>
     </section>

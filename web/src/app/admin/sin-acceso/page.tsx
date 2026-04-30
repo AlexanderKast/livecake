@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { createSupabaseServer } from '@/lib/supabase-server';
 
 export const metadata: Metadata = {
-  title: 'Sin acceso — UGC Colombia',
+  title: 'Sin acceso — Live Cake',
   robots: { index: false, follow: false },
 };
 
@@ -27,12 +27,12 @@ export default async function SinAccesoPage() {
         </div>
 
         <div className="text-brand-yellow text-xs font-semibold tracking-[0.25em] uppercase mb-3">
-          · UGC Colombia · Admin
+          · Live Cake · Admin
         </div>
 
         <h1 className="font-display text-4xl uppercase text-white mb-4 leading-tight">
           Tu cuenta no tiene{' '}
-          <span className="bg-gradient-to-r from-[#f9b334] via-[#d4a017] to-[#f9b334] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#00d64f] via-[#00d64f] to-[#00d64f] bg-clip-text text-transparent">
             acceso aún.
           </span>
         </h1>

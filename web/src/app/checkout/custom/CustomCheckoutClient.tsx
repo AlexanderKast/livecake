@@ -210,19 +210,19 @@ export function CustomCheckoutClient({
                     width: 24px;
                     height: 24px;
                     border-radius: 50%;
-                    background: linear-gradient(135deg, #f9b334, #d4a017);
+                    background: linear-gradient(135deg, #16a34a, #15803d);
                     cursor: pointer;
                     border: 3px solid #000;
-                    box-shadow: 0 0 16px rgba(249,179,52,0.5);
+                    box-shadow: 0 0 16px rgba(22,163,74,0.5);
                   }
                   .custom-checkout-slider::-moz-range-thumb {
                     width: 24px;
                     height: 24px;
                     border-radius: 50%;
-                    background: linear-gradient(135deg, #f9b334, #d4a017);
+                    background: linear-gradient(135deg, #16a34a, #15803d);
                     cursor: pointer;
                     border: 3px solid #000;
-                    box-shadow: 0 0 16px rgba(249,179,52,0.5);
+                    box-shadow: 0 0 16px rgba(22,163,74,0.5);
                   }
                 `}</style>
                 <label
@@ -239,7 +239,7 @@ export function CustomCheckoutClient({
                   step={1}
                   value={videos}
                   onChange={(e) => setVideos(parseInt(e.target.value, 10))}
-                  className="custom-checkout-slider w-full h-2 rounded-full appearance-none cursor-pointer accent-brand-yellow"
+                  className="custom-checkout-slider w-full h-2 rounded-full appearance-none cursor-pointer accent-brand-green"
                 />
                 <div className="flex justify-between mt-2 text-[10px] text-brand-gray/60">
                   <span>5</span>
@@ -252,7 +252,7 @@ export function CustomCheckoutClient({
 
               {/* Selector de duración */}
               <div className="mt-6">
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70 mb-2">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-2">
                   Compromiso
                 </p>
                 <div className="grid grid-cols-2 gap-2">
@@ -266,13 +266,13 @@ export function CustomCheckoutClient({
                         onClick={() => setGlobalDuration(d)}
                         className={`relative px-3 py-3.5 sm:py-2.5 rounded-lg border text-left transition-colors ${
                           active
-                            ? "border-brand-gold bg-brand-yellow/10"
-                            : "border-brand-graphite/60 hover:border-brand-gold/40"
+                            ? "border-brand-green bg-brand-green/10"
+                            : "border-brand-graphite/60 hover:border-brand-green/40"
                         }`}
                       >
                         <p
                           className={`text-xs font-semibold ${
-                            active ? "text-brand-yellow" : "text-white"
+                            active ? "text-brand-green" : "text-white"
                           }`}
                         >
                           {DURATION_LABEL[d]}
@@ -291,8 +291,8 @@ export function CustomCheckoutClient({
                 </div>
               </div>
 
-              <div className="mt-6 p-5 rounded-2xl border border-brand-gold/30 bg-gradient-to-b from-brand-yellow/5 to-transparent">
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70 mb-2">
+              <div className="mt-6 p-5 rounded-2xl border border-brand-green/30 bg-gradient-to-b from-brand-green/5 to-transparent">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-2">
                   Plan {label} · Total {cycleLabel}
                 </p>
                 <p className="font-display text-5xl sm:text-6xl text-white leading-none">
@@ -318,7 +318,7 @@ export function CustomCheckoutClient({
                 )}
 
                 <div className="mt-4 flex items-center gap-2 rounded-lg bg-black/30 border border-brand-graphite/60 px-3 py-2">
-                  <Globe className="w-3.5 h-3.5 text-brand-gold/70 flex-shrink-0" />
+                  <Globe className="w-3.5 h-3.5 text-brand-green/70 flex-shrink-0" />
                   <span className="text-[11px] text-brand-gray">
                     Desde {countryLabel(country)} se paga en{" "}
                     <strong className="text-white">{currency}</strong>
@@ -327,7 +327,7 @@ export function CustomCheckoutClient({
               </div>
 
               <div className="mt-6 flex items-center gap-2 text-xs text-brand-gray/70">
-                <ShieldCheck className="w-4 h-4 text-brand-gold/60" />
+                <ShieldCheck className="w-4 h-4 text-brand-green/60" />
                 <span>Procesado por Stripe · Cancela cuando quieras</span>
               </div>
             </motion.aside>
@@ -355,7 +355,7 @@ export function CustomCheckoutClient({
                     type="checkbox"
                     checked={accepted}
                     onChange={(e) => setAccepted(e.target.checked)}
-                    className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-brand-graphite bg-black/40 accent-brand-yellow flex-shrink-0"
+                    className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-brand-graphite bg-black/40 accent-brand-green flex-shrink-0"
                   />
                   <span>
                     Acepto que se cobre{" "}
@@ -365,7 +365,7 @@ export function CustomCheckoutClient({
                     </strong>{" "}
                     de forma automática hasta que cancele. Puedo pausar o
                     cancelar escribiendo a{" "}
-                    <span className="text-brand-gold">hola@ugccolombia.co</span>.
+                    <span className="text-brand-green">hola@ugccolombia.co</span>.
                   </span>
                 </label>
 
@@ -401,8 +401,8 @@ export function CustomCheckoutClient({
 
                 <p className="text-[11px] text-brand-gray/60 text-center">
                   Al continuar aceptas los{" "}
-                  <Link href="/terminos" className="text-brand-gold hover:underline">términos</Link> y la{" "}
-                  <Link href="/privacidad" className="text-brand-gold hover:underline">privacidad</Link>.
+                  <Link href="/terminos" className="text-brand-green hover:underline">términos</Link> y la{" "}
+                  <Link href="/privacidad" className="text-brand-green hover:underline">privacidad</Link>.
                 </p>
               </form>
             </motion.section>
@@ -430,7 +430,7 @@ function Field({
     <div>
       <label className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-brand-gray mb-2">
         {label}
-        {required && <span className="text-brand-gold ml-1">*</span>}
+        {required && <span className="text-brand-green ml-1">*</span>}
       </label>
       <input
         type={type}
@@ -440,7 +440,7 @@ function Field({
         autoComplete={autoComplete}
         inputMode={inputMode}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl border border-brand-graphite/60 bg-black/40 text-white text-base sm:text-sm placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold/40"
+        className="w-full px-4 py-3 rounded-xl border border-brand-graphite/60 bg-black/40 text-white text-base sm:text-sm placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green/40"
       />
     </div>
   );

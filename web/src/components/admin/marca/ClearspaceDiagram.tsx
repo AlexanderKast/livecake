@@ -20,7 +20,7 @@ export function ClearspaceDiagram() {
             width="360"
             height="160"
             fill="none"
-            stroke="#D4A017"
+            stroke="#00D64F"
             strokeWidth="1"
             strokeDasharray="4 4"
             opacity="0.6"
@@ -32,7 +32,7 @@ export function ClearspaceDiagram() {
             width="240"
             height="80"
             fill="none"
-            stroke="#F9B334"
+            stroke="#00D64F"
             strokeWidth="1.5"
           />
           {/* Logo placeholder */}
@@ -40,21 +40,21 @@ export function ClearspaceDiagram() {
             x="200"
             y="108"
             textAnchor="middle"
-            fill="#F9B334"
-            fontFamily="Anton, Impact, sans-serif"
+            fill="#00D64F"
+            fontFamily="Manrope, -apple-system, sans-serif"
             fontSize="24"
           >
             [LOGO]
           </text>
           {/* X measurements */}
-          <g fill="#BDBCBC" fontSize="11" fontFamily="monospace">
+          <g fill="#A3A3A3" fontSize="11" fontFamily="monospace">
             <text x="200" y="46">X</text>
             <text x="52" y="104">X</text>
             <text x="345" y="104">X</text>
             <text x="200" y="166">X</text>
           </g>
           {/* Arrows */}
-          <g stroke="#BDBCBC" strokeWidth="1">
+          <g stroke="#A3A3A3" strokeWidth="1">
             <line x1="200" y1="30" x2="200" y2="55" />
             <line x1="200" y1="145" x2="200" y2="170" />
             <line x1="30" y1="100" x2="75" y2="100" />

@@ -19,7 +19,7 @@ export function VideoSamplesSkeleton() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(212,160,23,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(22,163,74,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -33,7 +33,7 @@ export function VideoSamplesSkeleton() {
             <br />
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

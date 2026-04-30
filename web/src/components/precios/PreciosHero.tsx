@@ -11,13 +11,6 @@ import { trackOfferApply } from "@/lib/tracking/events";
 import { useOfferCountdown } from "@/hooks/use-offer-countdown";
 import { OPEN_SLOTS, OFFER_COPY } from "@/lib/offer-config";
 
-interface KreoonStatsDTO {
-  creators_count: number;
-  brands_count: number;
-  campaigns_completed: number;
-  videos_approved: number;
-}
-
 const STAGGER = 0.12;
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -36,11 +29,11 @@ const fadeUpReduced = {
   visible: () => ({ opacity: 1, transition: { duration: 0.3 } }),
 };
 
-// Fallback stats si KREOON no responde
+// Stats de live shopping citables
 const FALLBACK_STATS = [
-  { value: "+30", label: "Creadores activos" },
-  { value: "38%", label: "Hook rate promedio" },
-  { value: "2.8%", label: "CTR Meta Ads" },
+  { value: "30%", label: "Conversión live vs 3% ecom" },
+  { value: "+10-30%", label: "Ticket promedio más alto" },
+  { value: "34%", label: "Compras post-live (cola larga)" },
 ];
 
 export function PreciosHero() {
@@ -57,38 +50,11 @@ export function PreciosHero() {
     openAudit("precios_hero_apply");
   };
 
-  const [stats, setStats] = useState(FALLBACK_STATS);
-
-  useEffect(() => {
-    fetch("/api/showcase?action=stats", { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then(
-        (json: { success: boolean; data: KreoonStatsDTO | null } | null) => {
-          if (!json?.success || !json.data) return;
-          const { creators_count, videos_approved, campaigns_completed } =
-            json.data;
-          setStats([
-            creators_count > 0
-              ? { value: `+${creators_count}`, label: "Creadores en la red" }
-              : FALLBACK_STATS[0],
-            videos_approved > 0
-              ? { value: `${videos_approved}`, label: "Videos producidos" }
-              : { value: "38%", label: "Hook rate promedio" },
-            campaigns_completed > 0
-              ? {
-                  value: `${campaigns_completed}`,
-                  label: "Campañas entregadas",
-                }
-              : { value: "2.8%", label: "CTR Meta Ads" },
-          ]);
-        }
-      )
-      .catch(() => {});
-  }, []);
+  const [stats] = useState(FALLBACK_STATS);
 
   return (
     <section
-      aria-label="Precios — UGC Colombia"
+      aria-label="Precios — Live Cake"
       className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-brand-black pt-24"
     >
       {/* Imagen editorial de fondo */}
@@ -126,7 +92,7 @@ export function PreciosHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(212,160,23,0.10) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.10) 0%, transparent 70%)",
         }}
       />
 
@@ -142,7 +108,7 @@ export function PreciosHero() {
           <ApplicationCard source="precios_hero_apply" />
         </motion.div>
 
-        {/* Título — mismos clamp que ServiciosHero */}
+        {/* Título */}
         <motion.h1
           custom={1}
           variants={variants}
@@ -151,19 +117,19 @@ export function PreciosHero() {
           className="font-display leading-none mb-6"
         >
           <span className="block text-white text-[clamp(2.4rem,7vw,6rem)] leading-[0.92]">
-            INVIERTE UNA VEZ.
+            VENDE EN VIVO.
           </span>
           <span
             className="block text-[clamp(1.6rem,5vw,4.5rem)] leading-[0.95] mt-2"
             style={{
               background:
-                "linear-gradient(90deg, #f9b334 0%, #d4a017 50%, #f9b334 100%)",
+                "linear-gradient(90deg, #16a34a 0%, #15803d 50%, #16a34a 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}
           >
-            VENDE DURANTE MESES.
+            COBRA CADA MES.
           </span>
         </motion.h1>
 
@@ -175,13 +141,12 @@ export function PreciosHero() {
           animate="visible"
           className="max-w-2xl mx-auto text-brand-gray text-base sm:text-lg leading-relaxed mb-10"
         >
-          Cuatro paquetes diseñados por etapa de negocio. Precios claros, sin
-          letra pequeña y con{" "}
+          Cuatro planes de live shopping con la suite completa de Pancake
+          incluida. Precios claros, sin comisión sobre ventas y con{" "}
           <span className="text-white font-semibold">
-            licencia de publicidad por 12 meses incluida
+            setup técnico desde el día uno
           </span>
-          . Escoge el que calce con tu presupuesto hoy — el resto lo ajustamos
-          contigo.
+          . Escoge la frecuencia de lives que calce con tu negocio hoy.
         </motion.p>
 
         {/* CTAs */}
@@ -195,9 +160,9 @@ export function PreciosHero() {
           <Button
             asChild
             size="lg"
-            className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(249,179,52,0.35)] hover:shadow-[0_0_40px_rgba(249,179,52,0.55)]"
+            className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(22,163,74,0.35)] hover:shadow-[0_0_40px_rgba(22,163,74,0.55)]"
           >
-            <a href="#planes">VER LOS 4 PAQUETES →</a>
+            <a href="#planes">VER LOS 4 PLANES →</a>
           </Button>
           <Button
             size="lg"
@@ -205,7 +170,7 @@ export function PreciosHero() {
             className="w-full sm:w-auto text-sm sm:text-base min-h-[52px]"
             onClick={handleApply}
           >
-            APLICA AHORA →
+            AGENDAR LLAMADA →
           </Button>
         </motion.div>
 
@@ -219,7 +184,7 @@ export function PreciosHero() {
           {OFFER_COPY.application_note}
         </motion.p>
 
-        {/* Stat ribbon */}
+        {/* Stat ribbon — datos de mercado live shopping */}
         <motion.div
           custom={5}
           variants={variants}
@@ -233,7 +198,7 @@ export function PreciosHero() {
                 className="font-display text-2xl sm:text-3xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, #f9b334 0%, #d4a017 100%)",
+                    "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",

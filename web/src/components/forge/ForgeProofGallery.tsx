@@ -26,7 +26,7 @@ export function ForgeProofGallery() {
     <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex flex-col gap-4 items-center text-center mb-12">
-          <span className="text-[10px] uppercase tracking-widest font-bold text-brand-yellow">
+          <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
             Así se ven los outputs
           </span>
           <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight max-w-3xl">
@@ -43,7 +43,7 @@ export function ForgeProofGallery() {
               key={s.src}
               className="flex flex-col gap-3 rounded-2xl overflow-hidden border border-white/10 bg-black/40"
             >
-              <div className="relative aspect-[4/5] bg-gradient-to-br from-brand-yellow/5 via-transparent to-transparent">
+              <div className="relative aspect-[4/5] bg-gradient-to-br from-brand-green/5 via-transparent to-transparent">
                 <img src={s.src} alt={s.alt} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <figcaption className="px-4 pb-4 text-xs text-brand-gray-light uppercase tracking-wider font-semibold">
@@ -59,7 +59,7 @@ export function ForgeProofGallery() {
             href="https://github.com/Kreoon/ugc-colombia/tree/main/web/public/brand/social/20260417-3-errores-matan-ugc-hook"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-yellow hover:underline"
+            className="text-brand-green hover:underline"
           >
             el repo de UGC Colombia
           </a>

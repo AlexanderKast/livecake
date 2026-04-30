@@ -18,13 +18,13 @@ export function LegalLayout({
         className="pointer-events-none absolute inset-0 -z-0"
         style={{
           background:
-            "radial-gradient(ellipse at top, rgba(212,160,23,0.12) 0%, rgba(0,0,0,0) 55%)",
+            "radial-gradient(ellipse at top, rgba(22,163,74,0.12) 0%, rgba(0,0,0,0) 55%)",
         }}
       />
 
       <div className="relative z-10 mx-auto max-w-3xl">
         <div className="mb-12 border-b border-white/10 pb-8">
-          <span className="inline-block rounded-full border border-brand-yellow/40 bg-brand-yellow/10 px-3 py-1 text-[11px] font-sans font-bold uppercase tracking-widest text-brand-yellow">
+          <span className="inline-block rounded-full border border-brand-green/40 bg-brand-green/10 px-3 py-1 text-[11px] font-sans font-bold uppercase tracking-widest text-brand-green">
             Legal
           </span>
           <h1 className="mt-4 font-display text-[clamp(2.25rem,5vw,4rem)] uppercase leading-[0.95] tracking-tight text-white">
@@ -115,7 +115,7 @@ export function LegalLayout({
           text-align: left;
         }
         .legal-content th {
-          background: rgba(249,179,52,0.08);
+          background: rgba(22,163,74,0.08);
           color: white;
           font-weight: 600;
         }

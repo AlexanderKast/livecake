@@ -3,7 +3,7 @@ import type { LogoVariant } from "@/app/admin/marca/_data/logo";
 
 const bgClasses: Record<LogoVariant["bg"], string> = {
   black: "bg-brand-black",
-  cream: "bg-[#F5F5F0]",
+  cream: "bg-[#F5F5F5]",
   yellow: "bg-brand-yellow",
   graphite: "bg-brand-graphite",
   white: "bg-white",

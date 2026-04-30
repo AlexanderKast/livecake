@@ -233,9 +233,9 @@ export function GraciasPagoClient() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="mt-8 rounded-2xl border border-brand-gold/25 bg-white/[0.03] p-5 sm:p-6"
+              className="mt-8 rounded-2xl border border-brand-green/25 bg-white/[0.03] p-5 sm:p-6"
             >
-              <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70 mb-3">
+              <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-3">
                 Resumen de tu compra
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 text-sm">
@@ -269,10 +269,10 @@ export function GraciasPagoClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-10 rounded-2xl border border-brand-gold/30 bg-gradient-to-b from-brand-yellow/8 to-transparent p-6 sm:p-7 text-center"
+            className="mt-10 rounded-2xl border border-brand-green/30 bg-gradient-to-b from-brand-green/8 to-transparent p-6 sm:p-7 text-center"
           >
-            <div className="w-14 h-14 rounded-full bg-brand-yellow/15 border border-brand-yellow/40 flex items-center justify-center mx-auto mb-4">
-              <Calendar className="w-6 h-6 text-brand-yellow" />
+            <div className="w-14 h-14 rounded-full bg-brand-green/15 border border-brand-green/40 flex items-center justify-center mx-auto mb-4">
+              <Calendar className="w-6 h-6 text-brand-green" />
             </div>
             <h2 className="font-display text-2xl sm:text-3xl text-white uppercase tracking-tight mb-2">
               Agenda tu reunión de inicio
@@ -326,7 +326,7 @@ export function GraciasPagoClient() {
                       <div className="flex items-center gap-2 mb-1">
                         <span
                           className={`text-[10px] font-bold tracking-widest uppercase ${
-                            step.done ? "text-emerald-400" : "text-brand-gold/60"
+                            step.done ? "text-emerald-400" : "text-brand-green/60"
                           }`}
                         >
                           {step.day}
@@ -385,10 +385,10 @@ export function GraciasPagoClient() {
               href={COMMUNITY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-5 rounded-2xl border border-brand-gold/30 bg-brand-yellow/5 hover:bg-brand-yellow/10 transition-colors"
+              className="group p-5 rounded-2xl border border-brand-green/30 bg-brand-green/5 hover:bg-brand-green/10 transition-colors"
             >
               <div className="flex items-center gap-3 mb-2">
-                <Rocket className="w-5 h-5 text-brand-yellow" />
+                <Rocket className="w-5 h-5 text-brand-green" />
                 <p className="text-white font-semibold text-sm">
                   Comunidad de marcas
                 </p>
@@ -397,7 +397,7 @@ export function GraciasPagoClient() {
                 Más de 200 marcas comparten estrategias, casos y resultados.
                 Únete y aprende de quienes ya están dentro.
               </p>
-              <span className="text-[11px] text-brand-yellow font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span className="text-[11px] text-brand-green font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                 Unirme a la comunidad <ArrowRight className="w-3 h-3" />
               </span>
             </a>
@@ -410,7 +410,7 @@ export function GraciasPagoClient() {
               href="https://www.instagram.com/agenciaugccolombia"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-brand-yellow transition-colors"
+              className="hover:text-brand-green transition-colors"
               aria-label="Instagram de UGC Colombia"
             >
               <Instagram className="w-5 h-5" />

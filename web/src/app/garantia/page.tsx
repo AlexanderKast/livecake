@@ -128,7 +128,7 @@ export default function GarantiaPage() {
             <div className="rounded-2xl border border-brand-graphite/60 bg-white/[0.025] overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-brand-graphite/60 text-left text-[11px] uppercase tracking-widest text-brand-gold/70">
+                  <tr className="border-b border-brand-graphite/60 text-left text-[11px] uppercase tracking-widest text-brand-green/70">
                     <th className="px-4 py-3 font-semibold">Plan</th>
                     <th className="px-4 py-3 font-semibold">Videos del paquete</th>
                     <th className="px-4 py-3 font-semibold text-emerald-400">
@@ -197,13 +197,13 @@ export default function GarantiaPage() {
           </section>
 
           {/* Ejemplo */}
-          <section className="mb-12 rounded-2xl border border-brand-gold/30 bg-brand-yellow/5 p-6 sm:p-7">
-            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70 mb-3">
+          <section className="mb-12 rounded-2xl border border-brand-green/30 bg-brand-green/5 p-6 sm:p-7">
+            <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-3">
               Ejemplo en plan Crecimiento
             </p>
             <p className="text-white text-sm leading-relaxed mb-3">
               Contratas el plan{" "}
-              <strong className="text-brand-yellow">Crecimiento</strong> (10
+              <strong className="text-brand-green">Crecimiento</strong> (10
               videos · 3 variantes cada uno).
             </p>
             <ul className="text-sm text-brand-gray space-y-2 mb-3">

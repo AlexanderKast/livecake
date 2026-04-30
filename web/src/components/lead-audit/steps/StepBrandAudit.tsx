@@ -274,7 +274,7 @@ export function StepBrandAudit({ brandInfo, onSubmit, onBack }: Props) {
         </div>
         <div className="h-0.5 w-full bg-white/8 rounded-full overflow-hidden" role="progressbar" aria-valuenow={questionNumber} aria-valuemax={MAX_QUESTIONS}>
           <motion.div
-            className="h-full bg-brand-yellow/60 rounded-full"
+            className="h-full bg-brand-green/60 rounded-full"
             animate={{ width: `${(questionNumber / MAX_QUESTIONS) * 100}%` }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           />
@@ -306,7 +306,7 @@ export function StepBrandAudit({ brandInfo, onSubmit, onBack }: Props) {
             exit={{ opacity: 0 }}
             className="flex flex-col items-center justify-center min-h-[200px] py-8"
           >
-            <Loader2 className="w-6 h-6 text-brand-yellow animate-spin mb-3" />
+            <Loader2 className="w-6 h-6 text-brand-green animate-spin mb-3" />
             <p className="text-sm text-brand-gray/60">Analizando tu respuesta...</p>
           </motion.div>
         ) : displayQuestion ? (

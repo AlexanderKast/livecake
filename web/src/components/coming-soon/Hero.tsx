@@ -112,7 +112,7 @@ export function Hero() {
             {[0, 90, 180, 270].map((angle) => (
               <div
                 key={angle}
-                className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-brand-gold shadow-[0_0_12px_rgba(212,160,23,0.8)]"
+                className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full bg-brand-green shadow-[0_0_12px_rgba(22,163,74,0.8)]"
                 style={{
                   transform: `rotate(${angle}deg) translateX(min(260px,38vw)) translateY(-4px)`,
                 }}
@@ -164,7 +164,7 @@ export function Hero() {
               <motion.span
                 key={word}
                 variants={wordVariants}
-                className="font-display text-[clamp(3rem,10vw,7.5rem)] leading-none tracking-tight text-brand-gold uppercase block"
+                className="font-display text-[clamp(3rem,10vw,7.5rem)] leading-none tracking-tight text-brand-green uppercase block"
               >
                 {word}
               </motion.span>

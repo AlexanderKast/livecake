@@ -97,7 +97,7 @@ function EffectDemo({ id, replayKey }: { id: string; replayKey: number }) {
             className="bg-clip-text bg-white"
             style={{
               backgroundImage:
-                "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.15) 44%, rgba(249,179,52,0.55) 48%, rgba(255,255,255,0.9) 50%, rgba(249,179,52,0.55) 52%, rgba(255,255,255,0.15) 56%, transparent 70%)",
+                "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.15) 44%, rgba(0,214,79,0.55) 48%, rgba(255,255,255,0.9) 50%, rgba(0,214,79,0.55) 52%, rgba(255,255,255,0.15) 56%, transparent 70%)",
               backgroundSize: "200% 100%",
               animation: "shine-sweep 5s ease-in-out infinite",
             }}

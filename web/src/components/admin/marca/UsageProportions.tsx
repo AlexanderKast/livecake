@@ -20,7 +20,7 @@ export function UsageProportions({ proportions, note }: Props) {
       <div className="space-y-3">
         {proportions.map((p) => {
           const pct = (p.value / max) * 100;
-          const darkText = ["#F9B334", "#BDBCBC"].includes(p.color.toUpperCase());
+          const darkText = ["#00D64F", "#A3A3A3"].includes(p.color.toUpperCase());
           return (
             <div key={p.name} className="flex items-center gap-4">
               <div className="w-24 font-display uppercase text-white text-sm">

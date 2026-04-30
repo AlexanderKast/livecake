@@ -19,7 +19,7 @@ export function ServiciosOverview() {
         className="pointer-events-none absolute inset-0 opacity-50"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(249,179,52,0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(22,163,74,0.06) 0%, transparent 60%)",
         }}
       />
 
@@ -40,7 +40,7 @@ export function ServiciosOverview() {
             <br />
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -72,8 +72,8 @@ export function ServiciosOverview() {
                   className={cn(
                     "group relative block h-full p-5 sm:p-6 lg:p-7 rounded-2xl",
                     "border border-brand-graphite/60 bg-white/[0.025]",
-                    "hover:border-brand-gold/40 hover:bg-white/[0.04]",
-                    "hover:shadow-[0_12px_40px_-12px_rgba(212,160,23,0.25)]",
+                    "hover:border-brand-green/40 hover:bg-white/[0.04]",
+                    "hover:shadow-[0_12px_40px_-12px_rgba(22,163,74,0.25)]",
                     "transition-all duration-300 hover:-translate-y-1"
                   )}
                 >
@@ -84,15 +84,15 @@ export function ServiciosOverview() {
                     style={{
                       padding: "1px",
                       background:
-                        "linear-gradient(135deg, rgba(249,179,52,0.6), rgba(212,160,23,0.2), transparent 60%)",
+                        "linear-gradient(135deg, rgba(22,163,74,0.6), rgba(22,163,74,0.2), transparent 60%)",
                       WebkitMask:
                         "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                       WebkitMaskComposite: "xor",
                       maskComposite: "exclude",
                     }}
                   />
-                  <div className="relative w-11 h-11 rounded-xl bg-brand-yellow/10 border border-brand-yellow/25 flex items-center justify-center mb-4 group-hover:bg-brand-yellow/20 group-hover:border-brand-yellow/50 transition-colors">
-                    <Icon className="h-5 w-5 text-brand-yellow" aria-hidden="true" />
+                  <div className="relative w-11 h-11 rounded-xl bg-brand-green/10 border border-brand-green/25 flex items-center justify-center mb-4 group-hover:bg-brand-green/20 group-hover:border-brand-green/50 transition-colors">
+                    <Icon className="h-5 w-5 text-brand-green" aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-lg text-white tracking-wide uppercase leading-tight mb-2">
                     {s.title}
@@ -100,7 +100,7 @@ export function ServiciosOverview() {
                   <p className="text-sm text-brand-gray font-sans leading-snug mb-4">
                     {s.shortDescription}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs font-sans font-semibold text-brand-yellow group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-xs font-sans font-semibold text-brand-green group-hover:gap-2 transition-all">
                     Ver detalle <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>

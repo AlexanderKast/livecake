@@ -48,7 +48,7 @@ export function CookieConsent() {
             nuestra{" "}
             <Link
               href="/legal/privacidad"
-              className="text-brand-yellow underline underline-offset-2 hover:text-brand-gold"
+              className="text-brand-green underline underline-offset-2 hover:text-brand-green"
             >
               política de privacidad
             </Link>
@@ -65,7 +65,7 @@ export function CookieConsent() {
               onClick={() =>
                 save({ necessary: true, analytics: true, marketing: true })
               }
-              className="rounded-lg bg-brand-yellow px-5 py-2 text-sm font-semibold text-black transition-colors hover:bg-brand-gold"
+              className="rounded-lg bg-brand-green px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-green-dark"
             >
               Entendido
             </button>
@@ -83,7 +83,7 @@ export function CookieConsent() {
                 type="checkbox"
                 checked
                 disabled
-                className="h-4 w-4 accent-brand-yellow"
+                className="h-4 w-4 accent-brand-green"
               />
               <span className="text-sm text-brand-gray">
                 <strong className="text-white">Necesarias</strong> — Siempre
@@ -96,7 +96,7 @@ export function CookieConsent() {
                 type="checkbox"
                 checked={analytics}
                 onChange={(e) => setAnalytics(e.target.checked)}
-                className="h-4 w-4 accent-brand-yellow"
+                className="h-4 w-4 accent-brand-green"
               />
               <span className="text-sm text-brand-gray">
                 <strong className="text-white">Analítica</strong> — Google
@@ -109,7 +109,7 @@ export function CookieConsent() {
                 type="checkbox"
                 checked={marketing}
                 onChange={(e) => setMarketing(e.target.checked)}
-                className="h-4 w-4 accent-brand-yellow"
+                className="h-4 w-4 accent-brand-green"
               />
               <span className="text-sm text-brand-gray">
                 <strong className="text-white">Marketing</strong> — Meta Pixel,
@@ -129,7 +129,7 @@ export function CookieConsent() {
               onClick={() =>
                 save({ necessary: true, analytics, marketing })
               }
-              className="rounded-lg bg-brand-yellow px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-brand-gold"
+              className="rounded-lg bg-brand-green px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-green-dark"
             >
               Guardar preferencias
             </button>

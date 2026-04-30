@@ -11,9 +11,9 @@ export interface Plan {
   name: string;
   icon: LucideIcon;
   videos: string;
-  /** Cantidad numérica de videos/mes — usada para calcular precio por video. */
+  /** Cantidad numérica de lives/mes — usada para calcular precio por live. */
   videosCount: number;
-  /** Variantes incluidas por video (afecta el cálculo de entregables). */
+  /** Optimizaciones incluidas por live (afecta el cálculo de entregables). */
   variantsPerVideo: number;
   variants: string;
   description: string;
@@ -24,153 +24,182 @@ export interface Plan {
   ctaHref: string;
   highlight?: boolean;
   badge?: string;
+  /**
+   * Stripe Price ID por environment. Se asigna desde variables de entorno.
+   * Dejar undefined hasta que los price IDs de Stripe sean creados para live shopping.
+   */
+  stripePriceId?: string;
 }
 
-function totalDeliverables(videos: number, variants: number): number {
-  // Total = videos originales + (videos × variantes adicionales)
-  return videos + videos * variants;
-}
+// ─── Constantes por plan ──────────────────────────────────────────────────────
 
-const STARTER_VARIANTS = 2;
-const GROWTH_VARIANTS = 3;
-const SCALE_VARIANTS = 3;
+const STARTER_LIVES = 2;
+const GROWTH_LIVES = 8;
+const PRO_LIVES = 16;
+const ELITE_LIVES = 31;
 
-const STARTER_VIDEOS = 6;
-const GROWTH_VIDEOS = 10;
-const SCALE_VIDEOS = 30;
+const STARTER_OPTS = 2;
+const GROWTH_OPTS = 4;
+const PRO_OPTS = 8;
+// Elite: optimizaciones ilimitadas — usamos 99 como proxy numérico para la garantía
+const ELITE_OPTS = 99;
 
-const STARTER_GUARANTEE = computeGuaranteeForPlan(STARTER_VIDEOS);
-const GROWTH_GUARANTEE = computeGuaranteeForPlan(GROWTH_VIDEOS);
-const SCALE_GUARANTEE = computeGuaranteeForPlan(SCALE_VIDEOS);
+const STARTER_GUARANTEE = computeGuaranteeForPlan(STARTER_LIVES);
+const GROWTH_GUARANTEE = computeGuaranteeForPlan(GROWTH_LIVES);
+const PRO_GUARANTEE = computeGuaranteeForPlan(PRO_LIVES);
+const ELITE_GUARANTEE = computeGuaranteeForPlan(ELITE_LIVES);
 
 /**
- * Planes UGC recurrentes — fuente de verdad compartida entre home Pricing
+ * Planes Live Cake recurrentes — fuente de verdad compartida entre home Pricing
  * y la página dedicada /precios. Los precios nativos por moneda viven en
  * `@/lib/pricing/currency-config` (PLAN_PRICES) para permitir multi-moneda
  * con precios psicológicamente redondeados por país.
  *
- * La garantía de performance se calcula desde `@/lib/guarantee-policy` para
- * mantener una sola fuente de verdad de los umbrales (CTR ≥ 1.5%, HR ≥ 25%)
- * y del cap de reemplazo (30% del paquete).
+ * La garantía de performance se calcula desde `@/lib/guarantee-policy`.
+ * Para live shopping, "videos" equivale a lives A/B/mes y "variantes" a
+ * optimizaciones/mes — misma fórmula, diferente semántica de negocio.
  */
 export const PLANES_RECURRENTES: Plan[] = [
   {
     id: "starter",
-    name: "INICIO",
+    name: "Starter",
     icon: Zap,
-    videos: `${STARTER_VIDEOS} videos UGC`,
-    videosCount: STARTER_VIDEOS,
-    variantsPerVideo: STARTER_VARIANTS,
-    variants: `+ ${STARTER_VARIANTS} variantes = ${totalDeliverables(STARTER_VIDEOS, STARTER_VARIANTS)} entregables`,
-    description: "Para marcas que quieren probar sin complicarse.",
+    videos: `${STARTER_LIVES} lives A/B`,
+    videosCount: STARTER_LIVES,
+    variantsPerVideo: STARTER_OPTS,
+    variants: `${STARTER_OPTS} optimizaciones/mes`,
+    description: "Para marcas que quieren probar el live shopping sin complicarse.",
     features: [
-      `${STARTER_VIDEOS} videos UGC + ${STARTER_VARIANTS} variantes cada uno`,
-      "Investigación de mercado básica",
-      "Hasta 2 creadores distintos",
-      "Guiones escritos por nuestro equipo",
-      "Selección curada de creadores",
-      "Edición profesional lista para publicar",
-      "1 ronda de revisión por video",
-      "Entrega en 7 días",
+      `${STARTER_LIVES} lives A/B por mes (producción + transmisión)`,
+      "Suite Pancake completa: WebCake + LiveCake + Botcake + CRM + Postcake",
+      "Conversion API nativa (Meta + TikTok + Google)",
+      `${STARTER_OPTS} optimizaciones de live por mes`,
+      "Guion y estructura de cada live escritos por nuestro equipo",
+      "Presentador/host entrenado en live shopping LATAM",
+      "Setup técnico inicial y prueba de transmisión",
+      "Reporte de performance post-live (retención, CVR, AOV)",
       `Garantía de performance: ${STARTER_GUARANTEE.shortLabel}`,
-      "Licencia de publicidad 12 meses",
+      "Sin comisión sobre las ventas generadas",
     ],
     guarantee: STARTER_GUARANTEE,
-    ctaLabel: "Quiero empezar",
+    ctaLabel: "Empezar ahora",
     ctaType: "stripe",
     ctaHref: "/checkout/starter",
   },
   {
     id: "growth",
-    name: "CRECIMIENTO",
+    name: "Growth",
     icon: Sparkles,
-    videos: `${GROWTH_VIDEOS} videos UGC`,
-    videosCount: GROWTH_VIDEOS,
-    variantsPerVideo: GROWTH_VARIANTS,
-    variants: `+ ${GROWTH_VARIANTS} variantes = ${totalDeliverables(GROWTH_VIDEOS, GROWTH_VARIANTS)} entregables`,
-    description: "El más popular: para marcas que ya saben lo que funciona.",
+    videos: `${GROWTH_LIVES} lives A/B`,
+    videosCount: GROWTH_LIVES,
+    variantsPerVideo: GROWTH_OPTS,
+    variants: `${GROWTH_OPTS} optimizaciones/mes`,
+    description: "El más elegido: 2 lives por semana con optimización continua.",
     features: [
-      `${GROWTH_VIDEOS} videos UGC + ${GROWTH_VARIANTS} variantes cada uno`,
-      "Investigación de mercado V2 (continua)",
-      "Parrilla de contenido mensual planificada",
-      "Hasta 5 creadores distintos",
-      "Análisis de competencia trimestral",
-      "Guiones con marcos ganadores",
-      "Selección nivel premium de nuestra red",
-      "Edición profesional + gráficos animados",
-      "2 rondas de revisión por video",
-      "Reporte mensual de resultados",
-      "Asesora de cuenta dedicada",
-      "Entrega en 7 días",
+      `${GROWTH_LIVES} lives A/B por mes (2 por semana)`,
+      "Suite Pancake completa: WebCake + LiveCake + Botcake + CRM + Postcake",
+      "Conversion API nativa (Meta + TikTok + Google)",
+      `${GROWTH_OPTS} optimizaciones de live por mes`,
+      "Estrategia de producto y oferta para cada live",
+      "Guion, estructura y runbook semanal",
+      "Presentador/host dedicado a tu marca",
+      "Segmentación de audiencia y retargeting post-live",
+      "Reporte semanal con KPIs (viewers, retención, CVR, ROAS)",
+      "Integración con tu WhatsApp Business (Botcake flows)",
       `Garantía de performance: ${GROWTH_GUARANTEE.shortLabel}`,
-      "Licencia de publicidad 12 meses",
+      "Sin comisión sobre las ventas generadas",
     ],
     guarantee: GROWTH_GUARANTEE,
     ctaLabel: "Quiero crecer",
     ctaType: "stripe",
     ctaHref: "/checkout/growth",
     highlight: true,
-    badge: "MÁS POPULAR",
+    badge: "Mas elegido",
   },
   {
-    id: "scale",
-    name: "ESCALA",
+    id: "pro",
+    name: "Pro",
     icon: Rocket,
-    videos: `${SCALE_VIDEOS} videos UGC`,
-    videosCount: SCALE_VIDEOS,
-    variantsPerVideo: SCALE_VARIANTS,
-    variants: `+ ${SCALE_VARIANTS} variantes = ${totalDeliverables(SCALE_VIDEOS, SCALE_VARIANTS)} entregables`,
-    description:
-      "Para marcas que ya entendieron que el contenido es su mayor ventaja.",
+    videos: `${PRO_LIVES} lives A/B`,
+    videosCount: PRO_LIVES,
+    variantsPerVideo: PRO_OPTS,
+    variants: `${PRO_OPTS} optimizaciones/mes`,
+    description: "Un live día por medio: la cadencia ideal para marcas que ya venden.",
     features: [
-      `${SCALE_VIDEOS} videos UGC + ${SCALE_VARIANTS} variantes cada uno`,
-      "Investigación V3 Plus (análisis profundo del mercado)",
-      "Rastreo automatizado de la competencia",
-      "Rastreo de productos similares en el mercado",
-      "Estrategia V3 Plus (omnicanal + embudos de venta)",
-      "Hasta 10 creadores distintos",
-      "Consultoría estratégica mensual con Alexander",
-      "Banco de guiones por ángulo ganador",
-      "Grupo de creadores nivel premium exclusivo",
-      "Edición cinematográfica + subtítulos animados",
-      "Revisiones ilimitadas",
-      "Reportes semanales con datos accionables",
-      "Asesora de cuenta senior dedicada",
-      "Entrega prioritaria",
-      `Garantía de performance: ${SCALE_GUARANTEE.shortLabel}`,
-      "Licencia de publicidad 12 meses",
+      `${PRO_LIVES} lives A/B por mes (día por medio)`,
+      "Suite Pancake completa: WebCake + LiveCake + Botcake + CRM + Postcake",
+      "Conversion API nativa (Meta + TikTok + Google)",
+      `${PRO_OPTS} optimizaciones de live por mes`,
+      "Estrategia de catálogo rotativo por live",
+      "Guion, estructura y runbook bi-diario",
+      "Presentador/host senior dedicado",
+      "Setup de campañas de paid media pre y post live",
+      "Segmentación avanzada + lookalike audiences",
+      "Dashboard en tiempo real con métricas de cada live",
+      "Reunión estratégica quincenal con el equipo",
+      "Soporte prioritario por WhatsApp (respuesta < 2 h)",
+      `Garantía de performance: ${PRO_GUARANTEE.shortLabel}`,
+      "Sin comisión sobre las ventas generadas",
     ],
-    guarantee: SCALE_GUARANTEE,
+    guarantee: PRO_GUARANTEE,
     ctaLabel: "Quiero escalar",
     ctaType: "stripe",
-    ctaHref: "/checkout/scale",
+    ctaHref: "/checkout/pro",
+  },
+  {
+    id: "elite",
+    name: "Elite",
+    icon: Crown,
+    videos: `${ELITE_LIVES} lives A/B`,
+    videosCount: ELITE_LIVES,
+    variantsPerVideo: ELITE_OPTS,
+    variants: "Optimizaciones ilimitadas",
+    description: "Un live diario: máxima frecuencia y revenue predecible cada mes.",
+    features: [
+      `${ELITE_LIVES} lives A/B por mes (1 diario, 7 días/semana)`,
+      "Suite Pancake completa: WebCake + LiveCake + Botcake + CRM + Postcake",
+      "Conversion API nativa (Meta + TikTok + Google)",
+      "Optimizaciones ilimitadas de live por mes",
+      "Equipo dedicado: estratega, host, editor y account manager",
+      "Planificación mensual de catálogo, ofertas y lanzamientos",
+      "Campañas de paid media gestionadas por el equipo Live Cake",
+      "Automatización CRM + Botcake post-live (flujos de recuperación)",
+      "Integración con tu ERP / plataforma de e-commerce",
+      "Dashboard ejecutivo en tiempo real + reporte mensual ejecutivo",
+      "Reunión semanal con el account manager",
+      "Soporte de emergencia 24/7 durante transmisiones",
+      `Garantía de performance: ${ELITE_GUARANTEE.shortLabel}`,
+      "Sin comisión sobre las ventas generadas",
+    ],
+    guarantee: ELITE_GUARANTEE,
+    ctaLabel: "Quiero el Elite",
+    ctaType: "stripe",
+    ctaHref: "/checkout/elite",
   },
 ];
 
 export const ENTERPRISE_FEATURES = [
-  "60+ videos UGC al mes (escalable)",
-  "3 variantes por video",
-  "Estrategia 360° con tu equipo",
-  "Director creativo asignado",
-  "Equipo dedicado nivel premium exclusivo",
-  "Videos de ventas, videos principales y campañas premium",
-  "Posproducción cinematográfica ilimitada",
-  "Integración directa con tu equipo de publicidad",
-  "Panel en tiempo real",
-  "Slack/Teams compartido",
-  "Acuerdos de servicio garantizados por contrato",
+  "Lives ilimitados al mes (escalable)",
+  "Múltiples hosts simultáneos por canal",
+  "Estrategia 360° con tu equipo de marketing",
+  "Director de live shopping asignado",
+  "Equipo técnico y creativo dedicado",
+  "Integración directa con tu ERP y OMS",
+  "Panel en tiempo real con BI personalizado",
+  "Acuerdos de servicio garantizados por contrato (SLA)",
+  "Onboarding ejecutivo con Alexander Cast",
+  "Slack/Teams compartido con el equipo Live Cake",
+  "Campañas de paid media co-gestionadas",
   "Garantía de performance personalizada por contrato",
-  "Publicación con tu marca (negociable según engagement y seguidores del creador)",
-  "Arranque ejecutivo con Alexander Cast",
 ];
 
 export const ENTERPRISE_PLAN = {
   id: "enterprise",
-  name: "A LA MEDIDA",
+  name: "A la Medida",
   icon: Crown,
   price: "A la medida",
-  priceUnit: "60+ videos / mes · escalable",
-  tagline: "Para empresas con alto volumen que necesitan equipo dedicado y SLAs.",
+  priceUnit: "31+ lives / mes · Escalable",
+  tagline: "Para marcas con alto volumen que necesitan equipo dedicado, lives diarios y SLAs garantizados por contrato.",
 };
 
 /**
@@ -180,243 +209,210 @@ export const ENTERPRISE_PLAN = {
 export type ComparisonRow = {
   feature: string;
   category: string;
-  inicio: string | boolean;
-  crecimiento: string | boolean;
-  escala: string | boolean;
+  starter: string | boolean;
+  growth: string | boolean;
+  pro: string | boolean;
+  elite: string | boolean;
   enterprise: string | boolean;
 };
 
 export const COMPARISON_ROWS: ComparisonRow[] = [
   {
-    category: "Producción",
-    feature: "Videos UGC al mes",
-    inicio: String(STARTER_VIDEOS),
-    crecimiento: String(GROWTH_VIDEOS),
-    escala: String(SCALE_VIDEOS),
-    enterprise: "60+",
+    category: "Lives",
+    feature: "Lives A/B por mes",
+    starter: "2",
+    growth: "8 (2/sem)",
+    pro: "16 (día por medio)",
+    elite: "31 (1 diario)",
+    enterprise: "Ilimitados",
   },
   {
-    category: "Producción",
-    feature: "Variantes por video",
-    inicio: String(STARTER_VARIANTS),
-    crecimiento: String(GROWTH_VARIANTS),
-    escala: String(SCALE_VARIANTS),
-    enterprise: "3",
-  },
-  {
-    category: "Producción",
-    feature: "Entregables totales/mes",
-    inicio: String(totalDeliverables(STARTER_VIDEOS, STARTER_VARIANTS)),
-    crecimiento: String(totalDeliverables(GROWTH_VIDEOS, GROWTH_VARIANTS)),
-    escala: String(totalDeliverables(SCALE_VIDEOS, SCALE_VARIANTS)),
-    enterprise: "200+",
-  },
-  {
-    category: "Producción",
-    feature: "Tiempo de primera entrega",
-    inicio: "7 días",
-    crecimiento: "7 días",
-    escala: "Prioritaria",
-    enterprise: "SLA custom",
-  },
-  {
-    category: "Producción",
-    feature: "Rondas de revisión por video",
-    inicio: "1",
-    crecimiento: "2",
-    escala: "Ilimitadas",
+    category: "Lives",
+    feature: "Optimizaciones por mes",
+    starter: "2",
+    growth: "4",
+    pro: "8",
+    elite: "Ilimitadas",
     enterprise: "Ilimitadas",
   },
   {
+    category: "Lives",
+    feature: "Setup técnico inicial",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Suite Pancake",
+    feature: "WebCake (tienda live)",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Suite Pancake",
+    feature: "LiveCake (motor de transmisión)",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Suite Pancake",
+    feature: "Botcake (WhatsApp automation)",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Suite Pancake",
+    feature: "CRM + Postcake",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Suite Pancake",
+    feature: "Conversion API (Meta + TikTok + Google)",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Producción & Estrategia",
+    feature: "Guion y runbook por live",
+    starter: true,
+    growth: true,
+    pro: true,
+    elite: true,
+    enterprise: true,
+  },
+  {
+    category: "Producción & Estrategia",
+    feature: "Host / presentador",
+    starter: "Compartido",
+    growth: "Dedicado",
+    pro: "Senior dedicado",
+    elite: "Equipo dedicado",
+    enterprise: "Equipo dedicado",
+  },
+  {
+    category: "Producción & Estrategia",
+    feature: "Estrategia de catálogo y oferta",
+    starter: "Básica",
+    growth: "Semanal",
+    pro: "Bi-diaria",
+    elite: "Diaria",
+    enterprise: "Director dedicado",
+  },
+  {
+    category: "Producción & Estrategia",
+    feature: "Campañas de paid media pre/post live",
+    starter: false,
+    growth: "Segmentación básica",
+    pro: "Setup completo",
+    elite: "Gestionadas por el equipo",
+    enterprise: "Co-gestionadas",
+  },
+  {
+    category: "Reportes & Cuenta",
+    feature: "Reporte de performance post-live",
+    starter: "Por live",
+    growth: "Semanal",
+    pro: "Dashboard en tiempo real",
+    elite: "Dashboard + reporte mensual ejecutivo",
+    enterprise: "BI personalizado",
+  },
+  {
+    category: "Reportes & Cuenta",
+    feature: "Reunión estratégica",
+    starter: false,
+    growth: false,
+    pro: "Quincenal",
+    elite: "Semanal",
+    enterprise: "A demanda",
+  },
+  {
+    category: "Reportes & Cuenta",
+    feature: "Account manager",
+    starter: false,
+    growth: "Compartido",
+    pro: "Dedicado",
+    elite: "Senior dedicado",
+    enterprise: "Equipo dedicado",
+  },
+  {
+    category: "Soporte",
+    feature: "Soporte por WhatsApp",
+    starter: "Horario hábil",
+    growth: "Horario hábil",
+    pro: "Prioritario < 2 h",
+    elite: "24/7 durante lives",
+    enterprise: "SLA custom",
+  },
+  {
+    category: "Soporte",
+    feature: "SLA garantizado por contrato",
+    starter: false,
+    growth: false,
+    pro: false,
+    elite: false,
+    enterprise: true,
+  },
+  {
     category: "Garantía",
-    feature: "Videos reemplazables si no rinden",
-    inicio: STARTER_GUARANTEE.shortLabel,
-    crecimiento: GROWTH_GUARANTEE.shortLabel,
-    escala: SCALE_GUARANTEE.shortLabel,
+    feature: "Lives reemplazables si no rinden",
+    starter: STARTER_GUARANTEE.shortLabel,
+    growth: GROWTH_GUARANTEE.shortLabel,
+    pro: PRO_GUARANTEE.shortLabel,
+    elite: ELITE_GUARANTEE.shortLabel,
     enterprise: "Personalizada",
   },
   {
     category: "Garantía",
     feature: "Umbral CTR mínimo",
-    inicio: "≥ 1.5%",
-    crecimiento: "≥ 1.5%",
-    escala: "≥ 1.5%",
+    starter: "≥ 1.5%",
+    growth: "≥ 1.5%",
+    pro: "≥ 1.5%",
+    elite: "≥ 1.5%",
     enterprise: "Negociable",
   },
   {
     category: "Garantía",
-    feature: "Umbral Hook Rate mínimo",
-    inicio: "≥ 25%",
-    crecimiento: "≥ 25%",
-    escala: "≥ 25%",
+    feature: "Umbral retención mínima",
+    starter: "≥ 25%",
+    growth: "≥ 25%",
+    pro: "≥ 25%",
+    elite: "≥ 25%",
     enterprise: "Negociable",
   },
   {
-    category: "Estrategia",
-    feature: "Investigación de mercado",
-    inicio: "Básica",
-    crecimiento: "V2 continua",
-    escala: "V3 Plus (deep)",
-    enterprise: "360° con tu equipo",
+    category: "Comercial",
+    feature: "Comisión sobre ventas",
+    starter: "Sin comisión",
+    growth: "Sin comisión",
+    pro: "Sin comisión",
+    elite: "Sin comisión",
+    enterprise: "Sin comisión",
   },
   {
-    category: "Estrategia",
-    feature: "Parrilla de contenido mensual",
-    inicio: false,
-    crecimiento: "Mensual planificada",
-    escala: "Mensual + calendarios por ángulo",
-    enterprise: "Director creativo asignado",
-  },
-  {
-    category: "Estrategia",
-    feature: "Scraping de competidores",
-    inicio: false,
-    crecimiento: false,
-    escala: "Automatizado",
-    enterprise: "Continuo + insights",
-  },
-  {
-    category: "Estrategia",
-    feature: "Scraping de productos similares",
-    inicio: false,
-    crecimiento: false,
-    escala: true,
-    enterprise: true,
-  },
-  {
-    category: "Estrategia",
-    feature: "Estrategia general",
-    inicio: "Básica",
-    crecimiento: "Mensual documentada",
-    escala: "V3 Plus (omnicanal + embudos de venta)",
-    enterprise: "360° con director creativo",
-  },
-  {
-    category: "Estrategia",
-    feature: "Análisis de competencia",
-    inicio: "One-shot",
-    crecimiento: "Trimestral",
-    escala: "Continuo",
-    enterprise: "Continuo + insights",
-  },
-  {
-    category: "Estrategia",
-    feature: "Consultoría con Alexander",
-    inicio: false,
-    crecimiento: false,
-    escala: "Mensual",
-    enterprise: "Arranque ejecutivo",
-  },
-  {
-    category: "Creadores",
-    feature: "Creadores máximos",
-    inicio: "Hasta 2",
-    crecimiento: "Hasta 5",
-    escala: "Hasta 10",
-    enterprise: "Equipo dedicado",
-  },
-  {
-    category: "Creadores",
-    feature: "Nivel de selección",
-    inicio: "Curada",
-    crecimiento: "Premium",
-    escala: "Premium exclusivo",
-    enterprise: "Equipo dedicado",
-  },
-  {
-    category: "Creadores",
-    feature: "Aprobación previa del creador",
-    inicio: true,
-    crecimiento: true,
-    escala: true,
-    enterprise: true,
-  },
-  {
-    category: "Edición",
-    feature: "Edición profesional",
-    inicio: true,
-    crecimiento: true,
-    escala: true,
-    enterprise: true,
-  },
-  {
-    category: "Edición",
-    feature: "Gráficos animados",
-    inicio: false,
-    crecimiento: true,
-    escala: true,
-    enterprise: true,
-  },
-  {
-    category: "Edición",
-    feature: "Subtítulos animados",
-    inicio: false,
-    crecimiento: true,
-    escala: true,
-    enterprise: true,
-  },
-  {
-    category: "Edición",
-    feature: "Color grading cinematográfico",
-    inicio: false,
-    crecimiento: false,
-    escala: true,
-    enterprise: true,
-  },
-  {
-    category: "Cuenta & reportes",
-    feature: "Asesora de cuenta",
-    inicio: "Compartida",
-    crecimiento: "Dedicada",
-    escala: "Senior dedicada",
-    enterprise: "Equipo dedicado",
-  },
-  {
-    category: "Cuenta & reportes",
-    feature: "Reportes de resultados",
-    inicio: "Al cierre",
-    crecimiento: "Mensual",
-    escala: "Semanal",
-    enterprise: "Panel en tiempo real",
-  },
-  {
-    category: "Cuenta & reportes",
-    feature: "Canal Slack / Teams compartido",
-    inicio: false,
-    crecimiento: false,
-    escala: false,
-    enterprise: true,
-  },
-  {
-    category: "Derechos",
-    feature: "Licencia de publicidad pagada",
-    inicio: "12 meses",
-    crecimiento: "12 meses",
-    escala: "12 meses",
+    category: "Comercial",
+    feature: "Setup inicial (pago único)",
+    starter: "USD 1,400",
+    growth: "USD 1,800",
+    pro: "USD 2,200",
+    elite: "USD 3,000",
     enterprise: "A la medida",
-  },
-  {
-    category: "Derechos",
-    feature: "Publicación con tu marca",
-    inicio: "Negociable",
-    crecimiento: "Negociable",
-    escala: "Negociable",
-    enterprise: "Negociable",
-  },
-  {
-    category: "Derechos",
-    feature: "Exclusividad por nicho",
-    inicio: false,
-    crecimiento: false,
-    escala: false,
-    enterprise: true,
-  },
-  {
-    category: "Soporte",
-    feature: "Acuerdos de servicio garantizados (SLA)",
-    inicio: false,
-    crecimiento: false,
-    escala: false,
-    enterprise: true,
   },
 ];

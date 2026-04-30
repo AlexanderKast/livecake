@@ -20,7 +20,7 @@ export function Footer() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-sans text-sm font-semibold text-brand-yellow hover:text-brand-gold transition-colors duration-200 whitespace-nowrap"
+            className="font-sans text-sm font-semibold text-brand-green hover:text-brand-green transition-colors duration-200 whitespace-nowrap"
             aria-label="Agenda una llamada con UGC Colombia por WhatsApp"
           >
             Agenda una llamada →

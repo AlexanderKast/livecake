@@ -15,7 +15,7 @@ interface BaseProps {
 
 const styles: Record<ButtonVariant, string> = {
   default:
-    "bg-brand-yellow text-black hover:bg-brand-yellow-hover shadow-[0_0_20px_rgba(249,179,52,0.25)] hover:shadow-[0_0_28px_rgba(249,179,52,0.45)]",
+    "bg-brand-yellow text-black hover:bg-brand-yellow-hover shadow-[0_0_20px_rgba(0,214,79,0.25)] hover:shadow-[0_0_28px_rgba(0,214,79,0.45)]",
   outline:
     "border border-brand-gold text-brand-gold hover:bg-brand-gold/10",
   ghost: "text-brand-gray hover:text-white hover:bg-white/5",

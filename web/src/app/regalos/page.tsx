@@ -26,9 +26,9 @@ export default function RegalosPage() {
     <main className="bg-brand-black min-h-screen">
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/5">
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(249,179,52,0.10),transparent_55%)]" />
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(22,163,74,0.10),transparent_55%)]" />
         <div className="relative max-w-5xl mx-auto px-6 md:px-10 py-20 md:py-28 text-center">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40 mb-6">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand-green/15 text-brand-green border border-brand-green/40 mb-6">
             OPEN SOURCE · MIT
           </span>
           <h1 className="font-display text-6xl md:text-7xl lg:text-8xl uppercase text-white leading-[0.9] tracking-tight mb-6">
@@ -46,10 +46,10 @@ export default function RegalosPage() {
         <section className="bg-brand-black py-16 md:py-20 border-b border-white/5">
           <div className="max-w-5xl mx-auto px-6 md:px-10">
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-[10px] uppercase tracking-widest font-bold text-brand-yellow">
+              <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
                 ★ Destacado
               </span>
-              <div className="flex-1 h-px bg-brand-yellow/20" />
+              <div className="flex-1 h-px bg-brand-green/20" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -95,7 +95,7 @@ export default function RegalosPage() {
             <p className="text-sm text-brand-gray-light mb-3">¿Querés proponernos qué liberemos a continuación?</p>
             <Link
               href="mailto:founder@kreoon.com?subject=Sugerencia para Regalos UGC Colombia"
-              className="inline-flex items-center gap-2 text-brand-yellow hover:text-white font-semibold"
+              className="inline-flex items-center gap-2 text-brand-green hover:text-white font-semibold"
             >
               Escríbenos a founder@kreoon.com →
             </Link>

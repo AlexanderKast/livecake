@@ -55,9 +55,9 @@ export function ApplicationCard({
       className={cn(
         "relative inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4",
         "px-4 py-2.5 sm:py-2 rounded-full",
-        "bg-gradient-to-r from-brand-yellow/15 via-brand-yellow/10 to-brand-yellow/15",
-        "border border-brand-gold/50",
-        "shadow-[0_0_30px_-12px_rgba(212,160,23,0.45)]",
+        "bg-gradient-to-r from-brand-green/15 via-brand-green/10 to-brand-green/15",
+        "border border-brand-green/50",
+        "shadow-[0_0_30px_-12px_rgba(22,163,74,0.45)]",
         "backdrop-blur-sm",
         className,
       )}
@@ -65,24 +65,24 @@ export function ApplicationCard({
       <div className="inline-flex items-center gap-2 flex-shrink-0">
         <span
           aria-hidden
-          className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse"
+          className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse"
         />
-        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-sans font-bold tracking-[0.18em] uppercase text-brand-yellow">
+        <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-sans font-bold tracking-[0.18em] uppercase text-brand-green">
           <Users className="h-3 w-3" aria-hidden />
           {OPEN_SLOTS} cupos este mes
         </span>
       </div>
 
-      <span aria-hidden className="hidden sm:block w-px h-4 bg-brand-gold/40" />
+      <span aria-hidden className="hidden sm:block w-px h-4 bg-brand-green/40" />
 
       <div className="inline-flex items-center gap-1.5 flex-shrink-0">
-        <Sparkles className="h-3 w-3 text-brand-yellow" aria-hidden />
+        <Sparkles className="h-3 w-3 text-brand-green" aria-hidden />
         <span className="text-[10px] sm:text-[11px] font-sans font-semibold text-white/90 tracking-wide">
           {DISCOUNT_PCT}% si aplicas en
         </span>
         <span
           aria-live="polite"
-          className="font-mono text-[11px] sm:text-xs font-bold tabular-nums text-brand-yellow"
+          className="font-mono text-[11px] sm:text-xs font-bold tabular-nums text-brand-green"
         >
           {countdownLabel}
         </span>
@@ -92,16 +92,16 @@ export function ApplicationCard({
         <>
           <span
             aria-hidden
-            className="hidden sm:block w-px h-4 bg-brand-gold/40"
+            className="hidden sm:block w-px h-4 bg-brand-green/40"
           />
           <button
             type="button"
             onClick={handleApply}
             className={cn(
               "inline-flex items-center gap-1 px-3 py-1 rounded-full",
-              "bg-brand-yellow text-brand-black text-[11px] font-sans font-bold tracking-wide uppercase",
-              "hover:bg-brand-gold transition-colors",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+              "bg-brand-green text-brand-black text-[11px] font-sans font-bold tracking-wide uppercase",
+              "hover:bg-brand-green transition-colors",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-black",
             )}
           >
             {OFFER_COPY.apply_cta}

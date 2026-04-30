@@ -1,6 +1,6 @@
 # CONTRIBUTING — Convenciones de Desarrollo
 
-UGC Colombia. Equipo: Alexander Cast, Diana Mile, Brian, Samuel, Tanya.
+Live Cake. Equipo operativo interno.
 
 ---
 

@@ -63,8 +63,8 @@ function DolorBlockSection({ block, index }: { block: DolorBlockType; index: num
         className="absolute inset-0 pointer-events-none -z-0"
         style={{
           background: reverse
-            ? "radial-gradient(ellipse 50% 60% at 90% 50%, rgba(212,160,23,0.08) 0%, transparent 70%)"
-            : "radial-gradient(ellipse 50% 60% at 10% 50%, rgba(212,160,23,0.08) 0%, transparent 70%)",
+            ? "radial-gradient(ellipse 50% 60% at 90% 50%, rgba(22,163,74,0.08) 0%, transparent 70%)"
+            : "radial-gradient(ellipse 50% 60% at 10% 50%, rgba(22,163,74,0.08) 0%, transparent 70%)",
         }}
       />
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -78,7 +78,7 @@ function DolorBlockSection({ block, index }: { block: DolorBlockType; index: num
         >
           <div className="inline-flex items-center justify-center mb-6">
             <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-brand-graphite/60 flex items-center justify-center">
-              <Icon className="h-6 w-6 text-brand-yellow" />
+              <Icon className="h-6 w-6 text-brand-green" />
             </div>
           </div>
           <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase mb-5">
@@ -98,7 +98,7 @@ function DolorBlockSection({ block, index }: { block: DolorBlockType; index: num
           {block.dolores.map((d) => (
             <div
               key={d.titulo}
-              className="flex items-start gap-3 p-5 sm:p-6 rounded-2xl border border-brand-graphite/60 bg-white/[0.025] hover:border-brand-gold/40 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(212,160,23,0.25)] transition-all duration-300"
+              className="flex items-start gap-3 p-5 sm:p-6 rounded-2xl border border-brand-graphite/60 bg-white/[0.025] hover:border-brand-green/40 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(22,163,74,0.25)] transition-all duration-300"
             >
               <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-brand-graphite/60 flex items-center justify-center flex-shrink-0">
                 <X className="h-5 w-5 text-red-400" strokeWidth={2.5} />
@@ -123,20 +123,20 @@ function DolorBlockSection({ block, index }: { block: DolorBlockType; index: num
           transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
             "max-w-3xl mx-auto p-6 sm:p-8 lg:p-10 rounded-3xl",
-            "bg-white/[0.025] border border-brand-gold/40",
-            "shadow-[0_20px_60px_-20px_rgba(212,160,23,0.3)]"
+            "bg-white/[0.025] border border-brand-green/40",
+            "shadow-[0_20px_60px_-20px_rgba(22,163,74,0.3)]"
           )}
         >
           <div className="flex items-start gap-4 mb-5">
-            <div className="w-10 h-10 rounded-xl bg-brand-yellow/10 border border-brand-yellow/20 flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="h-5 w-5 text-brand-yellow" />
+            <div className="w-10 h-10 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="h-5 w-5 text-brand-green" />
             </div>
             <p className="font-display text-xl sm:text-2xl text-white tracking-wide uppercase leading-tight">
               Esto es lo que hacemos por ti
             </p>
           </div>
           <p className="text-base sm:text-lg text-brand-gray leading-relaxed font-sans mb-6 sm:pl-14">
-            <Check className="inline w-4 h-4 text-brand-yellow mr-1 -ml-1 align-[-2px]" />
+            <Check className="inline w-4 h-4 text-brand-green mr-1 -ml-1 align-[-2px]" />
             {block.solucion}
           </p>
 
@@ -145,12 +145,12 @@ function DolorBlockSection({ block, index }: { block: DolorBlockType; index: num
             {block.metricas.map((m) => (
               <div
                 key={m.label}
-                className="rounded-lg bg-white/[0.04] border border-brand-gold/15 p-3 text-center"
+                className="rounded-lg bg-white/[0.04] border border-brand-green/15 p-3 text-center"
               >
                 <p
                   className="font-display text-base sm:text-xl leading-tight mb-1"
                   style={{
-                    background: "linear-gradient(135deg, #f9b334, #d4a017)",
+                    background: "linear-gradient(135deg, #16a34a, #15803d)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",

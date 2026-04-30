@@ -24,6 +24,12 @@ const config: Config = {
           gray: brandColors.grayLight,
           cream: brandColors.cream,
           white: brandColors.white,
+          // Live Cake — palette semántica
+          green: brandColors.green,
+          "green-dark": brandColors.greenDark,
+          "green-bright": brandColors.greenBright,
+          "red-live": brandColors.redLive,
+          // Legacy keys (retrocompat — apuntan a verde Live Cake)
           yellow: brandColors.yellow,
           "yellow-hover": brandColors.yellowHover,
           "yellow-soft": brandColors.yellowSoft,
@@ -31,13 +37,12 @@ const config: Config = {
           "gold-dark": brandColors.goldDark,
           red: brandColors.red,
           "red-hover": brandColors.redHover,
-          green: brandColors.green,
         },
         "brand-gray": graysScale,
       },
       fontFamily: {
-        display: ["var(--font-anton)", "Anton", "Impact", "sans-serif"],
-        impact: ["var(--font-anton)", "Anton", "sans-serif"],
+        display: ["var(--font-manrope)", "Manrope", "-apple-system", "sans-serif"],
+        impact: ["var(--font-manrope)", "Manrope", "sans-serif"],
         sans: ["var(--font-inter)", "Inter", "sans-serif"],
       },
       borderRadius: {
@@ -57,8 +62,13 @@ const config: Config = {
         "brand-md": shadows.md,
         "brand-lg": shadows.lg,
         "brand-xl": shadows.xl,
-        gold: shadows.yellow,
-        "gold-sm": shadows.yellowSm,
+        // Live Cake — glows
+        green: shadows.green,
+        "green-sm": shadows.greenSm,
+        "live-dot": shadows.liveDot,
+        // Legacy (apuntan a glow verde)
+        gold: shadows.gold,
+        "gold-sm": shadows.goldSm,
         yellow: shadows.yellow,
         "yellow-sm": shadows.yellowSm,
       },
@@ -80,8 +90,12 @@ const config: Config = {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 8px 0px rgba(249,179,52,0.40)" },
-          "50%": { boxShadow: "0 0 20px 4px rgba(249,179,52,0.75)" },
+          "0%, 100%": { boxShadow: "0 0 8px 0px rgba(0,214,79,0.40)" },
+          "50%": { boxShadow: "0 0 20px 4px rgba(0,214,79,0.75)" },
+        },
+        "live-pulse": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.6", transform: "scale(1.15)" },
         },
       },
       animation: {
@@ -91,6 +105,7 @@ const config: Config = {
         "text-reveal": "text-reveal 0.7s ease-out forwards",
         "slide-up": "slide-up 0.6s ease-out forwards",
         "glow-pulse": "glow-pulse 2.5s ease-in-out infinite",
+        "live-pulse": "live-pulse 1.5s ease-in-out infinite",
       },
     },
   },

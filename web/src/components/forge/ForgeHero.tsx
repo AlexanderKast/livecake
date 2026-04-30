@@ -10,7 +10,7 @@ export function ForgeHero() {
       {/* Decorative backdrop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(249,179,52,0.10),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(22,163,74,0.10),transparent_55%)]"
       />
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.6)_80%)]" />
 
@@ -19,7 +19,7 @@ export function ForgeHero() {
           {/* LEFT · pitch */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand-green/15 text-brand-green border border-brand-green/40">
                 REGALO · GRATIS
               </span>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-green-500/15 text-green-400 border border-green-500/40">
@@ -31,7 +31,7 @@ export function ForgeHero() {
               Un estudio editorial en tu terminal
             </h1>
 
-            <p className="text-xl md:text-2xl text-brand-yellow/90 font-medium leading-snug">
+            <p className="text-xl md:text-2xl text-brand-green/90 font-medium leading-snug">
               Content Forge: el mismo pipeline que usamos todos los días en UGC Colombia para producir contenido premium. Ahora es tuyo.
             </p>
 
@@ -74,7 +74,7 @@ export function ForgeHero() {
 
 function CheckIcon() {
   return (
-    <svg className="w-5 h-5 flex-shrink-0 text-brand-yellow mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+    <svg className="w-5 h-5 flex-shrink-0 text-brand-green mt-0.5" viewBox="0 0 20 20" fill="currentColor">
       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
     </svg>
   );

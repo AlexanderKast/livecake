@@ -47,7 +47,7 @@ export function CursorDot() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-3 h-3 rounded-full bg-brand-gold mix-blend-difference pointer-events-none z-[9998]"
+      className="fixed top-0 left-0 w-3 h-3 rounded-full bg-brand-green mix-blend-difference pointer-events-none z-[9998]"
       style={{ x: springX, y: springY, opacity: isVisible ? 1 : 0 }}
       aria-hidden="true"
     />

@@ -22,14 +22,14 @@ export default async function MarcaIndexPage() {
             className="bg-clip-text text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(90deg, #F9B334 0%, #D4A017 50%, #F9B334 100%)",
+                "linear-gradient(90deg, #00D64F 0%, #00D64F 50%, #00D64F 100%)",
             }}
           >
             PARRILLA.
           </span>
         </h1>
         <p className="text-brand-gray text-lg max-w-2xl leading-relaxed">
-          La guía visual y operativa que gobierna cómo UGC Colombia se presenta,
+          La guía visual y operativa que gobierna cómo Live Cake se presenta,
           se publica y se recuerda. Un solo sistema, todos los canales.
         </p>
 
@@ -93,7 +93,7 @@ export default async function MarcaIndexPage() {
       {/* Footer */}
       <div className="mt-16 pt-8 border-t border-brand-gold/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="text-[10px] uppercase tracking-[0.2em] text-brand-gray">
-          UGC Colombia · Brand System v.1 · 2026
+          Live Cake · Brand System v.1 · 2026
         </div>
         <a
           href="/pdfs/MANUAL-DE-MARCA.pdf"

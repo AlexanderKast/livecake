@@ -109,7 +109,7 @@ export function Marcas() {
     <section
       ref={sectionRef}
       aria-labelledby="marcas-title"
-      className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden"
+      className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden"
     >
       {/* Glow ambient */}
       <div
@@ -117,7 +117,7 @@ export function Marcas() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, rgba(249,179,52,0.06), transparent 60%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(22,163,74,0.06), transparent 60%)",
         }}
       />
 
@@ -132,30 +132,30 @@ export function Marcas() {
           <div className="inline-flex items-center gap-3 mb-5">
             <span
               aria-hidden="true"
-              className="h-px w-8 bg-gradient-to-r from-transparent to-brand-gold/60"
+              className="h-px w-8 bg-gradient-to-r from-transparent to-brand-green/60"
             />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-brand-gold/80 font-sans">
-              Marcas que confiaron
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-brand-green/80 font-sans">
+              Marcas que ya transmiten
             </span>
             <span
               aria-hidden="true"
-              className="h-px w-8 bg-gradient-to-l from-transparent to-brand-gold/60"
+              className="h-px w-8 bg-gradient-to-l from-transparent to-brand-green/60"
             />
           </div>
           <h2
             id="marcas-title"
-            className="font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] text-white tracking-tight"
+            className="font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] text-neutral-900 tracking-tight"
           >
-            Marcas con las que hemos{" "}
+            Marcas escalando con{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #f9b334 0%, #d4a017 100%)",
+                background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              trabajado
+              live shopping
             </span>
             .
           </h2>
@@ -166,11 +166,11 @@ export function Marcas() {
           {/* Fades laterales */}
           <div
             aria-hidden="true"
-            className="absolute inset-y-0 left-0 w-24 sm:w-32 z-10 pointer-events-none bg-gradient-to-r from-brand-black to-transparent"
+            className="absolute inset-y-0 left-0 w-24 sm:w-32 z-10 pointer-events-none bg-gradient-to-r from-neutral-50 to-transparent"
           />
           <div
             aria-hidden="true"
-            className="absolute inset-y-0 right-0 w-24 sm:w-32 z-10 pointer-events-none bg-gradient-to-l from-brand-black to-transparent"
+            className="absolute inset-y-0 right-0 w-24 sm:w-32 z-10 pointer-events-none bg-gradient-to-l from-neutral-50 to-transparent"
           />
 
           <div
@@ -186,7 +186,7 @@ export function Marcas() {
               hoveringRef.current = false;
               lastTimeRef.current = 0;
             }}
-            className="relative overflow-hidden rounded-2xl border border-brand-gold/15 bg-white/[0.015] py-10 sm:py-12 cursor-grab active:cursor-grabbing select-none touch-pan-x"
+            className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white py-10 sm:py-12 cursor-grab active:cursor-grabbing select-none touch-pan-x"
           >
             <ul
               ref={trackRef}
@@ -208,7 +208,7 @@ export function Marcas() {
                         src={m.logo}
                         alt={m.label}
                         draggable={false}
-                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain select-none brightness-0 invert opacity-50 group-hover/brand:opacity-100 transition-opacity duration-300"
+                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain select-none brightness-0 opacity-35 group-hover/brand:opacity-70 transition-opacity duration-300"
                       />
                     ) : (
                       <span
@@ -216,7 +216,7 @@ export function Marcas() {
                           m.font,
                           m.className,
                           "text-2xl sm:text-3xl lg:text-[2rem] leading-none select-none",
-                          "text-white/45 group-hover/brand:text-white/100 transition-colors duration-300",
+                          "text-neutral-300 group-hover/brand:text-neutral-700 transition-colors duration-300",
                         ].join(" ")}
                       >
                         {m.label}
@@ -227,8 +227,8 @@ export function Marcas() {
                     <span
                       className={[
                         "pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap",
-                        "rounded-md bg-brand-black/95 px-2.5 py-1 text-[10px] font-sans font-medium uppercase tracking-wider text-brand-yellow",
-                        "border border-brand-gold/30 shadow-[0_4px_12px_-2px_rgba(249,179,52,0.3)]",
+                        "rounded-md bg-neutral-900/95 px-2.5 py-1 text-[10px] font-sans font-medium uppercase tracking-wider text-brand-green",
+                        "border border-brand-green/30 shadow-[0_4px_12px_-2px_rgba(22,163,74,0.3)]",
                         "opacity-0 translate-y-1 group-hover/brand:opacity-100 group-hover/brand:translate-y-0",
                         "transition-all duration-200",
                       ].join(" ")}
@@ -244,8 +244,8 @@ export function Marcas() {
         </div>
 
         {/* Disclaimer discreto */}
-        <p className="mt-6 text-center text-[11px] sm:text-xs text-brand-gray/70 font-sans tracking-wide">
-          Ecosistema Infiny Group · Clientes UGC LATAM
+        <p className="mt-6 text-center text-[11px] sm:text-xs text-neutral-400 font-sans tracking-wide">
+          Ecosistema Live Cake · Clientes live shopping LATAM
         </p>
       </div>
     </section>

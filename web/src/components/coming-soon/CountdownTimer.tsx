@@ -57,7 +57,7 @@ function Unit({ value, label, hideMobile }: UnitProps) {
 function Separator() {
   return (
     <span
-      className="font-display text-[clamp(2rem,6vw,4rem)] text-brand-gold/60 leading-none self-start pt-1"
+      className="font-display text-[clamp(2rem,6vw,4rem)] text-brand-green/60 leading-none self-start pt-1"
       aria-hidden="true"
     >
       :

@@ -90,7 +90,7 @@ export function LeadCard({ lead, onDelete, busy }: Props) {
 
   async function copyDiagnosisUrl() {
     if (!lead.diagnosisSlug) return;
-    const url = `https://www.ugccolombia.co/diagnostico/${lead.diagnosisSlug}`;
+    const url = `https://www.livecake.com/diagnostico/${lead.diagnosisSlug}`;
     await navigator.clipboard.writeText(url);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);

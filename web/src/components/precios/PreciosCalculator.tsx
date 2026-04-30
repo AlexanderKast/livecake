@@ -10,9 +10,6 @@ import { useCurrency } from "@/components/providers/CurrencyProvider";
 import {
   CURRENCY_META,
   PLAN_PRICES,
-  SOLO_RATES,
-  VOLUME_50_PRICE,
-  VOLUME_TIERS,
   type Currency,
 } from "@/lib/pricing/currency-config";
 import { formatPrice } from "@/lib/pricing/format";
@@ -23,41 +20,57 @@ import {
   applyDurationDiscount,
 } from "@/lib/stripe/plans";
 
-/** Calcula el precio mensual base del paquete UGC Colombia según volumen y moneda. */
-function getBasePackage(
-  videos: number,
+type PlanSlug = "starter" | "growth" | "pro" | "elite" | "custom";
+
+/**
+ * Resuelve el plan recomendado según la cantidad de lives/mes seleccionados.
+ * Umbral: 1-2 → Starter, 3-8 → Growth, 9-16 → Pro, 17-31 → Elite, >31 → Custom.
+ */
+function getBasePlan(
+  lives: number,
   currency: Currency,
-): { name: string; monthlyPrice: number; slug: "starter" | "growth" | "scale" | "custom" } {
-  if (videos <= 5)
+): { name: string; monthlyPrice: number; slug: PlanSlug } {
+  if (lives <= 2)
     return {
-      name: "INICIO",
+      name: "Starter",
       monthlyPrice: PLAN_PRICES.starter[currency].amount,
       slug: "starter",
     };
-  if (videos <= 10)
+  if (lives <= 8)
     return {
-      name: "CRECIMIENTO",
+      name: "Growth",
       monthlyPrice: PLAN_PRICES.growth[currency].amount,
       slug: "growth",
     };
-  if (videos <= 30)
+  if (lives <= 16)
     return {
-      name: "ESCALA",
-      monthlyPrice: PLAN_PRICES.scale[currency].amount,
-      slug: "scale",
+      name: "Pro",
+      monthlyPrice: PLAN_PRICES.pro[currency].amount,
+      slug: "pro",
     };
-  if (videos <= 50)
+  if (lives <= 31)
     return {
-      name: "VOLUMEN 50",
-      monthlyPrice: VOLUME_50_PRICE[currency],
-      slug: "custom",
+      name: "Elite",
+      monthlyPrice: PLAN_PRICES.elite[currency].amount,
+      slug: "elite",
     };
-  const tier = VOLUME_TIERS[currency].find(
-    (t) =>
-      videos >= t.minVideos && (t.maxVideos === null || videos <= t.maxVideos),
-  );
-  const monthlyPrice = tier ? videos * tier.perVideo : 0;
-  return { name: "A LA MEDIDA", monthlyPrice, slug: "custom" };
+  return {
+    name: "A la Medida",
+    monthlyPrice: PLAN_PRICES.elite[currency].amount,
+    slug: "custom",
+  };
+}
+
+/**
+ * Estima el costo mensual de armar el stack live shopping por cuenta propia
+ * (plataforma + host freelance + producción + estrategia) vs. con Live Cake.
+ */
+function getSoloCost(lives: number, currency: Currency): number {
+  // Tasas de referencia: plataforma básica + host por live + edición + estrategia
+  const base = currency === "USD" ? 200 : 800_000;
+  const perLive = currency === "USD" ? 120 : 480_000;
+  const strategy = currency === "USD" ? 400 : 1_600_000;
+  return base + lives * perLive + strategy;
 }
 
 function useCountUp(target: number, duration = 600) {
@@ -84,17 +97,17 @@ function useCountUp(target: number, duration = 600) {
   return current;
 }
 
-const FIXED_STOPS = [5, 10, 30, 50];
-const FREE_MIN = 51;
-const FREE_MAX = 300;
+const FIXED_STOPS = [2, 8, 16, 31];
+const FREE_MIN = 32;
+const FREE_MAX = 90;
 const SLIDER_MAX = FIXED_STOPS.length - 1 + (FREE_MAX - FREE_MIN + 1);
 
-function sliderToVideos(pos: number): number {
+function sliderToLives(pos: number): number {
   if (pos <= 3) return FIXED_STOPS[pos];
   return FREE_MIN + (pos - FIXED_STOPS.length);
 }
 
-function videosToSlider(v: number): number {
+function livesToSlider(v: number): number {
   const idx = FIXED_STOPS.indexOf(v);
   if (idx !== -1) return idx;
   if (v >= FREE_MIN) return FIXED_STOPS.length + (v - FREE_MIN);
@@ -105,13 +118,13 @@ function videosToSlider(v: number): number {
 }
 
 const LABEL_STOPS = [
-  { videos: 5, label: "5" },
-  { videos: 10, label: "10" },
-  { videos: 30, label: "30" },
-  { videos: 50, label: "50" },
-  { videos: 100, label: "100" },
-  { videos: 200, label: "200" },
-  { videos: 300, label: "300" },
+  { lives: 2, label: "2" },
+  { lives: 8, label: "8" },
+  { lives: 16, label: "16" },
+  { lives: 31, label: "31" },
+  { lives: 50, label: "50" },
+  { lives: 70, label: "70" },
+  { lives: 90, label: "90+" },
 ];
 
 export function PreciosCalculator() {
@@ -119,23 +132,20 @@ export function PreciosCalculator() {
     threshold: 0.1,
   });
   const { currency, format, duration, setDuration } = useCurrency();
-  const [videos, setVideos] = useState(10);
+  const [lives, setLives] = useState(8);
 
-  const sliderPos = videosToSlider(videos);
+  const sliderPos = livesToSlider(lives);
 
   const handleSlider = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setVideos(sliderToVideos(parseInt(e.target.value, 10)));
+    setLives(sliderToLives(parseInt(e.target.value, 10)));
   };
 
   const { soloCost, plan, cycleTotal, monthlyEquivalent, savings, savingsPct, commitmentSavings } =
     useMemo(() => {
-      const rates = SOLO_RATES[currency];
-      const soloCost =
-        videos * (rates.script + rates.edit + rates.creator) + rates.strategy;
-      const plan = getBasePackage(videos, currency);
+      const soloCost = getSoloCost(lives, currency);
+      const plan = getBasePlan(lives, currency);
       const cycle = applyDurationDiscount(plan.monthlyPrice, duration);
       const equivalent = duration > 0 ? Math.round(cycle / duration) : plan.monthlyPrice;
-      // Ahorro vs contratar por separado, comparando mes vs mes.
       const savings = Math.max(0, soloCost - equivalent);
       const savingsPct = soloCost > 0 ? Math.round((savings / soloCost) * 100) : 0;
       const commitmentSavings = plan.monthlyPrice * duration - cycle;
@@ -148,21 +158,20 @@ export function PreciosCalculator() {
         savingsPct,
         commitmentSavings,
       };
-    }, [videos, currency, duration]);
+    }, [lives, currency, duration]);
 
   const animatedSavings = useCountUp(savings);
   const animatedSoloCost = useCountUp(soloCost);
-  const perVideoAmount = videos > 0 ? Math.round(plan.monthlyPrice / videos) : 0;
-  const perVideo = format(perVideoAmount);
+  const perLiveAmount = lives > 0 ? Math.round(plan.monthlyPrice / lives) : 0;
+  const perLive = format(perLiveAmount);
   const unitLabel = CURRENCY_META[currency].unitLabel;
   const localeLabel = `${currency} al mes`;
-  const rates = SOLO_RATES[currency];
 
   const sliderPct = (sliderPos / SLIDER_MAX) * 100;
 
   const checkoutHref =
     plan.slug === "custom"
-      ? `/checkout/custom?videos=${videos}&duration=${duration}`
+      ? `/checkout/elite?duration=${duration}`
       : `/checkout/${plan.slug}?duration=${duration}`;
 
   const cycleLabel = duration === 1 ? "al mes" : `cada ${duration} meses`;
@@ -180,23 +189,23 @@ export function PreciosCalculator() {
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #f9b334, #d4a017);
+          background: linear-gradient(135deg, #16a34a, #15803d);
           cursor: pointer;
           border: 3px solid #000;
-          box-shadow: 0 0 16px rgba(249,179,52,0.5), 0 0 4px rgba(249,179,52,0.3);
+          box-shadow: 0 0 16px rgba(22,163,74,0.5), 0 0 4px rgba(22,163,74,0.3);
           transition: box-shadow 0.2s;
         }
         .pricing-slider::-webkit-slider-thumb:hover {
-          box-shadow: 0 0 24px rgba(249,179,52,0.7), 0 0 8px rgba(249,179,52,0.5);
+          box-shadow: 0 0 24px rgba(22,163,74,0.7), 0 0 8px rgba(22,163,74,0.5);
         }
         .pricing-slider::-moz-range-thumb {
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #f9b334, #d4a017);
+          background: linear-gradient(135deg, #16a34a, #15803d);
           cursor: pointer;
           border: 3px solid #000;
-          box-shadow: 0 0 16px rgba(249,179,52,0.5);
+          box-shadow: 0 0 16px rgba(22,163,74,0.5);
         }
       `}</style>
 
@@ -226,7 +235,7 @@ export function PreciosCalculator() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 sm:mb-14 max-w-2xl mx-auto"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
             Calculadora de ahorro
           </span>
           <h2
@@ -236,7 +245,7 @@ export function PreciosCalculator() {
             ¿Cuánto te{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -247,7 +256,7 @@ export function PreciosCalculator() {
             ?
           </h2>
           <p className="mt-5 text-sm sm:text-base text-brand-gray leading-relaxed">
-            Mueve el slider según los videos que necesitas al mes y elige cuánto
+            Mueve el slider según los lives que necesitas al mes y elige cuánto
             te comprometes. Más meses = más descuento.
           </p>
         </motion.div>
@@ -272,7 +281,7 @@ export function PreciosCalculator() {
             style={{
               padding: "1.5px",
               background:
-                "linear-gradient(135deg, rgba(249,179,52,0.5) 0%, rgba(16,185,129,0.25) 50%, transparent 100%)",
+                "linear-gradient(135deg, rgba(22,163,74,0.5) 0%, rgba(16,185,129,0.25) 50%, transparent 100%)",
               WebkitMask:
                 "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
               WebkitMaskComposite: "xor",
@@ -284,27 +293,27 @@ export function PreciosCalculator() {
             {/* Izquierda: slider + selector */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-11 h-11 rounded-xl bg-brand-yellow/10 border border-brand-yellow/25 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-brand-green/10 border border-brand-green/25 flex items-center justify-center">
                   <Calculator
-                    className="h-5 w-5 text-brand-yellow"
+                    className="h-5 w-5 text-brand-green"
                     aria-hidden
                   />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70">
-                    Videos al mes
+                  <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70">
+                    Lives al mes
                   </p>
                   <p className="font-display text-5xl sm:text-6xl text-white leading-none mt-1">
-                    {videos}
+                    {lives}
                   </p>
                 </div>
               </div>
 
-              <label htmlFor="video-slider" className="sr-only">
-                Cantidad de videos al mes
+              <label htmlFor="live-slider" className="sr-only">
+                Cantidad de lives al mes
               </label>
               <input
-                id="video-slider"
+                id="live-slider"
                 type="range"
                 min={0}
                 max={SLIDER_MAX}
@@ -313,18 +322,18 @@ export function PreciosCalculator() {
                 onChange={handleSlider}
                 className="pricing-slider w-full h-2 rounded-full appearance-none cursor-pointer"
                 style={{
-                  background: `linear-gradient(90deg, #f9b334 0%, #d4a017 ${sliderPct}%, rgba(61,61,60,0.6) ${sliderPct}%, rgba(61,61,60,0.6) 100%)`,
+                  background: `linear-gradient(90deg, #16a34a 0%, #15803d ${sliderPct}%, rgba(61,61,60,0.6) ${sliderPct}%, rgba(61,61,60,0.6) 100%)`,
                 }}
               />
               <div className="flex justify-between mt-3 text-[11px] text-brand-gray/70">
                 {LABEL_STOPS.map((stop) => (
                   <button
-                    key={stop.videos}
+                    key={stop.lives}
                     type="button"
-                    onClick={() => setVideos(stop.videos)}
+                    onClick={() => setLives(stop.lives)}
                     className={cn(
-                      "transition-colors hover:text-brand-yellow",
-                      videos === stop.videos && "text-brand-yellow font-bold",
+                      "transition-colors hover:text-brand-green",
+                      lives === stop.lives && "text-brand-green font-bold",
                     )}
                   >
                     {stop.label}
@@ -334,7 +343,7 @@ export function PreciosCalculator() {
 
               {/* Selector de compromiso */}
               <div className="mt-8">
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70 mb-3">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-3">
                   Compromiso
                 </p>
                 <div className="grid grid-cols-4 gap-2">
@@ -349,14 +358,14 @@ export function PreciosCalculator() {
                         className={cn(
                           "relative px-2 py-3 rounded-lg border text-center transition-all",
                           active
-                            ? "border-brand-gold bg-brand-yellow/10 shadow-[0_0_20px_-8px_rgba(249,179,52,0.5)]"
-                            : "border-brand-graphite/60 hover:border-brand-gold/40",
+                            ? "border-brand-green bg-brand-green/10 shadow-[0_0_20px_-8px_rgba(22,163,74,0.5)]"
+                            : "border-brand-graphite/60 hover:border-brand-green/40",
                         )}
                       >
                         <p
                           className={cn(
                             "text-[11px] font-bold uppercase tracking-wider",
-                            active ? "text-brand-yellow" : "text-white",
+                            active ? "text-brand-green" : "text-white",
                           )}
                         >
                           {DURATION_LABEL[d]}
@@ -379,11 +388,11 @@ export function PreciosCalculator() {
                 <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gray mb-1">
                   Te recomendamos
                 </p>
-                <p className="font-display text-2xl text-brand-yellow tracking-wide">
-                  PLAN {plan.name}
+                <p className="font-display text-2xl text-brand-green tracking-wide">
+                  PLAN {plan.name.toUpperCase()}
                 </p>
-                <p className="text-[11px] text-brand-gold/60 mt-1">
-                  {perVideo}/video · todo incluido
+                <p className="text-[11px] text-brand-green/60 mt-1">
+                  {perLive}/live · suite Pancake completa incluida
                 </p>
               </div>
             </div>
@@ -393,24 +402,24 @@ export function PreciosCalculator() {
               {/* Sin paquete */}
               <div className="rounded-xl border border-brand-graphite/60 bg-white/[0.015] p-5">
                 <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gray mb-2">
-                  Contratando por separado
+                  Armando el stack por tu cuenta
                 </p>
                 <p className="font-display text-3xl sm:text-4xl text-white/70 line-through decoration-brand-graphite">
                   {formatPrice(animatedSoloCost, currency)}
                 </p>
                 <p className="text-[11px] text-brand-gray/70 mt-1">
-                  Guiones + edición + creadores + estrategia
+                  Plataforma + host freelance + producción + estrategia
                 </p>
               </div>
 
               {/* Con paquete */}
-              <div className="rounded-xl border-2 border-brand-gold bg-brand-yellow/5 p-5 shadow-[0_0_40px_-20px_rgba(212,160,23,0.5)]">
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-yellow mb-2">
+              <div className="rounded-xl border-2 border-brand-green bg-brand-green/5 p-5 shadow-[0_0_40px_-20px_rgba(22,163,74,0.5)]">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green mb-2">
                   Con plan {plan.name} · {DURATION_LABEL[duration]}
                 </p>
                 <div className="flex items-end gap-2 flex-wrap">
                   <p className="font-display text-4xl sm:text-5xl text-white leading-none">
-                    {format(cycleTotal)}
+                    {formatPrice(cycleTotal, currency)}
                   </p>
                   <p className="text-[11px] text-brand-gray pb-1">{cycleLabel}</p>
                 </div>
@@ -432,12 +441,12 @@ export function PreciosCalculator() {
                 )}
                 {duration === 1 && (
                   <p className="text-[11px] text-brand-gray mt-2">
-                    {unitLabel} · todo incluido
+                    {unitLabel} · suite completa incluida
                   </p>
                 )}
               </div>
 
-              {/* Ahorro vs contratar por separado */}
+              {/* Ahorro vs armar por cuenta */}
               {savings > 0 && (
                 <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/8 p-5">
                   <div className="flex items-center justify-between mb-2">
@@ -453,7 +462,7 @@ export function PreciosCalculator() {
                     {formatPrice(animatedSavings, currency)}
                   </p>
                   <p className="text-[11px] text-emerald-400/80 mt-1">
-                    {localeLabel} · vs contratar por separado
+                    {localeLabel} · vs armar el stack por tu cuenta
                   </p>
                 </div>
               )}
@@ -462,12 +471,12 @@ export function PreciosCalculator() {
               <a
                 href={checkoutHref}
                 className={cn(
-                  "group/cta flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-brand-yellow text-black font-sans font-bold text-base tracking-wide transition-all min-h-[52px]",
-                  "hover:bg-brand-gold hover:shadow-[0_10px_40px_-10px_rgba(249,179,52,0.55)]",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+                  "group/cta flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-brand-green text-white font-sans font-bold text-base tracking-wide transition-all min-h-[52px]",
+                  "hover:bg-brand-green-dark hover:shadow-[0_10px_40px_-10px_rgba(22,163,74,0.55)]",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-black",
                 )}
               >
-                Comprar este plan
+                Empezar con este plan
                 <ArrowRight
                   className="h-5 w-5 transition-transform group-hover/cta:translate-x-1"
                   aria-hidden
@@ -476,44 +485,48 @@ export function PreciosCalculator() {
 
               <p className="flex items-center justify-center gap-1.5 text-xs text-brand-gray/70">
                 <Users className="h-3 w-3" aria-hidden />
-                Únete a las marcas que ya ahorran
+                Sin comisión sobre las ventas generadas
               </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Tabla de precios por volumen */}
+        {/* Tabla de referencias por plan */}
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
-          {VOLUME_TIERS[currency].map((tier) => (
+          {(
+            [
+              { label: "Starter · 2 lives", id: "starter" as const },
+              { label: "Growth · 8 lives", id: "growth" as const },
+              { label: "Pro · 16 lives", id: "pro" as const },
+              { label: "Elite · 31 lives", id: "elite" as const },
+            ] as const
+          ).map((p) => (
             <div
-              key={tier.label}
+              key={p.id}
               className="rounded-xl border border-brand-graphite/40 bg-white/[0.02] p-3 text-center"
             >
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-gray mb-1">
-                {tier.label} videos
+                {p.label}
               </p>
               <p
                 className="font-display text-lg"
                 style={{
-                  background: "linear-gradient(135deg, #f9b334, #d4a017)",
+                  background: "linear-gradient(135deg, #16a34a, #15803d)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                {tier.displayPrefix ? `${tier.displayPrefix} ` : ""}
-                {format(tier.perVideo)}
+                {format(PLAN_PRICES[p.id][currency].amount)}
               </p>
-              <p className="text-[10px] text-brand-gray/60">por video</p>
+              <p className="text-[10px] text-brand-gray/60">al mes</p>
             </div>
           ))}
         </div>
 
         <p className="mt-6 text-center text-xs text-brand-gray/60">
-          * Comparación basada en tarifas individuales UGC Colombia:{" "}
-          {format(rates.script)} guión, {format(rates.edit)} edición,{" "}
-          {format(rates.creator)} por creador, {format(rates.strategy)}{" "}
-          estrategia base.
+          * Comparación estimada vs. contratar plataforma live shopping, host
+          freelance, producción y estrategia por separado en LATAM.
         </p>
       </div>
     </section>

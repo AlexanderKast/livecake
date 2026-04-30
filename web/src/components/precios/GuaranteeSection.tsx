@@ -131,7 +131,7 @@ export function GuaranteeSection() {
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="rounded-2xl border border-brand-graphite/60 bg-white/[0.025] p-6 sm:p-8 mb-6"
         >
-          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gold/70 mb-5">
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-5">
             Cómo funciona
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">

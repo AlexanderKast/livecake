@@ -31,7 +31,7 @@ export default async function OGImage() {
             right: 0,
             bottom: 0,
             background:
-              "radial-gradient(ellipse at 20% 80%, rgba(212,160,23,0.12) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(249,179,52,0.08) 0%, transparent 50%)",
+              "radial-gradient(ellipse at 20% 80%, rgba(22,163,74,0.12) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(22,163,74,0.08) 0%, transparent 50%)",
           }}
         />
 
@@ -51,8 +51,8 @@ export default async function OGImage() {
               display: "flex",
               alignItems: "center",
               gap: "8px",
-              background: "rgba(212,160,23,0.15)",
-              border: "1px solid rgba(212,160,23,0.4)",
+              background: "rgba(22,163,74,0.15)",
+              border: "1px solid rgba(22,163,74,0.4)",
               borderRadius: "999px",
               padding: "8px 24px",
               marginBottom: "12px",

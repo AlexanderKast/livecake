@@ -31,7 +31,9 @@ export const CURRENCY_META: Record<Currency, CurrencyMeta> = {
 export interface PlanPricing {
   /** Precio mensual base (sin descuento por compromiso). */
   amount: number;
-  /** Ahorro mensual estimado vs. contratar por separado (para copy de UX). */
+  /** Precio de setup inicial (pago único, no recurrente). */
+  setupAmount: number;
+  /** Ahorro mensual estimado vs. contratar los componentes por separado (para copy de UX). */
   monthlySavings: number;
 }
 
@@ -39,19 +41,32 @@ export interface PlanPricing {
  * Precios mensuales base (ciclo de 1 mes, sin descuento por compromiso).
  * Los descuentos por duración (3/6/12 meses) se aplican encima y están
  * definidos en `@/lib/stripe/plans:DURATION_DISCOUNT`.
+ *
+ * Planes Live Cake (live shopping):
+ *   starter  → USD 599  /mes · Setup USD 1,400
+ *   growth   → USD 999  /mes · Setup USD 1,800
+ *   pro      → USD 1,699/mes · Setup USD 2,200
+ *   elite    → USD 2,799/mes · Setup USD 3,000
+ *
+ * Tasas COP: USD × 4,000 (referencia al 2026-04-30), redondeadas a cifras
+ * psicológicamente limpias para el mercado colombiano.
  */
 export const PLAN_PRICES: Record<string, Record<Currency, PlanPricing>> = {
   starter: {
-    USD: { amount: 590, monthlySavings: 400 },
-    COP: { amount: 1_590_000, monthlySavings: 2_350_000 },
+    USD: { amount: 599, setupAmount: 1_400, monthlySavings: 800 },
+    COP: { amount: 2_390_000, setupAmount: 5_590_000, monthlySavings: 3_200_000 },
   },
   growth: {
-    USD: { amount: 890, monthlySavings: 855 },
-    COP: { amount: 2_590_000, monthlySavings: 3_890_000 },
+    USD: { amount: 999, setupAmount: 1_800, monthlySavings: 1_500 },
+    COP: { amount: 3_990_000, setupAmount: 7_190_000, monthlySavings: 6_000_000 },
   },
-  scale: {
-    USD: { amount: 1_890, monthlySavings: 2_925 },
-    COP: { amount: 5_890_000, monthlySavings: 12_990_000 },
+  pro: {
+    USD: { amount: 1_699, setupAmount: 2_200, monthlySavings: 2_800 },
+    COP: { amount: 6_790_000, setupAmount: 8_790_000, monthlySavings: 11_200_000 },
+  },
+  elite: {
+    USD: { amount: 2_799, setupAmount: 3_000, monthlySavings: 5_200 },
+    COP: { amount: 11_190_000, setupAmount: 11_990_000, monthlySavings: 20_800_000 },
   },
 };
 

@@ -4,7 +4,7 @@ import { Sidebar } from "@/components/admin/Sidebar";
 import { Header } from "@/components/admin/Header";
 
 export const metadata: Metadata = {
-  title: "UGC Colombia · Admin",
+  title: "Live Cake · Admin",
   robots: { index: false, follow: false },
 };
 

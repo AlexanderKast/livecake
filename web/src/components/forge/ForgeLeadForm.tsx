@@ -103,10 +103,10 @@ export function ForgeLeadForm({ variant = "hero", className = "" }: Props) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className={`flex flex-col gap-4 p-6 md:p-8 rounded-2xl border border-brand-yellow/40 bg-black/60 backdrop-blur-sm ${className}`}
+      className={`flex flex-col gap-4 p-6 md:p-8 rounded-2xl border border-brand-green/40 bg-black/60 backdrop-blur-sm ${className}`}
     >
       <div className="flex flex-col gap-1">
-        <p className="text-xs text-brand-yellow uppercase tracking-widest font-bold">
+        <p className="text-xs text-brand-green uppercase tracking-widest font-bold">
           {isHero ? "Descargar Content Forge" : "Déjanos tus datos"}
         </p>
         <h3 className="font-display text-3xl md:text-4xl uppercase text-white leading-none tracking-tight">
@@ -172,7 +172,7 @@ export function ForgeLeadForm({ variant = "hero", className = "" }: Props) {
           name="howHeard"
           value={form.howHeard}
           onChange={(e) => update("howHeard", e.target.value)}
-          className="bg-black/40 text-white border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-yellow transition-colors"
+          className="bg-black/40 text-white border border-white/15 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand-green transition-colors"
         >
           <option value="">Selecciona...</option>
           <option value="instagram">Instagram</option>
@@ -196,7 +196,7 @@ export function ForgeLeadForm({ variant = "hero", className = "" }: Props) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-2 bg-brand-yellow hover:bg-brand-yellow-hover disabled:opacity-60 disabled:cursor-not-allowed text-brand-black font-bold py-4 px-6 rounded-xl text-base transition-colors"
+        className="mt-2 bg-brand-green hover:bg-brand-green-hover disabled:opacity-60 disabled:cursor-not-allowed text-brand-black font-bold py-4 px-6 rounded-xl text-base transition-colors"
       >
         {isSubmitting ? "Enviando..." : "Descargar Content Forge gratis →"}
       </button>
@@ -204,7 +204,7 @@ export function ForgeLeadForm({ variant = "hero", className = "" }: Props) {
       <p className="text-[11px] text-brand-gray-light/70 leading-relaxed text-center">
         Al enviar aceptas recibir correos con este entregable y futuros regalos.
         Tus datos están protegidos por la Ley 1581 de Colombia y nuestra{" "}
-        <a href="/legal/privacidad" className="text-brand-yellow hover:underline">
+        <a href="/legal/privacidad" className="text-brand-green hover:underline">
           política de privacidad
         </a>
         .
@@ -229,7 +229,7 @@ function Field(props: {
     <div className="flex flex-col gap-1.5">
       <label htmlFor={props.name} className="text-xs text-brand-gray-light uppercase tracking-wider font-semibold">
         {props.label}
-        {props.required ? <span className="text-brand-yellow ml-1">*</span> : null}
+        {props.required ? <span className="text-brand-green ml-1">*</span> : null}
       </label>
       <input
         id={props.name}
@@ -241,7 +241,7 @@ function Field(props: {
         required={props.required}
         autoComplete={props.autoComplete}
         className={`bg-black/40 text-white border rounded-lg px-4 py-3 text-sm placeholder:text-brand-gray-light/40 focus:outline-none transition-colors ${
-          props.error ? "border-red-500/60 focus:border-red-500" : "border-white/15 focus:border-brand-yellow"
+          props.error ? "border-red-500/60 focus:border-red-500" : "border-white/15 focus:border-brand-green"
         }`}
       />
       {props.error ? <p className="text-xs text-red-400">{props.error}</p> : null}

@@ -15,8 +15,8 @@ export const effects: EffectSpec[] = [
     name: "Glow Pulse",
     subtitle: "CTAs premium",
     css: `@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 8px rgba(212,160,23,0.4); }
-  50%      { box-shadow: 0 0 20px 4px rgba(212,160,23,0.7); }
+  0%, 100% { box-shadow: 0 0 8px rgba(0,214,79,0.4); }
+  50%      { box-shadow: 0 0 20px 4px rgba(0,214,79,0.7); }
 }`,
     duration: "2.5s",
     loop: "infinite",

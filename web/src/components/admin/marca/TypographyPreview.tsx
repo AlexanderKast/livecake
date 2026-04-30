@@ -53,7 +53,7 @@ export function FamilyCard({
 }
 
 export function HierarchyRow({ entry }: { entry: TypeHierarchyEntry }) {
-  const fontClass = entry.family === "Anton" ? "font-display" : "font-sans";
+  const fontClass = entry.family === "Manrope" ? "font-display" : "font-sans";
   const caseClass = entry.transform === "uppercase" ? "uppercase" : "";
 
   return (

@@ -1,11 +1,7 @@
 import {
-  Flame,
-  Repeat,
-  UserX,
-  Megaphone,
-  LineChart,
-  Camera,
-  Bot,
+  ShoppingCart,
+  TrendingDown,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 
@@ -22,6 +18,12 @@ export type DolorBlock = {
   icon: LucideIcon;
   image: string;
   imageAlt: string;
+  /** Nombre del avatar (persona real ficticia que representa el segmento). */
+  avatar?: string;
+  /** Rol o descripcion del avatar. */
+  avatarRole?: string;
+  /** Frase gancho que abre la narrativa del avatar. */
+  hook?: string;
   titulo: string;
   subtitulo: string;
   dolores: Dolor[];
@@ -31,183 +33,140 @@ export type DolorBlock = {
   servicioLabel: string;
 };
 
+/**
+ * Tres avatares LATAM de live shopping:
+ *  - Carlos   → dropshipper con devoluciones altas y ROAS en caida
+ *  - Valentina → infoproductora cuyo modelo de lanzamiento ya no escala
+ *  - Rodrigo  → empresario de marca propia ahogado por comisiones de marketplaces
+ */
 export const DOLOR_BLOCKS: DolorBlock[] = [
   {
-    id: "creacion-contenido",
-    icon: Flame,
+    id: "carlos-dropshipper",
+    icon: ShoppingCart,
     image: "/brand/casos-page/creacion-contenido.png",
-    imageAlt: "Escena editorial de creación de contenido improvisada",
-    titulo: "Crear contenido cada semana te está agotando.",
+    imageAlt: "Pantalla con dashboard de anuncios y ROAS en caida",
+    avatar: "Carlos",
+    avatarRole: "Dropshipper, Bogota",
+    hook: "Vende $25K al mes pero el 22% se le va en devoluciones — y cada mes necesita un producto nuevo.",
+    titulo: "Cada mes un producto nuevo. Y las devoluciones no bajan del 20%.",
     subtitulo:
-      "Sabes que necesitas publicar, sabes que necesitas videos para tus anuncios, sabes que el contenido es lo que mueve la aguja. Pero entre el día a día del negocio, al final del mes terminas grabando como puedas con el celular o pagándole a quien aparezca primero en Instagram.",
+      "Carlos lleva 3 anos en dropshipping. Cada vez que encuentra un ganador lo escala con Meta Ads, pero en 6-8 semanas la frecuencia sube, el ROAS cae a 1.5x y tiene que buscar otro producto. Encima, el 20-25% de los pedidos vuelven porque el cliente no vio bien el producto antes de comprar.",
     dolores: [
-      { titulo: "No sabes qué grabar", descripcion: "Cada semana pierdes 4 a 6 horas decidiendo qué grabar antes de poder grabarlo." },
-      { titulo: "Calidad inconsistente", descripcion: "Un video sale bien, los siguientes tres son flojos. No hay método, solo suerte." },
-      { titulo: "Equipo sobrecargado", descripcion: "Tu encargado de redes no es estratega, ni guionista, ni director, ni editor. Pero le pides todo." },
-      { titulo: "Publicar por publicar", descripcion: "Subes lo que sea para no romper la racha. La marca pierde rumbo y la gente lo nota." },
-      { titulo: "Cada video desde cero", descripcion: "Ningún proceso reutilizable. Cada producción empieza de la nada. Cero ahorro de tiempo." },
-      { titulo: "Terminas tú frente a la cámara", descripcion: "Acabas grabando porque nadie más quiere o puede. Y eso no escala." },
+      {
+        titulo: "ROAS de 1.5x que no cubre los costos",
+        descripcion:
+          "Con un ROAS de 1.5x en Meta solo cubre el costo del producto y la pauta. El margen real desaparece cuando suma devoluciones, fulfillment y servicio al cliente.",
+      },
+      {
+        titulo: "Devoluciones entre el 15% y el 30%",
+        descripcion:
+          "Los compradores no ven el producto en uso antes de comprarlo. El live shopping reduce las devoluciones a 10-15% porque el cliente ya lo vio funcionando en tiempo real. Eso es hasta un 40% menos de returns.",
+      },
+      {
+        titulo: "Fatiga de creativo cada 6-8 semanas",
+        descripcion:
+          "El video UGC se quema rapido. Sin un canal de venta en vivo que rote formatos y ofertas, queda atrapado en el ciclo de producir, escalar, quemar y reemplazar.",
+      },
+      {
+        titulo: "WhatsApp de servicio al cliente sin escalar",
+        descripcion:
+          "Dos personas respondiendo cientos de mensajes al dia sobre estado del pedido, cambios y devoluciones. Cada cliente insatisfecho es potencialmente una resena negativa.",
+      },
     ],
     solucion:
-      "Te entregamos 5, 10 o 30 videos UGC al mes con 3 versiones cada uno, listos para publicar en Meta y TikTok. Estrategia, guiones, selección de creadores, producción, edición y revisiones — todo con un solo equipo. Tu gente deja de improvisar y vuelve a enfocarse en vender.",
+      "Con live shopping los clientes ven el producto en uso, hacen preguntas en tiempo real y compran con mucha mas confianza — lo que reduce devoluciones al 10-15% (vs. 20-30% del ecom tradicional). El Botcake de Pancake automatiza el seguimiento de pedidos por WhatsApp sin contratar mas gente. Y el live en si es el contenido que alimenta los anuncios de la semana siguiente.",
     metricas: [
-      { label: "VOL", value: "30+", desc: "Entregables al mes" },
-      { label: "TIEMPO", value: "7d", desc: "Primera entrega" },
-      { label: "GANCHO", value: "30%+", desc: "Atención en 3 segundos" },
+      { label: "ROAS", value: "3-5x", desc: "Objetivo live shopping" },
+      { label: "DEVOLUC.", value: "-40%", desc: "Live vs ecom tradicional" },
+      { label: "RESP.", value: "<2 min", desc: "Botcake WhatsApp auto" },
     ],
-    servicioId: "ugc-ads",
-    servicioLabel: "Ver UGC Ads Pack",
+    servicioId: "live-shopping",
+    servicioLabel: "Ver planes de Live Shopping",
   },
   {
-    id: "fatiga-creativa",
-    icon: Repeat,
+    id: "valentina-infoproductora",
+    icon: TrendingDown,
     image: "/brand/casos-page/fatiga-creativa.png",
-    imageAlt: "Frames de video repitiéndose hacia el fondo en luz dorada",
-    titulo: "Tu video funcionó. Una sola vez. Hace tres meses.",
+    imageAlt: "Pantalla con embudo de lanzamiento y metricas en bajada",
+    avatar: "Valentina",
+    avatarRole: "Infoproductora, Ciudad de Mexico",
+    hook: "Sus webinars ya no llenan como antes — y sus ingresos solo existen en los 10 dias de lanzamiento.",
+    titulo: "La audiencia mira pero no compra. Y solo vendes en el lanzamiento.",
     subtitulo:
-      "Encontraste el video ganador, lo escalaste con todo, te trajo ventas… y de pronto el costo subió, la gente dejó de hacer clic y nadie en tu equipo sabe por qué. Spoiler: no es Meta, es que la audiencia ya se cansó del mismo video.",
+      "Valentina tiene 80K seguidores en Instagram, un curso de $497 USD y un perfil fuerte. Pero sus webinars ya no convierten como antes — la audiencia esta saturada del formato. El 90% de sus ingresos llega en ventanas de 10 dias, y los 20 dias siguientes son silencio total.",
     dolores: [
-      { titulo: "Mismo formato repetido", descripcion: "Solo testimonios. Solo aperturas de producto. Solo demos. Tu audiencia ya los memorizó." },
-      { titulo: "Una sola entrada al video", descripcion: "Un solo gancho inicial. Cuando deja de jalar, queda inservible todo el creativo." },
-      { titulo: "Siempre el mismo creador", descripcion: "Mismo rostro durante 6 meses. Tu marca termina siendo la marca de esa persona." },
-      { titulo: "Sin reservas de creativos", descripcion: "Cuando un video se quema no tienes 10 listos para reemplazarlo. Empiezas otra vez de cero." },
-      { titulo: "Audiencia agotada", descripcion: "La frecuencia se pasa de 3.5 y ya nadie te ve. Pero sigues pagando por mostrar el anuncio." },
+      {
+        titulo: "Webinars con menos del 30% de asistencia real",
+        descripcion:
+          "Se registran 500 personas, asisten 140, compran 8. El embudo de webinar esta agotado para audiencias que llevan anos viendo el mismo formato de 'te regalo valor y al final vendo'.",
+      },
+      {
+        titulo: "Ingresos solo en ventana de lanzamiento",
+        descripcion:
+          "Enero: $18K USD. Febrero: $900 USD. Marzo: $16K. El modelo de lanzamiento crea picos impredecibles imposibles de planear financieramente. El live shopping permite ventas predecibles cada semana.",
+      },
+      {
+        titulo: "La audiencia ve pero no compra",
+        descripcion:
+          "Los Reels y Stories generan muchos views pero pocos clics a la pagina de ventas. Sin interaccion en tiempo real, no hay urgencia ni conexion emocional suficiente para romper la inercia.",
+      },
+      {
+        titulo: "Sin canal de ventas evergreen entre lanzamientos",
+        descripcion:
+          "Entre lanzamientos solo hay contenido de valor sin CTA claro. Eso es contenido que educa pero no convierte — y que le esta regalando atencion a la competencia.",
+      },
     ],
     solucion:
-      "Te entregamos rotación constante: nuevos ganchos, nuevos creadores, nuevos formatos cada mes. 3 versiones por video × hasta 30 videos al mes = 90 entregables que pueden vivir al mismo tiempo en tu cuenta de anuncios. Cansancio del creativo, controlado.",
+      "El live shopping convierte mejor que un webinar grabado porque la interaccion es real: preguntas en directo, respuestas inmediatas, ofertas con tiempo limitado. Con 2-4 lives A/B a la semana Valentina puede vender su curso o sus servicios de forma predecible — sin depender del gran lanzamiento trimestral. La retension a los 10 minutos supera el 60% cuando el live esta bien producido.",
     metricas: [
-      { label: "VARIAS", value: "3x", desc: "Versiones por video" },
-      { label: "FREC", value: "<2.5", desc: "Frecuencia ideal Meta" },
-      { label: "FRESCO", value: "100%", desc: "Banco renovado al mes" },
+      { label: "RETEN.", value: "60%+", desc: "En live a los 10 minutos" },
+      { label: "CVR", value: "30%", desc: "Viewer a comprador en live" },
+      { label: "INGRES.", value: "Semanal", desc: "Ventas predecibles" },
     ],
-    servicioId: "ugc-ads",
-    servicioLabel: "Ver UGC Ads Pack",
+    servicioId: "live-shopping",
+    servicioLabel: "Ver planes de Live Shopping",
   },
   {
-    id: "contratar-creadores",
-    icon: UserX,
+    id: "rodrigo-marca-propia",
+    icon: MessageCircle,
     image: "/brand/casos-page/contratar-creadores.png",
-    imageAlt: "Teléfono con mensajes silenciados sobre superficie oscura",
-    titulo: "Contratar creadores sin agencia es un dolor de cabeza.",
+    imageAlt: "Pantalla de panel de marketplace con comisiones acumuladas",
+    avatar: "Rodrigo",
+    avatarRole: "Empresario marca propia, Medellin",
+    hook: "El marketplace se lleva el 22% de cada venta — y su equipo no alcanza a responder todos los WhatsApps.",
+    titulo: "El marketplace se queda con tu margen. Y no tienes canal propio.",
     subtitulo:
-      "Buscaste creadores en Instagram, en TikTok, en grupos de Facebook. Mandaste 30 mensajes. Te respondieron 6. Contrataste 2. Uno entregó tarde y el otro nunca volvió a aparecer. Bienvenido al mundo del freelance UGC sin filtros.",
+      "Rodrigo vende $60K USD al mes en Mercado Libre y Falabella, pero entre comisiones (15-25%), logistica y publicidad dentro del marketplace, el margen real cae por debajo del 12%. No tiene relacion directa con sus clientes, no puede hacer retargeting y si el marketplace cambia el algoritmo, sus ventas se desploman de la noche a la manana.",
     dolores: [
-      { titulo: "Búsqueda interminable por mensaje", descripcion: "8 horas a la semana solo buscando perfiles, mandando mensajes y rezando para que respondan." },
-      { titulo: "Te dicen sí y desaparecen", descripcion: "Aceptan, cobran adelanto y nunca vuelven a contestar. Sin contrato no tienes nada que reclamar." },
-      { titulo: "Calidad técnica pobre", descripcion: "Audio horrible, mala iluminación, formatos verticales mal cortados. No sirven para tus anuncios." },
-      { titulo: "Sin guías ni instrucciones", descripcion: "Improvisan porque nadie les explicó qué hacer. Resultado: video genérico que no convierte." },
-      { titulo: "Sin contratos ni derechos", descripcion: "No tienes derechos para usarlo en Meta Ads. Si te reportan, todo el creativo queda en el limbo." },
-      { titulo: "Pagos directos sin respaldo", descripcion: "Transferencias a cuentas personales, sin facturas, sin garantía de que te entreguen." },
-      { titulo: "Cero control de calidad", descripcion: "Recibes el video, no cumple, pides cambios y te dicen 'eso fue lo que acordamos'." },
+      {
+        titulo: "Comisiones de 15% a 25% sobre cada venta",
+        descripcion:
+          "Mercado Libre cobra entre el 11% y el 23% de comision mas IVA sobre la misma. Con logistica Fulfil y publicidad interna, el costo real por venta supera el 25% del precio final.",
+      },
+      {
+        titulo: "Cero relacion con el comprador",
+        descripcion:
+          "El marketplace es el dueno del cliente. Rodrigo no tiene el email ni el numero de telefono de ninguno de sus compradores — y no puede hacerles retargeting ni ofrecerles recompra directa.",
+      },
+      {
+        titulo: "Equipo desbordado con WhatsApps de soporte",
+        descripcion:
+          "Recibe 200-400 mensajes diarios entre preguntas de producto, seguimiento de pedido y quejas. Con 2 personas atendiendo, los tiempos de respuesta superan las 4 horas y los clientes se van con la competencia.",
+      },
+      {
+        titulo: "Sin canal de venta propio si el marketplace cambia",
+        descripcion:
+          "Una actualizacion del algoritmo, un cambio de politica o un competidor con mas presupuesto puede hundir las ventas de un dia para otro. Sin canal propio no hay red de seguridad.",
+      },
     ],
     solucion:
-      "Tenemos red de más de 30 creadores UGC verificados, contratos profesionales, instrucciones claras para cada grabación, control de calidad interno y derechos de uso comercial por 12 meses incluidos. Tú apruebas los creadores antes de grabar. Si algo no cumple, lo regrabamos sin discutir.",
+      "El live shopping es el canal propio que le falta a Rodrigo. Con WebCake tiene su tienda de live integrada, con Botcake automatiza el seguimiento por WhatsApp y con LiveCake transmite con su marca — sin pagar comision a ningun marketplace. Un live bien ejecutado puede generar el equivalente a 3-5 dias de ventas en el marketplace en una sola hora.",
     metricas: [
-      { label: "RED", value: "+30", desc: "Creadores verificados" },
-      { label: "QA", value: "100%", desc: "Aprobación previa del cliente" },
-      { label: "USO", value: "12m", desc: "Licencia comercial" },
+      { label: "COMIS.", value: "0%", desc: "Live Cake no cobra por venta" },
+      { label: "RESP.", value: "<2 min", desc: "Botcake WhatsApp auto" },
+      { label: "AOV", value: "+10-30%", desc: "Ticket promedio en live" },
     ],
-    servicioId: "talento",
-    servicioLabel: "Ver Agencia de Creadores",
-  },
-  {
-    id: "estrategia-organica",
-    icon: Megaphone,
-    image: "/brand/casos-page/estrategia-organica.png",
-    imageAlt: "Muro editorial con fragmentos dispersos sin estructura",
-    titulo: "Publicar sin estrategia es tirar contenido a la basura.",
-    subtitulo:
-      "Tu Instagram tiene 200 publicaciones y cero línea editorial. Tu TikTok copia tendencias que ya pasaron. Tu YouTube Shorts es un cementerio. Y aún así te preguntas por qué la marca no crece.",
-    dolores: [
-      { titulo: "Sin pilares de contenido", descripcion: "Cada publicación va por un lado distinto. La marca se siente sin alma." },
-      { titulo: "Copiar tendencias tarde", descripcion: "Subes el sonido del momento dos semanas después. Ya nadie lo ve." },
-      { titulo: "Cero consistencia", descripcion: "Publicas cinco días, desapareces dos semanas, vuelves. El algoritmo no te perdona." },
-      { titulo: "Publicaciones sueltas", descripcion: "No hay un hilo que conecte una con la siguiente. Cero efecto acumulado." },
-      { titulo: "Mides 'me gusta', no acciones", descripcion: "Te enorgulleces de mil 'me gusta' mientras cero personas entran a tu sitio." },
-    ],
-    solucion:
-      "Diseñamos tu estrategia editorial mensual: pilares, calendario, ángulos ganadores, instrucciones para cada creador y reportes de resultados. Coordinamos lo orgánico con los anuncios pagados para que ambos refuercen el mismo mensaje, no compitan.",
-    metricas: [
-      { label: "PILARES", value: "4-6", desc: "Pilares editoriales" },
-      { label: "POSTS", value: "20+", desc: "Publicaciones al mes" },
-      { label: "CTR", value: "3%+", desc: "Meta para TikTok Spark Ads" },
-    ],
-    servicioId: "estrategia",
-    servicioLabel: "Ver Estrategia de Contenido",
-  },
-  {
-    id: "metricas-ads",
-    icon: LineChart,
-    image: "/brand/casos-page/metricas-ads.png",
-    imageAlt: "Líneas de datos doradas entrelazándose en caos editorial",
-    titulo: "Mides ROAS y le echas la culpa al video equivocado.",
-    subtitulo:
-      "Tu retorno bajó. ¿Es el video? ¿Es la oferta? ¿Es la página de aterrizaje? ¿Es el pago? No sabes. Y mientras tanto cambias el video cada semana esperando que algo funcione por accidente.",
-    dolores: [
-      { titulo: "Persigues el ROAS sin contexto", descripcion: "El retorno depende de la oferta, los precios y el embudo de venta. Echarle la culpa al video es la salida fácil." },
-      { titulo: "No distingues gancho de retención", descripcion: "El video puede tener buen gancho y mala retención. O al revés. Cada uno se arregla diferente." },
-      { titulo: "Sin separar métrica por video", descripcion: "Un solo número agregado para todos los creativos. No sabes cuál está jalando." },
-      { titulo: "Decisiones a ciegas", descripcion: "Pausas el video equivocado, escalas el peor, repites los mismos errores." },
-      { titulo: "Sin referencias de la industria", descripcion: "No sabes si tu CTR de 1.2% es bueno o malo. No tienes con qué compararlo." },
-    ],
-    solucion:
-      "Auditamos tu embudo completo, separamos qué controla el video y qué controla la oferta, y te entregamos un plan a 90 días con métricas reales (gancho, retención, clics, costo por mil). Acompañamiento mensual con Alexander para no volver a decidir a ciegas.",
-    metricas: [
-      { label: "GANCHO", value: "30%+", desc: "Mejor 25% en Meta" },
-      { label: "RET.", value: "60%+", desc: "Retención a 15 segundos" },
-      { label: "PLAN", value: "90d", desc: "Hoja de ruta accionable" },
-    ],
-    servicioId: "consultoria",
-    servicioLabel: "Ver Consultoría",
-  },
-  {
-    id: "produccion-cara",
-    icon: Camera,
-    image: "/brand/casos-page/produccion-cara.png",
-    imageAlt: "Equipo de producción cinematográfica sobredimensionado en silueta",
-    titulo: "Una productora cobra $5K por un video que no convierte.",
-    subtitulo:
-      "Pagaste producción premium. Te entregaron una pieza de marca hermosa, en 4K, con drone y todo. La subiste a Meta Ads y… nada. Porque verse cinematográfico no significa que vende.",
-    dolores: [
-      { titulo: "Estética por encima de estrategia", descripcion: "Te enamoraste de la imagen y olvidaste el gancho." },
-      { titulo: "Entrega lenta", descripcion: "Tres meses de pre-producción para un video que ya ni encaja con la temporada." },
-      { titulo: "Un solo formato", descripcion: "Una versión 16:9 que toca recortar a mano para Reels y TikTok. Adiós composición." },
-      { titulo: "Sin pensar en resultados", descripcion: "Nadie del equipo entiende de Meta Ads. Hicieron lo de siempre." },
-      { titulo: "Sin versiones", descripcion: "Un solo video. Si no funciona, perdiste $5K. Si funciona, lo quemas en tres semanas." },
-    ],
-    solucion:
-      "Cuando necesitas producción premium de verdad — video de venta, pieza de marca, lanzamiento — la hacemos pensando en resultados: pre-producción estratégica, varios formatos para anuncios y orgánico, ganchos pensados para los primeros 2 segundos. Estética y conversión.",
-    metricas: [
-      { label: "FORMATOS", value: "9:16·1:1·16:9", desc: "Ads y orgánico" },
-      { label: "GANCHO", value: "2s", desc: "Atención forzada" },
-      { label: "CORTES", value: "5+", desc: "Versiones por master" },
-    ],
-    servicioId: "produccion",
-    servicioLabel: "Ver Producción Premium",
-  },
-  {
-    id: "procesos-manuales",
-    icon: Bot,
-    image: "/brand/casos-page/procesos-manuales.png",
-    imageAlt: "Escritorio editorial con pilas de papel y lámpara cálida",
-    titulo: "Tu equipo hace lo mismo todos los días, a mano.",
-    subtitulo:
-      "Responder WhatsApps, mover clientes de un Excel a otro, agendar llamadas, mandar recordatorios, copiar y pegar reportes. Tu gente se quema en tareas que un agente con IA podría resolver en minutos.",
-    dolores: [
-      { titulo: "Atención al cliente sin escalar", descripcion: "Mil mensajes al día, dos personas respondiendo. Los clientes se enfrían." },
-      { titulo: "Procesos en la cabeza de una sola persona", descripcion: "Si esa persona renuncia, te quedas sin operación." },
-      { titulo: "Reportes a mano", descripcion: "8 horas al mes copiando datos a Google Sheets solo para ver lo que ya pasó." },
-      { titulo: "Herramientas desconectadas", descripcion: "Tu CRM, Gmail, WhatsApp y planilla viven en mundos paralelos." },
-      { titulo: "Equipo quemado", descripcion: "La gente buena se cansa de hacer trabajo de robot. Te toca reemplazarlos cada 6 meses." },
-    ],
-    solucion:
-      "Diseñamos flujos automáticos con n8n, agentes en WhatsApp con IA e integraciones reales con tu CRM. Lo mismo que corremos en Jarvis v2 (nuestro asistente interno) lo aplicamos a tu operación. También producimos contenido con IA para escalar volumen sin sacrificar el ADN de tu marca.",
-    metricas: [
-      { label: "HORAS", value: "20+", desc: "Ahorradas a la semana" },
-      { label: "RESP.", value: "<1m", desc: "Tiempo de respuesta WhatsApp" },
-      { label: "STACK", value: "n8n+IA", desc: "Probado en producción" },
-    ],
-    servicioId: "ia-automatizacion",
-    servicioLabel: "Ver Automatización con IA",
+    servicioId: "live-shopping",
+    servicioLabel: "Ver planes de Live Shopping",
   },
 ];

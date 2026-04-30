@@ -441,10 +441,10 @@ function BrollView({ md }: { md: string | null }) {
 function PremiumView() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <InfoCard title="Tipografía" subtitle="Design tokens UGC Colombia">
+      <InfoCard title="Tipografía" subtitle="Design tokens Live Cake">
         <ul className="text-sm text-brand-gray space-y-1">
           <li>
-            <span className="text-white font-display uppercase">Anton</span> —
+            <span className="text-white font-display uppercase">Manrope</span> —
             títulos, hooks, stats
           </li>
           <li>
@@ -457,9 +457,9 @@ function PremiumView() {
       <InfoCard title="Paleta" subtitle="Contrast-safe 4.5:1+">
         <div className="flex gap-2 flex-wrap">
           <Swatch color="#000000" name="Brand Black" />
-          <Swatch color="#F9B334" name="Brand Yellow" />
-          <Swatch color="#D4A017" name="Brand Gold" />
-          <Swatch color="#BDBCBC" name="Brand Gray" />
+          <Swatch color="#00D64F" name="Brand Yellow" />
+          <Swatch color="#00D64F" name="Brand Gold" />
+          <Swatch color="#A3A3A3" name="Brand Gray" />
         </div>
       </InfoCard>
 
@@ -470,7 +470,7 @@ function PremiumView() {
       >
         <ul className="text-sm text-brand-gray space-y-1 list-disc list-inside">
           <li>Subtítulos: Inter 600, burned-in, 2 líneas máx, safe zone 10%.</li>
-          <li>Stats y data: Anton uppercase, color brand-yellow, shadow soft.</li>
+          <li>Stats y data: Manrope semibold, color brand-green, shadow soft.</li>
           <li>
             Transiciones: cortes limpios + zoom 2–3% puntual. Evitar whoosh
             genérico.

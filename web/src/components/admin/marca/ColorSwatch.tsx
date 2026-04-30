@@ -1,6 +1,6 @@
 import type { ColorToken } from "@/app/admin/marca/_data/colors";
 
-const darkText = new Set(["#F9B334", "#BDBCBC", "#F5F5F0", "#FFFFFF"]);
+const darkText = new Set(["#00D64F", "#A3A3A3", "#F5F5F5", "#FFFFFF"]);
 
 export function ColorSwatch({ token }: { token: ColorToken }) {
   const onDark = !darkText.has(token.hex.toUpperCase());

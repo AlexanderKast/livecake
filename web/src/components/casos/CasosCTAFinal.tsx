@@ -34,7 +34,7 @@ export function CasosCTAFinal() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(249,179,52,0.25) 0%, transparent 50%), radial-gradient(ellipse 70% 50% at 80% 80%, rgba(212,160,23,0.2) 0%, transparent 55%)",
+              "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(22,163,74,0.25) 0%, transparent 50%), radial-gradient(ellipse 70% 50% at 80% 80%, rgba(22,163,74,0.2) 0%, transparent 55%)",
           }}
         />
 
@@ -45,7 +45,7 @@ export function CasosCTAFinal() {
           style={{
             padding: "2px",
             background:
-              "linear-gradient(135deg, rgba(249,179,52,0.7), rgba(212,160,23,0.4) 40%, rgba(212,160,23,0.15) 70%, transparent 100%)",
+              "linear-gradient(135deg, rgba(22,163,74,0.7), rgba(22,163,74,0.4) 40%, rgba(22,163,74,0.15) 70%, transparent 100%)",
             WebkitMask:
               "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
             WebkitMaskComposite: "xor",
@@ -71,14 +71,14 @@ export function CasosCTAFinal() {
           <div className="flex flex-col items-start gap-7 max-w-4xl">
             {/* Badge */}
             <motion.span
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-xs font-semibold text-brand-yellow tracking-[0.2em] uppercase"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 text-xs font-semibold text-brand-green tracking-[0.2em] uppercase"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse" />
-              Ya identificaste tu dolor
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
+              Ya viste que no eres el unico
             </motion.span>
 
             {/* Headline */}
@@ -90,9 +90,9 @@ export function CasosCTAFinal() {
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              No tienes que cargar
+              El live shopping
               <br />
-              <span className="text-brand-yellow">con todo esto solo.</span>
+              <span className="text-brand-green">ya es tu siguiente canal.</span>
             </motion.h2>
 
             {/* Subheadline */}
@@ -103,9 +103,10 @@ export function CasosCTAFinal() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Ya leíste los 7 dolores. Ya viste cómo los resolvemos. El siguiente
-              paso es una llamada de 30 minutos donde revisamos tu caso, te decimos
-              qué línea de servicio encaja y salimos con un plan claro. Sin venta forzada.
+              Ya leiste los tres casos. Ya viste como el live shopping resuelve
+              devoluciones altas, ingresos solo en lanzamiento y comisiones de
+              marketplace. El siguiente paso es una llamada de 30 minutos donde
+              revisamos tu negocio y salimos con un plan claro. Sin venta forzada.
             </motion.p>
 
             {/* CTA Button */}
@@ -119,16 +120,16 @@ export function CasosCTAFinal() {
               <motion.button
                 type="button"
                 onClick={() => openAudit("casos_cta_final")}
-                className="group relative inline-flex items-center justify-center gap-3 px-7 sm:px-8 py-4 sm:py-5 rounded-xl bg-brand-yellow text-brand-black font-semibold text-base sm:text-lg tracking-wide overflow-hidden min-h-[56px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-yellow"
+                className="group relative inline-flex items-center justify-center gap-3 px-7 sm:px-8 py-4 sm:py-5 rounded-xl bg-brand-green text-white font-semibold text-base sm:text-lg tracking-wide overflow-hidden min-h-[56px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 style={{
                   boxShadow:
-                    "0 10px 40px -10px rgba(249,179,52,0.5), 0 0 80px -20px rgba(212,160,23,0.4)",
+                    "0 10px 40px -10px rgba(22,163,74,0.5), 0 0 80px -20px rgba(22,163,74,0.4)",
                 }}
               >
-                <span className="relative z-10">QUIERO MI DIAGNÓSTICO</span>
+                <span className="relative z-10">QUIERO MI DIAGNOSTICO</span>
                 <ArrowRight
                   className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1"
                   aria-hidden
@@ -157,16 +158,16 @@ export function CasosCTAFinal() {
 
             {/* Guarantee badge */}
             <motion.div
-              className="inline-flex items-center gap-2.5 mt-6 px-5 py-3 rounded-xl border border-brand-gold/25 bg-white/[0.03]"
+              className="inline-flex items-center gap-2.5 mt-6 px-5 py-3 rounded-xl border border-brand-green/25 bg-white/[0.03]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
-              <ShieldCheck className="h-5 w-5 text-brand-yellow flex-shrink-0" aria-hidden />
+              <ShieldCheck className="h-5 w-5 text-brand-green flex-shrink-0" aria-hidden />
               <div className="text-left">
-                <p className="text-xs font-bold text-white">Garantía de 7 días</p>
-                <p className="text-[10px] text-brand-gray">Si no encajamos, te recomendamos gratis a alguien que sí pueda ayudarte</p>
+                <p className="text-xs font-bold text-white">Garantia de performance incluida</p>
+                <p className="text-[10px] text-brand-gray">CTR minimo 1.5% y retencion 25% — o repetimos el live sin costo extra</p>
               </div>
             </motion.div>
 
@@ -187,7 +188,7 @@ export function CasosCTAFinal() {
                 ].map((c) => (
                   <div
                     key={c.name}
-                    className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-yellow/20 to-brand-gold/10 border-2 border-brand-black flex items-center justify-center overflow-hidden"
+                    className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-green/20 to-brand-green/5 border-2 border-brand-black flex items-center justify-center overflow-hidden"
                     title={c.name}
                   >
                     <img
@@ -198,11 +199,11 @@ export function CasosCTAFinal() {
                     />
                   </div>
                 ))}
-                <div className="w-9 h-9 rounded-full bg-brand-yellow/10 border-2 border-brand-black flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-brand-yellow/60 font-sans">+</span>
+                <div className="w-9 h-9 rounded-full bg-brand-green/10 border-2 border-brand-black flex items-center justify-center">
+                  <span className="text-[10px] font-bold text-brand-green/60 font-sans">+</span>
                 </div>
               </div>
-              <p className="text-xs text-brand-gray">Marcas en Colombia y LATAM ya confían en nosotros</p>
+              <p className="text-xs text-brand-gray">Marcas en Colombia y LATAM ya hacen live shopping con nosotros</p>
             </motion.div>
           </div>
         </div>

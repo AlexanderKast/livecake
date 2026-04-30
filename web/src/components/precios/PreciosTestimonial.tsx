@@ -63,7 +63,7 @@ export function PreciosTestimonial() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(212,160,23,0.08), transparent 70%)",
+            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(22,163,74,0.08), transparent 70%)",
         }}
       />
 
@@ -75,7 +75,7 @@ export function PreciosTestimonial() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
             Validado por referentes
           </span>
           <h2
@@ -85,7 +85,7 @@ export function PreciosTestimonial() {
             Lo que dice{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #f9b334, #d4a017)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -95,7 +95,7 @@ export function PreciosTestimonial() {
             </span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-brand-gray max-w-xl mx-auto">
-            CEO de smartBeemo, la plataforma de e-commerce más grande de LATAM
+            CEO de smartBeemo, la plataforma de e-commerce mas grande de LATAM
             con +60K estudiantes y +$18M invertidos en pauta digital.
           </p>
         </motion.div>
@@ -124,7 +124,7 @@ export function PreciosTestimonial() {
             style={{
               padding: "1.5px",
               background:
-                "linear-gradient(135deg, rgba(249,179,52,0.7) 0%, rgba(212,160,23,0.4) 30%, rgba(212,160,23,0.15) 60%, transparent 100%)",
+                "linear-gradient(135deg, rgba(22,163,74,0.7) 0%, rgba(22,163,74,0.4) 30%, rgba(22,163,74,0.15) 60%, transparent 100%)",
               WebkitMask:
                 "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
               WebkitMaskComposite: "xor",
@@ -137,7 +137,7 @@ export function PreciosTestimonial() {
             className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at 100% 0%, rgba(249,179,52,0.18), transparent 65%)",
+                "radial-gradient(ellipse at 100% 0%, rgba(22,163,74,0.18), transparent 65%)",
             }}
           />
           <div
@@ -145,7 +145,7 @@ export function PreciosTestimonial() {
             className="absolute bottom-0 left-0 w-80 h-80 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at 0% 100%, rgba(212,160,23,0.1), transparent 65%)",
+                "radial-gradient(ellipse at 0% 100%, rgba(22,163,74,0.1), transparent 65%)",
             }}
           />
 
@@ -153,7 +153,7 @@ export function PreciosTestimonial() {
           <div className="relative lg:col-span-2 p-6 sm:p-8 lg:p-10 lg:pr-0">
             <div className="mx-auto w-full max-w-[280px] lg:max-w-none">
               <div
-                className="relative rounded-2xl overflow-hidden border-2 border-brand-gold/40 shadow-[0_0_60px_-15px_rgba(212,160,23,0.4)]"
+                className="relative rounded-2xl overflow-hidden border-2 border-brand-green/40 shadow-[0_0_60px_-15px_rgba(22,163,74,0.4)]"
                 style={{ aspectRatio: "9 / 16" }}
               >
                 <video
@@ -182,7 +182,7 @@ export function PreciosTestimonial() {
                   onClick={toggleMute}
                   aria-label={muted ? "Activar sonido" : "Silenciar"}
                   aria-pressed={!muted}
-                  className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-brand-yellow/20 hover:border-brand-yellow/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+                  className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-brand-green/20 hover:border-brand-green/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
                 >
                   {muted ? (
                     <VolumeX className="h-4 w-4" aria-hidden />
@@ -197,7 +197,7 @@ export function PreciosTestimonial() {
                       Michel Edery
                     </p>
                     <BadgeCheck
-                      className="h-4 w-4 text-brand-yellow drop-shadow-lg"
+                      className="h-4 w-4 text-brand-green drop-shadow-lg"
                       aria-label="Verificado"
                     />
                   </div>
@@ -213,32 +213,32 @@ export function PreciosTestimonial() {
           <div className="relative lg:col-span-3 p-6 sm:p-8 lg:p-10 lg:pl-0">
             {/* Quote icon */}
             <Quote
-              className="h-12 w-12 text-brand-gold/20 mb-4"
+              className="h-12 w-12 text-brand-green/20 mb-4"
               aria-hidden
             />
 
             {/* Cita principal */}
             <p className="font-display text-xl sm:text-2xl lg:text-[1.75rem] xl:text-3xl text-white leading-snug italic mb-8">
-              &ldquo;Con más de 18 millones de dólares invertidos en pauta,{" "}
+              &ldquo;Con mas de 18 millones de dolares invertidos en pauta,{" "}
               <span
                 className="not-italic"
                 style={{
                   background:
-                    "linear-gradient(90deg, #f9b334 0%, #d4a017 100%)",
+                    "linear-gradient(90deg, #16a34a 0%, #15803d 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                garantizamos el trabajo de UGC Colombia.
+                garantizamos el trabajo de Live Cake.
               </span>{" "}
-              Son muy rápidos, súper creativos y su contenido está completamente
-              enfocado hacia la venta.&rdquo;
+              Son muy rapidos, super creativos y su live shopping esta
+              completamente enfocado hacia la venta.&rdquo;
             </p>
 
             {/* Autor con credenciales */}
-            <div className="flex items-center gap-4 mb-8 pb-8 border-b border-brand-gold/15">
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-gold/50 shadow-[0_0_24px_rgba(249,179,52,0.4)] flex-shrink-0">
+            <div className="flex items-center gap-4 mb-8 pb-8 border-b border-brand-green/15">
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-green/50 shadow-[0_0_24px_rgba(22,163,74,0.4)] flex-shrink-0">
                 <Image
                   src="/brand/precios/michel-edery.png"
                   alt="Michel Edery"
@@ -253,14 +253,14 @@ export function PreciosTestimonial() {
                     Michel Edery
                   </p>
                   <BadgeCheck
-                    className="h-4 w-4 text-brand-yellow"
+                    className="h-4 w-4 text-brand-green"
                     aria-hidden
                   />
                 </div>
                 <p className="text-sm text-brand-gray">
                   CEO & Co-Founder · smartBeemo
                 </p>
-                <p className="text-xs text-brand-gold/60 mt-0.5">
+                <p className="text-xs text-brand-green/60 mt-0.5">
                   CommerceTech LATAM · +60K estudiantes · +$18M en pauta
                 </p>
               </div>
@@ -275,13 +275,13 @@ export function PreciosTestimonial() {
               ].map((m) => (
                 <div
                   key={m.label}
-                  className="rounded-xl border border-brand-gold/25 bg-brand-yellow/[0.03] p-3 sm:p-4 text-center"
+                  className="rounded-xl border border-brand-green/25 bg-brand-green/[0.03] p-3 sm:p-4 text-center"
                 >
                   <p
                     className="font-display text-xl sm:text-2xl"
                     style={{
                       background:
-                        "linear-gradient(135deg, #f9b334 0%, #d4a017 100%)",
+                        "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",

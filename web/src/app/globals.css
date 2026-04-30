@@ -6,9 +6,15 @@
    Tailwind genere utilities como bg-brand-yellow, text-brand-gold,
    font-display, etc.                                             */
 @theme {
-  --color-brand-black: #000000;
+  --color-brand-black: #111111;
+  --color-brand-cream: #f8f7f4;
   --color-brand-graphite: #3d3d3c;
-  --color-brand-gray: #bdbcbc;
+  --color-brand-gray: #6b7280;
+  --color-brand-green: #16a34a;
+  --color-brand-green-dark: #15803d;
+  --color-brand-green-bright: #22c55e;
+  --color-brand-red-live: #ff0033;
+  /* Legacy UGC — mantener para admin */
   --color-brand-yellow: #f9b334;
   --color-brand-gold: #d4a017;
   --color-brand-gold-dark: #c9940a;
@@ -16,20 +22,24 @@
   --font-display: var(--font-anton), Anton, sans-serif;
   --font-sans: var(--font-inter), Inter, sans-serif;
 
-  /* Animaciones registradas en theme para usar con Tailwind */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
 /* ─── Brand tokens legacy (compat con inline styles) ──────── */
 :root {
-  --brand-black: #000000;
+  --brand-black: #111111;
+  --brand-cream: #f8f7f4;
   --brand-graphite: #3d3d3c;
-  --brand-gray: #bdbcbc;
+  --brand-gray: #6b7280;
+  --brand-green: #16a34a;
+  --brand-green-dark: #15803d;
+  --brand-green-bright: #22c55e;
+  --brand-red-live: #ff0033;
+  /* Legacy UGC — mantener para admin */
   --brand-yellow: #f9b334;
   --brand-gold: #d4a017;
   --brand-gold-dark: #c9940a;
-  /* Navbar height para scroll offset */
   --navbar-h: 64px;
 }
 
@@ -42,7 +52,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
   /* Offset para que los anchors no queden tapados por el chrome fijo:
      banner de urgencia (si está visible) + navbar. --banner-h lo setea
      UrgencyBanner dinámicamente (0px cuando oculto, 44px cuando visible). */
@@ -56,8 +66,8 @@ html {
 }
 
 body {
-  background-color: var(--brand-black);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111111;
   font-family: var(--font-inter), Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,8 +81,8 @@ body {
   left: 8px;
   z-index: 9999;
   padding: 8px 16px;
-  background: var(--brand-gold);
-  color: #000;
+  background: var(--brand-green);
+  color: #fff;
   font-weight: 700;
   border-radius: 4px;
   text-decoration: none;
@@ -89,16 +99,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--brand-graphite);
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--brand-gold);
+  background: var(--brand-green);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-yellow);
+  background: var(--brand-green-dark);
 }
 
 /* ─── Utility: ocultar scrollbar en carruseles horizontales ─── */
@@ -116,18 +126,18 @@ body {
 
 /* ─── Selection ────────────────────────────────────────────── */
 ::selection {
-  background: var(--brand-gold);
-  color: #000000;
+  background: var(--brand-green);
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background: var(--brand-gold);
-  color: #000000;
+  background: var(--brand-green);
+  color: #ffffff;
 }
 
 /* ─── Focus visible global ─────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--brand-gold);
+  outline: 2px solid var(--brand-green);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -165,10 +175,10 @@ body {
 @keyframes glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 8px 0 rgba(212, 160, 23, 0.4);
+    box-shadow: 0 0 8px 0 rgba(22, 163, 74, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px 4px rgba(212, 160, 23, 0.7);
+    box-shadow: 0 0 20px 4px rgba(22, 163, 74, 0.7);
   }
 }
 
@@ -222,9 +232,9 @@ body {
     115deg,
     transparent 30%,
     rgba(255, 255, 255, 0.15) 44%,
-    rgba(249, 179, 52, 0.55) 48%,
+    rgba(22, 163, 74, 0.45) 48%,
     rgba(255, 255, 255, 0.9) 50%,
-    rgba(249, 179, 52, 0.55) 52%,
+    rgba(22, 163, 74, 0.45) 52%,
     rgba(255, 255, 255, 0.15) 56%,
     transparent 70%
   );
@@ -274,8 +284,8 @@ body {
   padding: 1px;
   background: linear-gradient(
     135deg,
-    rgba(249, 179, 52, 0.6),
-    rgba(212, 160, 23, 0.3),
+    rgba(22, 163, 74, 0.6),
+    rgba(21, 128, 61, 0.3),
     transparent 60%
   );
   -webkit-mask:

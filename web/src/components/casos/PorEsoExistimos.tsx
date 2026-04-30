@@ -19,7 +19,7 @@ export function PorEsoExistimos() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(212,160,23,0.08) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(22,163,74,0.08) 0%, transparent 70%)",
         }}
       />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
@@ -29,7 +29,7 @@ export function PorEsoExistimos() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
             Por eso existimos
           </span>
           <h2
@@ -37,7 +37,7 @@ export function PorEsoExistimos() {
             className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase mb-6"
           >
             Tú haces la marca. <br className="hidden sm:block" />
-            <span className="text-brand-yellow">Nosotros hacemos el contenido.</span>
+            <span className="text-brand-green">Nosotros hacemos el contenido.</span>
           </h2>
           <p className="text-base sm:text-lg text-brand-gray leading-relaxed mb-10 max-w-2xl mx-auto">
             UGC Colombia nació para sacarte de ese ciclo. Estrategia, creadores, producción,

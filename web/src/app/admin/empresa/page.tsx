@@ -48,7 +48,7 @@ export default async function EmpresaIndexPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
       <PageHero
         eyebrow="Estructura empresarial"
-        title="UGC Colombia"
+        title="Live Cake"
         highlight="por dentro."
         lead="La estructura completa del negocio — misión, modelo operativo, estrategia y equipo — en un solo lugar, siempre actualizada."
       />

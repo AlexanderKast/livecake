@@ -9,9 +9,9 @@ import type { ReactNode } from "react";
 // ─── Shared styles ───────────────────────────────────────────────────────────
 
 export const inputClass = cn(
-  "w-full bg-black/60 border border-brand-gold/30 rounded-xl px-4 py-3.5",
+  "w-full bg-black/60 border border-brand-green/30 rounded-xl px-4 py-3.5",
   "text-white placeholder:text-brand-gray/50 font-sans text-sm",
-  "focus:outline-none focus:ring-2 focus:ring-brand-gold/50 focus:border-brand-gold/60",
+  "focus:outline-none focus:ring-2 focus:ring-brand-green/50 focus:border-brand-green/60",
   "transition-all duration-200"
 );
 
@@ -37,9 +37,9 @@ export function OptionCard({ selected, onClick, label, sublabel, icon }: OptionC
       onClick={onClick}
       className={cn(
         "flex items-center gap-3 w-full px-4 py-3.5 rounded-xl border text-left transition-colors text-sm",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
         selected
-          ? "border-brand-gold/60 bg-brand-yellow/10 text-white"
+          ? "border-brand-green/60 bg-brand-green/10 text-white"
           : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20 hover:bg-white/[0.04]"
       )}
       whileTap={{ scale: 0.98 }}
@@ -52,7 +52,7 @@ export function OptionCard({ selected, onClick, label, sublabel, icon }: OptionC
       <div
         className={cn(
           "w-5 h-5 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all",
-          selected ? "border-brand-yellow bg-brand-yellow" : "border-white/20"
+          selected ? "border-brand-green bg-brand-green" : "border-white/20"
         )}
       >
         {selected && (
@@ -80,9 +80,9 @@ export function MultiSelectCard({ selected, onClick, label }: MultiSelectCardPro
       onClick={onClick}
       className={cn(
         "px-3.5 py-2.5 rounded-lg border text-xs font-sans font-medium transition-all",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
         selected
-          ? "border-brand-gold/60 bg-brand-yellow/15 text-brand-yellow"
+          ? "border-brand-green/60 bg-brand-green/15 text-brand-green"
           : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20"
       )}
     >
