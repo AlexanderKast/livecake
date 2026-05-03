@@ -129,15 +129,22 @@ function PlanCard({
 
       {/* Precio */}
       <div className="mb-3">
-        <div className="flex items-baseline gap-2">
-          <span className="font-display text-4xl sm:text-5xl leading-none text-white">
+        <div className={cn(
+          "flex gap-2",
+          currency === "COP" ? "flex-col items-start gap-0.5" : "items-baseline"
+        )}>
+          <span className={cn(
+            "font-display leading-none text-white",
+            currency === "COP" ? "text-2xl sm:text-[1.75rem]" : "text-4xl sm:text-5xl"
+          )}>
             {priceDisplay}
           </span>
-          <span className="text-brand-gray font-sans text-sm">{unitLabel}</span>
+          <span className="text-brand-gray font-sans text-xs">{unitLabel}</span>
         </div>
         {pricing && (
-          <p className="text-[11px] text-brand-gray/60 mt-1">
-            Setup: {format(pricing.setupAmount)} · pago único
+          <p className="text-[11px] text-brand-gray/60 mt-1 leading-snug">
+            Setup: {format(pricing.setupAmount)}
+            <span className="text-brand-gray/40"> · pago único</span>
           </p>
         )}
       </div>
@@ -169,11 +176,11 @@ function PlanCard({
 
       {/* Ahorro */}
       {savingDisplay && (
-        <div className="mb-4 inline-flex items-center gap-2 self-start rounded-lg border border-emerald-500/30 bg-emerald-500/8 px-3 py-1.5">
-          <span aria-hidden className="text-xs text-emerald-400">
+        <div className="mb-4 flex items-start gap-2 self-start rounded-lg border border-emerald-500/30 bg-emerald-500/8 px-3 py-1.5">
+          <span aria-hidden className="text-[10px] sm:text-xs text-emerald-400 leading-snug flex-shrink-0">
             ✓
           </span>
-          <span className="text-xs font-semibold text-emerald-400">
+          <span className="text-[10px] sm:text-xs font-semibold text-emerald-400 leading-snug">
             {savingDisplay}
           </span>
         </div>
