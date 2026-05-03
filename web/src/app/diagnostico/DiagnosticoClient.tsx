@@ -58,29 +58,22 @@ export function DiagnosticoClient() {
   }
 
   return (
-    <main className="relative min-h-screen bg-brand-black text-white overflow-hidden">
+    <main className="relative min-h-screen bg-white text-neutral-900 overflow-hidden">
       {/* Ambient glow */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 20%, rgba(22,163,74,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse 70% 50% at 50% 20%, rgba(22,163,74,0.06) 0%, transparent 60%)",
         }}
       />
 
       {/* Logo bar (sin navbar completo para mantener foco) */}
-      <header className="relative z-10 border-b border-white/5">
+      <header className="relative z-10 border-b border-neutral-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          <Image
-            src="/brand/logo-dark-bg.png"
-            alt="UGC Colombia"
-            width={140}
-            height={42}
-            className="h-9 w-auto"
-            priority
-          />
-          <div className="hidden sm:flex items-center gap-2 text-xs text-brand-gray">
+          <Image src="/brand/logo-light-bg.png" alt="Live Cake" width={180} height={48} priority className="h-9 w-auto" />
+          <div className="hidden sm:flex items-center gap-2 text-xs text-neutral-500">
             <Shield className="w-3.5 h-3.5 text-emerald-400" />
             100% gratis · Sin tarjeta
           </div>
@@ -102,7 +95,7 @@ export function DiagnosticoClient() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight uppercase mb-5"
+          className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight uppercase mb-5 text-neutral-900"
         >
           Tus ads no venden?{" "}
           <span className="text-brand-green">Descubre qué falta</span> en 5
@@ -113,7 +106,7 @@ export function DiagnosticoClient() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-base sm:text-lg text-brand-gray max-w-xl mx-auto mb-8 leading-relaxed"
+          className="text-base sm:text-lg text-neutral-600 max-w-xl mx-auto mb-8 leading-relaxed"
         >
           Nuestra IA analiza tu marca, tus creativos y tu estrategia. Te entrega
           un diagnóstico claro con el problema exacto y cómo resolverlo — más
@@ -130,9 +123,9 @@ export function DiagnosticoClient() {
           {TRUST.map((t) => (
             <span
               key={t}
-              className="inline-flex items-center gap-1.5 text-xs text-brand-gray"
+              className="inline-flex items-center gap-1.5 text-xs text-neutral-500"
             >
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-brand-green" />
               {t}
             </span>
           ))}
@@ -147,12 +140,12 @@ export function DiagnosticoClient() {
           <Button
             size="lg"
             onClick={reopenAudit}
-            className="min-h-[56px] px-8 text-base font-bold tracking-wide shadow-[0_0_40px_rgba(22,163,74,0.45)] hover:shadow-[0_0_50px_rgba(22,163,74,0.6)]"
+            className="min-h-[56px] px-8 text-base font-bold tracking-wide shadow-[0_0_40px_rgba(22,163,74,0.25)] hover:shadow-[0_0_50px_rgba(22,163,74,0.35)]"
           >
             <Sparkles className="w-5 h-5 mr-2" />
             Empezar mi diagnóstico gratis →
           </Button>
-          <p className="mt-3 text-xs text-brand-gray/60 flex items-center justify-center gap-1.5">
+          <p className="mt-3 text-xs text-neutral-400 flex items-center justify-center gap-1.5">
             <Clock className="w-3.5 h-3.5" />5 minutos · Sin tarjeta · Sin
             spam
           </p>
@@ -171,15 +164,15 @@ export function DiagnosticoClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="p-5 rounded-2xl border border-brand-green/15 bg-white/[0.02]"
+                className="p-5 rounded-2xl border border-brand-green/15 bg-neutral-50"
               >
                 <div className="w-10 h-10 rounded-xl bg-brand-green/10 border border-brand-green/25 flex items-center justify-center mb-3">
                   <Icon className="w-5 h-5 text-brand-green" />
                 </div>
-                <h3 className="font-sans font-bold text-white mb-1.5 text-sm tracking-wide uppercase">
+                <h3 className="font-sans font-bold text-neutral-900 mb-1.5 text-sm tracking-wide uppercase">
                   {b.title}
                 </h3>
-                <p className="text-sm text-brand-gray leading-relaxed">
+                <p className="text-sm text-neutral-500 leading-relaxed">
                   {b.text}
                 </p>
               </motion.div>
@@ -197,10 +190,10 @@ export function DiagnosticoClient() {
           transition={{ duration: 0.4 }}
           className="p-6 sm:p-8 rounded-2xl border border-brand-green/25 bg-gradient-to-br from-brand-green/[0.06] to-transparent"
         >
-          <p className="font-display text-2xl sm:text-3xl uppercase tracking-tight mb-3">
+          <p className="font-display text-2xl sm:text-3xl uppercase tracking-tight mb-3 text-neutral-900">
             ¿Listo para saber qué te falta?
           </p>
-          <p className="text-sm text-brand-gray mb-5 max-w-md mx-auto">
+          <p className="text-sm text-neutral-500 mb-5 max-w-md mx-auto">
             Solo toma 5 minutos. Responde algunas preguntas y recibe tu
             diagnóstico personalizado — más un slot para agendar llamada si lo
             necesitas.
@@ -215,8 +208,8 @@ export function DiagnosticoClient() {
         </motion.div>
       </section>
 
-      <footer className="relative z-10 border-t border-white/5 py-5 text-center">
-        <p className="text-xs text-brand-gray/50">
+      <footer className="relative z-10 border-t border-neutral-100 py-5 text-center">
+        <p className="text-xs text-neutral-400">
           UGC Colombia · Diagnóstico gratis con IA · 100% remoto
         </p>
       </footer>

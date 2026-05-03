@@ -45,7 +45,7 @@ export function PreciosTestimonial() {
       ref={ref}
       id="testimonio-pricing"
       aria-labelledby="testimonio-pricing-title"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden"
     >
       {/* Imagen editorial de fondo */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -56,14 +56,14 @@ export function PreciosTestimonial() {
           sizes="100vw"
           className="object-cover opacity-18"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/70 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/80 via-neutral-50/70 to-neutral-50" />
       </div>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(22,163,74,0.08), transparent 70%)",
+            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(22,163,74,0.06), transparent 70%)",
         }}
       />
 
@@ -80,7 +80,7 @@ export function PreciosTestimonial() {
           </span>
           <h2
             id="testimonio-pricing-title"
-            className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] text-neutral-900 tracking-tight uppercase"
           >
             Lo que dice{" "}
             <span
@@ -94,7 +94,7 @@ export function PreciosTestimonial() {
               Michel Edery
             </span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-brand-gray max-w-xl mx-auto">
+          <p className="mt-4 text-sm sm:text-base text-neutral-500 max-w-xl mx-auto">
             CEO de smartBeemo, la plataforma de e-commerce mas grande de LATAM
             con +60K estudiantes y +$18M invertidos en pauta digital.
           </p>
@@ -108,16 +108,16 @@ export function PreciosTestimonial() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center rounded-3xl overflow-hidden"
         >
-          {/* Background premium */}
+          {/* Background premium — light */}
           <div
             aria-hidden
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(135deg, #0c0c0c 0%, #141208 40%, #0a0900 100%)",
+                "linear-gradient(135deg, #f9fafb 0%, #f0fdf4 40%, #f7fef9 100%)",
             }}
           />
-          {/* Gradient border dorado */}
+          {/* Gradient border verde */}
           <div
             aria-hidden
             className="absolute inset-0 rounded-3xl pointer-events-none"
@@ -137,7 +137,7 @@ export function PreciosTestimonial() {
             className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at 100% 0%, rgba(22,163,74,0.18), transparent 65%)",
+                "radial-gradient(ellipse at 100% 0%, rgba(22,163,74,0.08), transparent 65%)",
             }}
           />
           <div
@@ -145,7 +145,7 @@ export function PreciosTestimonial() {
             className="absolute bottom-0 left-0 w-80 h-80 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at 0% 100%, rgba(22,163,74,0.1), transparent 65%)",
+                "radial-gradient(ellipse at 0% 100%, rgba(22,163,74,0.05), transparent 65%)",
             }}
           />
 
@@ -167,7 +167,7 @@ export function PreciosTestimonial() {
                   preload="metadata"
                   aria-label="Testimonio de Michel Edery, CEO de smartBeemo"
                 />
-                {/* Gradient overlay */}
+                {/* Gradient overlay sobre video — conservar */}
                 <div
                   aria-hidden
                   className="absolute inset-0 pointer-events-none"
@@ -176,7 +176,7 @@ export function PreciosTestimonial() {
                       "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 20%, transparent 55%, rgba(0,0,0,0.85) 100%)",
                   }}
                 />
-                {/* Mute toggle */}
+                {/* Mute toggle — sobre video, conservar bg-black */}
                 <button
                   type="button"
                   onClick={toggleMute}
@@ -190,7 +190,7 @@ export function PreciosTestimonial() {
                     <Volume2 className="h-4 w-4" aria-hidden />
                   )}
                 </button>
-                {/* Name bottom */}
+                {/* Name bottom — sobre video, conservar text-white */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <p className="text-sm font-bold drop-shadow-lg">
@@ -218,7 +218,7 @@ export function PreciosTestimonial() {
             />
 
             {/* Cita principal */}
-            <p className="font-display text-xl sm:text-2xl lg:text-[1.75rem] xl:text-3xl text-white leading-snug italic mb-8">
+            <p className="font-display text-xl sm:text-2xl lg:text-[1.75rem] xl:text-3xl text-neutral-900 leading-snug italic mb-8">
               &ldquo;Con mas de 18 millones de dolares invertidos en pauta,{" "}
               <span
                 className="not-italic"
@@ -249,7 +249,7 @@ export function PreciosTestimonial() {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <p className="text-base font-bold text-white">
+                  <p className="text-base font-bold text-neutral-900">
                     Michel Edery
                   </p>
                   <BadgeCheck
@@ -257,7 +257,7 @@ export function PreciosTestimonial() {
                     aria-hidden
                   />
                 </div>
-                <p className="text-sm text-brand-gray">
+                <p className="text-sm text-neutral-500">
                   CEO & Co-Founder · smartBeemo
                 </p>
                 <p className="text-xs text-brand-green/60 mt-0.5">
@@ -289,7 +289,7 @@ export function PreciosTestimonial() {
                   >
                     {m.value}
                   </p>
-                  <p className="text-[10px] sm:text-xs text-brand-gray mt-1 tracking-wide">
+                  <p className="text-[10px] sm:text-xs text-neutral-500 mt-1 tracking-wide">
                     {m.label}
                   </p>
                 </div>

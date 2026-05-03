@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import Image from "next/image";
 import { useRef, type PointerEvent } from "react";
 
 const LINE_ONE_WORDS = ["CONTENIDO", "REAL,"];
@@ -124,7 +124,7 @@ export function Hero() {
           <div className="relative logo-shine-wrap">
             <Image
               src="/brand/logo-dark-bg.png"
-              alt="UGC Colombia"
+              alt="Live Cake"
               width={1640}
               height={580}
               priority

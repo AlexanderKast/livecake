@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Live Cake hero background">
+  <defs>
+    <radialGradient id="hGlow" cx="50%" cy="55%" r="65%">
+      <stop offset="0%" stop-color="#00D64F" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#00D64F" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="hGrid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0 L0 0 0 64" fill="none" stroke="#00B043" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="hMask" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="hGridMask">
+      <rect width="1600" height="900" fill="url(#hMask)"/>
+    </mask>
+  </defs>
+
+  <!-- Base blanca sólida -->
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <!-- Grid verde tenue masked radial -->
+  <rect width="1600" height="900" fill="url(#hGrid)" mask="url(#hGridMask)"/>
+  <!-- Radial glow verde central -->
+  <rect width="1600" height="900" fill="url(#hGlow)"/>
+
+  <!-- Waveform arcs (ondas de señal live) — verde tenue -->
+  <g opacity="0.35" stroke="#00B043" stroke-width="2" fill="none">
+    <circle cx="1400" cy="700" r="120"/>
+    <circle cx="1400" cy="700" r="170"/>
+    <circle cx="1400" cy="700" r="220"/>
+    <circle cx="200" cy="220" r="90"/>
+    <circle cx="200" cy="220" r="130"/>
+  </g>
+
+  <!-- Dot rojo "on air" + halo -->
+  <g transform="translate(1400 700)">
+    <circle r="32" fill="#FF0033" opacity="0.18"/>
+    <circle r="16" fill="#FF0033"/>
+  </g>
+  <g transform="translate(200 220)">
+    <circle r="24" fill="#00D64F" opacity="0.25"/>
+    <circle r="10" fill="#00D64F"/>
+  </g>
+
+  <!-- Diagonal accents verde -->
+  <g opacity="0.15" stroke="#00B043" stroke-width="2" fill="none">
+    <line x1="0" y1="820" x2="500" y2="320"/>
+    <line x1="1100" y1="900" x2="1600" y2="400"/>
+  </g>
+</svg>

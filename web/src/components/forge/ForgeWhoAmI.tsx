@@ -6,7 +6,7 @@ import Link from "next/link";
  */
 export function ForgeWhoAmI() {
   return (
-    <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
+    <section className="bg-white py-20 md:py-28 border-t border-neutral-100">
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
           <div className="md:sticky md:top-10">
@@ -20,13 +20,13 @@ export function ForgeWhoAmI() {
               Quién lo regala
             </span>
 
-            <h2 className="font-display text-4xl md:text-5xl uppercase text-white leading-[0.95] tracking-tight">
+            <h2 className="font-display text-4xl md:text-5xl uppercase text-neutral-900 leading-[0.95] tracking-tight">
               Hecho por nosotros en UGC Colombia
             </h2>
 
-            <div className="flex flex-col gap-4 text-base md:text-lg text-brand-gray-light leading-relaxed">
+            <div className="flex flex-col gap-4 text-base md:text-lg text-neutral-600 leading-relaxed">
               <p>
-                Somos <strong className="text-white">UGC Colombia</strong> — una agencia boutique que produce contenido estratégico para marcas D2C en LATAM y USA Hispanic. Operamos con sistemas, IA propia y procesos auditables. No somos un marketplace, somos un equipo.
+                Somos <strong className="text-neutral-900">UGC Colombia</strong> — una agencia boutique que produce contenido estratégico para marcas D2C en LATAM y USA Hispanic. Operamos con sistemas, IA propia y procesos auditables. No somos un marketplace, somos un equipo.
               </p>
               <p>
                 Construimos Content Forge porque lo necesitábamos nosotros mismos. Lo usamos todos los días en el estudio para producir los carruseles, reels y posts que publican nuestros clientes. Y funciona.
@@ -40,7 +40,7 @@ export function ForgeWhoAmI() {
               <p className="text-sm text-brand-green font-semibold">
                 — Alexander Cast
               </p>
-              <p className="text-xs text-brand-gray-light">
+              <p className="text-xs text-neutral-500">
                 Fundador · UGC Colombia × Kreoon · Bogotá
               </p>
             </div>
@@ -52,7 +52,7 @@ export function ForgeWhoAmI() {
               >
                 ugccolombia.co
               </Link>
-              <span className="text-brand-gray-light/40">·</span>
+              <span className="text-neutral-300">·</span>
               <Link
                 href="https://kreoon.com"
                 target="_blank"

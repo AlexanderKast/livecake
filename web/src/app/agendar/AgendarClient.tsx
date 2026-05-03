@@ -132,7 +132,7 @@ export function AgendarClient() {
     return (
       <>
         <Navbar />
-        <main className="relative bg-brand-black text-white min-h-screen pt-28 pb-20 px-4">
+        <main className="relative bg-white text-neutral-900 min-h-screen pt-28 pb-20 px-4">
           <motion.div
             className="max-w-lg mx-auto text-center"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -141,23 +141,23 @@ export function AgendarClient() {
             <div className="w-20 h-20 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 className="w-10 h-10 text-emerald-400" />
             </div>
-            <h1 className="font-sans text-3xl font-bold text-white mb-2">Llamada confirmada</h1>
-            <p className="text-brand-gray mb-8">Revisa tu email — te enviamos los detalles y el link de la reunión.</p>
+            <h1 className="font-sans text-3xl font-bold text-neutral-900 mb-2">Llamada confirmada</h1>
+            <p className="text-neutral-500 mb-8">Revisa tu email — te enviamos los detalles y el link de la reunión.</p>
 
-            <div className="inline-flex flex-col gap-3 p-6 rounded-2xl border border-brand-green/20 bg-white/[0.03] text-left mb-8">
+            <div className="inline-flex flex-col gap-3 p-6 rounded-2xl border border-brand-green/20 bg-neutral-50 text-left mb-8">
               <div className="flex items-center gap-3 text-sm">
                 <Calendar className="w-5 h-5 text-brand-green flex-shrink-0" />
-                <span className="text-white font-medium">
+                <span className="text-neutral-900 font-medium">
                   {DAY_FULL[cotDate.getUTCDay()]} {cotDate.getUTCDate()} de {MONTH_NAMES[cotDate.getUTCMonth()]}
                 </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Clock className="w-5 h-5 text-brand-green flex-shrink-0" />
-                <span className="text-white font-medium">{h12}:{m.toString().padStart(2, "0")} {ampm} — Hora Colombia</span>
+                <span className="text-neutral-900 font-medium">{h12}:{m.toString().padStart(2, "0")} {ampm} — Hora Colombia</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Video className="w-5 h-5 text-brand-green flex-shrink-0" />
-                <span className="text-brand-gray">30 min · Google Meet · Con {booked.host_name}</span>
+                <span className="text-neutral-500">30 min · Google Meet · Con {booked.host_name}</span>
               </div>
             </div>
 
@@ -189,11 +189,11 @@ export function AgendarClient() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen pt-28 pb-20 px-4">
+      <main className="relative bg-white text-neutral-900 min-h-screen pt-28 pb-20 px-4">
         <div
           aria-hidden
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(22,163,74,0.08), transparent 60%)" }}
+          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(22,163,74,0.04), transparent 60%)" }}
         />
         <div className="relative max-w-2xl mx-auto">
           {/* Header */}
@@ -206,10 +206,10 @@ export function AgendarClient() {
               <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
               100% gratis · 30 minutos
             </span>
-            <h1 className="font-sans text-2xl sm:text-3xl font-bold text-white mb-2">
+            <h1 className="font-sans text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
               Agenda tu llamada estratégica
             </h1>
-            <p className="text-sm text-brand-gray max-w-md mx-auto">
+            <p className="text-sm text-neutral-500 max-w-md mx-auto">
               Un especialista de UGC Colombia revisará tu marca contigo y te dará un plan de acción concreto.
             </p>
           </motion.div>
@@ -223,25 +223,25 @@ export function AgendarClient() {
               transition={{ delay: 0.1 }}
             >
               <div>
-                <label className="block text-[11px] font-semibold text-brand-gray mb-1.5 tracking-wider uppercase">Tu nombre</label>
+                <label className="block text-[11px] font-semibold text-neutral-500 mb-1.5 tracking-wider uppercase">Tu nombre</label>
                 <input
                   type="text"
                   autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Juan Pérez"
-                  className="w-full bg-black/60 border border-brand-green/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
+                  className="w-full bg-neutral-50 border border-brand-green/30 rounded-xl px-4 py-3 text-neutral-900 placeholder:text-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold text-brand-gray mb-1.5 tracking-wider uppercase">Tu email</label>
+                <label className="block text-[11px] font-semibold text-neutral-500 mb-1.5 tracking-wider uppercase">Tu email</label>
                 <input
                   type="email"
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="w-full bg-black/60 border border-brand-green/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
+                  className="w-full bg-neutral-50 border border-brand-green/30 rounded-xl px-4 py-3 text-neutral-900 placeholder:text-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green/50"
                 />
               </div>
             </motion.div>
@@ -250,11 +250,11 @@ export function AgendarClient() {
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20">
               <Loader2 className="w-8 h-8 text-brand-green animate-spin mb-3" />
-              <p className="text-sm text-brand-gray">Cargando disponibilidad...</p>
+              <p className="text-sm text-neutral-500">Cargando disponibilidad...</p>
             </div>
           ) : availableDates.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-brand-gray mb-4">No hay horarios disponibles en este momento.</p>
+              <p className="text-neutral-500 mb-4">No hay horarios disponibles en este momento.</p>
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola, quiero agendar una llamada con UGC Colombia.")}`}
                 target="_blank"
@@ -275,11 +275,11 @@ export function AgendarClient() {
                     type="button"
                     onClick={() => currentDateIdx > 0 && setSelectedDate(availableDates[currentDateIdx - 1])}
                     disabled={currentDateIdx === 0}
-                    className="p-2 rounded-lg text-brand-gray hover:text-white hover:bg-white/10 transition-colors disabled:opacity-30"
+                    className="p-2 rounded-lg text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors disabled:opacity-30"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-sm font-semibold text-neutral-900">
                     {selectedDate && (() => {
                       const d = new Date(selectedDate + "T12:00:00");
                       return `${DAY_FULL[d.getDay()]} ${d.getDate()} de ${MONTH_NAMES[d.getMonth()]}`;
@@ -289,7 +289,7 @@ export function AgendarClient() {
                     type="button"
                     onClick={() => currentDateIdx < availableDates.length - 1 && setSelectedDate(availableDates[currentDateIdx + 1])}
                     disabled={currentDateIdx === availableDates.length - 1}
-                    className="p-2 rounded-lg text-brand-gray hover:text-white hover:bg-white/10 transition-colors disabled:opacity-30"
+                    className="p-2 rounded-lg text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors disabled:opacity-30"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -308,8 +308,8 @@ export function AgendarClient() {
                         className={cn(
                           "flex flex-col items-center min-w-[56px] px-3 py-2.5 rounded-xl border text-xs transition-all flex-shrink-0",
                           isSelected
-                            ? "border-brand-green/60 bg-brand-green/15 text-white"
-                            : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20"
+                            ? "border-brand-green bg-brand-green/15 text-neutral-900"
+                            : "border-neutral-200 bg-neutral-50 text-neutral-500 hover:border-brand-green"
                         )}
                       >
                         <span className="font-semibold">{DAY_NAMES[d.getDay()]}</span>
@@ -322,7 +322,7 @@ export function AgendarClient() {
 
               {/* Time slots grid */}
               <div className="mb-5">
-                <p className="text-[11px] font-semibold text-brand-gray uppercase tracking-wider mb-2.5">
+                <p className="text-[11px] font-semibold text-neutral-500 uppercase tracking-wider mb-2.5">
                   Horarios disponibles · Hora Colombia
                 </p>
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
@@ -336,8 +336,8 @@ export function AgendarClient() {
                         className={cn(
                           "px-3 py-3 rounded-xl border text-sm font-medium transition-all",
                           isSelected
-                            ? "border-brand-green/60 bg-brand-green/15 text-brand-green"
-                            : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20 hover:text-white"
+                            ? "border-brand-green bg-brand-green text-white"
+                            : "border-neutral-200 bg-neutral-50 text-neutral-900 hover:border-brand-green"
                         )}
                       >
                         {slot.time_label}
@@ -357,7 +357,7 @@ export function AgendarClient() {
                       <><CheckCircle2 className="w-5 h-5" /> Confirmar {selectedSlot.time_label}<ArrowRight className="w-5 h-5" /></>
                     )}
                   </Button>
-                  <div className="flex items-center justify-center gap-4 mt-3 text-[11px] text-brand-gray/60">
+                  <div className="flex items-center justify-center gap-4 mt-3 text-[11px] text-neutral-400">
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 30 min</span>
                     <span className="flex items-center gap-1"><Video className="w-3 h-3" /> Google Meet</span>
                     <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3" /> Gratis</span>
@@ -366,7 +366,7 @@ export function AgendarClient() {
               )}
 
               {error && (
-                <div className="mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-sm text-red-400">
+                <div className="mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-sm text-red-400" role="alert" aria-live="polite">
                   {error}
                 </div>
               )}

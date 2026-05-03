@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Solucion background">
+  <defs>
+    <linearGradient id="sFade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EAFBEE"/>
+    </linearGradient>
+    <linearGradient id="phoneScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#00D64F"/>
+      <stop offset="100%" stop-color="#00B043"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sFade)"/>
+
+  <!-- Smartphone frame mockup (vertical 9:16) centrado-derecha -->
+  <g transform="translate(1080 120)" opacity="0.85">
+    <!-- Body -->
+    <rect x="0" y="0" width="360" height="680" rx="44" ry="44" fill="#0A0A0A"/>
+    <!-- Screen -->
+    <rect x="16" y="16" width="328" height="648" rx="32" ry="32" fill="url(#phoneScreen)"/>
+    <!-- Notch -->
+    <rect x="140" y="26" width="80" height="18" rx="9" ry="9" fill="#0A0A0A"/>
+
+    <!-- LIVE badge -->
+    <g transform="translate(40 70)">
+      <rect x="0" y="0" width="86" height="30" rx="15" ry="15" fill="#FF0033"/>
+      <circle cx="16" cy="15" r="5" fill="#FFFFFF"/>
+      <text x="28" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" letter-spacing="1.5">LIVE</text>
+    </g>
+    <!-- Viewer count -->
+    <g transform="translate(140 70)" opacity="0.95">
+      <rect x="0" y="0" width="90" height="30" rx="15" ry="15" fill="#0A0A0A" fill-opacity="0.35"/>
+      <text x="14" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">👁 12.8k</text>
+    </g>
+
+    <!-- Play triangle center -->
+    <g transform="translate(180 340)" opacity="0.85">
+      <circle r="38" fill="#FFFFFF" fill-opacity="0.25"/>
+      <path d="M-10 -14 L-10 14 L18 0 Z" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Chat bubbles (bottom) -->
+    <g transform="translate(40 540)" opacity="0.9">
+      <rect x="0"  y="0"  width="180" height="22" rx="11" ry="11" fill="#FFFFFF" fill-opacity="0.9"/>
+      <rect x="0"  y="32" width="220" height="22" rx="11" ry="11" fill="#FFFFFF" fill-opacity="0.9"/>
+      <rect x="0"  y="64" width="140" height="22" rx="11" ry="11" fill="#FFFFFF" fill-opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- Dashed radiating waves from phone (señal) -->
+  <g opacity="0.15" stroke="#00B043" stroke-width="2" fill="none" stroke-dasharray="4 6">
+    <path d="M 1050 440 Q 900 440 900 300"/>
+    <path d="M 1050 460 Q 850 460 780 340"/>
+    <path d="M 1050 480 Q 800 500 680 420"/>
+  </g>
+
+  <!-- Verde accent blob bottom-left -->
+  <circle cx="200" cy="820" r="180" fill="#00D64F" opacity="0.10"/>
+</svg>

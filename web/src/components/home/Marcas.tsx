@@ -4,45 +4,55 @@ import { useEffect, useRef, type PointerEvent as ReactPointerEvent } from "react
 import { motion } from "motion/react";
 import { useIntersection } from "@/hooks/use-intersection";
 
-const MARCAS: { label: string; logo?: string; font?: string; className?: string }[] = [
-  { label: "Beemo", logo: "https://beemo.tv/img/logo_smartbeemo.svg" },
-  { label: "Unlocked Academy", logo: "https://lwfiles.mycourse.app/68dc04362e776ced248cac8e-public/b5b23fe7d48093ee532a2206f6cd2049.png" },
-  { label: "Altevo", logo: "https://altevo.com.co/cdn/shop/files/Altevo_Logo.png?v=1758591345&width=150" },
-  { label: "Vitalcom", logo: "/brand/logos/vitalcom.png" },
-  { label: "Shop Tokio", logo: "https://shoptokio.co/cdn/shop/files/gempages_513541607190955198-297e6fa2-f0e0-455a-bdf4-12a9388c792d.webp?v=1728089603&width=260" },
-  { label: "Soluna", logo: "https://laboratoriosoluna.com/cdn/shop/files/Diseno_sin_titulo_1.png?v=1738769608&width=300" },
-  { label: "Bioboosters", logo: "https://bioboosters.co/cdn/shop/files/Logo_Blanco.png?v=1758762956&width=290" },
+// ── Data ──────────────────────────────────────────────────────────────────────
+interface PartnerItem {
+  label: string;
+  badge?: string;
+  accent?: boolean; // verde (partner principal)
+}
+
+const PARTNERS: PartnerItem[] = [
+  { label: "Pancake",           badge: "Partner oficial", accent: true },
+  { label: "Meta",              badge: "Conversion API"               },
+  { label: "TikTok",            badge: "Partner"                      },
+  { label: "Google",            badge: "Partner"                      },
+  { label: "Hotmart"                                                   },
+  { label: "Dropi"                                                     },
+  { label: "Hoko"                                                      },
+  { label: "Gintracom"                                                 },
+  { label: "WhatsApp Business", badge: "Business API"                 },
+  { label: "Effi Commerce"                                             },
 ];
 
-// Triplicamos para tener buffer suficiente al wrap del loop infinito
-const LOOP = [...MARCAS, ...MARCAS, ...MARCAS];
+// Triple para buffer suficiente en el loop infinito
+const LOOP = [...PARTNERS, ...PARTNERS, ...PARTNERS];
 
-// pixels por milisegundo. ~90 px/seg (más rápido que el marquee anterior)
+// px / ms — igual que el original
 const AUTO_SPEED = 0.09;
 
+// ── Component ─────────────────────────────────────────────────────────────────
 export function Marcas() {
   const { ref: sectionRef, isIntersecting } = useIntersection<HTMLDivElement>({
     threshold: 0.2,
     once: true,
   });
 
-  const trackRef = useRef<HTMLUListElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const trackRef    = useRef<HTMLUListElement>(null);
+  const wrapperRef  = useRef<HTMLDivElement>(null);
 
-  const offsetRef = useRef(0);
-  const trackWidthRef = useRef(0);
-  const draggingRef = useRef(false);
-  const hoveringRef = useRef(false);
-  const dragStartXRef = useRef(0);
+  const offsetRef          = useRef(0);
+  const trackWidthRef      = useRef(0);
+  const draggingRef        = useRef(false);
+  const hoveringRef        = useRef(false);
+  const dragStartXRef      = useRef(0);
   const dragStartOffsetRef = useRef(0);
-  const lastTimeRef = useRef<number>(0);
-  const rafRef = useRef<number | null>(null);
+  const lastTimeRef        = useRef<number>(0);
+  const rafRef             = useRef<number | null>(null);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
-    // Ancho del primer "set" (un tercio porque triplicamos)
     function measure() {
       if (!track) return;
       trackWidthRef.current = track.scrollWidth / 3;
@@ -52,14 +62,13 @@ export function Marcas() {
 
     function tick(time: number) {
       if (!lastTimeRef.current) lastTimeRef.current = time;
-      const dt = Math.min(time - lastTimeRef.current, 64); // cap a ~15fps mínimo
+      const dt = Math.min(time - lastTimeRef.current, 64);
       lastTimeRef.current = time;
 
       if (!draggingRef.current && !hoveringRef.current && trackWidthRef.current > 0) {
         offsetRef.current -= AUTO_SPEED * dt;
       }
 
-      // Wrap infinito
       if (trackWidthRef.current > 0) {
         while (offsetRef.current <= -trackWidthRef.current * 2) {
           offsetRef.current += trackWidthRef.current;
@@ -122,43 +131,29 @@ export function Marcas() {
       />
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Eyebrow + titulo */}
+        {/* Eyebrow — único título de sección */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 sm:mb-14"
         >
-          <div className="inline-flex items-center gap-3 mb-5">
+          <div className="inline-flex items-center gap-3">
             <span
               aria-hidden="true"
               className="h-px w-8 bg-gradient-to-r from-transparent to-brand-green/60"
             />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-brand-green/80 font-sans">
-              Marcas que ya transmiten
-            </span>
+            <h2
+              id="marcas-title"
+              className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-brand-green/80 font-sans"
+            >
+              Integrado con las plataformas que ya usas
+            </h2>
             <span
               aria-hidden="true"
               className="h-px w-8 bg-gradient-to-l from-transparent to-brand-green/60"
             />
           </div>
-          <h2
-            id="marcas-title"
-            className="font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] text-neutral-900 tracking-tight"
-          >
-            Marcas escalando con{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              live shopping
-            </span>
-            .
-          </h2>
         </motion.div>
 
         {/* Marquee infinito + draggable */}
@@ -179,13 +174,8 @@ export function Marcas() {
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
-            onMouseEnter={() => {
-              hoveringRef.current = true;
-            }}
-            onMouseLeave={() => {
-              hoveringRef.current = false;
-              lastTimeRef.current = 0;
-            }}
+            onMouseEnter={() => { hoveringRef.current = true; }}
+            onMouseLeave={() => { hoveringRef.current = false; lastTimeRef.current = 0; }}
             className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white py-10 sm:py-12 cursor-grab active:cursor-grabbing select-none touch-pan-x"
           >
             <ul
@@ -193,49 +183,41 @@ export function Marcas() {
               className="flex items-center gap-12 sm:gap-20 whitespace-nowrap will-change-transform"
               style={{ transform: "translate3d(0,0,0)" }}
             >
-              {LOOP.map((m, i) => (
+              {LOOP.map((p, i) => (
                 <li
-                  key={`${m.label}-${i}`}
+                  key={`${p.label}-${i}`}
                   className="flex items-center justify-center shrink-0"
-                  aria-hidden={i >= MARCAS.length ? "true" : undefined}
+                  aria-hidden={i >= PARTNERS.length ? "true" : undefined}
                 >
                   <div
-                    className="group/brand relative inline-flex items-center justify-center transition-transform duration-300 ease-out hover:scale-[1.18]"
-                    title={m.label}
+                    className="group/brand inline-flex flex-col items-center gap-1.5 transition-transform duration-300 ease-out hover:scale-[1.1]"
+                    title={p.label}
                   >
-                    {m.logo ? (
-                      <img
-                        src={m.logo}
-                        alt={m.label}
-                        draggable={false}
-                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain select-none brightness-0 opacity-35 group-hover/brand:opacity-70 transition-opacity duration-300"
-                      />
-                    ) : (
+                    {/* Nombre de plataforma */}
+                    <span className="font-sans font-semibold text-lg sm:text-xl lg:text-2xl leading-none text-neutral-300 group-hover/brand:text-neutral-800 transition-colors duration-300">
+                      {p.label}
+                    </span>
+
+                    {/* Badge pill — visible solo en hover cuando no hay acento */}
+                    {p.badge && (
                       <span
                         className={[
-                          m.font,
-                          m.className,
-                          "text-2xl sm:text-3xl lg:text-[2rem] leading-none select-none",
-                          "text-neutral-300 group-hover/brand:text-neutral-700 transition-colors duration-300",
+                          "text-[9px] sm:text-[10px] font-sans font-semibold uppercase tracking-wider",
+                          "px-2 py-0.5 rounded-full border transition-all duration-300",
+                          p.accent
+                            ? [
+                                "text-brand-green border-brand-green/30 bg-brand-green/5",
+                                "group-hover/brand:border-brand-green/60 group-hover/brand:bg-brand-green/10",
+                              ].join(" ")
+                            : [
+                                "text-neutral-300 border-neutral-200",
+                                "group-hover/brand:text-neutral-500 group-hover/brand:border-neutral-300",
+                              ].join(" "),
                         ].join(" ")}
                       >
-                        {m.label}
+                        {p.badge}
                       </span>
                     )}
-
-                    {/* Tooltip */}
-                    <span
-                      className={[
-                        "pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap",
-                        "rounded-md bg-neutral-900/95 px-2.5 py-1 text-[10px] font-sans font-medium uppercase tracking-wider text-brand-green",
-                        "border border-brand-green/30 shadow-[0_4px_12px_-2px_rgba(22,163,74,0.3)]",
-                        "opacity-0 translate-y-1 group-hover/brand:opacity-100 group-hover/brand:translate-y-0",
-                        "transition-all duration-200",
-                      ].join(" ")}
-                      aria-hidden="true"
-                    >
-                      {m.label}
-                    </span>
                   </div>
                 </li>
               ))}
@@ -243,9 +225,9 @@ export function Marcas() {
           </div>
         </div>
 
-        {/* Disclaimer discreto */}
+        {/* Disclaimer */}
         <p className="mt-6 text-center text-[11px] sm:text-xs text-neutral-400 font-sans tracking-wide">
-          Ecosistema Live Cake · Clientes live shopping LATAM
+          Ecosistema LiveCake · Partners tecnológicos y plataformas integradas
         </p>
       </div>
     </section>

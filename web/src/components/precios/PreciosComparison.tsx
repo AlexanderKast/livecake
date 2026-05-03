@@ -42,7 +42,7 @@ function CellValue({
   if (value === false) {
     return (
       <span
-        className="inline-flex w-5 h-5 rounded-full items-center justify-center bg-brand-graphite/20 border border-brand-graphite/50 text-brand-graphite"
+        className="inline-flex w-5 h-5 rounded-full items-center justify-center bg-neutral-200 border border-neutral-300 text-neutral-400"
         aria-label="No incluido"
       >
         <X className="h-3 w-3" strokeWidth={2.5} aria-hidden />
@@ -53,7 +53,7 @@ function CellValue({
     <span
       className={cn(
         "text-xs sm:text-sm font-sans",
-        highlight ? "text-brand-green font-semibold" : "text-white/85"
+        highlight ? "text-brand-green font-semibold" : "text-neutral-700"
       )}
     >
       {value}
@@ -110,7 +110,7 @@ export function PreciosComparison() {
     <section
       id="comparativa"
       aria-labelledby="comparativa-title"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       <div
         aria-hidden
@@ -134,7 +134,7 @@ export function PreciosComparison() {
           </span>
           <h2
             id="comparativa-title"
-            className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.95] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase"
           >
             Todo lo que{" "}
             <span
@@ -149,7 +149,7 @@ export function PreciosComparison() {
             </span>
             .
           </h2>
-          <p className="mt-6 text-base sm:text-lg text-brand-gray leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-neutral-500 leading-relaxed">
             Cada variable comparada lado a lado. Sin asteriscos, sin letra
             pequena.
           </p>
@@ -160,10 +160,10 @@ export function PreciosComparison() {
           initial={{ opacity: 0, y: 24 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden lg:block rounded-2xl border border-brand-graphite/60 bg-white/[0.015] overflow-hidden"
+          className="hidden lg:block rounded-2xl border border-neutral-200 bg-neutral-50 overflow-hidden"
         >
           {/* Sticky header */}
-          <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border-b border-brand-graphite/60 sticky top-0 z-20 backdrop-blur-md">
+          <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] bg-gradient-to-b from-neutral-100 to-neutral-50 border-b border-neutral-200 sticky top-0 z-20 backdrop-blur-md">
             <div className="p-5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70">
               Caracteristica
             </div>
@@ -171,19 +171,19 @@ export function PreciosComparison() {
               <div
                 key={col.key}
                 className={cn(
-                  "p-5 text-center border-l border-brand-graphite/40",
+                  "p-5 text-center border-l border-neutral-200",
                   col.highlight && "bg-brand-green/[0.08]"
                 )}
               >
                 <p
                   className={cn(
                     "font-display text-sm tracking-[0.2em] uppercase mb-1",
-                    col.highlight ? "text-brand-green" : "text-white"
+                    col.highlight ? "text-brand-green" : "text-neutral-900"
                   )}
                 >
                   {col.name}
                 </p>
-                <p className="text-[11px] text-brand-gray">{col.price}</p>
+                <p className="text-[11px] text-neutral-500">{col.price}</p>
               </div>
             ))}
           </div>
@@ -192,7 +192,7 @@ export function PreciosComparison() {
           {grouped.map((group) => (
             <div key={group.category}>
               {/* Category header */}
-              <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] border-b border-brand-graphite/40 bg-white/[0.01]">
+              <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] border-b border-neutral-200 bg-neutral-100">
                 <div className="col-span-6 px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/80">
                   {group.category}
                 </div>
@@ -200,24 +200,24 @@ export function PreciosComparison() {
               {group.items.map((row) => (
                 <div
                   key={row.feature}
-                  className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] border-b border-brand-graphite/30 last:border-b-0 hover:bg-brand-green/[0.02] hover:shadow-[inset_0_0_30px_rgba(22,163,74,0.03)] transition-all duration-200"
+                  className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr] border-b border-neutral-200 last:border-b-0 hover:bg-brand-green/[0.02] hover:shadow-[inset_0_0_30px_rgba(22,163,74,0.03)] transition-all duration-200"
                 >
-                  <div className="px-5 py-3.5 text-sm text-white/90 font-sans">
+                  <div className="px-5 py-3.5 text-sm text-neutral-700 font-sans">
                     {row.feature}
                   </div>
-                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
+                  <div className="px-5 py-3.5 text-center border-l border-neutral-200">
                     <CellValue value={row.starter} />
                   </div>
-                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30 bg-brand-green/[0.04]">
+                  <div className="px-5 py-3.5 text-center border-l border-neutral-200 bg-brand-green/[0.04]">
                     <CellValue value={row.growth} highlight />
                   </div>
-                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
+                  <div className="px-5 py-3.5 text-center border-l border-neutral-200">
                     <CellValue value={row.pro} />
                   </div>
-                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
+                  <div className="px-5 py-3.5 text-center border-l border-neutral-200">
                     <CellValue value={row.elite} />
                   </div>
-                  <div className="px-5 py-3.5 text-center border-l border-brand-graphite/30">
+                  <div className="px-5 py-3.5 text-center border-l border-neutral-200">
                     <CellValue value={row.enterprise} />
                   </div>
                 </div>
@@ -238,19 +238,19 @@ export function PreciosComparison() {
                 "rounded-2xl border p-5 sm:p-6",
                 col.highlight
                   ? "border-2 border-brand-green bg-brand-green/5 shadow-[0_0_40px_-20px_rgba(22,163,74,0.4)]"
-                  : "border-brand-graphite/60 bg-white/[0.025]"
+                  : "border-neutral-200 bg-neutral-50"
               )}
             >
-              <div className="flex items-baseline justify-between mb-5 pb-3 border-b border-brand-graphite/40">
+              <div className="flex items-baseline justify-between mb-5 pb-3 border-b border-neutral-200">
                 <p
                   className={cn(
                     "font-display text-xl tracking-[0.15em] uppercase",
-                    col.highlight ? "text-brand-green" : "text-white"
+                    col.highlight ? "text-brand-green" : "text-neutral-900"
                   )}
                 >
                   {col.name}
                 </p>
-                <p className="text-xs text-brand-gray">{col.price}</p>
+                <p className="text-xs text-neutral-500">{col.price}</p>
               </div>
 
               {grouped.map((group) => (
@@ -262,9 +262,9 @@ export function PreciosComparison() {
                     {group.items.map((row) => (
                       <li
                         key={row.feature}
-                        className="flex items-center justify-between gap-3 py-1.5 border-b border-brand-graphite/20 last:border-b-0"
+                        className="flex items-center justify-between gap-3 py-1.5 border-b border-neutral-100 last:border-b-0"
                       >
-                        <span className="text-xs text-white/80 flex-1">
+                        <span className="text-xs text-neutral-600 flex-1">
                           {row.feature}
                         </span>
                         <CellValue

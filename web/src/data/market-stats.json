@@ -1,0 +1,250 @@
+{
+  "$schema": "./market-stats.schema.json",
+  "lastUpdated": "2026-04-30",
+  "currency": "USD",
+  "notes": "Cifras citables para landing/SEO. Cada entrada incluye fuente verificable. Actualizar este archivo desbloquea todos los componentes que las consumen.",
+  "stats": [
+    {
+      "id": "global-market-2025",
+      "category": "market-size",
+      "label": "Mercado global de live commerce 2025",
+      "value": "USD 8.5B",
+      "valueShort": "$8.5B",
+      "context": "Proyectado a USD 69.3B en 2036",
+      "year": 2025,
+      "source": "Future Market Insights",
+      "sourceUrl": "https://www.futuremarketinsights.com/reports/live-commerce-market"
+    },
+    {
+      "id": "saas-market-cagr",
+      "category": "market-size",
+      "label": "Plataformas live commerce (SaaS) 2030",
+      "value": "USD 7.2B",
+      "valueShort": "$7.2B",
+      "context": "Desde USD 2.4B en 2024 — CAGR 19.9%",
+      "year": 2025,
+      "source": "Research and Markets",
+      "sourceUrl": "https://www.globenewswire.com/news-release/2025/04/29/3070539/28124/en/Live-Commerce-Platforms-Market-Outlook-2025-2030-A-7-2-Billion-Opportunity.html"
+    },
+    {
+      "id": "mckinsey-share-2026",
+      "category": "market-size",
+      "label": "Cuota del e-commerce que será live para 2026",
+      "value": "10–20%",
+      "valueShort": "10-20%",
+      "context": "LATAM en banda baja, Asia ya en banda alta",
+      "year": 2021,
+      "source": "McKinsey & Company",
+      "sourceUrl": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/becoming-indispensable-moving-past-e-commerce-to-next-commerce"
+    },
+    {
+      "id": "conversion-live-vs-ecom",
+      "category": "performance",
+      "label": "Conversión live vs ecommerce tradicional",
+      "value": "30% vs 3%",
+      "valueShort": "30% vs 3%",
+      "context": "Hasta 10× la conversión de un sitio tradicional",
+      "year": 2024,
+      "source": "McKinsey, vía Buywith",
+      "sourceUrl": "https://www.buywith.com/article/rise-of-live-commerce-us-eu-vs-china-2024/"
+    },
+    {
+      "id": "retention-10min",
+      "category": "performance",
+      "label": "Retención en lives a los 10 minutos",
+      "value": "≥60%",
+      "valueShort": "60%+",
+      "context": "Top performers retienen 40% hasta el final",
+      "year": 2025,
+      "source": "Immerss",
+      "sourceUrl": "https://www.immerss.live/content/ecommerce-conversion-retention-metrics-guide/"
+    },
+    {
+      "id": "long-tail-purchases",
+      "category": "performance",
+      "label": "Compras que ocurren después del live",
+      "value": "34%",
+      "valueShort": "34%",
+      "context": "Efecto cola larga: el live sigue vendiendo cuando termina",
+      "year": 2025,
+      "source": "Immerss",
+      "sourceUrl": "https://www.immerss.live/content/ecommerce-conversion-retention-metrics-guide/"
+    },
+    {
+      "id": "aov-uplift",
+      "category": "performance",
+      "label": "Ticket promedio (AOV) en live vs ecom",
+      "value": "+10–30%",
+      "valueShort": "+10-30%",
+      "context": "Bundling y upselling en vivo elevan el AOV",
+      "year": 2025,
+      "source": "Immerss",
+      "sourceUrl": "https://www.immerss.live/content/ecommerce-conversion-retention-metrics-guide/"
+    },
+    {
+      "id": "returns-reduction",
+      "category": "performance",
+      "label": "Devoluciones live shopping vs ecommerce",
+      "value": "10–15% vs 20–30%",
+      "valueShort": "-40%",
+      "context": "Live shoppers devuelven ~40% menos que compradores online",
+      "year": 2025,
+      "source": "Coresight + Immerss",
+      "sourceUrl": "https://www.immerss.live/content/ecommerce-conversion-retention-metrics-guide/"
+    },
+    {
+      "id": "tiktok-shop-gmv-2025",
+      "category": "platform",
+      "label": "TikTok Shop GMV global 2025",
+      "value": "USD 66B",
+      "valueShort": "$66B",
+      "context": "Proyección 2026: USD 112.2B",
+      "year": 2025,
+      "source": "Marketmaze / Marketing LTB",
+      "sourceUrl": "https://marketingltb.com/blog/statistics/tiktok-shop-statistics/"
+    },
+    {
+      "id": "tiktok-shop-us-h1-2025",
+      "category": "platform",
+      "label": "TikTok Shop EE.UU. H1 2025",
+      "value": "+91% YoY",
+      "valueShort": "+91%",
+      "context": "Cierre 2025 estimado en USD 15.8B (+108% YoY)",
+      "year": 2025,
+      "source": "eMarketer / Resourcera",
+      "sourceUrl": "https://marketingltb.com/blog/statistics/tiktok-shop-statistics/"
+    },
+    {
+      "id": "whatnot-revenue",
+      "category": "platform",
+      "label": "Whatnot — ventas anuales 2025",
+      "value": "USD 6B+",
+      "valueShort": "$6B+",
+      "context": "~USD 1B en ingresos · 95 min/día por usuario · retención mensual >80%",
+      "year": 2025,
+      "source": "The Information / Marketplace Pulse",
+      "sourceUrl": "https://www.theinformation.com/briefings/livestream-shopping-app-whatnot-nears-1-billion-2025-revenue"
+    },
+    {
+      "id": "douyin-gmv",
+      "category": "platform",
+      "label": "Douyin GMV 2024 (China)",
+      "value": "USD 487B",
+      "valueShort": "$487B",
+      "context": "+30% YoY · 40–58% del GMV vino de livestream",
+      "year": 2024,
+      "source": "36Kr / ECDB",
+      "sourceUrl": "https://eu.36kr.com/en/p/3166066575158018"
+    },
+    {
+      "id": "latam-market-2024",
+      "category": "latam",
+      "label": "Mercado LATAM live commerce 2024",
+      "value": "USD 3.87B",
+      "valueShort": "$3.87B",
+      "context": "Proyectado a USD 32.08B en 2033 — CAGR 27.2%",
+      "year": 2025,
+      "source": "Grand View Research",
+      "sourceUrl": "https://www.grandviewresearch.com/industry-analysis/latin-america-live-commerce-market-report"
+    },
+    {
+      "id": "latam-share-by-country",
+      "category": "latam",
+      "label": "Cuota LATAM por país",
+      "value": "Brasil 36% · Argentina 16% · Colombia 8.5% · Chile 5%",
+      "valueShort": "BR36/AR16/CO8.5",
+      "context": "Colombia es el tercer mercado LATAM",
+      "year": 2025,
+      "source": "Grand View Research",
+      "sourceUrl": "https://www.grandviewresearch.com/industry-analysis/latin-america-live-commerce-market-report"
+    },
+    {
+      "id": "tiktok-shop-latam-status",
+      "category": "latam",
+      "label": "TikTok Shop en LATAM 2025-2026",
+      "value": "Brasil + México full · Colombia beta",
+      "valueShort": "BR/MX activo",
+      "context": "Colombia en seller program limitado 2025",
+      "year": 2025,
+      "source": "m2ecloud",
+      "sourceUrl": "https://blog.m2ecloud.com/tiktok-shop-across-latam-where-it-s-live-and-what-s-coming/"
+    },
+    {
+      "id": "magalu-bf-2024",
+      "category": "case-study",
+      "label": "Magalu Black Friday 2024 (Brasil)",
+      "value": "USD 240M+",
+      "valueShort": "$240M",
+      "context": "Ventas en un solo día · operan Magalu Live desde 2020",
+      "year": 2024,
+      "source": "ecommerceupdate.org",
+      "sourceUrl": "https://www.ecommerceupdate.org/en/highlight/americanas-e-magalu-anunciam-parceria-estrategica-para-e-commerce/"
+    },
+    {
+      "id": "vtex-live-uplift",
+      "category": "case-study",
+      "label": "VTEX clientes LATAM",
+      "value": "+40%",
+      "valueShort": "+40%",
+      "context": "Aumento de órdenes completadas durante eventos live",
+      "year": 2025,
+      "source": "VTEX / yavendio",
+      "sourceUrl": "https://www.yavendio.com/en/blog/live-commerce-latam-estadisticas"
+    },
+    {
+      "id": "beauty-retailer-conversion",
+      "category": "case-study",
+      "label": "Retailer brasileño de belleza",
+      "value": "30%",
+      "valueShort": "30%",
+      "context": "Conversión viewer→purchase, ~10× su ecommerce estándar",
+      "year": 2025,
+      "source": "yavendio",
+      "sourceUrl": "https://www.yavendio.com/en/blog/live-commerce-latam-estadisticas"
+    },
+    {
+      "id": "cpm-tiktok-colombia",
+      "category": "ads",
+      "label": "CPM TikTok Ads Colombia",
+      "value": "USD 2–6",
+      "valueShort": "$2-6",
+      "context": "Audiencias <35 años: 30–50% más baratas que Meta",
+      "year": 2026,
+      "source": "Consolidación Digital / Bunker DB",
+      "sourceUrl": "https://www.consolidaciondigital.com/blog/performance-marketing/tiktok-ads-colombia"
+    },
+    {
+      "id": "cpm-meta-colombia",
+      "category": "ads",
+      "label": "CPM Meta Ads Colombia",
+      "value": "USD 1–8",
+      "valueShort": "$1-8",
+      "context": "Promedio mixto B2C/remarketing; B2B real en USD 3–8",
+      "year": 2026,
+      "source": "Bunker DB",
+      "sourceUrl": "https://bunkerdb.com/blog/facebook-vs-tiktok-2025"
+    },
+    {
+      "id": "tiktok-pre-recorded-policy",
+      "category": "compliance",
+      "label": "TikTok — política de live pre-grabado nativo",
+      "value": "Prohibido",
+      "valueShort": "No nativo",
+      "context": "Pancake corre el live en su plataforma partner-oficial — no en TikTok Live nativo. Los ads sí van a TikTok.",
+      "year": 2025,
+      "source": "TikTok LIVE Community Guidelines",
+      "sourceUrl": "https://www.tiktok.com/live/studio/help/article/Before-you-go-LIVE/Community-Guidelines"
+    },
+    {
+      "id": "pancake-partnerships",
+      "category": "compliance",
+      "label": "Pancake — partnerships oficiales",
+      "value": "Meta + TikTok + Google",
+      "valueShort": "Meta+TikTok+Google",
+      "context": "Único partner triple-oficial para live commerce en LATAM",
+      "year": 2026,
+      "source": "Pancake (Mauricio Cuevas, CEO)",
+      "sourceUrl": ""
+    }
+  ]
+}

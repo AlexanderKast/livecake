@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { Instagram, Linkedin, MessageCircle } from "lucide-react";
+import Image from "next/image";
 import { SiTiktok } from "@/components/home/icons";
 import { trackSocialClick, trackWhatsappClick } from "@/lib/tracking/events";
 
@@ -64,13 +64,7 @@ export function Footer() {
               className="inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
               aria-label="Live Cake - Inicio"
             >
-              <Image
-                src="/brand/logo-light-bg.png"
-                alt="Live Cake"
-                width={180}
-                height={52}
-                className="h-10 w-auto"
-              />
+              <Image src="/brand/logo-light-bg.png" alt="Live Cake" width={180} height={48} className="h-10 w-auto" />
             </a>
             <p className="mt-6 text-sm text-neutral-500 max-w-xs leading-relaxed">
               Live shopping + falsos lives 24/7 sobre Pancake. Partner oficial

@@ -8,17 +8,17 @@ import { ForgeLeadForm } from "@/components/forge/ForgeLeadForm";
 import { SocialLinks } from "@/components/shared/SocialLinks";
 
 export const metadata: Metadata = {
-  title: "Content Forge · Un estudio editorial en tu terminal — UGC Colombia",
+  title: "Content Forge · Un estudio editorial en tu terminal — Live Cake",
   description:
-    "Regalo de UGC Colombia: el pipeline que usamos para generar carruseles, reels y posts con calidad de agencia. Consistencia de personaje, voz configurable, tu propio rostro. Gratis, MIT.",
+    "Regalo de Live Cake: el pipeline que usamos para generar carruseles, reels y posts con calidad de agencia. Consistencia de personaje, voz configurable, tu propio rostro. Gratis, MIT.",
   openGraph: {
     title: "Content Forge — Un estudio editorial en tu terminal",
     description:
-      "El pipeline de UGC Colombia, liberado como regalo. Carruseles, reels y posts con calidad de agencia desde Claude Code. Consistencia de personaje para marca personal.",
-    url: "https://ugccolombia.co/forge",
+      "El pipeline de Live Cake, liberado como regalo. Carruseles, reels y posts con calidad de agencia desde Claude Code. Consistencia de personaje para marca personal.",
+    url: "https://livecake.com/forge",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
-  alternates: { canonical: "https://ugccolombia.co/forge" },
+  alternates: { canonical: "https://livecake.com/forge" },
 };
 
 // Force dynamic rendering para evitar errores de prerender en build
@@ -26,7 +26,7 @@ export const dynamic = "force-dynamic";
 
 export default function ForgePage() {
   return (
-    <main className="bg-brand-black min-h-screen">
+    <main className="bg-white min-h-screen">
       <ForgeHero />
       <ForgeFeatures />
       <ForgeProofGallery />
@@ -34,16 +34,16 @@ export default function ForgePage() {
       <ForgeFAQ />
 
       {/* CTA final */}
-      <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
+      <section className="bg-neutral-50 py-20 md:py-28 border-t border-neutral-100">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <div className="flex flex-col gap-4 items-center text-center mb-10">
             <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
               Todo listo
             </span>
-            <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight">
+            <h2 className="font-display text-5xl md:text-6xl uppercase text-neutral-900 leading-[0.95] tracking-tight">
               Déjanos tus datos y empieza hoy
             </h2>
-            <p className="text-base text-brand-gray-light max-w-xl leading-relaxed">
+            <p className="text-base text-neutral-600 max-w-xl leading-relaxed">
               En menos de 1 minuto tendrás Content Forge en tu correo. En 20 minutos estarás publicando.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function ForgePage() {
       </section>
 
       {/* Footer redes */}
-      <section className="bg-brand-black py-12 border-t border-white/5">
+      <section className="bg-white py-12 border-t border-neutral-100">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <SocialLinks variant="default" align="center" label="Síguenos para más regalos y contenido real" />
         </div>

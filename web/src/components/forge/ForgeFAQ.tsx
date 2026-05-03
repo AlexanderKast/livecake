@@ -37,13 +37,13 @@ export function ForgeFAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
+    <section className="bg-white py-20 md:py-28 border-t border-neutral-100">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
         <div className="flex flex-col gap-3 items-center text-center mb-10">
           <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
             Preguntas frecuentes
           </span>
-          <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight">
+          <h2 className="font-display text-5xl md:text-6xl uppercase text-neutral-900 leading-[0.95] tracking-tight">
             Lo que más preguntan
           </h2>
         </div>
@@ -52,7 +52,7 @@ export function ForgeFAQ() {
           {FAQS.map((f, i) => (
             <article
               key={f.q}
-              className="rounded-xl border border-white/10 bg-black/40 overflow-hidden"
+              className="rounded-xl border border-neutral-200 bg-neutral-50 overflow-hidden"
             >
               <button
                 type="button"
@@ -60,7 +60,7 @@ export function ForgeFAQ() {
                 className="w-full flex items-center justify-between gap-4 p-5 text-left"
                 aria-expanded={open === i}
               >
-                <h3 className="text-base md:text-lg font-semibold text-white leading-snug">
+                <h3 className="text-base md:text-lg font-semibold text-neutral-900 leading-snug">
                   {f.q}
                 </h3>
                 <span
@@ -73,7 +73,7 @@ export function ForgeFAQ() {
                 </span>
               </button>
               {open === i ? (
-                <div className="px-5 pb-5 text-sm md:text-base text-brand-gray-light leading-relaxed">
+                <div className="px-5 pb-5 text-sm md:text-base text-neutral-600 leading-relaxed">
                   {f.a}
                 </div>
               ) : null}

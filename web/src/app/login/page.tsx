@@ -15,13 +15,13 @@ export default function LoginPage() {
   return (
     <>
       <Navbar />
-      <main className="relative min-h-screen bg-brand-black text-white overflow-hidden flex items-center">
+      <main className="relative min-h-screen bg-neutral-50 text-neutral-900 overflow-hidden flex items-center">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-0"
           style={{
             background:
-              "radial-gradient(ellipse at top, rgba(22,163,74,0.20) 0%, rgba(0,0,0,0) 55%), radial-gradient(ellipse at bottom right, rgba(22,163,74,0.10) 0%, rgba(0,0,0,0) 60%)",
+              "radial-gradient(ellipse at top, rgba(22,163,74,0.08) 0%, transparent 55%), radial-gradient(ellipse at bottom right, rgba(22,163,74,0.05) 0%, transparent 60%)",
           }}
         />
         <section className="relative z-10 w-full pt-28 pb-16 px-4 sm:px-6 lg:px-8">

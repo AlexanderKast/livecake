@@ -180,7 +180,7 @@ export function PreciosCalculator() {
     <section
       id="calculadora"
       aria-labelledby="calculadora-title"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
       <style>{`
         .pricing-slider::-webkit-slider-thumb {
@@ -191,7 +191,7 @@ export function PreciosCalculator() {
           border-radius: 50%;
           background: linear-gradient(135deg, #16a34a, #15803d);
           cursor: pointer;
-          border: 3px solid #000;
+          border: 3px solid #fff;
           box-shadow: 0 0 16px rgba(22,163,74,0.5), 0 0 4px rgba(22,163,74,0.3);
           transition: box-shadow 0.2s;
         }
@@ -204,7 +204,7 @@ export function PreciosCalculator() {
           border-radius: 50%;
           background: linear-gradient(135deg, #16a34a, #15803d);
           cursor: pointer;
-          border: 3px solid #000;
+          border: 3px solid #fff;
           box-shadow: 0 0 16px rgba(22,163,74,0.5);
         }
       `}</style>
@@ -217,7 +217,7 @@ export function PreciosCalculator() {
           sizes="100vw"
           className="object-cover opacity-18"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/70 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/80 via-neutral-50/70 to-neutral-50" />
       </div>
       <div
         aria-hidden
@@ -240,7 +240,7 @@ export function PreciosCalculator() {
           </span>
           <h2
             id="calculadora-title"
-            className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] text-neutral-900 tracking-tight uppercase"
           >
             ¿Cuánto te{" "}
             <span
@@ -255,7 +255,7 @@ export function PreciosCalculator() {
             </span>
             ?
           </h2>
-          <p className="mt-5 text-sm sm:text-base text-brand-gray leading-relaxed">
+          <p className="mt-5 text-sm sm:text-base text-neutral-500 leading-relaxed">
             Mueve el slider según los lives que necesitas al mes y elige cuánto
             te comprometes. Más meses = más descuento.
           </p>
@@ -265,14 +265,14 @@ export function PreciosCalculator() {
           initial={{ opacity: 0, y: 32 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-3xl border border-brand-graphite/60 bg-gradient-to-b from-white/[0.04] to-transparent p-6 sm:p-10 lg:p-12 overflow-hidden"
+          className="relative rounded-3xl border border-neutral-200 bg-gradient-to-b from-neutral-100 to-transparent p-6 sm:p-10 lg:p-12 overflow-hidden"
         >
           <div
             aria-hidden
             className="absolute top-0 right-0 w-80 h-80 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at 100% 0%, rgba(16,185,129,0.14), transparent 65%)",
+                "radial-gradient(ellipse at 100% 0%, rgba(16,185,129,0.07), transparent 65%)",
             }}
           />
           <div
@@ -303,7 +303,7 @@ export function PreciosCalculator() {
                   <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70">
                     Lives al mes
                   </p>
-                  <p className="font-display text-5xl sm:text-6xl text-white leading-none mt-1">
+                  <p className="font-display text-5xl sm:text-6xl text-neutral-900 leading-none mt-1">
                     {lives}
                   </p>
                 </div>
@@ -322,10 +322,10 @@ export function PreciosCalculator() {
                 onChange={handleSlider}
                 className="pricing-slider w-full h-2 rounded-full appearance-none cursor-pointer"
                 style={{
-                  background: `linear-gradient(90deg, #16a34a 0%, #15803d ${sliderPct}%, rgba(61,61,60,0.6) ${sliderPct}%, rgba(61,61,60,0.6) 100%)`,
+                  background: `linear-gradient(90deg, #16a34a 0%, #15803d ${sliderPct}%, rgba(212,212,212,0.8) ${sliderPct}%, rgba(212,212,212,0.8) 100%)`,
                 }}
               />
-              <div className="flex justify-between mt-3 text-[11px] text-brand-gray/70">
+              <div className="flex justify-between mt-3 text-[11px] text-neutral-400">
                 {LABEL_STOPS.map((stop) => (
                   <button
                     key={stop.lives}
@@ -359,22 +359,22 @@ export function PreciosCalculator() {
                           "relative px-2 py-3 rounded-lg border text-center transition-all",
                           active
                             ? "border-brand-green bg-brand-green/10 shadow-[0_0_20px_-8px_rgba(22,163,74,0.5)]"
-                            : "border-brand-graphite/60 hover:border-brand-green/40",
+                            : "border-neutral-200 hover:border-brand-green/40",
                         )}
                       >
                         <p
                           className={cn(
                             "text-[11px] font-bold uppercase tracking-wider",
-                            active ? "text-brand-green" : "text-white",
+                            active ? "text-brand-green" : "text-neutral-900",
                           )}
                         >
                           {DURATION_LABEL[d]}
                         </p>
-                        <p className="text-[10px] text-brand-gray mt-0.5">
+                        <p className="text-[10px] text-neutral-500 mt-0.5">
                           {d === 1 ? "1 mes" : `${d} m`}
                         </p>
                         {pct > 0 && (
-                          <span className="block mt-1 text-[10px] font-bold text-emerald-400">
+                          <span className="block mt-1 text-[10px] font-bold text-emerald-600">
                             -{pct}%
                           </span>
                         )}
@@ -384,8 +384,8 @@ export function PreciosCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 rounded-xl border border-brand-graphite/60 bg-white/[0.02]">
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gray mb-1">
+              <div className="mt-6 p-4 rounded-xl border border-neutral-200 bg-neutral-50">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-neutral-500 mb-1">
                   Te recomendamos
                 </p>
                 <p className="font-display text-2xl text-brand-green tracking-wide">
@@ -400,14 +400,14 @@ export function PreciosCalculator() {
             {/* Derecha: comparación de costos */}
             <div className="space-y-4">
               {/* Sin paquete */}
-              <div className="rounded-xl border border-brand-graphite/60 bg-white/[0.015] p-5">
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-gray mb-2">
+              <div className="rounded-xl border border-neutral-200 bg-neutral-100 p-5">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-neutral-500 mb-2">
                   Armando el stack por tu cuenta
                 </p>
-                <p className="font-display text-3xl sm:text-4xl text-white/70 line-through decoration-brand-graphite">
+                <p className="font-display text-3xl sm:text-4xl text-neutral-400 line-through decoration-neutral-300">
                   {formatPrice(animatedSoloCost, currency)}
                 </p>
-                <p className="text-[11px] text-brand-gray/70 mt-1">
+                <p className="text-[11px] text-neutral-500 mt-1">
                   Plataforma + host freelance + producción + estrategia
                 </p>
               </div>
@@ -418,21 +418,21 @@ export function PreciosCalculator() {
                   Con plan {plan.name} · {DURATION_LABEL[duration]}
                 </p>
                 <div className="flex items-end gap-2 flex-wrap">
-                  <p className="font-display text-4xl sm:text-5xl text-white leading-none">
+                  <p className="font-display text-4xl sm:text-5xl text-neutral-900 leading-none">
                     {formatPrice(cycleTotal, currency)}
                   </p>
-                  <p className="text-[11px] text-brand-gray pb-1">{cycleLabel}</p>
+                  <p className="text-[11px] text-neutral-500 pb-1">{cycleLabel}</p>
                 </div>
                 {duration > 1 && (
-                  <p className="text-[11px] text-brand-gray mt-2">
+                  <p className="text-[11px] text-neutral-500 mt-2">
                     Equivalente a{" "}
-                    <strong className="text-white">
+                    <strong className="text-neutral-900">
                       {format(monthlyEquivalent)}/mes
                     </strong>
                     {commitmentSavings > 0 && (
                       <>
                         {" · "}
-                        <span className="text-emerald-400 font-semibold">
+                        <span className="text-emerald-600 font-semibold">
                           ahorras {format(commitmentSavings)} por prepago
                         </span>
                       </>
@@ -440,7 +440,7 @@ export function PreciosCalculator() {
                   </p>
                 )}
                 {duration === 1 && (
-                  <p className="text-[11px] text-brand-gray mt-2">
+                  <p className="text-[11px] text-neutral-500 mt-2">
                     {unitLabel} · suite completa incluida
                   </p>
                 )}
@@ -450,18 +450,18 @@ export function PreciosCalculator() {
               {savings > 0 && (
                 <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/8 p-5">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-emerald-400 flex items-center gap-1.5">
+                    <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-emerald-600 flex items-center gap-1.5">
                       <TrendingDown className="h-3 w-3" aria-hidden />
                       Tu ahorro mensual
                     </p>
-                    <span className="text-[11px] font-bold text-emerald-400">
+                    <span className="text-[11px] font-bold text-emerald-600">
                       -{savingsPct}%
                     </span>
                   </div>
-                  <p className="font-display text-4xl sm:text-5xl text-emerald-400">
+                  <p className="font-display text-4xl sm:text-5xl text-emerald-600">
                     {formatPrice(animatedSavings, currency)}
                   </p>
-                  <p className="text-[11px] text-emerald-400/80 mt-1">
+                  <p className="text-[11px] text-emerald-600/80 mt-1">
                     {localeLabel} · vs armar el stack por tu cuenta
                   </p>
                 </div>
@@ -473,7 +473,7 @@ export function PreciosCalculator() {
                 className={cn(
                   "group/cta flex items-center justify-center gap-2 w-full px-6 py-4 rounded-xl bg-brand-green text-white font-sans font-bold text-base tracking-wide transition-all min-h-[52px]",
                   "hover:bg-brand-green-dark hover:shadow-[0_10px_40px_-10px_rgba(22,163,74,0.55)]",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                 )}
               >
                 Empezar con este plan
@@ -483,7 +483,7 @@ export function PreciosCalculator() {
                 />
               </a>
 
-              <p className="flex items-center justify-center gap-1.5 text-xs text-brand-gray/70">
+              <p className="flex items-center justify-center gap-1.5 text-xs text-neutral-500">
                 <Users className="h-3 w-3" aria-hidden />
                 Sin comisión sobre las ventas generadas
               </p>
@@ -503,9 +503,9 @@ export function PreciosCalculator() {
           ).map((p) => (
             <div
               key={p.id}
-              className="rounded-xl border border-brand-graphite/40 bg-white/[0.02] p-3 text-center"
+              className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-center"
             >
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-gray mb-1">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-500 mb-1">
                 {p.label}
               </p>
               <p
@@ -519,12 +519,12 @@ export function PreciosCalculator() {
               >
                 {format(PLAN_PRICES[p.id][currency].amount)}
               </p>
-              <p className="text-[10px] text-brand-gray/60">al mes</p>
+              <p className="text-[10px] text-neutral-400">al mes</p>
             </div>
           ))}
         </div>
 
-        <p className="mt-6 text-center text-xs text-brand-gray/60">
+        <p className="mt-6 text-center text-xs text-neutral-400">
           * Comparación estimada vs. contratar plataforma live shopping, host
           freelance, producción y estrategia por separado en LATAM.
         </p>

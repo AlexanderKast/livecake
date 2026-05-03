@@ -11,9 +11,9 @@ export function ServiciosOverview() {
     <section
       id="overview"
       aria-labelledby="overview-heading"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden scroll-mt-20 sm:scroll-mt-24"
     >
-      {/* Background glow dorado sutil (matches home Servicios.tsx) */}
+      {/* Background glow verde sutil */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-50"
@@ -34,7 +34,7 @@ export function ServiciosOverview() {
           <p className="sr-only">Resumen de servicios</p>
           <h2
             id="overview-heading"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase"
           >
             Diez líneas.
             <br />
@@ -49,7 +49,7 @@ export function ServiciosOverview() {
               Una sola estrategia.
             </span>
           </h2>
-          <p className="mt-6 text-base sm:text-lg text-brand-gray leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-neutral-500 leading-relaxed">
             Contenido, estrategia, producción, consultoría, creadores, IA, web y
             dev. Cada línea se integra para acompañarte desde la idea hasta el
             resultado.
@@ -71,13 +71,13 @@ export function ServiciosOverview() {
                   href={`#${s.id}`}
                   className={cn(
                     "group relative block h-full p-5 sm:p-6 lg:p-7 rounded-2xl",
-                    "border border-brand-graphite/60 bg-white/[0.025]",
-                    "hover:border-brand-green/40 hover:bg-white/[0.04]",
+                    "border border-neutral-200 bg-neutral-100",
+                    "hover:border-brand-green/40 hover:bg-neutral-100",
                     "hover:shadow-[0_12px_40px_-12px_rgba(22,163,74,0.25)]",
                     "transition-all duration-300 hover:-translate-y-1"
                   )}
                 >
-                  {/* Gradient border on hover — matches home Servicios.tsx */}
+                  {/* Gradient border on hover */}
                   <div
                     aria-hidden
                     className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -94,10 +94,10 @@ export function ServiciosOverview() {
                   <div className="relative w-11 h-11 rounded-xl bg-brand-green/10 border border-brand-green/25 flex items-center justify-center mb-4 group-hover:bg-brand-green/20 group-hover:border-brand-green/50 transition-colors">
                     <Icon className="h-5 w-5 text-brand-green" aria-hidden="true" />
                   </div>
-                  <h3 className="font-display text-lg text-white tracking-wide uppercase leading-tight mb-2">
+                  <h3 className="font-display text-lg text-neutral-900 tracking-wide uppercase leading-tight mb-2">
                     {s.title}
                   </h3>
-                  <p className="text-sm text-brand-gray font-sans leading-snug mb-4">
+                  <p className="text-sm text-neutral-500 font-sans leading-snug mb-4">
                     {s.shortDescription}
                   </p>
                   <span className="inline-flex items-center gap-1 text-xs font-sans font-semibold text-brand-green group-hover:gap-2 transition-all">

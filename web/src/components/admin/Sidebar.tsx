@@ -142,14 +142,7 @@ export function Sidebar({ user }: SidebarProps) {
         {/* Logo */}
         <div className="px-6 py-6 border-b border-brand-gold/10 flex-shrink-0">
           <Link href="/admin" onClick={() => setMobileOpen(false)}>
-            <Image
-              src="/brand/logo-dark-bg.png?v=2"
-              alt="Live Cake"
-              width={148}
-              height={40}
-              className="w-auto h-8"
-              priority
-            />
+            <Image src="/brand/logo-dark-bg.png" alt="Live Cake" width={160} height={40} className="h-8 w-auto" />
           </Link>
           <div className="text-[10px] uppercase tracking-[0.2em] text-brand-yellow mt-2 font-semibold">
             · Admin

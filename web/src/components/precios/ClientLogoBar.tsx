@@ -55,7 +55,7 @@ export function ClientLogoBar({ className }: { className?: string }) {
 
   return (
     <div className={cn("w-full", className)}>
-      <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-brand-graphite text-center mb-5 font-sans">
+      <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-neutral-400 text-center mb-5 font-sans">
         Confían en nosotros
       </p>
 
@@ -67,7 +67,7 @@ export function ClientLogoBar({ className }: { className?: string }) {
           aria-label="Anterior"
           className={cn(
             "absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full",
-            "bg-brand-black/80 backdrop-blur border border-white/15 text-brand-gray",
+            "bg-white/90 backdrop-blur border border-neutral-200 text-neutral-600",
             "flex items-center justify-center transition-all duration-200",
             "hover:text-brand-green hover:border-brand-green/50 hover:scale-110",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
@@ -84,7 +84,7 @@ export function ClientLogoBar({ className }: { className?: string }) {
           aria-hidden
           className={cn(
             "absolute left-0 top-0 bottom-0 w-12 sm:w-16 z-10 pointer-events-none transition-opacity duration-300",
-            "bg-gradient-to-r from-brand-black to-transparent",
+            "bg-gradient-to-r from-white to-transparent",
             canScrollLeft ? "opacity-100" : "opacity-0",
           )}
         />
@@ -112,9 +112,9 @@ export function ClientLogoBar({ className }: { className?: string }) {
                   draggable={false}
                   className={cn(
                     "h-8 sm:h-9 w-auto object-contain select-none",
-                    "brightness-0 invert opacity-50",
+                    "brightness-0 opacity-40",
                     "transition-all duration-300 ease-out",
-                    "group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0",
+                    "group-hover:opacity-100 group-hover:brightness-100",
                     "group-hover:drop-shadow-[0_0_18px_rgba(22,163,74,0.45)]",
                   )}
                 />
@@ -122,15 +122,15 @@ export function ClientLogoBar({ className }: { className?: string }) {
                 <div className="flex items-center gap-2">
                   <span
                     className={cn(
-                      "w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-white/[0.06] border border-white/[0.08]",
-                      "flex items-center justify-center text-[11px] font-bold text-white/50 font-sans tracking-tight",
+                      "w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-neutral-100 border border-neutral-200",
+                      "flex items-center justify-center text-[11px] font-bold text-neutral-600 font-sans tracking-tight",
                       "transition-all duration-300",
                       "group-hover:bg-brand-green/15 group-hover:text-brand-green group-hover:border-brand-green/40",
                     )}
                   >
                     {client.letters}
                   </span>
-                  <span className="text-xs sm:text-sm font-sans font-medium text-white/40 tracking-wide hidden sm:inline group-hover:text-white transition-colors">
+                  <span className="text-xs sm:text-sm font-sans font-medium text-neutral-400 tracking-wide hidden sm:inline group-hover:text-neutral-900 transition-colors">
                     {client.name}
                   </span>
                 </div>
@@ -144,7 +144,7 @@ export function ClientLogoBar({ className }: { className?: string }) {
           aria-hidden
           className={cn(
             "absolute right-0 top-0 bottom-0 w-12 sm:w-16 z-10 pointer-events-none transition-opacity duration-300",
-            "bg-gradient-to-l from-brand-black to-transparent",
+            "bg-gradient-to-l from-white to-transparent",
             canScrollRight ? "opacity-100" : "opacity-0",
           )}
         />
@@ -156,7 +156,7 @@ export function ClientLogoBar({ className }: { className?: string }) {
           aria-label="Siguiente"
           className={cn(
             "absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full",
-            "bg-brand-black/80 backdrop-blur border border-white/15 text-brand-gray",
+            "bg-white/90 backdrop-blur border border-neutral-200 text-neutral-600",
             "flex items-center justify-center transition-all duration-200",
             "hover:text-brand-green hover:border-brand-green/50 hover:scale-110",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",

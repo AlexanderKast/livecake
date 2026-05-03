@@ -18,7 +18,7 @@ export function ServiciosDetalle() {
   return (
     <section
       aria-label="Detalle de servicios"
-      className="relative bg-brand-black"
+      className="relative bg-white"
     >
       {SERVICE_LINES.map((line, i) => (
         <ServiceBlock key={line.id} line={line} index={i} />
@@ -39,7 +39,10 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
   return (
     <div
       id={line.id}
-      className="relative py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24 border-b border-brand-graphite/40 last:border-b-0"
+      className={cn(
+        "relative py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24 border-b border-neutral-200 last:border-b-0",
+        index % 2 === 1 ? "bg-neutral-50" : "bg-white"
+      )}
     >
       {/* gradient corner glow */}
       <div
@@ -60,7 +63,7 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className={cn("order-1", reverse ? "lg:order-2" : "lg:order-1")}
         >
-          <div className="relative aspect-square max-w-md mx-auto rounded-3xl border border-brand-green/25 overflow-hidden bg-brand-black shadow-[0_20px_60px_-20px_rgba(22,163,74,0.3)]">
+          <div className="relative aspect-square max-w-md mx-auto rounded-3xl border border-brand-green/25 overflow-hidden bg-neutral-100 shadow-[0_20px_60px_-20px_rgba(22,163,74,0.3)]">
             <Image
               src={line.image}
               alt={line.imageAlt}
@@ -70,9 +73,9 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
             />
             <div
               aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-brand-black/10 to-transparent"
+              className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/10 to-transparent"
             />
-            <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-brand-black/60 backdrop-blur-md border border-brand-green/40 flex items-center justify-center">
+            <div className="absolute top-4 left-4 w-12 h-12 rounded-xl bg-white/60 backdrop-blur-md border border-brand-green/40 flex items-center justify-center">
               <Icon className="w-6 h-6 text-brand-green" strokeWidth={1.5} aria-hidden />
             </div>
           </div>
@@ -86,10 +89,10 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className={cn("order-2", reverse ? "lg:order-1" : "lg:order-2")}
         >
-          <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] leading-[1] text-white tracking-tight uppercase mb-4">
+          <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] leading-[1] text-neutral-900 tracking-tight uppercase mb-4">
             {line.title}
           </h2>
-          <p className="text-base sm:text-lg text-brand-gray leading-relaxed mb-6">
+          <p className="text-base sm:text-lg text-neutral-500 leading-relaxed mb-6">
             {line.longDescription}
           </p>
 
@@ -100,7 +103,7 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
             </p>
             <ul className="grid sm:grid-cols-2 gap-2">
               {deliverables.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-sm text-white/90 font-sans">
+                <li key={d} className="flex items-start gap-2 text-sm text-neutral-700 font-sans">
                   <Check className="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" />
                   <span>{d}</span>
                 </li>
@@ -110,11 +113,11 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
 
           {/* Target + Precio */}
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
-            <div className="p-4 rounded-xl border border-brand-graphite/60 bg-white/[0.02]">
-              <p className="text-[10px] font-sans font-bold tracking-widest uppercase text-brand-gray mb-1">
+            <div className="p-4 rounded-xl border border-neutral-200 bg-neutral-100">
+              <p className="text-[10px] font-sans font-bold tracking-widest uppercase text-neutral-500 mb-1">
                 Para quién es
               </p>
-              <p className="text-sm text-white/90 font-sans leading-relaxed">{line.target}</p>
+              <p className="text-sm text-neutral-700 font-sans leading-relaxed">{line.target}</p>
             </div>
             <div className="p-4 rounded-xl border border-brand-green/40 bg-brand-green/5">
               <p className="text-[10px] font-sans font-bold tracking-widest uppercase text-brand-green mb-1">
@@ -124,7 +127,7 @@ function ServiceBlock({ line, index }: { line: ServiceLine; index: number }) {
             </div>
           </div>
 
-          <p className="text-xs text-brand-gray italic mb-6 leading-relaxed">
+          <p className="text-xs text-neutral-500 italic mb-6 leading-relaxed">
             <span className="text-brand-green not-italic font-semibold">Ejemplo:</span> {example}
           </p>
 

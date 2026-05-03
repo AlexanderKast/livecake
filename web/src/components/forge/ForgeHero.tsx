@@ -6,13 +6,13 @@ import { PrioritySlotsCounter } from "./PrioritySlotsCounter";
  */
 export function ForgeHero() {
   return (
-    <section className="relative overflow-hidden bg-brand-black">
+    <section className="relative overflow-hidden bg-white">
       {/* Decorative backdrop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(22,163,74,0.10),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(22,163,74,0.05),transparent_55%)]"
       />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.6)_80%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.6)_80%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-28">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-start">
@@ -22,12 +22,12 @@ export function ForgeHero() {
               <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand-green/15 text-brand-green border border-brand-green/40">
                 REGALO · GRATIS
               </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-green-500/15 text-green-400 border border-green-500/40">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-green-500/15 text-emerald-600 border border-green-500/40">
                 NUEVO
               </span>
             </div>
 
-            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl uppercase leading-[0.9] tracking-tight text-white">
+            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl uppercase leading-[0.9] tracking-tight text-neutral-900">
               Un estudio editorial en tu terminal
             </h1>
 
@@ -35,11 +35,11 @@ export function ForgeHero() {
               Content Forge: el mismo pipeline que usamos todos los días en UGC Colombia para producir contenido premium. Ahora es tuyo.
             </p>
 
-            <p className="text-base md:text-lg text-brand-gray-light leading-relaxed max-w-[58ch]">
+            <p className="text-base md:text-lg text-neutral-600 leading-relaxed max-w-[58ch]">
               Clonas, configuras tu marca en 3 minutos, y empiezas a publicar carruseles, reels y posts con calidad de agencia — desde tu propia marca, tu propia voz, tu propio rostro si eres marca personal.
             </p>
 
-            <ul className="flex flex-col gap-2 text-sm text-brand-gray-light">
+            <ul className="flex flex-col gap-2 text-sm text-neutral-600">
               <li className="flex items-start gap-2">
                 <CheckIcon /> Imágenes generadas con Gemini 2.5 Flash Image
               </li>

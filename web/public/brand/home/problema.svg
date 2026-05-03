@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Problema background">
+  <defs>
+    <linearGradient id="pFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#F5F5F5"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <pattern id="pDiag" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+      <line x1="0" y1="0" x2="0" y2="28" stroke="#FF0033" stroke-opacity="0.10" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#pFade)"/>
+  <rect width="1600" height="900" fill="url(#pDiag)"/>
+
+  <!-- Gráfica descendente (métricas cayendo) -->
+  <g opacity="0.22" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="80,260 260,310 440,400 620,380 800,540 980,510 1160,680 1340,650 1520,800"/>
+  </g>
+  <g opacity="0.35" fill="#FF0033">
+    <circle cx="80"   cy="260" r="6"/>
+    <circle cx="260"  cy="310" r="6"/>
+    <circle cx="440"  cy="400" r="6"/>
+    <circle cx="620"  cy="380" r="6"/>
+    <circle cx="800"  cy="540" r="6"/>
+    <circle cx="980"  cy="510" r="6"/>
+    <circle cx="1160" cy="680" r="6"/>
+    <circle cx="1340" cy="650" r="6"/>
+    <circle cx="1520" cy="800" r="6"/>
+  </g>
+
+  <!-- Flecha descendente grande -->
+  <g opacity="0.10" fill="#FF0033" transform="translate(1300 120) rotate(35)">
+    <path d="M0 0 L120 0 L120 280 L180 280 L60 400 L-60 280 L0 280 Z"/>
+  </g>
+</svg>

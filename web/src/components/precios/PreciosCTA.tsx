@@ -30,16 +30,16 @@ export function PreciosCTA() {
   return (
     <section
       id="cta-precios"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-brand-black overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 overflow-hidden"
       aria-labelledby="cta-precios-title"
     >
-      {/* Background glow — mejorado */}
+      {/* Background glow */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(22,163,74,0.15) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(22,163,74,0.06) 0%, transparent 65%)",
         }}
       />
       {/* Grid pattern */}
@@ -62,7 +62,7 @@ export function PreciosCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 40% 30% at 50% 70%, rgba(22,163,74,0.08) 0%, transparent 100%)",
+            "radial-gradient(ellipse 40% 30% at 50% 70%, rgba(22,163,74,0.05) 0%, transparent 100%)",
         }}
       />
 
@@ -81,7 +81,7 @@ export function PreciosCTA() {
 
         <h2
           id="cta-precios-title"
-          className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[0.95] text-white tracking-tight uppercase mb-6"
+          className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase mb-6"
         >
           Aplica para{" "}
           <span
@@ -97,26 +97,26 @@ export function PreciosCTA() {
           .
         </h2>
 
-        <p className="text-base sm:text-lg text-brand-gray leading-relaxed mb-8 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-neutral-500 leading-relaxed mb-8 max-w-2xl mx-auto">
           Revisamos cada aplicación en 24h. Si tu marca encaja, te agendamos una
           llamada de 30 min para alinear objetivos y cerrar el partnership —{" "}
-          <span className="text-white font-semibold">
+          <span className="text-neutral-900 font-semibold">
             {OFFER_COPY.discount_text}
           </span>
           .
         </p>
 
         {/* Guarantee badge */}
-        <div className="inline-flex items-center gap-2.5 mb-8 px-5 py-3 rounded-xl border border-brand-green/25 bg-white/[0.03]">
+        <div className="inline-flex items-center gap-2.5 mb-8 px-5 py-3 rounded-xl border border-brand-green/25 bg-neutral-100">
           <ShieldCheck
             className="h-5 w-5 text-brand-green flex-shrink-0"
             aria-hidden
           />
           <div className="text-left">
-            <p className="text-xs font-bold text-white">
+            <p className="text-xs font-bold text-neutral-900">
               Garantia de 7 dias
             </p>
-            <p className="text-[10px] text-brand-gray">
+            <p className="text-[10px] text-neutral-500">
               100% de devolucion si no encajamos
             </p>
           </div>
@@ -147,7 +147,7 @@ export function PreciosCTA() {
             {RECENT_CLIENTS.map((client) => (
               <div
                 key={client.initials}
-                className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-green/20 to-brand-green/5 border-2 border-brand-black flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-green/20 to-brand-green/5 border-2 border-white flex items-center justify-center"
                 title={client.name}
               >
                 <span className="text-[10px] font-bold text-brand-green/80 font-sans">
@@ -155,18 +155,18 @@ export function PreciosCTA() {
                 </span>
               </div>
             ))}
-            <div className="w-9 h-9 rounded-full bg-brand-green/10 border-2 border-brand-black flex items-center justify-center">
+            <div className="w-9 h-9 rounded-full bg-brand-green/10 border-2 border-white flex items-center justify-center">
               <span className="text-[10px] font-bold text-brand-green/60 font-sans">
                 +
               </span>
             </div>
           </div>
-          <p className="text-xs text-brand-gray">
+          <p className="text-xs text-neutral-500">
             Marcas en Colombia y LATAM ya confian en nosotros
           </p>
         </div>
 
-        <p className="mt-6 text-xs text-brand-graphite tracking-wide">
+        <p className="mt-6 text-xs text-neutral-400 tracking-wide">
           30 min · Gratis · Sin compromiso
         </p>
       </motion.div>

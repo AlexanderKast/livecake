@@ -43,7 +43,7 @@ interface Props {
 
 function scoreColor(s: number) {
   if (s >= 70) return "#F97316";
-  if (s >= 40) return "#F9B334";
+  if (s >= 40) return "#16a34a";
   return "#3B82F6";
 }
 
@@ -57,10 +57,10 @@ function ScoreBar({ label, score }: { label: string; score: number }) {
   return (
     <div className="space-y-1">
       <div className="flex justify-between text-xs">
-        <span className="text-brand-gray capitalize">{label.replace(/_/g, " ")}</span>
-        <span className="text-white font-bold">{score}</span>
+        <span className="text-neutral-500 capitalize">{label.replace(/_/g, " ")}</span>
+        <span className="text-neutral-900 font-bold">{score}</span>
       </div>
-      <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+      <div className="h-2 w-full bg-neutral-200 rounded-full overflow-hidden">
         <motion.div
           className="h-full rounded-full"
           style={{ background: scoreColor(score) }}
@@ -91,7 +91,7 @@ function Section({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
     >
-      <h2 className="flex items-center gap-2 text-sm font-semibold text-brand-gray uppercase tracking-wider mb-4">
+      <h2 className="flex items-center gap-2 text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-4">
         <Icon className="w-4 h-4 text-brand-green" />
         {title}
       </h2>
@@ -149,19 +149,19 @@ export function DiagnosisPageClient({
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen">
+      <main className="relative bg-white text-neutral-900 min-h-screen">
         <section className="relative pt-28 pb-16 px-4 sm:px-6 lg:px-8">
           <div
             aria-hidden
             className="absolute inset-0"
             style={{
-              background: `radial-gradient(ellipse 60% 40% at 50% 20%, ${color}15, transparent 60%)`,
+              background: `radial-gradient(ellipse 60% 40% at 50% 20%, ${color}0a, transparent 60%)`,
             }}
           />
           <div className="relative max-w-4xl mx-auto">
             {/* Breadcrumb */}
-            <p className="text-[11px] text-brand-gray/50 uppercase tracking-wider mb-6">
-              <a href="/" className="hover:text-brand-gray transition-colors">
+            <p className="text-[11px] text-neutral-400 uppercase tracking-wider mb-6">
+              <a href="/" className="hover:text-neutral-500 transition-colors">
                 UGC Colombia
               </a>{" "}
               / Diagnóstico /{" "}
@@ -172,30 +172,30 @@ export function DiagnosisPageClient({
 
             {/* ─── SCORE HERO (always visible) ─── */}
             <motion.div
-              className="relative rounded-2xl border p-6 sm:p-8 mb-8 bg-gradient-to-br from-white/[0.04] to-transparent"
+              className="relative rounded-2xl border p-6 sm:p-8 mb-8 bg-neutral-50"
               style={{ borderColor: `${color}30` }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h1 className="font-sans text-2xl sm:text-3xl font-bold text-white mb-1">
+                  <h1 className="font-sans text-2xl sm:text-3xl font-bold text-neutral-900 mb-1">
                     {companyName || `@${handle}`}
                   </h1>
-                  <p className="text-sm text-brand-gray flex items-center gap-2 flex-wrap">
+                  <p className="text-sm text-neutral-500 flex items-center gap-2 flex-wrap">
                     {industry && (
                       <span>{industry.replace(/_/g, " ")}</span>
                     )}
                     {instagramHandle && (
                       <>
-                        <span className="text-brand-gray/30">·</span>
+                        <span className="text-neutral-300">·</span>
                         <Instagram className="w-3.5 h-3.5 inline" /> @
                         {instagramHandle}
                       </>
                     )}
                     {ig && (
                       <>
-                        <span className="text-brand-gray/30">·</span>
+                        <span className="text-neutral-300">·</span>
                         {ig.followers?.toLocaleString()} seg ·{" "}
                         {ig.engagement_rate}% ER
                       </>
@@ -205,17 +205,17 @@ export function DiagnosisPageClient({
                     <span className="font-display text-6xl" style={{ color }}>
                       {score}
                     </span>
-                    <span className="text-brand-gray text-lg">/100</span>
+                    <span className="text-neutral-500 text-lg">/100</span>
                   </div>
                 </div>
                 <div
-                  className="p-3 rounded-xl bg-black/30"
+                  className="p-3 rounded-xl bg-neutral-100"
                   style={{ color }}
                 >
                   {tempIcon(temperature)}
                 </div>
               </div>
-              <div className="mt-4 h-2.5 w-full bg-black/30 rounded-full overflow-hidden">
+              <div className="mt-4 h-2.5 w-full bg-neutral-200 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full rounded-full bg-gradient-to-r from-blue-500 via-brand-green to-orange-500"
                   initial={{ width: 0 }}
@@ -246,7 +246,7 @@ export function DiagnosisPageClient({
                   {/* 5 Scores */}
                   {Object.keys(scores).length > 0 && (
                     <Section icon={BarChart3} title="Scores detallados" delay={0.1}>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 rounded-2xl border border-neutral-200 bg-neutral-50">
                         {Object.entries(scores).map(([key, val]) => (
                           <ScoreBar key={key} label={key} score={val as number} />
                         ))}
@@ -257,8 +257,8 @@ export function DiagnosisPageClient({
                   {/* Executive Summary */}
                   {summary && (
                     <Section icon={Eye} title="Resumen ejecutivo" delay={0.2}>
-                      <div className="p-5 rounded-2xl border border-white/10 bg-white/[0.02]">
-                        <p className="text-brand-gray text-sm leading-relaxed">
+                      <div className="p-5 rounded-2xl border border-neutral-200 bg-neutral-50">
+                        <p className="text-neutral-600 text-sm leading-relaxed">
                           {summary}
                         </p>
                       </div>
@@ -277,12 +277,12 @@ export function DiagnosisPageClient({
                         ].filter(m => m.value).map((m, i) => (
                           <div
                             key={i}
-                            className="p-4 rounded-xl border border-white/8 bg-white/[0.02] text-center"
+                            className="p-4 rounded-xl border border-neutral-200 bg-neutral-50 text-center"
                           >
-                            <p className="text-[10px] text-brand-gray/60 uppercase">
+                            <p className="text-[10px] text-neutral-400 uppercase">
                               {m.label}
                             </p>
-                            <p className="text-lg font-bold text-white mt-1">
+                            <p className="text-lg font-bold text-neutral-900 mt-1">
                               {m.value}
                             </p>
                           </div>
@@ -309,11 +309,11 @@ export function DiagnosisPageClient({
                               {i + 1}
                             </span>
                             <div>
-                              <p className="text-sm text-white font-medium">
+                              <p className="text-sm text-neutral-900 font-medium">
                                 {item.insight}
                               </p>
                               {item.evidence && (
-                                <p className="text-xs text-brand-gray mt-1">
+                                <p className="text-xs text-neutral-500 mt-1">
                                   {item.evidence}
                                 </p>
                               )}
@@ -335,11 +335,11 @@ export function DiagnosisPageClient({
                           >
                             <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm text-white font-medium">
+                              <p className="text-sm text-neutral-900 font-medium">
                                 {item.insight}
                               </p>
                               {item.evidence && (
-                                <p className="text-xs text-brand-gray mt-1">
+                                <p className="text-xs text-neutral-500 mt-1">
                                   {item.evidence}
                                 </p>
                               )}
@@ -353,8 +353,8 @@ export function DiagnosisPageClient({
                   {/* Ad Analysis */}
                   {audit.ad_analysis?.summary && (
                     <Section icon={TrendingUp} title="Análisis de publicidad" delay={0.3}>
-                      <div className="p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
-                        <p className="text-sm text-brand-gray leading-relaxed">
+                      <div className="p-5 rounded-2xl border border-neutral-200 bg-neutral-50">
+                        <p className="text-sm text-neutral-600 leading-relaxed">
                           {audit.ad_analysis.summary}
                         </p>
                         {audit.ad_analysis.recommendation && (
@@ -370,7 +370,7 @@ export function DiagnosisPageClient({
                   {!audit.whats_failing?.length &&
                     !audit.whats_working?.length &&
                     !audit.ad_analysis?.summary && (
-                      <div className="text-center py-16 text-brand-gray/50 text-sm">
+                      <div className="text-center py-16 text-neutral-400 text-sm">
                         No hay datos de auditoría disponibles.
                       </div>
                     )}
@@ -385,19 +385,19 @@ export function DiagnosisPageClient({
                     <Section icon={Users} title="Tu cliente ideal" delay={0.1}>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {avatar.demographics && (
-                          <div className="p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
+                          <div className="p-5 rounded-2xl border border-neutral-200 bg-neutral-50">
                             <p className="text-xs text-brand-green font-semibold uppercase tracking-wider mb-2">
                               Avatar
                             </p>
-                            <p className="text-sm text-brand-gray">
+                            <p className="text-sm text-neutral-600">
                               {avatar.demographics}
                             </p>
                             {avatar.pain_points?.length > 0 && (
                               <div className="mt-3">
-                                <p className="text-[11px] text-brand-gray/60 uppercase mb-1">
+                                <p className="text-[11px] text-neutral-400 uppercase mb-1">
                                   Dolores
                                 </p>
-                                <ul className="text-xs text-brand-gray space-y-1">
+                                <ul className="text-xs text-neutral-600 space-y-1">
                                   {avatar.pain_points.map(
                                     (p: string, i: number) => (
                                       <li key={i}>• {p}</li>
@@ -409,18 +409,18 @@ export function DiagnosisPageClient({
                           </div>
                         )}
                         {persona.name && (
-                          <div className="p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
+                          <div className="p-5 rounded-2xl border border-neutral-200 bg-neutral-50">
                             <p className="text-xs text-brand-green font-semibold uppercase tracking-wider mb-2">
                               Buyer Persona
                             </p>
-                            <p className="text-sm text-white font-medium">
+                            <p className="text-sm text-neutral-900 font-medium">
                               {persona.name}, {persona.age} años
                             </p>
-                            <p className="text-xs text-brand-gray mt-1">
+                            <p className="text-xs text-neutral-500 mt-1">
                               {persona.occupation}
                             </p>
                             {persona.how_discovers_brands && (
-                              <p className="text-xs text-brand-gray mt-2">
+                              <p className="text-xs text-neutral-500 mt-2">
                                 Descubre marcas:{" "}
                                 {persona.how_discovers_brands}
                               </p>
@@ -436,11 +436,11 @@ export function DiagnosisPageClient({
                     <Section icon={Star} title="Identidad de marca" delay={0.15}>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         {identity.current_tone && (
-                          <div className="p-4 rounded-xl border border-white/8 bg-white/[0.02]">
-                            <p className="text-[10px] text-brand-gray/60 uppercase">
+                          <div className="p-4 rounded-xl border border-neutral-200 bg-neutral-50">
+                            <p className="text-[10px] text-neutral-400 uppercase">
                               Tono actual
                             </p>
-                            <p className="text-sm text-white mt-1">
+                            <p className="text-sm text-neutral-900 mt-1">
                               {identity.current_tone}
                             </p>
                           </div>
@@ -450,27 +450,27 @@ export function DiagnosisPageClient({
                             <p className="text-[10px] text-brand-green/60 uppercase">
                               Tono recomendado
                             </p>
-                            <p className="text-sm text-white mt-1">
+                            <p className="text-sm text-neutral-900 mt-1">
                               {identity.recommended_tone}
                             </p>
                           </div>
                         )}
                         {identity.archetype && (
-                          <div className="p-4 rounded-xl border border-white/8 bg-white/[0.02]">
-                            <p className="text-[10px] text-brand-gray/60 uppercase">
+                          <div className="p-4 rounded-xl border border-neutral-200 bg-neutral-50">
+                            <p className="text-[10px] text-neutral-400 uppercase">
                               Arquetipo
                             </p>
-                            <p className="text-sm text-white mt-1">
+                            <p className="text-sm text-neutral-900 mt-1">
                               {identity.archetype}
                             </p>
                           </div>
                         )}
                         {identity.differentiator && (
-                          <div className="p-4 rounded-xl border border-white/8 bg-white/[0.02]">
-                            <p className="text-[10px] text-brand-gray/60 uppercase">
+                          <div className="p-4 rounded-xl border border-neutral-200 bg-neutral-50">
+                            <p className="text-[10px] text-neutral-400 uppercase">
                               Diferenciador
                             </p>
-                            <p className="text-sm text-white mt-1">
+                            <p className="text-sm text-neutral-900 mt-1">
                               {identity.differentiator}
                             </p>
                           </div>
@@ -490,17 +490,17 @@ export function DiagnosisPageClient({
                         {strategy.pillars.map((p: any, i: number) => (
                           <div
                             key={i}
-                            className="p-4 rounded-xl border border-white/8 bg-white/[0.02]"
+                            className="p-4 rounded-xl border border-neutral-200 bg-neutral-50"
                           >
                             <div className="flex items-center justify-between mb-2">
-                              <span className="text-sm font-bold text-white">
+                              <span className="text-sm font-bold text-neutral-900">
                                 {p.name}
                               </span>
                               <span className="text-xs text-brand-green font-bold">
                                 {p.percentage}%
                               </span>
                             </div>
-                            <p className="text-xs text-brand-gray">
+                            <p className="text-xs text-neutral-500">
                               {p.description}
                             </p>
                             {p.example_posts?.length > 0 && (
@@ -510,7 +510,7 @@ export function DiagnosisPageClient({
                                   .map((ex: string, j: number) => (
                                     <p
                                       key={j}
-                                      className="text-[11px] text-brand-gray/60"
+                                      className="text-[11px] text-neutral-400"
                                     >
                                       • {ex}
                                     </p>
@@ -556,7 +556,7 @@ export function DiagnosisPageClient({
                                 {labels[stage]}
                               </p>
                               {data.goal && (
-                                <p className="text-[11px] text-brand-gray mt-2">
+                                <p className="text-[11px] text-neutral-500 mt-2">
                                   {data.goal}
                                 </p>
                               )}
@@ -579,12 +579,12 @@ export function DiagnosisPageClient({
                           (hook: string, i: number) => (
                             <div
                               key={i}
-                              className="flex gap-3 p-3 rounded-xl border border-white/8 bg-white/[0.02]"
+                              className="flex gap-3 p-3 rounded-xl border border-neutral-200 bg-neutral-50"
                             >
                               <span className="text-brand-green font-bold text-sm">
                                 {i + 1}
                               </span>
-                              <p className="text-sm text-brand-gray">{hook}</p>
+                              <p className="text-sm text-neutral-600">{hook}</p>
                             </div>
                           )
                         )}
@@ -599,23 +599,23 @@ export function DiagnosisPageClient({
                       title="Mejores horarios para publicar"
                       delay={0.35}
                     >
-                      <div className="p-5 rounded-2xl border border-white/8 bg-white/[0.02]">
+                      <div className="p-5 rounded-2xl border border-neutral-200 bg-neutral-50">
                         <div className="grid grid-cols-2 gap-4">
                           <div>
-                            <p className="text-[10px] text-brand-gray/60 uppercase mb-1">
+                            <p className="text-[10px] text-neutral-400 uppercase mb-1">
                               Días
                             </p>
-                            <p className="text-sm text-white">
+                            <p className="text-sm text-neutral-900">
                               {Array.isArray(strategy.best_times.days)
                                 ? strategy.best_times.days.join(", ")
                                 : strategy.best_times.days}
                             </p>
                           </div>
                           <div>
-                            <p className="text-[10px] text-brand-gray/60 uppercase mb-1">
+                            <p className="text-[10px] text-neutral-400 uppercase mb-1">
                               Horas
                             </p>
-                            <p className="text-sm text-white">
+                            <p className="text-sm text-neutral-900">
                               {Array.isArray(strategy.best_times.hours)
                                 ? strategy.best_times.hours.join(", ")
                                 : strategy.best_times.hours}
@@ -623,7 +623,7 @@ export function DiagnosisPageClient({
                           </div>
                         </div>
                         {strategy.best_times.reason && (
-                          <p className="text-xs text-brand-gray mt-3">
+                          <p className="text-xs text-neutral-500 mt-3">
                             {strategy.best_times.reason}
                           </p>
                         )}
@@ -647,10 +647,10 @@ export function DiagnosisPageClient({
                           >
                             <Zap className="w-4 h-4 text-brand-green flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm text-white font-medium">
+                              <p className="text-sm text-neutral-900 font-medium">
                                 {qw.action}
                               </p>
-                              <p className="text-xs text-brand-gray mt-1">
+                              <p className="text-xs text-neutral-500 mt-1">
                                 {qw.expected_impact}
                               </p>
                             </div>
@@ -668,11 +668,11 @@ export function DiagnosisPageClient({
                       delay={0.2}
                     >
                       <div className="p-5 rounded-2xl border border-brand-green/25 bg-gradient-to-br from-brand-green/8 to-transparent">
-                        <p className="text-lg text-white font-bold mb-1">
+                        <p className="text-lg text-neutral-900 font-bold mb-1">
                           {proposal.recommended}
                         </p>
                         {proposal.pricing_note && (
-                          <p className="text-sm text-brand-gray">
+                          <p className="text-sm text-neutral-500">
                             {proposal.pricing_note}
                           </p>
                         )}
@@ -696,12 +696,12 @@ export function DiagnosisPageClient({
                         {nextSteps.map((step: string, i: number) => (
                           <div
                             key={i}
-                            className="flex gap-3 p-3 rounded-xl border border-white/8 bg-white/[0.02]"
+                            className="flex gap-3 p-3 rounded-xl border border-neutral-200 bg-neutral-50"
                           >
                             <span className="w-6 h-6 rounded-full bg-brand-green/20 flex items-center justify-center text-[11px] text-brand-green font-bold flex-shrink-0">
                               {i + 1}
                             </span>
-                            <p className="text-sm text-brand-gray">{step}</p>
+                            <p className="text-sm text-neutral-600">{step}</p>
                           </div>
                         ))}
                       </div>
@@ -715,10 +715,10 @@ export function DiagnosisPageClient({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <h2 className="font-sans text-xl sm:text-2xl font-bold text-white mb-2">
+                    <h2 className="font-sans text-xl sm:text-2xl font-bold text-neutral-900 mb-2">
                       ¿Quieres implementar estas mejoras?
                     </h2>
-                    <p className="text-sm text-brand-gray mb-6 max-w-md mx-auto">
+                    <p className="text-sm text-neutral-500 mb-6 max-w-md mx-auto">
                       30 minutos gratis con un estratega de contenido. Sin
                       compromiso.
                     </p>
@@ -744,7 +744,7 @@ export function DiagnosisPageClient({
               </TabsContent>
             </Tabs>
 
-            <p className="text-center text-[11px] text-brand-gray/30 mt-8">
+            <p className="text-center text-[11px] text-neutral-300 mt-8">
               Diagnóstico generado por IA — UGC Colombia · ugccolombia.co
             </p>
           </div>

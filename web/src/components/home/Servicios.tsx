@@ -5,14 +5,14 @@ import { motion } from "motion/react";
 import { useIntersection } from "@/hooks/use-intersection";
 import {
   ArrowRight,
-  Compass,
-  TrendingUp,
-  BookOpen,
-  FileText,
-  Search,
-  Eye,
+  Monitor,
+  Radio,
+  Bot,
+  MessageSquare,
+  LayoutDashboard,
+  Plug,
   Film,
-  BadgeCheck,
+  PlayCircle,
   Check,
   Sparkles,
 } from "lucide-react";
@@ -41,74 +41,74 @@ type Servicio = {
 
 const SERVICIOS: Servicio[] = [
   {
-    id: "consultoria",
-    icon: Compass,
-    title: "Diagnóstico de sistema live",
+    id: "landing",
+    icon: Monitor,
+    title: "Landing del falso live",
     description:
-      "Sesiones 1-a-1 para auditar tu stack actual y construir la hoja de ruta de live shopping para los próximos 90 días. Definimos formato Pancake, presentadores y ángulos de venta.",
+      "Página embebida en tu dominio vía WebCake. El live corre en tu marca, no en TikTok o Facebook.",
     prices: { USD: 200, COP: 790_000 },
-    unit: "sesión",
+    unit: "proyecto",
   },
   {
-    id: "marketing",
-    icon: TrendingUp,
-    title: "Estrategia de live shopping",
+    id: "live247",
+    icon: Radio,
+    title: "Live 24/7 sobre Pancake",
     description:
-      "Plan completo de live commerce: frecuencia de lives, ángulos por producto, segmentación de ads hacia Pancake y estructura de follow-up post-live con Postcake CRM.",
+      "Video pregrabado que transmite como live. Pancake es partner oficial de Meta, TikTok y Google — legítimo y aprobado.",
     prices: { USD: 325, COP: 1_290_000 },
     unit: "mes",
   },
   {
-    id: "contenido",
-    icon: BookOpen,
-    title: "Calendario de lives y contenido",
+    id: "botcake",
+    icon: Bot,
+    title: "Chatbot WhatsApp (Botcake)",
     description:
-      "Pilares editoriales para live, calendario mensual de transmisiones, ganchos de apertura y estructura de pitch de venta adaptados al formato Pancake.",
+      "Responde preguntas, captura datos del pedido y confirma la orden automáticamente. Sin intervención manual.",
     prices: { USD: 225, COP: 890_000 },
     unit: "mes",
   },
   {
-    id: "guiones",
-    icon: FileText,
-    title: "Guiones de live shopping",
+    id: "comentarios",
+    icon: MessageSquare,
+    title: "Comentarios simulados",
     description:
-      "Guiones conversacionales con apertura de gancho, demostración de producto y CTA de compra listos para live. Tono latino real, acento natural, probados en formato Pancake.",
+      "Prueba social en tiempo real: relleno, testimoniales, preguntas frecuentes y señales de compra. Configurados con timing exacto.",
     prices: { USD: 45, COP: 179_000 },
-    unit: "guion",
+    unit: "live",
   },
   {
-    id: "research",
-    icon: Search,
-    title: "Investigación de audiencia live",
+    id: "postcake",
+    icon: LayoutDashboard,
+    title: "CRM y gestión de órdenes (Postcake)",
     description:
-      "Análisis de qué productos venden mejor en live, qué dolores activan la compra impulsiva y qué horarios maximizan la retención en tu categoría LATAM.",
+      "Todas las órdenes centralizadas. Tú gestionas. Nosotros configuramos y conectamos con tu plataforma.",
     prices: { USD: 225, COP: 890_000 },
-    unit: "proyecto",
+    unit: "mes",
   },
   {
-    id: "competencia",
-    icon: Eye,
-    title: "Auditoría de competencia en live",
+    id: "integracion",
+    icon: Plug,
+    title: "Integración con tu plataforma",
     description:
-      "Análisis de cómo tus competidores directos usan live commerce: frecuencia, formato, presentadores, precios y oportunidades de diferenciación en Pancake.",
+      "Hotmart, Dropi, Hoco, Gintracom o la que uses. La conexión técnica la hacemos nosotros.",
     prices: { USD: 175, COP: 690_000 },
     unit: "proyecto",
   },
   {
-    id: "edicion",
+    id: "videos-ads",
     icon: Film,
-    title: "Producción y edición de lives",
+    title: "Videos para ads",
     description:
-      "Grabación, edición y optimización del live para Pancake: corrección de color, gráficos de producto animados, subtítulos y exportación lista para embeber en tu dominio.",
+      "6 videos mínimo por paquete, listos para correr en Meta y TikTok usando el falso live como base creativa.",
     prices: { USD: 33, COP: 129_000 },
     unit: "live",
   },
   {
-    id: "creadores",
-    icon: BadgeCheck,
-    title: "Presentadores entrenados Pancake",
+    id: "spot-base",
+    icon: PlayCircle,
+    title: "Spot base del producto",
     description:
-      "Acceso a nuestra red de +30 presentadores latinos pre-verificados entrenados en live shopping formato Pancake. Selección por nicho, audiencia y estilo de marca.",
+      "El video principal del live. Duración calibrada según tu ticket: 8–12 min bajo ticket, 30+ min high ticket.",
     prices: { USD: 75, COP: 299_000 },
     unit: "live",
   },
@@ -121,14 +121,14 @@ const PACKAGE_SEPARATE_COST: Record<Currency, number> = {
 };
 
 const PACKAGE_INCLUDES = [
-  "Diagnóstico de sistema live mensual",
-  "Estrategia de live shopping completa",
-  "Calendario de lives editorial",
-  "Guiones de live por campaña",
-  "Investigación de audiencia continua",
-  "Auditoría de competencia trimestral",
-  "Producción de lives ilimitada",
-  "Red de presentadores verificados Pancake",
+  "Landing del falso live en tu dominio",
+  "Live 24/7 sobre Pancake (partner oficial)",
+  "Chatbot WhatsApp Botcake configurado",
+  "Comentarios simulados con timing exacto",
+  "CRM Postcake + gestión de órdenes",
+  "Integración con tu plataforma de venta",
+  "6 videos mínimo para Meta y TikTok Ads",
+  "Spot base del producto grabado",
   "Asesora de cuenta dedicada",
   "Reportes semanales de conversión",
   "Setup completo suite Pancake",
@@ -145,9 +145,6 @@ function ServicioCard({
   isIntersecting: boolean;
 }) {
   const Icon = servicio.icon;
-  const { currency, format } = useCurrency();
-  const priceFrom = format(servicio.prices[currency]);
-  const priceUnit = `${currency} / ${servicio.unit}`;
 
   return (
     <motion.article
@@ -193,30 +190,9 @@ function ServicioCard({
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-neutral-500 leading-relaxed mb-5 flex-grow">
+      <p className="text-sm text-neutral-500 leading-relaxed flex-grow">
         {servicio.description}
       </p>
-
-      {/* Price */}
-      <div className="pt-4 border-t border-neutral-200">
-        <div className="flex items-baseline justify-between gap-2">
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400 mb-1">
-              Desde
-            </p>
-            <div className="flex items-baseline gap-2">
-              <span className="font-display text-2xl sm:text-3xl text-brand-green">
-                {priceFrom}
-              </span>
-              <span className="text-xs text-neutral-400">{priceUnit}</span>
-            </div>
-          </div>
-          <ArrowRight
-            className="h-5 w-5 text-neutral-300 group-hover:text-brand-green group-hover:translate-x-1 transition-all flex-shrink-0"
-            aria-hidden
-          />
-        </div>
-      </div>
     </motion.article>
   );
 }
@@ -263,8 +239,7 @@ export function Servicios() {
             id="servicios-title"
             className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase"
           >
-            Servicios a la medida.
-            <br />
+            Todo lo que{" "}
             <span
               style={{
                 background: "linear-gradient(90deg, #16a34a, #15803d)",
@@ -273,14 +248,14 @@ export function Servicios() {
                 backgroundClip: "text",
               }}
             >
-              O todo el paquete.
-            </span>
+              montamos
+            </span>{" "}
+            por ti
           </h2>
           <p className="mt-6 text-base sm:text-lg text-neutral-500 leading-relaxed">
-            8 servicios independientes diseñados para marcas que quieren dominar
-            su categoría con live shopping. Cada uno se cotiza por separado —{" "}
+            Un solo proveedor. Un sistema completo. Listo en 10 días.{" "}
             <span className="text-neutral-900 font-semibold">
-              o los combinas todos
+              Combínalos todos
             </span>{" "}
             en el Paquete Live Cake y ahorras hasta{" "}
             <span className="text-emerald-400 font-semibold">

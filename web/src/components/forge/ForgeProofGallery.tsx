@@ -23,16 +23,16 @@ const SLIDES = [
 
 export function ForgeProofGallery() {
   return (
-    <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
+    <section className="bg-neutral-50 py-20 md:py-28 border-t border-neutral-100">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex flex-col gap-4 items-center text-center mb-12">
           <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
             Así se ven los outputs
           </span>
-          <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight max-w-3xl">
+          <h2 className="font-display text-5xl md:text-6xl uppercase text-neutral-900 leading-[0.95] tracking-tight max-w-3xl">
             3 slides reales. Generados por el pipeline. Sin retocar.
           </h2>
-          <p className="text-lg text-brand-gray-light max-w-2xl leading-relaxed">
+          <p className="text-lg text-neutral-600 max-w-2xl leading-relaxed">
             Estos fueron producidos end-to-end por Content Forge el 17 de abril. El carrusel completo de 10 slides se generó en 5 minutos desde un pedido en lenguaje natural.
           </p>
         </div>
@@ -41,19 +41,19 @@ export function ForgeProofGallery() {
           {SLIDES.map((s) => (
             <figure
               key={s.src}
-              className="flex flex-col gap-3 rounded-2xl overflow-hidden border border-white/10 bg-black/40"
+              className="flex flex-col gap-3 rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100"
             >
               <div className="relative aspect-[4/5] bg-gradient-to-br from-brand-green/5 via-transparent to-transparent">
                 <img src={s.src} alt={s.alt} className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <figcaption className="px-4 pb-4 text-xs text-brand-gray-light uppercase tracking-wider font-semibold">
+              <figcaption className="px-4 pb-4 text-xs text-neutral-500 uppercase tracking-wider font-semibold">
                 {s.caption}
               </figcaption>
             </figure>
           ))}
         </div>
 
-        <p className="text-center text-sm text-brand-gray-light/70 mt-8">
+        <p className="text-center text-sm text-neutral-400 mt-8">
           Ver los 10 slides completos en{" "}
           <a
             href="https://github.com/Kreoon/ugc-colombia/tree/main/web/public/brand/social/20260417-3-errores-matan-ugc-hook"

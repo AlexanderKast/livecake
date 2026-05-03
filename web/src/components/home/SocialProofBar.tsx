@@ -1,97 +1,85 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useIntersection } from "@/hooks/use-intersection";
 import { useCountUp } from "@/hooks/use-count-up";
 
-interface MetricProps {
-  prefix?: string;
+// ── Data ──────────────────────────────────────────────────────────────────────
+interface StatItem {
   value: number;
-  suffix?: string;
+  suffix: string;
   label: string;
+  source: string;
   decimals?: number;
+}
+
+const STATS: StatItem[] = [
+  {
+    value: 30,
+    suffix: "%",
+    label: "Conversión promedio en live shopping",
+    source: "Fuente: McKinsey",
+  },
+  {
+    value: 3,
+    suffix: "×",
+    label: "Más ventas vs. landing page tradicional",
+    source: "Datos: Immerss + Coresight",
+  },
+  {
+    value: 10,
+    suffix: " días",
+    label: "De contrato a sistema funcionando en vivo",
+    source: "Proceso LiveCake",
+  },
+];
+
+const TEXT_STAT = {
+  display: "24/7",
+  label: "Tu live corriendo solo, sin intervención",
+  source: "Powered by Pancake",
+};
+
+// ── Shared style ──────────────────────────────────────────────────────────────
+const greenGradient: React.CSSProperties = {
+  background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+};
+
+// ── Stat sub-component ────────────────────────────────────────────────────────
+interface StatProps extends StatItem {
   trigger: boolean;
 }
 
-function Metric({ prefix, value, suffix, label, decimals = 0, trigger }: MetricProps) {
-  const count = useCountUp({ end: value, duration: 1800, trigger, decimals });
+function Stat({ value, suffix, label, source, decimals = 0, trigger }: StatProps) {
+  const count = useCountUp({ end: value, duration: 1500, trigger, decimals });
 
   return (
-    <div className="flex flex-col items-center gap-1.5 px-6 py-5 flex-1 min-w-0">
+    <div className="flex flex-col items-center gap-1 px-6 py-5 flex-1 min-w-0">
       <span
         className="font-display text-4xl sm:text-5xl leading-none"
-        style={{
-          background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-        }}
-        aria-label={`${prefix ?? ""}${count}${suffix ?? ""}`}
+        style={greenGradient}
+        aria-label={`${count}${suffix}`}
       >
-        {prefix}
-        {count}
-        {suffix}
+        {count}{suffix}
       </span>
-      <span className="text-xs sm:text-sm text-brand-gray tracking-wide text-center font-sans">
+      <span className="text-xs sm:text-sm text-brand-gray tracking-wide text-center font-sans mt-0.5">
         {label}
+      </span>
+      <span className="text-[10px] text-brand-gray tracking-wide text-center font-sans opacity-60">
+        {source}
       </span>
     </div>
   );
 }
 
-interface MetricItem {
-  prefix?: string;
-  value: number;
-  suffix?: string;
-  label: string;
-  decimals?: number;
-}
-
-const FALLBACK_METRICS: MetricItem[] = [
-  { prefix: "+", value: 30, suffix: "", label: "Presentadores entrenados", decimals: 0 },
-  { prefix: "", value: 60, suffix: "%+", label: "Retención a 10 min en live", decimals: 0 },
-  { prefix: "", value: 27.2, suffix: "%", label: "CAGR mercado LATAM 2033", decimals: 1 },
-];
-
-const TEXT_METRICS = ["24/7"];
-
-interface KreoonStatsDTO {
-  creators_count: number;
-  brands_count: number;
-  campaigns_completed: number;
-  videos_approved: number;
-}
-
+// ── Main export ───────────────────────────────────────────────────────────────
 export function SocialProofBar() {
   const { ref, isIntersecting } = useIntersection<HTMLDivElement>({
     threshold: 0.3,
     once: true,
   });
-  const [metrics, setMetrics] = useState<MetricItem[]>(FALLBACK_METRICS);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/showcase?action=stats", { cache: "no-store" })
-      .then(r => r.ok ? r.json() : null)
-      .then((json: { success: boolean; data: KreoonStatsDTO | null } | null) => {
-        if (cancelled || !json?.success || !json.data) return;
-        const { creators_count, videos_approved, campaigns_completed } = json.data;
-        const next: MetricItem[] = [
-          creators_count > 0
-            ? { prefix: "+", value: creators_count, label: "Presentadores entrenados" }
-            : FALLBACK_METRICS[0],
-          videos_approved > 0
-            ? { prefix: "+", value: videos_approved, label: "Lives producidos" }
-            : FALLBACK_METRICS[1],
-          campaigns_completed > 0
-            ? { prefix: "+", value: campaigns_completed, label: "Campañas live entregadas" }
-            : FALLBACK_METRICS[2],
-        ];
-        setMetrics(next);
-      })
-      .catch(() => { /* fallback ya cargado */ });
-    return () => { cancelled = true; };
-  }, []);
 
   return (
     <section
@@ -107,27 +95,28 @@ export function SocialProofBar() {
 
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-wrap sm:flex-nowrap divide-y sm:divide-y-0 sm:divide-x divide-neutral-200">
-          {metrics.map((m) => (
-            <Metric key={m.label} {...m} trigger={isIntersecting} />
+
+          {STATS.map((s) => (
+            <Stat key={s.label} {...s} trigger={isIntersecting} />
           ))}
 
-          {/* Métrica de texto estática — live 24/7 */}
-          <div className="flex flex-col items-center gap-1.5 px-6 py-5 flex-1 min-w-0">
+          {/* Stat 4: "24/7" — valor mixto, sin animación de conteo */}
+          <div className="flex flex-col items-center gap-1 px-6 py-5 flex-1 min-w-0">
             <span
-              className="font-display text-3xl sm:text-4xl leading-none"
-              style={{
-                background: "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              className="font-display text-4xl sm:text-5xl leading-none"
+              style={greenGradient}
+              aria-label={TEXT_STAT.display}
             >
-              {TEXT_METRICS[0]}
+              {TEXT_STAT.display}
             </span>
-            <span className="text-xs sm:text-sm text-neutral-500 tracking-wide text-center font-sans">
-              Marcas que ya transmiten con Live Cake
+            <span className="text-xs sm:text-sm text-brand-gray tracking-wide text-center font-sans mt-0.5">
+              {TEXT_STAT.label}
+            </span>
+            <span className="text-[10px] text-brand-gray tracking-wide text-center font-sans opacity-60">
+              {TEXT_STAT.source}
             </span>
           </div>
+
         </div>
       </div>
 

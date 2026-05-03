@@ -27,9 +27,9 @@ export function CasosHero() {
   return (
     <section
       aria-label="Casos — UGC Colombia"
-      className="relative min-h-[90vh] lg:min-h-[820px] flex items-center justify-center overflow-hidden bg-brand-black pt-16"
+      className="relative min-h-[90vh] lg:min-h-[820px] flex items-center justify-center overflow-hidden bg-white pt-16"
     >
-      {/* Imagen editorial de fondo */}
+      {/* Imagen editorial de fondo — overlay conservado para legibilidad */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <Image
           src="/brand/casos-page/hero.png"
@@ -39,7 +39,7 @@ export function CasosHero() {
           sizes="100vw"
           className="object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/75 via-brand-black/65 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white" />
       </div>
 
       <div
@@ -60,7 +60,7 @@ export function CasosHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.08) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -82,7 +82,7 @@ export function CasosHero() {
           animate="visible"
           className="font-display leading-none mb-6"
         >
-          <span className="block text-white text-[clamp(2.4rem,8vw,8rem)] leading-[0.92]">
+          <span className="block text-neutral-900 text-[clamp(2.4rem,8vw,8rem)] leading-[0.92]">
             CREAR CONTENIDO
           </span>
           <span
@@ -103,7 +103,7 @@ export function CasosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="max-w-2xl mx-auto text-brand-gray text-base sm:text-lg leading-relaxed mb-10"
+          className="max-w-2xl mx-auto text-neutral-500 text-base sm:text-lg leading-relaxed mb-10"
         >
           Cada semana decides qué grabar, contratas creadores que desaparecen,
           ruegas por revisiones, mides resultados sin saber qué falla y vuelves
@@ -130,7 +130,7 @@ export function CasosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="mt-5 text-xs text-brand-graphite tracking-wide"
+          className="mt-5 text-xs text-neutral-400 tracking-wide"
         >
           30 min · Gratis · Sin compromiso
         </motion.p>

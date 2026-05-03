@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAudit } from "@/components/lead-audit/AuditContext";
@@ -81,13 +81,13 @@ export function Navbar() {
           <Image
             src="/brand/logo-light-bg.png"
             alt="Live Cake"
-            width={148}
-            height={40}
+            width={180}
+            height={48}
+            priority
             className={cn(
               "w-auto transition-all duration-300",
               scrolled ? "h-7" : "h-8 sm:h-9"
             )}
-            priority
           />
         </a>
 

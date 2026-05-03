@@ -8,7 +8,7 @@ const buttonVariants = cva(
     "inline-flex items-center justify-center gap-2",
     "font-sans font-semibold tracking-wide",
     "transition-all duration-200",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 focus-visible:ring-offset-white",
     "disabled:pointer-events-none disabled:opacity-50",
     "cursor-pointer select-none",
   ],
@@ -16,13 +16,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: [
-          "bg-brand-yellow text-black",
-          "hover:bg-brand-gold hover:shadow-[0_0_20px_rgba(212,160,23,0.5)]",
+          "bg-brand-green text-white",
+          "hover:bg-brand-green-dark hover:shadow-[0_0_20px_rgba(22,163,74,0.5)]",
           "active:scale-[0.98]",
         ],
         outline: [
-          "border border-brand-gold text-brand-gold bg-transparent",
-          "hover:bg-brand-gold/10 hover:shadow-[0_0_16px_rgba(212,160,23,0.3)]",
+          "border border-brand-green text-brand-green bg-transparent",
+          "hover:bg-brand-green/10 hover:shadow-[0_0_16px_rgba(22,163,74,0.3)]",
           "active:scale-[0.98]",
         ],
         ghost: [

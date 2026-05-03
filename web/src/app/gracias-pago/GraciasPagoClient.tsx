@@ -189,13 +189,13 @@ export function GraciasPagoClient() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen">
+      <main className="relative bg-white text-neutral-900 min-h-screen">
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(16,185,129,0.10), transparent 60%)",
+              "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(16,185,129,0.05), transparent 60%)",
           }}
         />
 
@@ -218,10 +218,10 @@ export function GraciasPagoClient() {
             <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-4 bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
               Pago confirmado
             </span>
-            <h1 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1] text-white tracking-tight uppercase mb-4">
+            <h1 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-[1] text-neutral-900 tracking-tight uppercase mb-4">
               {firstName ? `¡Gracias, ${firstName}!` : "¡Gracias!"}
             </h1>
-            <p className="text-brand-gray text-base max-w-xl mx-auto">
+            <p className="text-neutral-600 text-base max-w-xl mx-auto">
               Tu plan está activo. En los próximos minutos te llega un correo
               con la factura y el siguiente paso.
             </p>
@@ -233,7 +233,7 @@ export function GraciasPagoClient() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="mt-8 rounded-2xl border border-brand-green/25 bg-white/[0.03] p-5 sm:p-6"
+              className="mt-8 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 sm:p-6"
             >
               <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-3">
                 Resumen de tu compra
@@ -258,7 +258,7 @@ export function GraciasPagoClient() {
           )}
 
           {!loading && error && (
-            <div className="mt-6 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-sm text-amber-200">
+            <div className="mt-6 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-sm text-amber-600">
               {error} — Pero tu pago se procesó correctamente. Te escribimos al
               correo registrado para continuar.
             </div>
@@ -269,15 +269,15 @@ export function GraciasPagoClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-10 rounded-2xl border border-brand-green/30 bg-gradient-to-b from-brand-green/8 to-transparent p-6 sm:p-7 text-center"
+            className="mt-10 rounded-2xl border border-brand-green/30 bg-gradient-to-b from-brand-green/[0.04] to-transparent p-6 sm:p-7 text-center"
           >
             <div className="w-14 h-14 rounded-full bg-brand-green/15 border border-brand-green/40 flex items-center justify-center mx-auto mb-4">
               <Calendar className="w-6 h-6 text-brand-green" />
             </div>
-            <h2 className="font-display text-2xl sm:text-3xl text-white uppercase tracking-tight mb-2">
+            <h2 className="font-display text-2xl sm:text-3xl text-neutral-900 uppercase tracking-tight mb-2">
               Agenda tu reunión de inicio
             </h2>
-            <p className="text-sm text-brand-gray max-w-md mx-auto mb-5">
+            <p className="text-sm text-neutral-600 max-w-md mx-auto mb-5">
               30 minutos con Brian, tu coordinador de cuenta, para alinear
               objetivos, revisar tu marca y dejar listo el calendario de
               producción de esta semana.
@@ -298,7 +298,7 @@ export function GraciasPagoClient() {
             transition={{ delay: 0.6 }}
             className="mt-10"
           >
-            <h3 className="font-display text-xl text-white uppercase tracking-tight mb-5">
+            <h3 className="font-display text-xl text-neutral-900 uppercase tracking-tight mb-5">
               Tu primera semana, paso a paso
             </h3>
             <ol className="space-y-3">
@@ -310,14 +310,14 @@ export function GraciasPagoClient() {
                     className={`flex gap-4 p-4 rounded-xl border transition-colors ${
                       step.done
                         ? "border-emerald-500/30 bg-emerald-500/5"
-                        : "border-brand-graphite/60 bg-white/[0.02]"
+                        : "border-neutral-200 bg-neutral-50"
                     }`}
                   >
                     <div
                       className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
                         step.done
                           ? "bg-emerald-500/20 text-emerald-400"
-                          : "bg-brand-graphite/40 text-brand-gray"
+                          : "bg-neutral-100 text-neutral-500"
                       }`}
                     >
                       <Icon className="w-5 h-5" />
@@ -337,14 +337,14 @@ export function GraciasPagoClient() {
                           </span>
                         )}
                       </div>
-                      <p className="text-white font-semibold text-sm">
+                      <p className="text-neutral-900 font-semibold text-sm">
                         {step.title}
                       </p>
-                      <p className="text-brand-gray text-xs mt-1 leading-relaxed">
+                      <p className="text-neutral-500 text-xs mt-1 leading-relaxed">
                         {step.description}
                       </p>
                     </div>
-                    <span className="flex-shrink-0 text-[11px] text-brand-gray/50 font-semibold">
+                    <span className="flex-shrink-0 text-[11px] text-neutral-400 font-semibold">
                       {idx + 1}
                     </span>
                   </li>
@@ -368,11 +368,11 @@ export function GraciasPagoClient() {
             >
               <div className="flex items-center gap-3 mb-2">
                 <MessageCircle className="w-5 h-5 text-emerald-400" />
-                <p className="text-white font-semibold text-sm">
+                <p className="text-neutral-900 font-semibold text-sm">
                   Escríbele a Brian por WhatsApp
                 </p>
               </div>
-              <p className="text-xs text-brand-gray mb-3">
+              <p className="text-xs text-neutral-500 mb-3">
                 Brian es tu coordinador de cuenta. Ya conoce los datos de tu
                 compra; solo confírmale que llegaste y arranca tu proceso.
               </p>
@@ -389,11 +389,11 @@ export function GraciasPagoClient() {
             >
               <div className="flex items-center gap-3 mb-2">
                 <Rocket className="w-5 h-5 text-brand-green" />
-                <p className="text-white font-semibold text-sm">
+                <p className="text-neutral-900 font-semibold text-sm">
                   Comunidad de marcas
                 </p>
               </div>
-              <p className="text-xs text-brand-gray mb-3">
+              <p className="text-xs text-neutral-500 mb-3">
                 Más de 200 marcas comparten estrategias, casos y resultados.
                 Únete y aprende de quienes ya están dentro.
               </p>
@@ -404,7 +404,7 @@ export function GraciasPagoClient() {
           </motion.div>
 
           {/* Redes */}
-          <div className="mt-10 flex items-center justify-center gap-4 text-xs text-brand-gray/50">
+          <div className="mt-10 flex items-center justify-center gap-4 text-xs text-neutral-400">
             <span>Síguenos en redes:</span>
             <a
               href="https://www.instagram.com/agenciaugccolombia"
@@ -426,10 +426,10 @@ export function GraciasPagoClient() {
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[10px] font-bold tracking-widest uppercase text-brand-gray mb-1">
+      <p className="text-[10px] font-bold tracking-widest uppercase text-neutral-500 mb-1">
         {label}
       </p>
-      <p className="text-white font-semibold">{value}</p>
+      <p className="text-neutral-900 font-semibold">{value}</p>
     </div>
   );
 }

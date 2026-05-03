@@ -55,7 +55,7 @@ export function PreciosHero() {
   return (
     <section
       aria-label="Precios — Live Cake"
-      className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-brand-black pt-24"
+      className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-white pt-24"
     >
       {/* Imagen editorial de fondo */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -67,7 +67,7 @@ export function PreciosHero() {
           sizes="100vw"
           className="object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/75 via-brand-black/65 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white" />
       </div>
 
       {/* Grid SVG pattern */}
@@ -86,13 +86,13 @@ export function PreciosHero() {
             "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
         }}
       />
-      {/* Radial glow dorado */}
+      {/* Radial glow verde */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.10) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -116,7 +116,7 @@ export function PreciosHero() {
           animate="visible"
           className="font-display leading-none mb-6"
         >
-          <span className="block text-white text-[clamp(2.4rem,7vw,6rem)] leading-[0.92]">
+          <span className="block text-neutral-900 text-[clamp(2.4rem,7vw,6rem)] leading-[0.92]">
             VENDE EN VIVO.
           </span>
           <span
@@ -139,11 +139,11 @@ export function PreciosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="max-w-2xl mx-auto text-brand-gray text-base sm:text-lg leading-relaxed mb-10"
+          className="max-w-2xl mx-auto text-neutral-500 text-base sm:text-lg leading-relaxed mb-10"
         >
           Cuatro planes de live shopping con la suite completa de Pancake
           incluida. Precios claros, sin comisión sobre ventas y con{" "}
-          <span className="text-white font-semibold">
+          <span className="text-neutral-900 font-semibold">
             setup técnico desde el día uno
           </span>
           . Escoge la frecuencia de lives que calce con tu negocio hoy.
@@ -179,7 +179,7 @@ export function PreciosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="mt-5 text-xs text-brand-graphite tracking-wide"
+          className="mt-5 text-xs text-neutral-400 tracking-wide"
         >
           {OFFER_COPY.application_note}
         </motion.p>
@@ -206,7 +206,7 @@ export function PreciosHero() {
               >
                 {stat.value}
               </span>
-              <span className="text-xs sm:text-sm text-brand-gray">
+              <span className="text-xs sm:text-sm text-neutral-500">
                 {stat.label}
               </span>
             </div>

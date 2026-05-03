@@ -28,7 +28,7 @@ export function ServiciosHero() {
   return (
     <section
       aria-label="Servicios — UGC Colombia"
-      className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-brand-black pt-24"
+      className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-white pt-24"
     >
       {/* Imagen editorial de fondo */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -40,7 +40,7 @@ export function ServiciosHero() {
           sizes="100vw"
           className="object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/75 via-brand-black/65 to-brand-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white" />
       </div>
 
       {/* Grid SVG */}
@@ -63,7 +63,7 @@ export function ServiciosHero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.10) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22,163,74,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -85,7 +85,7 @@ export function ServiciosHero() {
           animate="visible"
           className="font-display leading-none mb-6"
         >
-          <span className="block text-white text-[clamp(2.4rem,7vw,6rem)] leading-[0.92]">
+          <span className="block text-neutral-900 text-[clamp(2.4rem,7vw,6rem)] leading-[0.92]">
             SOLUCIONES UGC
           </span>
           <span
@@ -106,10 +106,10 @@ export function ServiciosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="max-w-2xl mx-auto text-brand-gray text-base sm:text-lg leading-relaxed mb-10"
+          className="max-w-2xl mx-auto text-neutral-500 text-base sm:text-lg leading-relaxed mb-10"
         >
           Producción UGC, estrategia, audiovisual premium, consultoría, agencia de
-          creadores, <span className="text-white font-semibold">IA, automatización y dev a medida</span>,
+          creadores, <span className="text-neutral-900 font-semibold">IA, automatización y dev a medida</span>,
           contenido generativo, diseño web y landing pages de conversión.
           Nueve líneas integradas para marcas que quieren escalar más rápido, no solo videos.
         </motion.p>
@@ -138,7 +138,7 @@ export function ServiciosHero() {
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="mt-5 text-xs text-brand-graphite tracking-wide"
+          className="mt-5 text-xs text-neutral-400 tracking-wide"
         >
           30 min · Gratis · Sin compromiso
         </motion.p>

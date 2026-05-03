@@ -17,14 +17,7 @@ export function Navbar() {
           className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-sm"
           aria-label="UGC Colombia - Inicio"
         >
-          <Image
-            src="/brand/logo-dark-bg.png"
-            alt="UGC Colombia"
-            width={140}
-            height={40}
-            className="h-8 sm:h-9 w-auto"
-            priority
-          />
+          <Image src="/brand/logo-dark-bg.png" alt="Live Cake" width={160} height={40} priority className="h-8 sm:h-9 w-auto" />
         </a>
         <SocialIcons />
       </div>

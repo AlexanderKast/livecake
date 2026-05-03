@@ -148,7 +148,7 @@ export function KickoffClient() {
     return (
       <>
         <Navbar />
-        <main className="relative bg-brand-black text-white min-h-screen pt-16 sm:pt-20 md:pt-28 pb-20 px-4">
+        <main className="relative bg-white text-neutral-900 min-h-screen pt-16 sm:pt-20 md:pt-28 pb-20 px-4">
           <motion.div
             className="max-w-lg mx-auto text-center"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -157,31 +157,31 @@ export function KickoffClient() {
             <div className="w-20 h-20 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto mb-6">
               <Rocket className="w-10 h-10 text-emerald-400" />
             </div>
-            <h1 className="font-sans text-3xl font-bold text-white mb-2">
+            <h1 className="font-sans text-3xl font-bold text-neutral-900 mb-2">
               Reunión confirmada
             </h1>
-            <p className="text-brand-gray mb-8">
+            <p className="text-neutral-500 mb-8">
               Revisa tu correo — te enviamos los datos y el enlace de la reunión
               con tu coordinador de cuenta.
             </p>
 
-            <div className="inline-flex flex-col gap-3 p-6 rounded-2xl border border-emerald-500/20 bg-white/[0.03] text-left mb-8">
+            <div className="inline-flex flex-col gap-3 p-6 rounded-2xl border border-emerald-500/20 bg-neutral-50 text-left mb-8">
               <div className="flex items-center gap-3 text-sm">
                 <Calendar className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-white font-medium">
+                <span className="text-neutral-900 font-medium">
                   {DAY_FULL[cotDate.getUTCDay()]} {cotDate.getUTCDate()} de{" "}
                   {MONTH_NAMES[cotDate.getUTCMonth()]}
                 </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Clock className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-white font-medium">
+                <span className="text-neutral-900 font-medium">
                   {h12}:{m.toString().padStart(2, "0")} {ampm} — Hora Colombia
                 </span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Video className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                <span className="text-brand-gray">
+                <span className="text-neutral-500">
                   30 min · Google Meet · Con {booked.host_name}
                 </span>
               </div>
@@ -209,13 +209,13 @@ export function KickoffClient() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen pt-16 sm:pt-20 md:pt-28 pb-20 px-4">
+      <main className="relative bg-white text-neutral-900 min-h-screen pt-16 sm:pt-20 md:pt-28 pb-20 px-4">
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(16,185,129,0.10), transparent 60%)",
+              "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(16,185,129,0.05), transparent 60%)",
           }}
         />
         <div className="relative max-w-2xl mx-auto">
@@ -229,10 +229,10 @@ export function KickoffClient() {
               <Rocket className="w-3 h-3" />
               Reunión de inicio · 30 minutos
             </span>
-            <h1 className="font-sans text-2xl sm:text-3xl font-bold text-white mb-2">
+            <h1 className="font-sans text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
               Agenda tu reunión de inicio
             </h1>
-            <p className="text-sm text-brand-gray max-w-md mx-auto">
+            <p className="text-sm text-neutral-500 max-w-md mx-auto">
               Tu coordinador de cuenta revisa tu marca, alinea los objetivos y
               deja listo el calendario de producción de esta semana.
             </p>
@@ -246,7 +246,7 @@ export function KickoffClient() {
             transition={{ delay: 0.1 }}
           >
             <div>
-              <label className="block text-xs sm:text-[11px] font-semibold text-brand-gray mb-1.5 tracking-wider uppercase">
+              <label className="block text-xs sm:text-[11px] font-semibold text-neutral-500 mb-1.5 tracking-wider uppercase">
                 Tu nombre
               </label>
               <input
@@ -255,11 +255,11 @@ export function KickoffClient() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Juan Pérez"
-                className="w-full bg-black/60 border border-emerald-500/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
+                className="w-full bg-neutral-50 border border-emerald-500/30 rounded-xl px-4 py-3 text-neutral-900 placeholder:text-neutral-400 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
               />
             </div>
             <div>
-              <label className="block text-xs sm:text-[11px] font-semibold text-brand-gray mb-1.5 tracking-wider uppercase">
+              <label className="block text-xs sm:text-[11px] font-semibold text-neutral-500 mb-1.5 tracking-wider uppercase">
                 Tu correo
               </label>
               <input
@@ -269,11 +269,11 @@ export function KickoffClient() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@correo.com"
-                className="w-full bg-black/60 border border-emerald-500/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
+                className="w-full bg-neutral-50 border border-emerald-500/30 rounded-xl px-4 py-3 text-neutral-900 placeholder:text-neutral-400 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
               />
             </div>
             <div className="sm:col-span-2">
-              <label className="block text-xs sm:text-[11px] font-semibold text-brand-gray mb-1.5 tracking-wider uppercase">
+              <label className="block text-xs sm:text-[11px] font-semibold text-neutral-500 mb-1.5 tracking-wider uppercase">
                 Empresa / Marca
               </label>
               <input
@@ -282,7 +282,7 @@ export function KickoffClient() {
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 placeholder="Tu marca"
-                className="w-full bg-black/60 border border-emerald-500/30 rounded-xl px-4 py-3 text-white placeholder:text-brand-gray/50 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
+                className="w-full bg-neutral-50 border border-emerald-500/30 rounded-xl px-4 py-3 text-neutral-900 placeholder:text-neutral-400 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
               />
             </div>
           </motion.div>
@@ -290,13 +290,13 @@ export function KickoffClient() {
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20">
               <Loader2 className="w-8 h-8 text-emerald-400 animate-spin mb-3" />
-              <p className="text-sm text-brand-gray">
+              <p className="text-sm text-neutral-500">
                 Cargando los horarios disponibles de tu coordinador…
               </p>
             </div>
           ) : availableDates.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-brand-gray mb-4">
+              <p className="text-neutral-500 mb-4">
                 Por ahora no hay horarios disponibles. Escríbenos por WhatsApp
                 y te agendamos a mano.
               </p>
@@ -328,11 +328,11 @@ export function KickoffClient() {
                     }
                     disabled={currentDateIdx === 0}
                     aria-label="Día anterior"
-                    className="min-w-[44px] min-h-[44px] p-2 rounded-lg text-brand-gray hover:text-white hover:bg-white/10 transition-colors disabled:opacity-30 flex items-center justify-center"
+                    className="min-w-[44px] min-h-[44px] p-2 rounded-lg text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors disabled:opacity-30 flex items-center justify-center"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-sm font-semibold text-neutral-900">
                     {selectedDate &&
                       (() => {
                         const d = new Date(selectedDate + "T12:00:00");
@@ -347,7 +347,7 @@ export function KickoffClient() {
                     }
                     disabled={currentDateIdx === availableDates.length - 1}
                     aria-label="Día siguiente"
-                    className="min-w-[44px] min-h-[44px] p-2 rounded-lg text-brand-gray hover:text-white hover:bg-white/10 transition-colors disabled:opacity-30 flex items-center justify-center"
+                    className="min-w-[44px] min-h-[44px] p-2 rounded-lg text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors disabled:opacity-30 flex items-center justify-center"
                   >
                     <ChevronRight className="w-5 h-5" />
                   </button>
@@ -369,8 +369,8 @@ export function KickoffClient() {
                           className={cn(
                             "flex flex-col items-center min-w-[64px] sm:min-w-[56px] px-3 py-3 sm:py-2.5 rounded-xl border text-xs transition-all flex-shrink-0",
                             isSelected
-                              ? "border-emerald-500/60 bg-emerald-500/15 text-white"
-                              : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20",
+                              ? "border-emerald-500 bg-emerald-500/15 text-neutral-900"
+                              : "border-neutral-200 bg-neutral-50 text-neutral-500 hover:border-emerald-500/60",
                           )}
                         >
                           <span className="font-semibold">
@@ -391,13 +391,13 @@ export function KickoffClient() {
                   {/* Fade lateral para indicar scroll horizontal en mobile */}
                   <div
                     aria-hidden
-                    className="pointer-events-none absolute right-0 top-0 bottom-2 w-10 bg-gradient-to-l from-brand-black to-transparent"
+                    className="pointer-events-none absolute right-0 top-0 bottom-2 w-10 bg-gradient-to-l from-white to-transparent"
                   />
                 </div>
               </div>
 
               <div className="mb-5">
-                <p className="text-xs sm:text-[11px] font-semibold text-brand-gray uppercase tracking-wider mb-2.5">
+                <p className="text-xs sm:text-[11px] font-semibold text-neutral-500 uppercase tracking-wider mb-2.5">
                   Horarios disponibles · Hora Colombia
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-2">
@@ -411,8 +411,8 @@ export function KickoffClient() {
                         className={cn(
                           "px-3 py-3.5 sm:py-3 rounded-xl border text-sm font-medium transition-all",
                           isSelected
-                            ? "border-emerald-500/60 bg-emerald-500/15 text-emerald-400"
-                            : "border-white/10 bg-white/[0.02] text-brand-gray hover:border-white/20 hover:text-white",
+                            ? "border-emerald-500 bg-emerald-500 text-white"
+                            : "border-neutral-200 bg-neutral-50 text-neutral-900 hover:border-emerald-500/60",
                         )}
                       >
                         {slot.time_label}
@@ -446,7 +446,7 @@ export function KickoffClient() {
                       </>
                     )}
                   </Button>
-                  <div className="flex items-center justify-center gap-4 mt-3 text-[11px] text-brand-gray/60">
+                  <div className="flex items-center justify-center gap-4 mt-3 text-[11px] text-neutral-400">
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" /> 30 min
                     </span>
@@ -458,7 +458,7 @@ export function KickoffClient() {
               )}
 
               {error && (
-                <div className="mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-sm text-red-400">
+                <div className="mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-sm text-red-400" role="alert" aria-live="polite">
                   {error}
                 </div>
               )}

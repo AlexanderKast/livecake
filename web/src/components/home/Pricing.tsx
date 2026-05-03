@@ -22,6 +22,7 @@ import { trackPlanClick } from "@/lib/tracking/events";
 import {
   PLANES_RECURRENTES,
   ENTERPRISE_FEATURES,
+  PLAN_INCLUDES_ALL,
   type Plan,
 } from "@/lib/pricing-plans";
 import { useCurrency } from "@/components/providers/CurrencyProvider";
@@ -134,6 +135,11 @@ function PlanCard({
           </span>
           <span className="text-brand-gray font-sans text-sm">{unitLabel}</span>
         </div>
+        {pricing && (
+          <p className="text-[11px] text-brand-gray/60 mt-1">
+            Setup: {format(pricing.setupAmount)} · pago único
+          </p>
+        )}
       </div>
 
       {/* Videos highlight */}
@@ -483,28 +489,18 @@ export function Pricing() {
           </span>
           <h2
             id="pricing-title"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight"
           >
-            Precios claros.
-            <br />
-            <span
-              style={{
-                background: "linear-gradient(90deg, #22c55e, #16a34a)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Sin letra pequeña.
-            </span>
+            Elige tu frecuencia de lives
           </h2>
           <p className="mt-6 text-base sm:text-lg text-brand-gray leading-relaxed">
-            Cada plan incluye la suite completa de Pancake — WebCake, LiveCake, Botcake y Postcake CRM — más la producción de lives y la optimización continua.
+            Sin comisión sobre ventas. Recurrencia mensual fija.{" "}
+            Suite Pancake completa incluida en todos los planes.
           </p>
         </motion.div>
 
-        {/* Grid 3 planes recurrentes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+        {/* Grid 4 planes recurrentes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
           {PLANES_RECURRENTES.map((plan, i) => (
             <PlanCard
               key={plan.id}
@@ -515,8 +511,41 @@ export function Pricing() {
           ))}
         </div>
 
+        {/* Incluido en todos los planes */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 rounded-2xl border border-brand-green/20 bg-brand-green/5 p-5 sm:p-6"
+        >
+          <p className="text-[11px] font-sans font-bold tracking-widest uppercase text-brand-green mb-4">
+            Incluido en todos los planes:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-2.5">
+            {PLAN_INCLUDES_ALL.map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="flex-shrink-0 w-3.5 h-3.5 rounded-full bg-brand-green/20 border border-brand-green/40 flex items-center justify-center mt-0.5">
+                  <Check className="h-2 w-2 text-brand-green" strokeWidth={3} aria-hidden />
+                </span>
+                <span className="text-xs text-white/70 leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
         {/* Banner Enterprise full-width */}
         <EnterpriseBanner isIntersecting={isIntersecting} />
+
+        {/* Nota adicional */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isIntersecting ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 text-center text-xs text-brand-gray/60 font-sans leading-relaxed max-w-2xl mx-auto"
+        >
+          El spot personalizado de marca (con tu identidad visual completa) es un add-on desde $800 USD.
+          La gestión de tus pedidos la haces tú — nosotros configuramos y conectamos todo el sistema.
+        </motion.p>
 
         {/* Trust row */}
         <motion.div

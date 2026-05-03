@@ -8,11 +8,11 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-brand-yellow/15 text-brand-yellow border border-brand-yellow/30 rounded-full px-3 py-1",
-        gold: "bg-brand-gold/15 text-brand-gold border border-brand-gold/30 rounded-full px-3 py-1",
+          "bg-brand-green/10 text-brand-green border border-brand-green/25 rounded-full px-3 py-1",
+        gold: "bg-brand-green/10 text-brand-green border border-brand-green/25 rounded-full px-3 py-1",
         outline:
-          "border border-brand-graphite text-brand-gray rounded-full px-3 py-1",
-        solid: "bg-brand-yellow text-black rounded-full px-3 py-1",
+          "border border-neutral-300 text-neutral-500 rounded-full px-3 py-1",
+        solid: "bg-brand-green text-white rounded-full px-3 py-1",
       },
     },
     defaultVariants: {

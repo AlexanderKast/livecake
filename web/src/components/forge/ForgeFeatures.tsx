@@ -37,16 +37,16 @@ const FEATURES = [
 
 export function ForgeFeatures() {
   return (
-    <section className="bg-brand-black py-20 md:py-28 border-t border-white/5">
+    <section className="bg-neutral-50 py-20 md:py-28 border-t border-neutral-100">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex flex-col gap-4 items-center text-center mb-12 md:mb-16">
           <span className="text-[10px] uppercase tracking-widest font-bold text-brand-green">
             Qué recibes
           </span>
-          <h2 className="font-display text-5xl md:text-6xl uppercase text-white leading-[0.95] tracking-tight max-w-3xl">
+          <h2 className="font-display text-5xl md:text-6xl uppercase text-neutral-900 leading-[0.95] tracking-tight max-w-3xl">
             Calidad de agencia, sin agencia.
           </h2>
-          <p className="text-lg text-brand-gray-light max-w-2xl leading-relaxed">
+          <p className="text-lg text-neutral-600 max-w-2xl leading-relaxed">
             Todo lo que necesitas para construir una marca coherente, publicar con frecuencia y no sonar genérico. Ya configurado al estándar editorial que usamos en UGC Colombia.
           </p>
         </div>
@@ -55,13 +55,13 @@ export function ForgeFeatures() {
           {FEATURES.map((f) => (
             <article
               key={f.title}
-              className="flex flex-col gap-3 p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-brand-green/5 via-transparent to-transparent hover:border-brand-green/40 transition-colors"
+              className="flex flex-col gap-3 p-6 rounded-2xl border border-neutral-200 bg-gradient-to-br from-brand-green/5 via-transparent to-transparent hover:border-brand-green/40 transition-colors"
             >
               <div className="text-3xl" aria-hidden>{f.icon}</div>
-              <h3 className="font-display text-2xl uppercase text-white tracking-tight leading-none">
+              <h3 className="font-display text-2xl uppercase text-neutral-900 tracking-tight leading-none">
                 {f.title}
               </h3>
-              <p className="text-sm text-brand-gray-light leading-relaxed">{f.body}</p>
+              <p className="text-sm text-neutral-600 leading-relaxed">{f.body}</p>
             </article>
           ))}
         </div>

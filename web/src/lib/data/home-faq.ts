@@ -5,43 +5,43 @@ export interface FAQItem {
 
 export const HOME_FAQS: FAQItem[] = [
   {
-    question: "¿Cuánto tardan en hacer el primer live?",
+    question: "¿Qué es exactamente un falso live?",
     answer:
-      "Desde el inicio del contrato hasta el primer live en producción tomamos entre 7 y 14 días hábiles: setup de Pancake, pruebas técnicas de transmisión, briefing del host y aprobación del guion. A partir del primer live operamos con el calendario de frecuencia del plan contratado.",
+      "Es un video pregrabado que transmite continuamente como si fuera en vivo, sobre la plataforma Pancake. Incluye comentarios simulados con timing exacto, botón de compra activo y chatbot de WhatsApp integrado. El cliente vive la experiencia de un live real — con prueba social, interacción y urgencia — pero el sistema corre solo, sin que estés presente.",
   },
   {
-    question: "¿Puedo ver y aprobar el guion antes de cada live?",
+    question: "¿Esto está permitido por Meta y TikTok?",
     answer:
-      "Sí, siempre. Te enviamos el guion y el runbook de cada live con al menos 48 horas de anticipación para que apruebes el flujo, las ofertas y los mensajes clave. Nada se transmite sin tu visto bueno.",
+      "Sí. Pancake es partner oficial de Meta, TikTok y Google. Los lives de LiveCake no corren en TikTok Live ni Facebook Live nativos — corren sobre Pancake embebido en tu dominio vía WebCake. Eso es precisamente lo que permite operar 24/7 con respaldo oficial de las plataformas. Es la única vía aprobada para live commerce continuo en LATAM.",
   },
   {
-    question: "¿Los lives son con mi marca o con la de Live Cake?",
+    question: "¿Necesito tener cuenta de Pancake?",
     answer:
-      "Completamente con tu marca. Pancake transmite en tu propio dominio o página, con tu logo, tus colores y tu identidad visual. Live Cake es invisible para el espectador — solo tu marca aparece en pantalla.",
+      "No. LiveCake asume el costo de la licencia Pancake hasta 4 conexiones y 1 dominio en todos los planes. Si necesitas más conexiones o dominios adicionales, esos corren por tu cuenta. Si ya tienes cuenta de Pancake, nos la proporcionas y trabajamos sobre ella.",
   },
   {
-    question: "¿En qué plataformas se puede hacer live shopping?",
+    question: "¿Cuánto tiempo tarda en estar funcionando?",
     answer:
-      "Pancake transmite en tu tienda propia (WebCake) y simultáneamente puede enviar el stream a Facebook Live, Instagram Live y YouTube Live. Para TikTok Live nativo la política de pre-grabado lo restringe, pero los anuncios post-live sí van a TikTok Ads. Pancake es partner oficial de Meta, TikTok y Google.",
+      "10 días hábiles desde la firma del contrato. Día 1: briefing y accesos. Días 2–6: configuración técnica completa (WebCake, Botcake, comentarios, CRM, integración de plataforma). Días 7–9: producción de videos. Día 10: QA y sistema en vivo.",
   },
   {
-    question: "¿Hay permanencia mínima en los planes?",
+    question: "¿Con qué plataformas se integra?",
     answer:
-      "Mínimo 3 meses en todos los planes recurrentes (Starter, Growth, Pro, Elite). Después queda mes a mes, cancelable con 30 días de aviso. El setup inicial se paga una sola vez al arranque y no se devuelve.",
+      "Hotmart (infoproductos), Dropi, Hoco y Gintracom (dropshipping), WhatsApp Business (Botcake), y Conversion API de Meta, TikTok y Google para optimización de pauta. El plan Starter incluye 1 integración, Pro y Elite incluyen integraciones ilimitadas.",
   },
   {
-    question: "¿Cobran comisión sobre las ventas que genera el live?",
+    question: "¿Ustedes gestionan mis pedidos?",
     answer:
-      "No. El modelo de Live Cake es tarifa fija mensual más setup inicial. No cobramos porcentaje sobre las ventas — todo el revenue que genera el live es tuyo.",
+      "No. LiveCake configura y conecta el CRM (Postcake). La gestión operativa de los pedidos la hace tu equipo. Nosotros montamos el sistema, tú operas el día a día.",
   },
   {
-    question: "¿Cómo es la comunicación durante el proyecto?",
+    question: "¿Qué diferencia hay entre el spot genérico y el spot personalizado?",
     answer:
-      "Grupo de WhatsApp dedicado con tu account manager y el estratega de live asignado. Respuesta en horario hábil en menos de 4 horas. Reportes post-live automáticos con KPIs clave (viewers únicos, retención, conversión, AOV). Reunión quincenal o semanal según el plan.",
+      "El spot base genérico está incluido en todos los planes: es el video principal del live producido con la estética de LiveCake. El spot personalizado es un add-on (desde $800 USD) donde producimos el video con tu identidad visual completa: tus colores, tu presentador específico, tu locación, tu música de marca.",
   },
   {
-    question: "¿Qué los diferencia de hacer el live por cuenta propia?",
+    question: "¿Puedo alquilar el estudio y los equipos de LiveCake?",
     answer:
-      "Hacer un live con tu equipo requiere plataforma técnica, host entrenado en ventas, guion, producción y estrategia de paid media para llevar audiencia — todo coordinado al mismo tiempo. Live Cake opera ese stack completo bajo una sola tarifa fija. Además incluye Pancake (suite de live commerce con Conversion API nativa) que una empresa no puede replicar contratando freelancers.",
+      "Sí, es un add-on de $200–$500 USD/mes. Incluye acceso al espacio de grabación con equipos (cámara, iluminación, audio) con un máximo de 2 horas al día de uso activo. El set montado para tu marca queda disponible a tiempo completo — no se desmonta entre sesiones.",
   },
 ];

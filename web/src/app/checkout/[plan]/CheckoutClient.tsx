@@ -138,13 +138,13 @@ export function CheckoutClient({
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen">
+      <main className="relative bg-white text-neutral-900 min-h-screen">
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 40% at 50% 10%, rgba(22,163,74,0.08), transparent 60%)",
+              "radial-gradient(ellipse 60% 40% at 50% 10%, rgba(22,163,74,0.06), transparent 60%)",
           }}
         />
 
@@ -157,10 +157,10 @@ export function CheckoutClient({
             >
               <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm text-amber-300 font-semibold">
+                <p className="text-sm text-amber-600 font-semibold">
                   Checkout cancelado
                 </p>
-                <p className="text-xs text-amber-200/80 mt-1">
+                <p className="text-xs text-amber-500/80 mt-1">
                   Puedes completar tu compra cuando estés listo. Los datos
                   siguen disponibles.
                 </p>
@@ -179,10 +179,10 @@ export function CheckoutClient({
               <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-4 bg-brand-green/15 text-brand-green border border-brand-green/40">
                 Checkout · Plan {planName}
               </span>
-              <h1 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05] text-white tracking-tight uppercase">
+              <h1 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05] text-neutral-900 tracking-tight uppercase">
                 {planVideos}
               </h1>
-              <p className="mt-3 text-sm text-brand-gray leading-relaxed">
+              <p className="mt-3 text-sm text-neutral-500 leading-relaxed">
                 {planDescription}
               </p>
 
@@ -203,17 +203,17 @@ export function CheckoutClient({
                         className={`relative px-3 py-3.5 sm:py-2.5 rounded-lg border text-left transition-colors ${
                           active
                             ? "border-brand-green bg-brand-green/10"
-                            : "border-brand-graphite/60 hover:border-brand-green/40"
+                            : "border-neutral-200 hover:border-brand-green/40"
                         }`}
                       >
                         <p
                           className={`text-xs font-semibold ${
-                            active ? "text-brand-green" : "text-white"
+                            active ? "text-brand-green" : "text-neutral-900"
                           }`}
                         >
                           {DURATION_LABEL[d]}
                         </p>
-                        <p className="text-[10px] text-brand-gray mt-0.5">
+                        <p className="text-[10px] text-neutral-500 mt-0.5">
                           {d === 1 ? "1 mes" : `${d} meses`}
                         </p>
                         {pct > 0 && (
@@ -232,19 +232,19 @@ export function CheckoutClient({
                   Total {cycleLabel}
                 </p>
                 <div className="flex items-end gap-3 flex-wrap">
-                  <p className="font-display text-5xl sm:text-6xl text-white leading-none">
+                  <p className="font-display text-5xl sm:text-6xl text-neutral-900 leading-none">
                     {formatPrice(cycleTotal, currency)}
                   </p>
-                  <p className="text-xs text-brand-gray pb-2">
+                  <p className="text-xs text-neutral-500 pb-2">
                     {currency} · se renueva automáticamente
                   </p>
                 </div>
 
                 {duration > 1 && (
                   <div className="mt-3 flex items-center gap-2 text-xs flex-wrap">
-                    <span className="text-brand-gray">
+                    <span className="text-neutral-500">
                       Equivalente a{" "}
-                      <strong className="text-white">
+                      <strong className="text-neutral-900">
                         {formatPrice(monthlyEquivalent, currency)}/mes
                       </strong>
                     </span>
@@ -256,16 +256,16 @@ export function CheckoutClient({
                   </div>
                 )}
                 {duration === 1 && discountPct === 0 && (
-                  <p className="mt-2 text-[11px] text-brand-gray/70">
+                  <p className="mt-2 text-[11px] text-neutral-400">
                     Compromete 3, 6 o 12 meses y ahorra hasta 40%.
                   </p>
                 )}
 
-                <div className="mt-4 flex items-center gap-2 rounded-lg bg-black/30 border border-brand-graphite/60 px-3 py-2">
+                <div className="mt-4 flex items-center gap-2 rounded-lg bg-neutral-100 border border-neutral-200 px-3 py-2">
                   <Globe className="w-3.5 h-3.5 text-brand-green/70 flex-shrink-0" />
-                  <span className="text-[11px] text-brand-gray">
+                  <span className="text-[11px] text-neutral-500">
                     Desde {countryLabel(country)} se paga en{" "}
-                    <strong className="text-white">{currency}</strong>
+                    <strong className="text-neutral-900">{currency}</strong>
                   </span>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export function CheckoutClient({
                 {features.slice(0, 6).map((f) => (
                   <li
                     key={f}
-                    className="flex items-start gap-2 text-sm text-brand-gray"
+                    className="flex items-start gap-2 text-sm text-neutral-500"
                   >
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
                     <span>{f}</span>
@@ -282,7 +282,7 @@ export function CheckoutClient({
                 ))}
               </ul>
 
-              <div className="mt-6 flex items-center gap-2 text-xs text-brand-gray/70">
+              <div className="mt-6 flex items-center gap-2 text-xs text-neutral-400">
                 <ShieldCheck className="w-4 h-4 text-brand-green/60" />
                 <span>Pago procesado por Stripe · Cancela cuando quieras</span>
               </div>
@@ -293,10 +293,10 @@ export function CheckoutClient({
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative rounded-3xl border border-brand-graphite/60 bg-white/[0.03] p-6 sm:p-8"
+              className="relative rounded-3xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8"
             >
               <form onSubmit={handleSubmit} className="space-y-5">
-                <h2 className="font-display text-2xl text-white uppercase tracking-tight">
+                <h2 className="font-display text-2xl text-neutral-900 uppercase tracking-tight">
                   Datos de facturación
                 </h2>
 
@@ -337,16 +337,16 @@ export function CheckoutClient({
                   onChange={setTaxId}
                 />
 
-                <label className="flex items-start gap-3 text-xs text-brand-gray cursor-pointer">
+                <label className="flex items-start gap-3 text-xs text-neutral-600 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={accepted}
                     onChange={(e) => setAccepted(e.target.checked)}
-                    className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-brand-graphite bg-black/40 accent-brand-green flex-shrink-0"
+                    className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-neutral-300 bg-white accent-brand-green flex-shrink-0"
                   />
                   <span>
                     Acepto que se cobre{" "}
-                    <strong className="text-white">
+                    <strong className="text-neutral-900">
                       {formatPrice(cycleTotal, currency)} en {currency}{" "}
                       {cycleLabel}
                     </strong>{" "}
@@ -361,7 +361,7 @@ export function CheckoutClient({
                   <div
                     role="alert"
                     aria-live="assertive"
-                    className="p-3 rounded-lg border border-red-500/40 bg-red-500/10 text-sm text-red-300"
+                    className="p-3 rounded-lg border border-red-500/40 bg-red-500/10 text-sm text-red-600"
                   >
                     {error}
                   </div>
@@ -387,7 +387,7 @@ export function CheckoutClient({
                   )}
                 </Button>
 
-                <p className="text-[11px] text-brand-gray/60 text-center">
+                <p className="text-[11px] text-neutral-400 text-center">
                   Al continuar aceptas los{" "}
                   <Link href="/terminos" className="text-brand-green hover:underline">
                     términos de servicio
@@ -429,7 +429,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-brand-gray mb-2">
+      <label className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-neutral-600 mb-2">
         {label}
         {required && <span className="text-brand-green ml-1">*</span>}
       </label>
@@ -441,7 +441,7 @@ function Field({
         autoComplete={autoComplete}
         inputMode={inputMode}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl border border-brand-graphite/60 bg-black/40 text-white text-base sm:text-sm placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green/40"
+        className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-neutral-900 text-base sm:text-sm placeholder:text-neutral-400 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green/40"
       />
     </div>
   );

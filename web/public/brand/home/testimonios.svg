@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Testimonios background">
+  <defs>
+    <linearGradient id="tFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#F5F5F5"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#tFade)"/>
+
+  <!-- Big decorative opening quote (izq) -->
+  <g transform="translate(140 220)" opacity="0.12" fill="#00B043">
+    <path d="M0 240 C0 108 80 24 200 0 L200 80 C140 96 110 144 108 200 L200 200 L200 360 L0 360 Z"/>
+    <path d="M240 240 C240 108 320 24 440 0 L440 80 C380 96 350 144 348 200 L440 200 L440 360 L240 360 Z"/>
+  </g>
+
+  <!-- Closing quote (der) -->
+  <g transform="translate(1300 540) rotate(180)" opacity="0.12" fill="#00B043">
+    <path d="M0 240 C0 108 80 24 200 0 L200 80 C140 96 110 144 108 200 L200 200 L200 360 L0 360 Z"/>
+    <path d="M240 240 C240 108 320 24 440 0 L440 80 C380 96 350 144 348 200 L440 200 L440 360 L240 360 Z"/>
+  </g>
+
+  <!-- 5 stars line (centro) -->
+  <g transform="translate(720 120)" fill="#00D64F" opacity="0.35">
+    <g transform="translate(0 0)">
+      <polygon points="24,0 30,16 47,16 33,27 38,43 24,34 10,43 15,27 1,16 18,16"/>
+    </g>
+    <g transform="translate(52 0)">
+      <polygon points="24,0 30,16 47,16 33,27 38,43 24,34 10,43 15,27 1,16 18,16"/>
+    </g>
+    <g transform="translate(104 0)">
+      <polygon points="24,0 30,16 47,16 33,27 38,43 24,34 10,43 15,27 1,16 18,16"/>
+    </g>
+    <g transform="translate(156 0)">
+      <polygon points="24,0 30,16 47,16 33,27 38,43 24,34 10,43 15,27 1,16 18,16"/>
+    </g>
+    <g transform="translate(208 0)">
+      <polygon points="24,0 30,16 47,16 33,27 38,43 24,34 10,43 15,27 1,16 18,16"/>
+    </g>
+  </g>
+
+  <!-- Avatar placeholders (círculos overlapping) -->
+  <g transform="translate(720 520)" opacity="0.45">
+    <circle cx="0"    cy="0" r="44" fill="#00D64F" opacity="0.5"/>
+    <circle cx="0"    cy="0" r="44" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+    <circle cx="70"   cy="0" r="44" fill="#00B043" opacity="0.5"/>
+    <circle cx="70"   cy="0" r="44" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+    <circle cx="140"  cy="0" r="44" fill="#00F25F" opacity="0.5"/>
+    <circle cx="140"  cy="0" r="44" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+    <circle cx="210"  cy="0" r="44" fill="#0A0A0A" opacity="0.4"/>
+    <circle cx="210"  cy="0" r="44" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+  </g>
+</svg>

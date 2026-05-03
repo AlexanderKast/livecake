@@ -57,11 +57,11 @@ export function GraciasClient() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen">
+      <main className="relative bg-white text-neutral-900 min-h-screen">
         <div
           aria-hidden
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(16,185,129,0.08), transparent 60%)" }}
+          style={{ background: "radial-gradient(ellipse 60% 30% at 50% 15%, rgba(16,185,129,0.04), transparent 60%)" }}
         />
 
         <div className="relative max-w-lg mx-auto pt-28 pb-20 px-4 text-center">
@@ -76,10 +76,10 @@ export function GraciasClient() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-            <h1 className="font-sans text-3xl sm:text-4xl font-bold text-white mb-3">
+            <h1 className="font-sans text-3xl sm:text-4xl font-bold text-neutral-900 mb-3">
               ¡Llamada confirmada!
             </h1>
-            <p className="text-brand-gray text-base mb-8">
+            <p className="text-neutral-500 text-base mb-8">
               Te enviamos un email con los detalles y el link de la reunión.
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ export function GraciasClient() {
           {/* Meeting details card */}
           {startISO && (
             <motion.div
-              className="p-6 rounded-2xl border border-brand-green/20 bg-white/[0.03] text-left mb-8 inline-block w-full"
+              className="p-6 rounded-2xl border border-brand-green/20 bg-neutral-50 text-left mb-8 inline-block w-full"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -95,15 +95,15 @@ export function GraciasClient() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-brand-green flex-shrink-0" />
-                  <span className="text-white font-semibold">{dateStr}</span>
+                  <span className="text-neutral-900 font-semibold">{dateStr}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-brand-green flex-shrink-0" />
-                  <span className="text-white font-semibold">{timeStr} — Hora Colombia</span>
+                  <span className="text-neutral-900 font-semibold">{timeStr} — Hora Colombia</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Video className="w-5 h-5 text-brand-green flex-shrink-0" />
-                  <span className="text-brand-gray">30 min · Google Meet · Con {hostName}</span>
+                  <span className="text-neutral-500">30 min · Google Meet · Con {hostName}</span>
                 </div>
               </div>
 
@@ -129,9 +129,9 @@ export function GraciasClient() {
           >
             <div className="flex items-center justify-center gap-2 mb-3">
               <MessageCircle className="w-5 h-5 text-emerald-400" />
-              <h2 className="text-white font-bold text-lg">Únete a nuestra comunidad</h2>
+              <h2 className="text-neutral-900 font-bold text-lg">Únete a nuestra comunidad</h2>
             </div>
-            <p className="text-sm text-brand-gray mb-5 max-w-sm mx-auto">
+            <p className="text-sm text-neutral-500 mb-5 max-w-sm mx-auto">
               +200 marcas y emprendedores compartiendo estrategias de marketing, ventas, contenido y crecimiento de negocios. 100% gratis.
             </p>
             <a
@@ -148,13 +148,13 @@ export function GraciasClient() {
 
           {/* Preparación para la llamada */}
           <motion.div
-            className="p-5 rounded-2xl border border-white/10 bg-white/[0.02] text-left mb-8"
+            className="p-5 rounded-2xl border border-neutral-200 bg-neutral-50 text-left mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
           >
-            <p className="text-xs font-semibold text-brand-gray uppercase tracking-wider mb-3">Prepárate para la llamada</p>
-            <ul className="space-y-2 text-sm text-brand-gray">
+            <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">Prepárate para la llamada</p>
+            <ul className="space-y-2 text-sm text-neutral-600">
               <li className="flex items-start gap-2">
                 <span className="text-brand-green mt-0.5">1.</span>
                 Ten a mano ejemplos de contenido que hayas usado o que te gusten
@@ -177,8 +177,8 @@ export function GraciasClient() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <p className="text-xs text-brand-gray/50">Síguenos:</p>
-            <a href="https://www.instagram.com/agenciaugccolombia" target="_blank" rel="noopener noreferrer" className="text-brand-gray/50 hover:text-brand-green transition-colors">
+            <p className="text-xs text-neutral-400">Síguenos:</p>
+            <a href="https://www.instagram.com/agenciaugccolombia" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-brand-green transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
           </motion.div>

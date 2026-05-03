@@ -81,15 +81,7 @@ export function PageLoader() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 flex flex-col items-center gap-6"
           >
-            <Image
-              src="/brand/logo-dark-bg.png"
-              alt="Live Cake"
-              width={220}
-              height={80}
-              priority
-              className="select-none"
-              draggable={false}
-            />
+            <Image src="/brand/logo-dark-bg.png" alt="Live Cake" width={220} height={60} className="w-auto" priority />
             {/* Barra de progreso sutil debajo del logo */}
             <div className="relative w-36 h-[2px] bg-white/10 rounded-full overflow-hidden">
               <motion.div

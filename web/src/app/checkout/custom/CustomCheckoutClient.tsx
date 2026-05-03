@@ -159,13 +159,13 @@ export function CustomCheckoutClient({
   return (
     <>
       <Navbar />
-      <main className="relative bg-brand-black text-white min-h-screen">
+      <main className="relative bg-white text-neutral-900 min-h-screen">
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 40% at 50% 10%, rgba(16,185,129,0.08), transparent 60%)",
+              "radial-gradient(ellipse 60% 40% at 50% 10%, rgba(16,185,129,0.06), transparent 60%)",
           }}
         />
 
@@ -177,7 +177,7 @@ export function CustomCheckoutClient({
               className="mb-8 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 flex items-start gap-3"
             >
               <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-amber-300">
+              <p className="text-sm text-amber-600">
                 Checkout cancelado. Tus datos no se han guardado aún — puedes
                 reintentar cuando quieras.
               </p>
@@ -191,13 +191,13 @@ export function CustomCheckoutClient({
               animate={{ opacity: 1, y: 0 }}
               className="md:sticky md:top-28"
             >
-              <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-4 bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
+              <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-4 bg-emerald-500/15 text-emerald-600 border border-emerald-500/40">
                 <Sparkles className="inline w-3 h-3 mr-1" /> Plan a la medida
               </span>
-              <h1 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05] text-white tracking-tight uppercase">
+              <h1 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.05] text-neutral-900 tracking-tight uppercase">
                 {videos} videos al mes
               </h1>
-              <p className="mt-3 text-sm text-brand-gray leading-relaxed">
+              <p className="mt-3 text-sm text-neutral-500 leading-relaxed">
                 Ajusta el volumen y el compromiso. El precio se recalcula
                 automáticamente aplicando los descuentos por prepago.
               </p>
@@ -212,7 +212,7 @@ export function CustomCheckoutClient({
                     border-radius: 50%;
                     background: linear-gradient(135deg, #16a34a, #15803d);
                     cursor: pointer;
-                    border: 3px solid #000;
+                    border: 3px solid #fff;
                     box-shadow: 0 0 16px rgba(22,163,74,0.5);
                   }
                   .custom-checkout-slider::-moz-range-thumb {
@@ -221,13 +221,13 @@ export function CustomCheckoutClient({
                     border-radius: 50%;
                     background: linear-gradient(135deg, #16a34a, #15803d);
                     cursor: pointer;
-                    border: 3px solid #000;
+                    border: 3px solid #fff;
                     box-shadow: 0 0 16px rgba(22,163,74,0.5);
                   }
                 `}</style>
                 <label
                   htmlFor="custom-videos"
-                  className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-brand-gray mb-2"
+                  className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-neutral-600 mb-2"
                 >
                   Videos al mes: {videos}
                 </label>
@@ -241,7 +241,7 @@ export function CustomCheckoutClient({
                   onChange={(e) => setVideos(parseInt(e.target.value, 10))}
                   className="custom-checkout-slider w-full h-2 rounded-full appearance-none cursor-pointer accent-brand-green"
                 />
-                <div className="flex justify-between mt-2 text-[10px] text-brand-gray/60">
+                <div className="flex justify-between mt-2 text-[10px] text-neutral-400">
                   <span>5</span>
                   <span>50</span>
                   <span>100</span>
@@ -267,17 +267,17 @@ export function CustomCheckoutClient({
                         className={`relative px-3 py-3.5 sm:py-2.5 rounded-lg border text-left transition-colors ${
                           active
                             ? "border-brand-green bg-brand-green/10"
-                            : "border-brand-graphite/60 hover:border-brand-green/40"
+                            : "border-neutral-200 hover:border-brand-green/40"
                         }`}
                       >
                         <p
                           className={`text-xs font-semibold ${
-                            active ? "text-brand-green" : "text-white"
+                            active ? "text-brand-green" : "text-neutral-900"
                           }`}
                         >
                           {DURATION_LABEL[d]}
                         </p>
-                        <p className="text-[10px] text-brand-gray mt-0.5">
+                        <p className="text-[10px] text-neutral-500 mt-0.5">
                           {d === 1 ? "1 mes" : `${d} meses`}
                         </p>
                         {pct > 0 && (
@@ -295,17 +295,17 @@ export function CustomCheckoutClient({
                 <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-2">
                   Plan {label} · Total {cycleLabel}
                 </p>
-                <p className="font-display text-5xl sm:text-6xl text-white leading-none">
+                <p className="font-display text-5xl sm:text-6xl text-neutral-900 leading-none">
                   {formatPrice(cycleTotal, currency)}
                 </p>
-                <p className="text-xs text-brand-gray mt-2">
+                <p className="text-xs text-neutral-500 mt-2">
                   {currency} · {formatPrice(perVideo, currency)} por video
                 </p>
                 {duration > 1 && (
                   <div className="mt-2 flex items-center gap-2 text-xs flex-wrap">
-                    <span className="text-brand-gray">
+                    <span className="text-neutral-500">
                       Equivalente a{" "}
-                      <strong className="text-white">
+                      <strong className="text-neutral-900">
                         {formatPrice(monthlyEquivalent, currency)}/mes
                       </strong>
                     </span>
@@ -317,16 +317,16 @@ export function CustomCheckoutClient({
                   </div>
                 )}
 
-                <div className="mt-4 flex items-center gap-2 rounded-lg bg-black/30 border border-brand-graphite/60 px-3 py-2">
+                <div className="mt-4 flex items-center gap-2 rounded-lg bg-neutral-100 border border-neutral-200 px-3 py-2">
                   <Globe className="w-3.5 h-3.5 text-brand-green/70 flex-shrink-0" />
-                  <span className="text-[11px] text-brand-gray">
+                  <span className="text-[11px] text-neutral-500">
                     Desde {countryLabel(country)} se paga en{" "}
-                    <strong className="text-white">{currency}</strong>
+                    <strong className="text-neutral-900">{currency}</strong>
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center gap-2 text-xs text-brand-gray/70">
+              <div className="mt-6 flex items-center gap-2 text-xs text-neutral-400">
                 <ShieldCheck className="w-4 h-4 text-brand-green/60" />
                 <span>Procesado por Stripe · Cancela cuando quieras</span>
               </div>
@@ -337,10 +337,10 @@ export function CustomCheckoutClient({
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="relative rounded-3xl border border-brand-graphite/60 bg-white/[0.03] p-6 sm:p-8"
+              className="relative rounded-3xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8"
             >
               <form onSubmit={handleSubmit} className="space-y-5">
-                <h2 className="font-display text-2xl text-white uppercase tracking-tight">
+                <h2 className="font-display text-2xl text-neutral-900 uppercase tracking-tight">
                   Datos de facturación
                 </h2>
 
@@ -350,16 +350,16 @@ export function CustomCheckoutClient({
                 <Field label="WhatsApp (opcional)" placeholder="+57 300 123 4567" value={whatsapp} onChange={setWhatsapp} autoComplete="tel" inputMode="tel" />
                 <Field label="NIT / RUC (opcional)" value={taxId} onChange={setTaxId} />
 
-                <label className="flex items-start gap-3 text-xs text-brand-gray cursor-pointer">
+                <label className="flex items-start gap-3 text-xs text-neutral-600 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={accepted}
                     onChange={(e) => setAccepted(e.target.checked)}
-                    className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-brand-graphite bg-black/40 accent-brand-green flex-shrink-0"
+                    className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-neutral-300 bg-white accent-brand-green flex-shrink-0"
                   />
                   <span>
                     Acepto que se cobre{" "}
-                    <strong className="text-white">
+                    <strong className="text-neutral-900">
                       {formatPrice(cycleTotal, currency)} en {currency}{" "}
                       {cycleLabel}
                     </strong>{" "}
@@ -373,7 +373,7 @@ export function CustomCheckoutClient({
                   <div
                     role="alert"
                     aria-live="assertive"
-                    className="p-3 rounded-lg border border-red-500/40 bg-red-500/10 text-sm text-red-300"
+                    className="p-3 rounded-lg border border-red-500/40 bg-red-500/10 text-sm text-red-600"
                   >
                     {error}
                   </div>
@@ -399,7 +399,7 @@ export function CustomCheckoutClient({
                   )}
                 </Button>
 
-                <p className="text-[11px] text-brand-gray/60 text-center">
+                <p className="text-[11px] text-neutral-400 text-center">
                   Al continuar aceptas los{" "}
                   <Link href="/terminos" className="text-brand-green hover:underline">términos</Link> y la{" "}
                   <Link href="/privacidad" className="text-brand-green hover:underline">privacidad</Link>.
@@ -428,7 +428,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-brand-gray mb-2">
+      <label className="block text-xs sm:text-[11px] font-bold tracking-widest uppercase text-neutral-600 mb-2">
         {label}
         {required && <span className="text-brand-green ml-1">*</span>}
       </label>
@@ -440,7 +440,7 @@ function Field({
         autoComplete={autoComplete}
         inputMode={inputMode}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl border border-brand-graphite/60 bg-black/40 text-white text-base sm:text-sm placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green/40"
+        className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-neutral-900 text-base sm:text-sm placeholder:text-neutral-400 focus:outline-none focus:border-brand-green focus:ring-1 focus:ring-brand-green/40"
       />
     </div>
   );
