@@ -77,7 +77,7 @@ export function ApplicationCard({
 
       <div className="inline-flex items-center gap-1.5 flex-shrink-0">
         <Sparkles className="h-3 w-3 text-brand-green" aria-hidden />
-        <span className="text-[10px] sm:text-[11px] font-sans font-semibold text-white/90 tracking-wide">
+        <span className="text-[10px] sm:text-[11px] font-sans font-semibold text-neutral-700 tracking-wide">
           {DISCOUNT_PCT}% si aplicas en
         </span>
         <span

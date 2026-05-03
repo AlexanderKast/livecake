@@ -2,30 +2,17 @@
 
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, ShieldCheck } from "lucide-react";
+import { CalendarDays, Check } from "lucide-react";
 import { useAudit } from "@/components/lead-audit/AuditContext";
-import { trackOfferApply } from "@/lib/tracking/events";
-import { useOfferCountdown } from "@/hooks/use-offer-countdown";
-import { OFFER_COPY, OPEN_SLOTS } from "@/lib/offer-config";
 
-const RECENT_CLIENTS = [
-  { initials: "ME", name: "Michel E." },
-  { initials: "CM", name: "Carolina M." },
-  { initials: "JP", name: "Juan P." },
-  { initials: "LS", name: "Laura S." },
+const REASSURANCE = [
+  "Sin compromiso de compra",
+  "Te recomendamos el plan correcto, no el más caro",
+  "Respuesta en menos de 24 horas",
 ];
 
 export function PreciosCTA() {
   const { openAudit } = useAudit();
-  const countdown = useOfferCountdown();
-
-  const handleApply = () => {
-    trackOfferApply("precios_cta_final", {
-      hoursLeft: countdown.hoursLeft,
-      slotsLeft: OPEN_SLOTS,
-    });
-    openAudit("precios_cta_final");
-  };
 
   return (
     <section
@@ -56,34 +43,23 @@ export function PreciosCTA() {
             "radial-gradient(ellipse at center, black 25%, transparent 75%)",
         }}
       />
-      {/* Secondary glow */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 40% 30% at 50% 70%, rgba(22,163,74,0.05) 0%, transparent 100%)",
-        }}
-      />
 
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative max-w-4xl mx-auto text-center"
+        className="relative max-w-3xl mx-auto text-center"
       >
-        {/* Badge urgencia — pill badge pattern */}
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 text-xs font-semibold text-brand-green tracking-[0.2em] uppercase mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-          {OFFER_COPY.slots_text}
+        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-6 bg-brand-green/15 text-brand-green border border-brand-green/40">
+          Diagnóstico gratuito
         </span>
 
         <h2
           id="cta-precios-title"
           className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[0.95] text-neutral-900 tracking-tight uppercase mb-6"
         >
-          Aplica para{" "}
+          ¿No sabes cuál{" "}
           <span
             style={{
               background: "linear-gradient(90deg, #16a34a, #15803d)",
@@ -92,44 +68,24 @@ export function PreciosCTA() {
               backgroundClip: "text",
             }}
           >
-            ser partner
+            plan es el tuyo?
           </span>
-          .
         </h2>
 
-        <p className="text-base sm:text-lg text-neutral-500 leading-relaxed mb-8 max-w-2xl mx-auto">
-          Revisamos cada aplicación en 24h. Si tu marca encaja, te agendamos una
-          llamada de 30 min para alinear objetivos y cerrar el partnership —{" "}
-          <span className="text-neutral-900 font-semibold">
-            {OFFER_COPY.discount_text}
-          </span>
-          .
+        <p className="text-base sm:text-lg text-neutral-500 leading-relaxed mb-8 max-w-xl mx-auto">
+          En el diagnóstico gratuito de 20 minutos te decimos exactamente qué
+          plan necesitas según tu volumen, tu producto y tus objetivos —
+          antes de que pagues un peso.
         </p>
 
-        {/* Guarantee badge */}
-        <div className="inline-flex items-center gap-2.5 mb-8 px-5 py-3 rounded-xl border border-brand-green/25 bg-neutral-100">
-          <ShieldCheck
-            className="h-5 w-5 text-brand-green flex-shrink-0"
-            aria-hidden
-          />
-          <div className="text-left">
-            <p className="text-xs font-bold text-neutral-900">
-              Garantia de 7 dias
-            </p>
-            <p className="text-[10px] text-neutral-500">
-              100% de devolucion si no encajamos
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 mb-8">
           <Button
             size="lg"
             className="w-full sm:w-auto text-sm sm:text-base font-bold tracking-wide min-h-[52px] shadow-[0_0_28px_rgba(22,163,74,0.35)] hover:shadow-[0_0_40px_rgba(22,163,74,0.55)]"
-            onClick={handleApply}
+            onClick={() => openAudit("precios_cta_final")}
           >
             <CalendarDays className="h-5 w-5 mr-2" aria-hidden />
-            APLICA AHORA →
+            Agendar diagnóstico gratuito →
           </Button>
           <Button
             asChild
@@ -137,38 +93,22 @@ export function PreciosCTA() {
             variant="outline"
             className="w-full sm:w-auto text-sm sm:text-base min-h-[52px]"
           >
-            <a href="#planes">VER PAQUETES</a>
+            <a href="#comparativa">Ver comparativa completa de planes ↑</a>
           </Button>
         </div>
 
-        {/* Avatar stack */}
-        <div className="mt-8 flex flex-col items-center gap-3">
-          <div className="flex items-center -space-x-2.5">
-            {RECENT_CLIENTS.map((client) => (
-              <div
-                key={client.initials}
-                className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-green/20 to-brand-green/5 border-2 border-white flex items-center justify-center"
-                title={client.name}
-              >
-                <span className="text-[10px] font-bold text-brand-green/80 font-sans">
-                  {client.initials}
-                </span>
-              </div>
-            ))}
-            <div className="w-9 h-9 rounded-full bg-brand-green/10 border-2 border-white flex items-center justify-center">
-              <span className="text-[10px] font-bold text-brand-green/60 font-sans">
-                +
-              </span>
+        {/* Reassurance */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+          {REASSURANCE.map((item) => (
+            <div key={item} className="flex items-center gap-2">
+              <Check
+                className="h-4 w-4 text-brand-green flex-shrink-0"
+                aria-hidden
+              />
+              <span className="text-sm text-neutral-600">{item}</span>
             </div>
-          </div>
-          <p className="text-xs text-neutral-500">
-            Marcas en Colombia y LATAM ya confian en nosotros
-          </p>
+          ))}
         </div>
-
-        <p className="mt-6 text-xs text-neutral-400 tracking-wide">
-          30 min · Gratis · Sin compromiso
-        </p>
       </motion.div>
     </section>
   );

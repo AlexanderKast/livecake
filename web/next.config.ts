@@ -1,11 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Trailing slash desactivado (SEO canónico limpio)
   trailingSlash: false,
 
-  // Excluir assets pesados del bundle de serverless functions.
-  // public/ ya es servido como estático por Vercel, no necesita estar en las funciones.
   outputFileTracingExcludes: {
     "*": [
       "public/brand/**/*",
@@ -18,8 +15,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Incluir explícitamente los .md que cada ruta admin necesita leer del filesystem.
-  // Sin esto, Next no los incluye en el bundle de la función y getContentWithOverrides falla.
   outputFileTracingIncludes: {
     "/admin/marca/[slug]": ["./brand/**/*.md"],
     "/admin/viralidad/modelo": ["./content/viralidad/*.md"],
@@ -40,9 +35,11 @@ const nextConfig: NextConfig = {
       "./content/viralidad/packs/**/*.md",
     ],
     "/admin/packs/valentina": ["./content/packs/valentina/*.md"],
+    "/blog": ["./content/blog/*.mdx"],
+    "/blog/[slug]": ["./content/blog/*.mdx"],
+    "/blog/categoria/[categoria]": ["./content/blog/*.mdx"],
   },
 
-  // Optimización de imágenes
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -57,7 +54,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Headers de seguridad y SEO
   async headers() {
     return [
       {
@@ -84,11 +80,8 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Redirects 301 para rutas legacy
   async redirects() {
-    return [
-      // Agregar redirects de migración aquí cuando aplique
-    ];
+    return [];
   },
 };
 

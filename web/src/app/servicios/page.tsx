@@ -7,23 +7,23 @@ import { ServiciosDetalle } from "@/components/servicios/ServiciosDetalle";
 import { ServiciosFAQ } from "@/components/servicios/ServiciosFAQ";
 
 export const metadata = createMetadata({
-  title: "Servicios UGC",
+  title: "Servicios — Sistema LiveCake completo",
   description:
-    "Producción UGC, estrategia, audiovisual premium, consultoría, creadores, IA + automatización + dev a medida, contenido generativo, diseño web y landing pages. Nueve líneas integradas de una agencia 360 desde Colombia.",
+    "WebCake, LiveCake, Botcake, comentarios simulados, CRM, integraciones y videos para ads. Un sistema completo sobre Pancake — partner oficial Meta + TikTok + Google en LATAM. Listo en 10 días.",
   path: "/servicios",
   keywords: [
-    "servicios UGC",
-    "producción audiovisual",
-    "estrategia de contenido",
-    "automatización IA",
-    "diseño web Colombia",
+    "live shopping Colombia",
+    "falso live Pancake",
+    "WebCake landing live",
+    "Botcake WhatsApp chatbot",
+    "live commerce LATAM",
   ],
 });
 
 const jsonLd = getDefaultJsonLd("service", {
-  name: "Servicios UGC — UGC Colombia",
+  name: "Servicios — Sistema LiveCake",
   description:
-    "Nueve líneas de servicio integradas: UGC, estrategia, audiovisual, consultoría, creadores, IA + dev a medida, contenido IA, diseño web y landing pages.",
+    "Sistema completo de live commerce sobre Pancake: WebCake, LiveCake, Botcake, comentarios, CRM, integraciones y videos para ads. Partner oficial Meta + TikTok + Google.",
   url: "/servicios",
   faqs: SERVICIOS_FAQS,
 });

@@ -7,23 +7,23 @@ import { PorEsoExistimos } from "@/components/casos/PorEsoExistimos";
 import { CasosCTAFinal } from "@/components/casos/CasosCTAFinal";
 
 export const metadata = createMetadata({
-  title: "Casos — Por que el live shopping cambia el juego",
+  title: "Casos — ¿Te suena familiar alguno de estos dolores?",
   description:
-    "Carlos pierde el 22% en devoluciones. Valentina solo vende en lanzamiento. Rodrigo le paga el 20% al marketplace. Tres casos reales de por que el live shopping es el canal que le faltaba a tu negocio.",
+    "Landing que no convierte, ingresos solo en lanzamiento, comisiones del 20% al marketplace. Tres dolores reales — y cómo el live shopping sobre Pancake los resuelve.",
   path: "/casos",
   keywords: [
-    "casos live shopping LATAM",
+    "live shopping LATAM dolores",
+    "dropshipping tasa conversión",
+    "infoproductores live evergreen",
+    "marcas canal directo sin marketplace",
     "live commerce Colombia",
-    "devoluciones ecommerce live",
-    "live shopping vs marketplace",
-    "infoproductos live shopping",
   ],
 });
 
 const jsonLd = getDefaultJsonLd("cases", {
-  name: "Casos Live Shopping — Live Cake",
+  name: "Casos LiveCake — El dolor que ya conoces",
   description:
-    "Tres avatares reales que muestran por que el live shopping resuelve devoluciones altas, ingresos estacionales y comisiones de marketplace.",
+    "Tres avatares: dropshipper con landing que no convierte, infoproductora que solo vende en lanzamiento y empresario que paga 20% al marketplace. Un sistema que los resuelve.",
   url: "/casos",
 });
 

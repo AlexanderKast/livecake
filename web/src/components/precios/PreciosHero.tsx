@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { useAudit } from "@/components/lead-audit/AuditContext";
@@ -29,11 +28,11 @@ const fadeUpReduced = {
   visible: () => ({ opacity: 1, transition: { duration: 0.3 } }),
 };
 
-// Stats de live shopping citables
-const FALLBACK_STATS = [
-  { value: "30%", label: "Conversión live vs 3% ecom" },
-  { value: "+10-30%", label: "Ticket promedio más alto" },
-  { value: "34%", label: "Compras post-live (cola larga)" },
+const TRUST_BAR = [
+  "Listo en 10 días",
+  "Sin comisión sobre ventas",
+  "Pancake partner oficial Meta + TikTok + Google",
+  "Setup único — sin costos ocultos",
 ];
 
 export function PreciosHero() {
@@ -49,8 +48,6 @@ export function PreciosHero() {
     });
     openAudit("precios_hero_apply");
   };
-
-  const [stats] = useState(FALLBACK_STATS);
 
   return (
     <section
@@ -117,10 +114,10 @@ export function PreciosHero() {
           className="font-display leading-none mb-6"
         >
           <span className="block text-neutral-900 text-[clamp(2.4rem,7vw,6rem)] leading-[0.92]">
-            VENDE EN VIVO.
+            Elige cuántos lives
           </span>
           <span
-            className="block text-[clamp(1.6rem,5vw,4.5rem)] leading-[0.95] mt-2"
+            className="block text-[clamp(2rem,5.5vw,5rem)] leading-[0.95] mt-2"
             style={{
               background:
                 "linear-gradient(90deg, #16a34a 0%, #15803d 50%, #16a34a 100%)",
@@ -129,7 +126,7 @@ export function PreciosHero() {
               backgroundClip: "text",
             }}
           >
-            COBRA CADA MES.
+            quieres por mes.
           </span>
         </motion.h1>
 
@@ -141,12 +138,10 @@ export function PreciosHero() {
           animate="visible"
           className="max-w-2xl mx-auto text-neutral-500 text-base sm:text-lg leading-relaxed mb-10"
         >
-          Cuatro planes de live shopping con la suite completa de Pancake
-          incluida. Precios claros, sin comisión sobre ventas y con{" "}
+          Sin comisión sobre tus ventas. Recurrencia mensual fija.{" "}
           <span className="text-neutral-900 font-semibold">
-            setup técnico desde el día uno
+            Suite Pancake completa incluida en todos los planes desde el día 1.
           </span>
-          . Escoge la frecuencia de lives que calce con tu negocio hoy.
         </motion.p>
 
         {/* CTAs */}
@@ -184,34 +179,35 @@ export function PreciosHero() {
           {OFFER_COPY.application_note}
         </motion.p>
 
-        {/* Stat ribbon — datos de mercado live shopping */}
+        {/* Trust bar */}
         <motion.div
           custom={5}
           variants={variants}
           initial="hidden"
           animate="visible"
-          className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+          className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6"
         >
-          {stats.map((stat: { value: string; label: string }, i: number) => (
-            <div key={i} className="flex items-baseline gap-2">
-              <span
-                className="font-display text-2xl sm:text-3xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {stat.value}
+          {TRUST_BAR.map((item) => (
+            <div key={item} className="flex items-center gap-2">
+              <span className="w-4 h-4 rounded-full bg-brand-green/15 border border-brand-green/30 flex items-center justify-center flex-shrink-0">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden>
+                  <path d="M1.5 4L3.5 6L6.5 2" stroke="#16a34a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </span>
-              <span className="text-xs sm:text-sm text-neutral-500">
-                {stat.label}
-              </span>
+              <span className="text-xs sm:text-sm text-neutral-600">{item}</span>
             </div>
           ))}
         </motion.div>
+
+        <motion.p
+          custom={5}
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          className="mt-3 text-[11px] text-neutral-400 tracking-wide"
+        >
+          El setup cubre la implementación completa del sistema. La recurrencia mensual es lo único que pagas después.
+        </motion.p>
 
         {/* Logo bar clientes */}
         <motion.div

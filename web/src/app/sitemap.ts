@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/tracking/constants";
+import { getAllPosts } from "@/lib/blog/get-posts";
+import { TODAS_CATEGORIAS } from "@/lib/blog/blog-types";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -46,5 +48,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Silently fail — static pages are still returned
   }
 
-  return [...staticPages, ...diagnosisPages];
+  // Blog pages
+  const blogPosts = getAllPosts()
+  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.fechaActualizacion ?? post.fecha),
+    changeFrequency: "monthly" as const,
+    priority: post.destacado ? 0.8 : 0.7,
+  }))
+
+  const blogCategoriaPages: MetadataRoute.Sitemap = TODAS_CATEGORIAS.map((cat) => ({
+    url: `${SITE_URL}/blog/categoria/${cat}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }))
+
+  const blogIndexPage: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+  ]
+
+  return [...staticPages, ...blogIndexPage, ...blogPostPages, ...blogCategoriaPages, ...diagnosisPages];
 }

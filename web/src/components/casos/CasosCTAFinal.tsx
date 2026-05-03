@@ -1,8 +1,35 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShoppingCart, BookOpen, Store } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useAudit } from "@/components/lead-audit/AuditContext";
+import { cn } from "@/lib/utils";
+
+const SEGMENTS = [
+  {
+    id: "dropshippers",
+    icon: ShoppingCart,
+    label: "Soy dropshipper o ecommerce",
+    description: "Dropshipping · Ecommerce · Productos físicos",
+    href: "/para/dropshippers",
+  },
+  {
+    id: "infoproductores",
+    icon: BookOpen,
+    label: "Vendo cursos o mentorías",
+    description: "Cursos online · Mentorías · Coaches · Hotmart",
+    href: "/para/infoproductores",
+  },
+  {
+    id: "marcas",
+    icon: Store,
+    label: "Tengo una marca con producto propio",
+    description: "Marcas propias · Retail · Producto establecido",
+    href: "/para/marcas",
+  },
+];
 
 export function CasosCTAFinal() {
   const { openAudit } = useAudit();
@@ -10,204 +37,123 @@ export function CasosCTAFinal() {
   return (
     <section
       id="contacto"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="casos-cta-heading"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-50 scroll-mt-20"
     >
-      <motion.div
-        className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {/* Background layers */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(22,163,74,0.25) 0%, transparent 50%), radial-gradient(ellipse 70% 50% at 80% 80%, rgba(22,163,74,0.2) 0%, transparent 55%)",
-          }}
-        />
+      <div className="max-w-5xl mx-auto">
+        {/* Encabezado */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-12 sm:mb-14"
+        >
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-6 bg-brand-green/15 text-brand-green border border-brand-green/40">
+            Siguiente paso
+          </span>
+          <h2
+            id="casos-cta-heading"
+            className="font-display text-neutral-900 text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[0.95] tracking-tight mb-5"
+          >
+            ¿Cuál de estos dolores es el tuyo?
+          </h2>
+          <p className="max-w-2xl mx-auto text-neutral-500 text-base sm:text-lg leading-relaxed">
+            En 20 minutos te mostramos exactamente cómo quedaría el sistema de
+            live para tu negocio — antes de que tomes cualquier decisión.
+          </p>
+        </motion.div>
 
-        {/* Gradient border */}
-        <div
-          aria-hidden
-          className="absolute inset-0 rounded-3xl pointer-events-none"
-          style={{
-            padding: "2px",
-            background:
-              "linear-gradient(135deg, rgba(22,163,74,0.7), rgba(22,163,74,0.4) 40%, rgba(22,163,74,0.15) 70%, transparent 100%)",
-            WebkitMask:
-              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-            WebkitMaskComposite: "xor",
-            maskComposite: "exclude",
-          }}
-        />
-
-        {/* Grid pattern */}
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-            maskImage:
-              "radial-gradient(ellipse at center, black 20%, transparent 70%)",
-          }}
-        />
-
-        {/* Content */}
-        <div className="relative px-6 sm:px-12 lg:px-20 xl:px-24 py-16 sm:py-20 lg:py-28">
-          <div className="flex flex-col items-start gap-7 max-w-4xl">
-            {/* Badge */}
-            <motion.span
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/30 text-xs font-semibold text-brand-green tracking-[0.2em] uppercase"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-              Ya viste que no eres el unico
-            </motion.span>
-
-            {/* Headline */}
-            <motion.h2
-              id="casos-cta-heading"
-              className="font-display text-[clamp(2.5rem,8vw,6.5rem)] leading-[0.9] text-white tracking-tight uppercase"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-            >
-              El live shopping
-              <br />
-              <span className="text-brand-green">ya es tu siguiente canal.</span>
-            </motion.h2>
-
-            {/* Subheadline */}
-            <motion.p
-              className="max-w-2xl text-base sm:text-lg lg:text-xl text-brand-gray leading-relaxed"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              Ya leiste los tres casos. Ya viste como el live shopping resuelve
-              devoluciones altas, ingresos solo en lanzamiento y comisiones de
-              marketplace. El siguiente paso es una llamada de 30 minutos donde
-              revisamos tu negocio y salimos con un plan claro. Sin venta forzada.
-            </motion.p>
-
-            {/* CTA Button */}
-            <motion.div
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 mt-2 w-full sm:w-auto"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-            >
-              <motion.button
-                type="button"
-                onClick={() => openAudit("casos_cta_final")}
-                className="group relative inline-flex items-center justify-center gap-3 px-7 sm:px-8 py-4 sm:py-5 rounded-xl bg-brand-green text-white font-semibold text-base sm:text-lg tracking-wide overflow-hidden min-h-[56px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                style={{
-                  boxShadow:
-                    "0 10px 40px -10px rgba(22,163,74,0.5), 0 0 80px -20px rgba(22,163,74,0.4)",
+        {/* Cards de segmento */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12"
+        >
+          {SEGMENTS.map((seg, i) => {
+            const Icon = seg.icon;
+            return (
+              <motion.div
+                key={seg.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.15 + i * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <span className="relative z-10">QUIERO MI DIAGNOSTICO</span>
-                <ArrowRight
-                  className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1"
-                  aria-hidden
-                />
-                <span
-                  aria-hidden
-                  className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent)",
-                  }}
-                />
-              </motion.button>
-
-              <div className="flex items-center justify-center sm:justify-start gap-3 text-sm text-brand-gray">
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
-                  30 min
-                </span>
-                <span className="w-1 h-1 rounded-full bg-brand-graphite" aria-hidden />
-                <span>Gratis</span>
-                <span className="w-1 h-1 rounded-full bg-brand-graphite" aria-hidden />
-                <span>Sin venta forzada</span>
-              </div>
-            </motion.div>
-
-            {/* Guarantee badge */}
-            <motion.div
-              className="inline-flex items-center gap-2.5 mt-6 px-5 py-3 rounded-xl border border-brand-green/25 bg-white/[0.03]"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-            >
-              <ShieldCheck className="h-5 w-5 text-brand-green flex-shrink-0" aria-hidden />
-              <div className="text-left">
-                <p className="text-xs font-bold text-white">Garantia de performance incluida</p>
-                <p className="text-[10px] text-brand-gray">CTR minimo 1.5% y retencion 25% — o repetimos el live sin costo extra</p>
-              </div>
-            </motion.div>
-
-            {/* Avatar stack */}
-            <motion.div
-              className="flex flex-col items-center sm:items-start gap-3 mt-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              <div className="flex items-center -space-x-2.5">
-                {[
-                  { name: "Shop Tokio", logo: "https://shoptokio.co/cdn/shop/files/gempages_513541607190955198-297e6fa2-f0e0-455a-bdf4-12a9388c792d.webp?v=1728089603&width=260" },
-                  { name: "Altevo", logo: "https://altevo.com.co/cdn/shop/files/Altevo_Logo.png?v=1758591345&width=150" },
-                  { name: "Vitalcom", logo: "/brand/logos/vitalcom.png" },
-                  { name: "Bioboosters", logo: "https://bioboosters.co/cdn/shop/files/Logo_Blanco.png?v=1758762956&width=290" },
-                ].map((c) => (
-                  <div
-                    key={c.name}
-                    className="w-9 h-9 rounded-full bg-gradient-to-br from-brand-green/20 to-brand-green/5 border-2 border-brand-black flex items-center justify-center overflow-hidden"
-                    title={c.name}
-                  >
-                    <img
-                      src={c.logo}
-                      alt={c.name}
-                      loading="lazy"
-                      className="w-full h-full object-contain p-1.5 brightness-0 invert opacity-80"
-                    />
+                <Link
+                  href={seg.href}
+                  className={cn(
+                    "group flex flex-col gap-4 p-6 sm:p-7 rounded-2xl",
+                    "bg-white border border-neutral-200",
+                    "hover:border-brand-green/50 hover:shadow-[0_8px_32px_-8px_rgba(22,163,74,0.2)]",
+                    "transition-all duration-300 h-full",
+                  )}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-green/15 transition-colors">
+                    <Icon className="h-5 w-5 text-brand-green" aria-hidden />
                   </div>
-                ))}
-                <div className="w-9 h-9 rounded-full bg-brand-green/10 border-2 border-brand-black flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-brand-green/60 font-sans">+</span>
-                </div>
-              </div>
-              <p className="text-xs text-brand-gray">Marcas en Colombia y LATAM ya hacen live shopping con nosotros</p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.div>
+                  <div className="flex flex-col gap-1.5 flex-1">
+                    <p className="text-base font-sans font-bold text-neutral-900 leading-snug group-hover:text-brand-green transition-colors">
+                      {seg.label}
+                    </p>
+                    <p className="text-xs text-neutral-400 font-sans">
+                      {seg.description}
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-sm text-brand-green font-semibold mt-auto">
+                    Ver más
+                    <ArrowRight
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Divisor */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex items-center gap-4 mb-10"
+        >
+          <span className="flex-1 h-px bg-neutral-200" />
+          <span className="text-xs text-neutral-400 font-sans tracking-wide">
+            O agenda el diagnóstico gratuito directamente
+          </span>
+          <span className="flex-1 h-px bg-neutral-200" />
+        </motion.div>
+
+        {/* CTA unificado */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center gap-4 text-center"
+        >
+          <Button
+            size="lg"
+            className="min-h-[56px] px-8 font-bold tracking-wide text-base shadow-[0_0_32px_rgba(22,163,74,0.35)] hover:shadow-[0_0_48px_rgba(22,163,74,0.55)]"
+            onClick={() => openAudit("casos_cta_final")}
+          >
+            Agendar diagnóstico de 20 min →
+          </Button>
+          <p className="text-xs text-neutral-400 font-sans tracking-wide">
+            Sin compromiso · Sin costo · Respuesta en menos de 24 horas
+          </p>
+        </motion.div>
+      </div>
     </section>
   );
 }

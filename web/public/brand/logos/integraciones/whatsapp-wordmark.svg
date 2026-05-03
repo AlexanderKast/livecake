@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" width="260" height="80">
+  <g transform="translate(7,0)">
+    <circle cx="36" cy="40" r="30" fill="#25D366"/>
+    <path d="M47 49 C44 52 40 54 36 54 C28 54 21 50 17 44 L20 39 C21 37 20 35 19 34 L16 29 C15 27 13 27 12 28 C10 30 9 33 9 36 C9 46 17 54 27 58 C30 59 33 60 36 60 C44 60 51 57 56 52 C57 51 57 49 55 48 L50 45 C49 44 47 44 47 46 Z" fill="white" transform="translate(2,2) scale(0.85)"/>
+    <text x="74" y="55" font-family="Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="38" fill="#25D366" letter-spacing="-0.5">WhatsApp</text>
+  </g>
+</svg>

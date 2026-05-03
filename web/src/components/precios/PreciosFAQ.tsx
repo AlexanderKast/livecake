@@ -16,7 +16,7 @@ export function PreciosFAQ() {
   return (
     <section
       id="faq-precios"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24 bg-neutral-900"
       aria-labelledby="faq-precios-heading"
     >
       <div className="max-w-4xl mx-auto">
@@ -33,10 +33,10 @@ export function PreciosFAQ() {
             className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
           >
             Preguntas sobre{" "}
-            <span className="text-brand-green">precios.</span>
+            <span className="text-brand-green">precios y planes.</span>
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-brand-gray mt-2">
-            Todo sobre pagos, permanencia, cambios de plan y facturacion. Si
+            Setup, permanencia, cambios de plan, spot personalizado y facturación. Si
             falta algo,{" "}
             <a
               href="https://wa.me/573001234567"

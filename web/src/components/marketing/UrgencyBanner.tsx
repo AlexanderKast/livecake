@@ -14,15 +14,12 @@ import { cn } from "@/lib/utils";
 const BANNER_HEIGHT_PX = 44;
 
 const MARQUEE_MESSAGES = [
-  `Solo ${OPEN_SLOTS} cupos disponibles este mes`,
-  `${DISCOUNT_PCT}% de descuento exclusivo — termina pronto`,
-  `Acceso únicamente por aplicación · Agencia por invitación`,
-  `+50 marcas LATAM & USA ya confiaron en nosotros`,
-  `Agencia UGC #1 de Colombia · Ecosistema Infiny Group`,
-  `Diagnóstico estratégico incluido · Sin costo adicional`,
-  `No dejes tu crecimiento al azar · Cupos limitados`,
-  `Las marcas top de LATAM ya están dentro`,
-  `Última oportunidad del mes · El precio sube al cerrar`,
+  "Las landing pages convierten al 3% · Los lives al 30% · Nosotros montamos el tuyo",
+  "Pancake — único partner oficial Meta + TikTok + Google en LATAM",
+  "Listo en 10 días · Sin comisión sobre tus ventas · 24/7",
+  "Starter desde $599 USD/mes · Suite Pancake completa incluida",
+  "Falso live + Chatbot WhatsApp + CRM + Videos para ads · Todo incluido",
+  "Diagnóstico gratuito de 20 min · Agenda hoy → Sin compromiso",
 ];
 
 const LOOP_MESSAGES = [...MARQUEE_MESSAGES, ...MARQUEE_MESSAGES];
@@ -125,7 +122,7 @@ export function UrgencyBanner() {
             className="absolute inset-y-0 left-0 w-8 sm:w-12 z-10 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to right, rgb(212,160,23) 0%, rgba(22,163,74,0) 100%)",
+                "linear-gradient(to right, rgb(255,255,255) 0%, rgba(22,163,74,0) 100%)",
             }}
           />
           <div
@@ -133,7 +130,7 @@ export function UrgencyBanner() {
             className="absolute inset-y-0 right-0 w-8 sm:w-12 z-10 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to left, rgb(212,160,23) 0%, rgba(22,163,74,0) 100%)",
+                "linear-gradient(to left, rgb(255,255,255) 0%, rgba(22,163,74,0) 100%)",
             }}
           />
 

@@ -13,8 +13,8 @@ export function ServiciosFAQ() {
   return (
     <section
       id="faq-servicios"
-      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 sm:scroll-mt-24"
       aria-labelledby="faq-servicios-heading"
+      className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-neutral-900 scroll-mt-20 sm:scroll-mt-24"
     >
       <div className="max-w-4xl mx-auto">
         <motion.div
@@ -24,7 +24,7 @@ export function ServiciosFAQ() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
+          <span className="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase bg-brand-green/15 text-brand-green border border-brand-green/40">
             Preguntas frecuentes
           </span>
           <h2
@@ -32,11 +32,10 @@ export function ServiciosFAQ() {
             className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white tracking-tight uppercase"
           >
             Preguntas sobre{" "}
-            <span className="text-brand-green">servicios.</span>
+            <span className="text-brand-green">el servicio.</span>
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-brand-gray mt-2">
-            Todo lo que quieres saber antes de elegir una línea de servicio. Si
-            falta algo,{" "}
+            Todo lo que necesitas saber antes de arrancar. Si falta algo,{" "}
             <a
               href="https://wa.me/573001234567"
               target="_blank"
@@ -60,7 +59,7 @@ export function ServiciosFAQ() {
               <AccordionItem
                 key={idx}
                 value={`item-${idx}`}
-                className="border border-brand-graphite/60 rounded-xl bg-white/[0.02] hover:border-brand-green/40 transition-colors overflow-hidden"
+                className="border border-white/10 rounded-xl bg-white/[0.03] hover:border-brand-green/40 transition-colors overflow-hidden"
               >
                 <AccordionTrigger className="px-5 sm:px-6 py-4 sm:py-5 text-left hover:no-underline min-h-[52px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-inset">
                   <span className="text-sm sm:text-base font-semibold text-white pr-4 leading-snug">
@@ -68,7 +67,9 @@ export function ServiciosFAQ() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-5 sm:px-6 pb-5 pt-0">
-                  <p className="text-sm sm:text-base text-brand-gray leading-relaxed">{item.answer}</p>
+                  <p className="text-sm sm:text-base text-brand-gray leading-relaxed">
+                    {item.answer}
+                  </p>
                 </AccordionContent>
               </AccordionItem>
             ))}

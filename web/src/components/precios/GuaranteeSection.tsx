@@ -1,37 +1,27 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
 import { useIntersection } from "@/hooks/use-intersection";
-import {
-  ShieldCheck,
-  Target,
-  TrendingUp,
-  RefreshCcw,
-  CheckCircle2,
-  AlertCircle,
-  ArrowRight,
-} from "lucide-react";
-import { PERFORMANCE_GUARANTEE } from "@/lib/guarantee-policy";
+import { ShieldCheck, Zap, RefreshCcw, XCircle } from "lucide-react";
 
-const METRICS = [
+const GUARANTEES = [
   {
-    icon: Target,
-    label: "CTR mínimo",
-    value: `≥ ${PERFORMANCE_GUARANTEE.minCtrPercent}%`,
-    desc: "Tasa de clics del video en el anuncio",
-  },
-  {
-    icon: TrendingUp,
-    label: "Hook Rate mínimo",
-    value: `≥ ${PERFORMANCE_GUARANTEE.minHookRatePercent}%`,
-    desc: "Personas que pasan los primeros 3 segundos",
+    icon: Zap,
+    title: "Sistema funcionando en 10 días",
+    description:
+      "Si en 10 días hábiles el sistema no está completamente operativo — live corriendo, Botcake activo, CRM conectado, videos entregados — te devolvemos el setup.",
   },
   {
     icon: RefreshCcw,
-    label: "Reemplazo cubierto",
-    value: `${PERFORMANCE_GUARANTEE.replacementCapPercent}%`,
-    desc: "Del paquete contratado",
+    title: "Optimizaciones incluidas sin costo extra",
+    description:
+      "Cada optimización mensual incluida en tu plan es sin costo adicional. Si necesitamos más iteraciones para que el sistema rinda, las hacemos dentro del plan.",
+  },
+  {
+    icon: XCircle,
+    title: "Sin permanencia mínima",
+    description:
+      "No hay contrato de permanencia. Si en el primer mes el sistema no es lo que esperabas, cancelas. Solo pierdes el setup — la recurrencia no se cobra si cancelas antes del siguiente ciclo.",
   },
 ];
 
@@ -55,7 +45,7 @@ export function GuaranteeSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 45% at 50% 35%, rgba(16,185,129,0.10) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 45% at 50% 35%, rgba(22,163,74,0.08) 0%, transparent 60%)",
         }}
       />
 
@@ -66,155 +56,78 @@ export function GuaranteeSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12 max-w-2xl mx-auto"
         >
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            Garantía de performance
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-sans font-bold tracking-widest uppercase mb-5 bg-brand-green/15 text-brand-green border border-brand-green/40">
+            <ShieldCheck className="w-3.5 h-3.5" aria-hidden />
+            Garantía del sistema
           </span>
           <h2
             id="garantia-title"
             className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] text-white tracking-tight uppercase"
           >
-            Si no rinde,
-            <br />
+            ¿Qué pasa si el sistema{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #10b981, #34d399)",
+                background: "linear-gradient(90deg, #16a34a, #15803d)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              te lo reemplazamos.
+              no funciona?
             </span>
           </h2>
           <p className="mt-5 text-sm sm:text-base text-brand-gray leading-relaxed">
-            Si tus videos no llegan a la tasa de clics mínima ni a la tasa de
-            retención mínima dentro de anuncios pagados, los reemplazamos sin
-            costo hasta cubrir el{" "}
-            {PERFORMANCE_GUARANTEE.replacementCapPercent}% de tu paquete.
+            Nos comprometemos con los resultados del sistema — no con los
+            resultados de tu negocio (eso depende de tu producto, tu precio y
+            tu pauta). Pero si el sistema técnico falla, lo resolvemos.
           </p>
         </motion.div>
 
-        {/* Métricas */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10"
-        >
-          {METRICS.map((m) => {
-            const Icon = m.icon;
+        {/* 3 bloques de garantía */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-10">
+          {GUARANTEES.map((g, i) => {
+            const Icon = g.icon;
             return (
-              <div
-                key={m.label}
-                className="rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.04] p-5 text-center"
+              <motion.div
+                key={g.title}
+                initial={{ opacity: 0, y: 24 }}
+                animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.1 + i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="rounded-2xl border border-brand-green/20 bg-brand-green/[0.04] p-6 sm:p-7 flex flex-col gap-4"
               >
-                <div className="w-10 h-10 mx-auto rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mb-3">
-                  <Icon className="w-5 h-5 text-emerald-400" aria-hidden />
+                <div className="w-10 h-10 rounded-xl bg-brand-green/15 border border-brand-green/30 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 text-brand-green" aria-hidden />
                 </div>
-                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-emerald-400/80 mb-1">
-                  {m.label}
-                </p>
-                <p className="font-display text-3xl sm:text-4xl text-white leading-none">
-                  {m.value}
-                </p>
-                <p className="text-[11px] text-brand-gray mt-2">{m.desc}</p>
-              </div>
+                <div>
+                  <p className="text-white font-sans font-bold text-sm sm:text-base leading-snug mb-2">
+                    {g.title}
+                  </p>
+                  <p className="text-brand-gray text-xs sm:text-sm leading-relaxed">
+                    {g.description}
+                  </p>
+                </div>
+              </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Cómo funciona */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-2xl border border-brand-graphite/60 bg-white/[0.025] p-6 sm:p-8 mb-6"
+        {/* Nota legal */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isIntersecting ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center text-[11px] text-brand-gray/50 max-w-2xl mx-auto leading-relaxed"
         >
-          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70 mb-5">
-            Cómo funciona
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-            <Rule
-              icon={CheckCircle2}
-              tone="emerald"
-              title="Se mide por video, no por variante."
-              body="Si UNA sola variante del video supera los umbrales, ese video se considera ganador y no aplica la garantía sobre él."
-            />
-            <Rule
-              icon={CheckCircle2}
-              tone="emerald"
-              title="Solo en publicidad pagada."
-              body="La garantía cubre desempeño en Meta Ads, TikTok Ads o Google Ads. Contenido orgánico no aplica."
-            />
-            <Rule
-              icon={CheckCircle2}
-              tone="emerald"
-              title="Acceso a tu cuenta publicitaria."
-              body="Necesitamos lectura de tu Business Manager para validar las métricas. Te damos las instrucciones de acceso seguro."
-            />
-            <Rule
-              icon={CheckCircle2}
-              tone="emerald"
-              title="Ventana de evaluación: 14 días."
-              body="Cada video debe acumular al menos 14 días con gasto publicitario activo para considerar su desempeño."
-            />
-            <Rule
-              icon={AlertCircle}
-              tone="amber"
-              title={`Si el ${PERFORMANCE_GUARANTEE.voidThresholdPercent}% del paquete cumple, se anula.`}
-              body="Si la mayoría de los videos están funcionando, significa que la campaña está viva — la garantía se desactiva sobre los videos restantes."
-            />
-            <Rule
-              icon={AlertCircle}
-              tone="amber"
-              title="Cap del 30% del paquete."
-              body="Reemplazamos hasta el 30% de tus videos. Para Crecimiento (10 videos) son hasta 3, para Escala (30 videos) hasta 9."
-            />
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.45 }}
-          className="text-center"
-        >
-          <Link
-            href="/garantia"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-sm font-semibold text-emerald-400 hover:bg-emerald-500/15 transition-colors"
-          >
-            Ver condiciones completas
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
+          La garantía aplica sobre el funcionamiento técnico del sistema. Los
+          resultados de conversión y ventas dependen de factores externos a
+          LiveCake: calidad del producto, precio, inversión en pauta y mercado
+          objetivo.
+        </motion.p>
       </div>
     </section>
-  );
-}
-
-function Rule({
-  icon: Icon,
-  tone,
-  title,
-  body,
-}: {
-  icon: typeof CheckCircle2;
-  tone: "emerald" | "amber";
-  title: string;
-  body: string;
-}) {
-  const color =
-    tone === "emerald"
-      ? "text-emerald-400"
-      : "text-amber-400";
-  return (
-    <div className="flex items-start gap-3">
-      <Icon className={`w-4 h-4 ${color} flex-shrink-0 mt-0.5`} aria-hidden />
-      <div>
-        <p className="text-white font-semibold text-sm leading-snug">{title}</p>
-        <p className="text-brand-gray text-xs mt-1 leading-relaxed">{body}</p>
-      </div>
-    </div>
   );
 }

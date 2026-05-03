@@ -121,7 +121,7 @@ function PlanCard({
       )}
 
       {/* Header */}
-      <div className="flex items-start justify-between mb-4 mt-1">
+      <div className="flex items-start justify-between mb-3 mt-1">
         <div
           className={cn(
             "w-10 h-10 rounded-xl flex items-center justify-center",
@@ -132,14 +132,19 @@ function PlanCard({
         >
           <Icon className="h-5 w-5" aria-hidden />
         </div>
-        <p
-          className={cn(
-            "font-display text-xs tracking-[0.25em]",
-            plan.highlight ? "text-brand-green" : "text-brand-green/80"
+        <div className="text-right">
+          <p
+            className={cn(
+              "font-display text-xs tracking-[0.25em]",
+              plan.highlight ? "text-brand-green" : "text-brand-green/80"
+            )}
+          >
+            {plan.name}
+          </p>
+          {plan.tagline && (
+            <p className="text-[10px] text-brand-gray/60 mt-0.5 font-sans">{plan.tagline}</p>
           )}
-        >
-          {plan.name}
-        </p>
+        </div>
       </div>
 
       {/* Precio */}
@@ -179,6 +184,9 @@ function PlanCard({
         >
           {plan.videos}
         </p>
+        {plan.liveFrequency && (
+          <p className="text-[11px] text-brand-green/70 font-sans mt-0.5">{plan.liveFrequency}</p>
+        )}
         <p className="text-[11px] text-brand-gray mt-0.5">{plan.variants}</p>
       </div>
 
@@ -244,6 +252,18 @@ function PlanCard({
             </>
           )}
         </button>
+      )}
+
+      {/* No incluido */}
+      {plan.notIncluded && plan.notIncluded.length > 0 && (
+        <ul className="space-y-1.5 mb-4" aria-label={`No incluido en ${plan.name}`}>
+          {plan.notIncluded.map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <span className="flex-shrink-0 text-brand-gray/40 text-sm leading-none mt-0.5">—</span>
+              <span className="text-xs text-brand-gray/50 leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
       )}
 
       {/* CTA */}
@@ -526,6 +546,16 @@ export function PreciosPlans() {
             />
           ))}
         </div>
+
+        {/* Nota global sobre planes */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 rounded-xl border border-brand-graphite/40 bg-white/[0.02] px-5 sm:px-7 py-4 text-xs text-brand-gray/70 leading-relaxed"
+        >
+          El spot personalizado de marca (con tu identidad visual completa) es siempre un add-on desde $800 USD — en ningún plan está incluido. El spot incluido en todos los planes es el spot base genérico de LiveCake. La gestión de tus pedidos la hace tu equipo — nosotros configuramos y conectamos todo el sistema técnico.
+        </motion.div>
 
         {/* Banner Enterprise full-width */}
         <EnterpriseBanner isIntersecting={isIntersecting} />

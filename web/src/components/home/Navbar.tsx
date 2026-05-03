@@ -12,8 +12,8 @@ const NAV_LINKS = [
   { label: "Servicios", href: "/servicios", external: true as const },
   { label: "Casos", href: "/casos", external: true as const },
   { label: "Precios", href: "/precios", external: true as const },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Blog", href: "#blog" },
+  { label: "Sobre nosotros", href: "/sobre-nosotros", external: true as const },
+  { label: "Blog", href: "/blog", external: true as const },
 ] as const;
 
 // Offset equal to navbar height to avoid content hidden under it
@@ -121,30 +121,6 @@ export function Navbar() {
               </button>
             );
           })}
-          <a
-            href="/login"
-            className={cn(
-              "px-4 py-2 text-sm font-sans font-semibold text-neutral-600",
-              "rounded-lg transition-all duration-150",
-              "hover:text-brand-black hover:bg-brand-green/10",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
-              "min-h-[44px] flex items-center"
-            )}
-          >
-            Ingresar
-          </a>
-          <a
-            href="/registro"
-            className={cn(
-              "px-4 py-2 text-sm font-sans font-semibold text-brand-green",
-              "rounded-lg transition-all duration-150",
-              "hover:text-brand-green-dark hover:bg-brand-green/10",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green",
-              "min-h-[44px] flex items-center"
-            )}
-          >
-            Registro
-          </a>
         </nav>
 
         {/* Lado derecho: CTA visible siempre en mobile + desktop */}
@@ -236,31 +212,6 @@ export function Navbar() {
                 </button>
               );
             })}
-
-            <a
-              href="/login"
-              onClick={() => setMobileOpen(false)}
-              className={cn(
-                "w-full text-left px-4 py-3.5 text-base font-sans font-semibold text-neutral-600",
-                "rounded-xl transition-all duration-150 min-h-[44px]",
-                "hover:text-brand-black hover:bg-brand-green/10 hover:translate-x-1",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
-              )}
-            >
-              Ingresar
-            </a>
-            <a
-              href="/registro"
-              onClick={() => setMobileOpen(false)}
-              className={cn(
-                "w-full text-left px-4 py-3.5 text-base font-sans font-semibold text-brand-green",
-                "rounded-xl transition-all duration-150 min-h-[44px]",
-                "hover:text-brand-green-dark hover:bg-brand-green/10 hover:translate-x-1",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
-              )}
-            >
-              Registro →
-            </a>
 
             <div className="mt-3 pt-4 border-t border-white/10 flex items-center gap-3">
               <Button

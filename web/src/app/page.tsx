@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { createMetadata } from "@/lib/seo/metadata";
 import { getDefaultJsonLd } from "@/lib/seo/page-config";
 import { HOME_FAQS } from "@/lib/data/home-faq";
@@ -9,8 +8,6 @@ import { Marcas } from "@/components/home/Marcas";
 import { Problema } from "@/components/home/Problema";
 import { Solucion } from "@/components/home/Solucion";
 import { Servicios } from "@/components/home/Servicios";
-import { VideoSamples } from "@/components/home/VideoSamples";
-import { VideoSamplesSkeleton } from "@/components/home/VideoSamplesSkeleton";
 import { Casos } from "@/components/home/Casos";
 import { Aliados } from "@/components/home/Aliados";
 import { Pricing } from "@/components/home/Pricing";
@@ -48,9 +45,6 @@ export default function HomePage() {
       <Problema />
       <Solucion />
       <Servicios />
-      <Suspense fallback={<VideoSamplesSkeleton />}>
-        <VideoSamples />
-      </Suspense>
       <Casos />
       <Aliados />
       <Pricing />
