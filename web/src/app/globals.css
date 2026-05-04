@@ -51,18 +51,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* No usar `scroll-behavior: smooth` — Lenis maneja el smooth scroll
+     en JS y los dos sistemas a la vez causan jitter. Como fallback
+     para usuarios con `prefers-reduced-motion` o mobile (sin Lenis),
+     el scroll es directo y nativo. */
   color-scheme: light;
   /* Offset para que los anchors no queden tapados por el chrome fijo:
      banner de urgencia (si está visible) + navbar. --banner-h lo setea
      UrgencyBanner dinámicamente (0px cuando oculto, 44px cuando visible). */
   scroll-padding-top: calc(var(--banner-h, 0px) + var(--navbar-h));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }
 
 body {
@@ -140,6 +137,31 @@ body {
   outline: 2px solid var(--brand-green);
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* ─── Jerarquía tipográfica base ───────────────────────────── */
+@layer base {
+  h1 {
+    @apply font-display text-5xl md:text-6xl leading-tight tracking-tight font-normal;
+  }
+  h2 {
+    @apply font-display text-4xl md:text-5xl leading-tight tracking-tight font-normal;
+  }
+  h3 {
+    @apply font-sans text-xl md:text-2xl leading-snug font-semibold;
+  }
+  h4 {
+    @apply font-sans text-lg leading-snug font-semibold;
+  }
+  h5 {
+    @apply font-sans text-sm leading-normal font-bold tracking-wide uppercase;
+  }
+  h6 {
+    @apply font-sans text-xs leading-normal font-bold tracking-wider uppercase;
+  }
+  p {
+    @apply font-sans text-base leading-relaxed font-normal;
+  }
 }
 
 /* ─── Keyframes ────────────────────────────────────────────── */
@@ -305,6 +327,21 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ─── Performance hints para Framer Motion ───────────────────
+   `will-change` global en TODOS los `[data-framer-motion]` crea
+   demasiadas capas GPU permanentes y produce jitter al hacer scroll.
+   Framer Motion ya gestiona `will-change` por componente cuando
+   anima, así que dejamos esto como `auto` y solo lo activamos vía
+   utility cuando un caso lo justifica. */
+.animate-gpu {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animation-done {
+  will-change: auto;
 }
 
 /* ─── Markdown renderer ─────────────────────────────────────── */
