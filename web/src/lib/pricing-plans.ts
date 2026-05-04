@@ -38,18 +38,14 @@ export interface Plan {
 const STARTER_LIVES = 2;
 const GROWTH_LIVES = 8;
 const PRO_LIVES = 16;
-const ELITE_LIVES = 31;
 
 const STARTER_OPTS = 2;
 const GROWTH_OPTS = 4;
 const PRO_OPTS = 8;
-// Elite: optimizaciones ilimitadas — usamos 99 como proxy numérico para la garantía
-const ELITE_OPTS = 99;
 
 const STARTER_GUARANTEE = computeGuaranteeForPlan(STARTER_LIVES);
 const GROWTH_GUARANTEE = computeGuaranteeForPlan(GROWTH_LIVES);
 const PRO_GUARANTEE = computeGuaranteeForPlan(PRO_LIVES);
-const ELITE_GUARANTEE = computeGuaranteeForPlan(ELITE_LIVES);
 
 /**
  * Planes Live Cake recurrentes — fuente de verdad compartida entre home Pricing
@@ -163,39 +159,6 @@ export const PLANES_RECURRENTES: Plan[] = [
     ctaType: "stripe",
     ctaHref: "/checkout/pro",
   },
-  {
-    id: "elite",
-    name: "Elite",
-    icon: Crown,
-    videos: `${ELITE_LIVES} lives A/B`,
-    videosCount: ELITE_LIVES,
-    variantsPerVideo: ELITE_OPTS,
-    variants: "Optimizaciones ilimitadas",
-    description: "Un live diario: máxima frecuencia y revenue predecible cada mes.",
-    tagline: "Un live nuevo cada día del mes",
-    liveFrequency: "1 diario · todos los días",
-    features: [
-      `${ELITE_LIVES} lives A/B por mes (1 diario)`,
-      "Optimizaciones ilimitadas",
-      "30+ videos para ads + renovación mensual",
-      "Rotación diaria de variantes",
-      "Integraciones de plataforma ilimitadas",
-      "Comentarios simulados ilimitados",
-      "Botcake full-funnel completo",
-      "Guion y runbook diario",
-      "Reunión estratégica cada 8 días",
-      "Soporte prioritario <4h",
-      "Sin comisión sobre las ventas generadas",
-    ],
-    notIncluded: [
-      "Spot personalizado de marca (add-on desde $800 USD)",
-      "Gestión de pauta publicitaria",
-    ],
-    guarantee: ELITE_GUARANTEE,
-    ctaLabel: "Empezar con Elite",
-    ctaType: "stripe",
-    ctaHref: "/checkout/elite",
-  },
 ];
 
 export const ENTERPRISE_FEATURES = [
@@ -243,7 +206,6 @@ export type ComparisonRow = {
   starter: string | boolean;
   growth: string | boolean;
   pro: string | boolean;
-  elite: string | boolean;
   enterprise: string | boolean;
 };
 
@@ -255,7 +217,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "USD 1,400",
     growth: "USD 1,800",
     pro: "USD 2,200",
-    elite: "USD 3,000",
     enterprise: "A la medida",
   },
   {
@@ -264,7 +225,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "10 días",
     growth: "10 días",
     pro: "10 días",
-    elite: "10 días",
     enterprise: "10 días",
   },
   {
@@ -273,7 +233,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: true,
     growth: true,
     pro: true,
-    elite: true,
     enterprise: true,
   },
   {
@@ -282,7 +241,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: true,
     growth: true,
     pro: true,
-    elite: true,
     enterprise: true,
   },
   {
@@ -291,7 +249,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "Add-on $800+",
     growth: "Add-on $800+",
     pro: "Add-on $800+",
-    elite: "Add-on $800+",
     enterprise: "Add-on $800+",
   },
   // ── Lives y producción ──────────────────────────────────────────────────
@@ -301,7 +258,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "2",
     growth: "8 (2/sem)",
     pro: "16 (día por medio)",
-    elite: "31 (1 diario)",
     enterprise: "Ilimitados",
   },
   {
@@ -310,7 +266,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "1 cada 2 semanas",
     growth: "2 por semana",
     pro: "Día por medio",
-    elite: "Diario",
     enterprise: "Escalable",
   },
   {
@@ -319,7 +274,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "2",
     growth: "4",
     pro: "8",
-    elite: "Ilimitadas",
     enterprise: "Ilimitadas",
   },
   {
@@ -328,7 +282,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "2",
     growth: "4",
     pro: "8",
-    elite: "Rotación diaria",
     enterprise: "Ilimitadas",
   },
   {
@@ -337,7 +290,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "6",
     growth: "12",
     pro: "20",
-    elite: "30+",
     enterprise: "A la medida",
   },
   // ── Tecnología Pancake ──────────────────────────────────────────────────
@@ -347,7 +299,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: true,
     growth: true,
     pro: true,
-    elite: true,
     enterprise: true,
   },
   {
@@ -356,7 +307,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "Básico",
     growth: "Avanzado",
     pro: "Full-funnel",
-    elite: "Full-funnel",
     enterprise: "Full-funnel",
   },
   {
@@ -365,7 +315,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: true,
     growth: true,
     pro: true,
-    elite: true,
     enterprise: true,
   },
   {
@@ -374,7 +323,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: true,
     growth: true,
     pro: true,
-    elite: true,
     enterprise: true,
   },
   {
@@ -383,7 +331,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: true,
     growth: true,
     pro: true,
-    elite: true,
     enterprise: true,
   },
   {
@@ -392,7 +339,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "30 comentarios",
     growth: "A/B testing",
     pro: "A/B testing",
-    elite: "Ilimitados",
     enterprise: "Ilimitados",
   },
   // ── Integraciones ───────────────────────────────────────────────────────
@@ -402,7 +348,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "1",
     growth: "2",
     pro: "Ilimitadas",
-    elite: "Ilimitadas",
     enterprise: "Ilimitadas",
   },
   {
@@ -411,7 +356,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "Add-on",
     growth: "Add-on",
     pro: "Add-on",
-    elite: "Add-on",
     enterprise: "Add-on",
   },
   {
@@ -420,7 +364,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "No disponible aún",
     growth: "No disponible aún",
     pro: "No disponible aún",
-    elite: "No disponible aún",
     enterprise: "No disponible aún",
   },
   // ── Gestión y soporte ───────────────────────────────────────────────────
@@ -430,7 +373,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "c/15 días",
     growth: "c/15 días",
     pro: "c/8 días",
-    elite: "c/8 días",
     enterprise: "A demanda",
   },
   {
@@ -439,7 +381,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "Mensual",
     growth: "Quincenal",
     pro: "Semanal",
-    elite: "Semanal + dashboard",
     enterprise: "BI personalizado",
   },
   {
@@ -448,7 +389,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "48h",
     growth: "24h",
     pro: "12h",
-    elite: "Prioritario <4h",
     enterprise: "SLA custom",
   },
   {
@@ -457,7 +397,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: false,
     growth: false,
     pro: false,
-    elite: false,
     enterprise: false,
   },
   {
@@ -466,7 +405,6 @@ export const COMPARISON_ROWS: ComparisonRow[] = [
     starter: "Cliente",
     growth: "Cliente",
     pro: "Cliente",
-    elite: "Cliente",
     enterprise: "Cliente",
   },
 ];

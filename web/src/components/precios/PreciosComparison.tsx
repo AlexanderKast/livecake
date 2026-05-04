@@ -8,7 +8,7 @@ import { useCurrency } from "@/components/providers/CurrencyProvider";
 import { PLAN_PRICES } from "@/lib/pricing/currency-config";
 import { cn } from "@/lib/utils";
 
-type PlanColumnKey = "starter" | "growth" | "pro" | "elite" | "enterprise";
+type PlanColumnKey = "starter" | "growth" | "pro";
 
 interface PlanColumn {
   key: PlanColumnKey;
@@ -98,11 +98,6 @@ export function PreciosComparison() {
       name: "Pro",
       price: `${format(PLAN_PRICES.pro[currency].amount)}/mes`,
     },
-    {
-      key: "elite",
-      name: "Elite",
-      price: `${format(PLAN_PRICES.elite[currency].amount)}/mes`,
-    },
   ];
 
   return (
@@ -162,7 +157,7 @@ export function PreciosComparison() {
           className="hidden lg:block rounded-2xl border border-neutral-200 bg-neutral-50 overflow-hidden"
         >
           {/* Sticky header */}
-          <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-gradient-to-b from-neutral-100 to-neutral-50 border-b border-neutral-200 sticky top-0 z-20 backdrop-blur-md">
+          <div className="grid grid-cols-[2fr_1fr_1fr] bg-gradient-to-b from-neutral-100 to-neutral-50 border-b border-neutral-200 sticky top-0 z-20 backdrop-blur-md">
             <div className="p-5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/70">
               Caracteristica
             </div>
@@ -191,15 +186,15 @@ export function PreciosComparison() {
           {grouped.map((group) => (
             <div key={group.category}>
               {/* Category header */}
-              <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] border-b border-neutral-200 bg-neutral-100">
-                <div className="col-span-5 px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/80">
+              <div className="grid grid-cols-[2fr_1fr_1fr] border-b border-neutral-200 bg-neutral-100">
+                <div className="col-span-3 px-5 py-2.5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-green/80">
                   {group.category}
                 </div>
               </div>
               {group.items.map((row) => (
                 <div
                   key={row.feature}
-                  className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] border-b border-neutral-200 last:border-b-0 hover:bg-brand-green/[0.02] hover:shadow-[inset_0_0_30px_rgba(22,163,74,0.03)] transition-all duration-200"
+                  className="grid grid-cols-[2fr_1fr_1fr] border-b border-neutral-200 last:border-b-0 hover:bg-brand-green/[0.02] hover:shadow-[inset_0_0_30px_rgba(22,163,74,0.03)] transition-all duration-200"
                 >
                   <div className="px-5 py-3.5 text-sm text-neutral-700 font-sans">
                     {row.feature}
@@ -212,9 +207,6 @@ export function PreciosComparison() {
                   </div>
                   <div className="px-5 py-3.5 text-center border-l border-neutral-200">
                     <CellValue value={row.pro} />
-                  </div>
-                  <div className="px-5 py-3.5 text-center border-l border-neutral-200">
-                    <CellValue value={row.elite} />
                   </div>
                 </div>
               ))}
